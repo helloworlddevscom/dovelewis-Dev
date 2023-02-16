@@ -1,0 +1,58 @@
+uuid: 603fa08e-4d3a-4ecb-aa9f-cd543be7d86e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featured_donation_case_study
+    - field.field.node.donation_case_study.body
+    - field.field.node.donation_case_study.field_donation_image
+    - field.field.node.donation_case_study.field_donation_link
+    - field.field.node.donation_case_study.field_donation_type
+    - image.style.medium_scale_crop
+    - node.type.donation_case_study
+  module:
+    - link
+    - svg_image
+    - text
+    - user
+id: node.donation_case_study.featured_donation_case_study
+targetEntityType: node
+bundle: donation_case_study
+mode: featured_donation_case_study
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_donation_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium_scale_crop
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_donation_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_donation_type: true
+  langcode: true
+  links: true

@@ -1,0 +1,53 @@
+/**
+ * Footer landing page contact info block.
+ */
+
+.block-id--footer-landing-contact {
+  margin-bottom: $spacing--medium;
+
+  .block__content {
+    padding-top: 5px;
+    text-align: center;
+
+    a {
+      min-width: 150px;
+      display: inline-block;
+      margin: 0 10px $spacing--xsmall 0;
+    }
+
+    .footer-landing-contact__address {
+      margin-top: $spacing--small;
+    }
+
+    .address__name {
+      display: block;
+      font-weight: bold;
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .block__content {
+      text-align: left;
+
+      a {
+        display: block;
+        width: 100%;
+        margin: 0 0 30px 0;
+      }
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    .block__content {
+      a {
+        min-width: 180px;
+      }
+    }
+  }
+}

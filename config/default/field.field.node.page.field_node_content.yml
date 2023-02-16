@@ -1,0 +1,61 @@
+uuid: 050e9c9e-7f4c-4eb1-bfe7-1330731e27c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_node_content
+    - node.type.page
+    - paragraphs.paragraphs_type.container
+  module:
+    - entity_reference_revisions
+id: node.page.field_node_content
+field_name: field_node_content
+entity_type: node
+bundle: page
+label: 'Content Containers - Bottom'
+description: 'Allows building more complex page layouts with multiple Columns. Will be displayed <em>beneath</em> Body and Sidebar fields.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      container: container
+    negate: 0
+    target_bundles_drag_drop:
+      block_ref:
+        weight: 9
+        enabled: false
+      column:
+        weight: 4
+        enabled: false
+      contact:
+        weight: 14
+        enabled: false
+      container:
+        weight: 3
+        enabled: true
+      faqs:
+        weight: 12
+        enabled: false
+      marquee:
+        weight: 13
+        enabled: false
+      resource_file:
+        weight: 18
+        enabled: false
+      teaser:
+        weight: 14
+        enabled: false
+      teaser_static:
+        weight: 20
+        enabled: false
+      view:
+        weight: 15
+        enabled: false
+      wysiwyg:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

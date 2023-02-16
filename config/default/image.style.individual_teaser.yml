@@ -1,0 +1,15 @@
+uuid: d37895a1-8c51-4c55-a569-6d17fe9cab16
+langcode: en
+status: true
+dependencies: {  }
+name: individual_teaser
+label: 'Individual Teaser (290x290)'
+effects:
+  955aef09-a2df-475a-ad5b-0ec88d68a612:
+    uuid: 955aef09-a2df-475a-ad5b-0ec88d68a612
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 290
+      height: 290
+      anchor: center-center

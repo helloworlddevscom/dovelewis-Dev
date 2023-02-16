@@ -1,0 +1,19 @@
+uuid: 0eb94530-4056-46ed-bb37-61cf91ce169e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_par_faq_title
+    - paragraphs.paragraphs_type.faqs
+id: paragraph.faqs.field_par_faq_title
+field_name: field_par_faq_title
+entity_type: paragraph
+bundle: faqs
+label: Title
+description: 'Set a title to be displayed above the FAQs. This will only be displayed on the Questions List style.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,162 @@
+/**
+ * Paragraph: Homepage Marquee.
+ */
+
+.paragraph--type--homepage-marquee {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+
+  // Overlay
+
+  .paragraph--type--homepage-marquee__content {
+    margin: 0;
+    max-width: 100%;
+
+    .homepage-marquee__bg-image {
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .homepage-marquee__overlay-text {
+      padding: 20px 20px 40px;
+      font-family: $ff--sentinel;
+      color: $color--body-text;
+      font-size: 1.25rem;
+      background-color: $color--white;
+    }
+
+    p {
+      font-size: rem-calc(20);
+      line-height: 1.3;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a:not([class]) {
+      @include link-style--green;
+      text-decoration: underline;
+      text-decoration-color: $color--lightgreen;
+    }
+  }
+
+  .slick-list {
+    background-color: $color--white;
+  }
+
+  .slick-next,
+  .slick-prev {
+    display: none !important;  // sass-lint:disable-line no-important
+  }
+
+  .slick-dots {
+    position: relative;
+    margin: 25px 0 15px;
+
+    button {
+      background-color: $color--green;
+    }
+  }
+
+
+  // MEDIUM
+
+  @include breakpoint(medium) {
+    .paragraph--type--homepage-marquee__content {
+      .homepage-marquee__overlay-text {
+        padding: 20px 40px 40px;
+      }
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .paragraph--type--homepage-marquee__content {
+      .homepage-marquee__overlay-text {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 65px;
+        display: flex;
+        align-items: center;
+        width: 85%;
+        color: $color--white;
+        background-color: transparent;
+      }
+
+      a:not([class]) {
+        @include link-style--white;
+      }
+
+      p {
+        font-size: rem-calc(28);
+      }
+    }
+
+    .slick-next,
+    .slick-prev {
+      display: block !important; // sass-lint:disable-line no-important
+    }
+
+    .slick-dots {
+      position: absolute;
+      margin: 0;
+
+      button {
+        background-color: $color--white;
+      }
+    }
+  }
+
+  // 1135px
+
+  @include breakpoint(1135px) {
+    .paragraph--type--homepage-marquee__content {
+      .homepage-marquee__overlay-text {
+        p {
+          font-size: rem-calc(32);
+        }
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .paragraph--type--homepage-marquee__content {
+      .homepage-marquee__overlay-text {
+        right: 85px;
+        width: 590px;
+        padding: 40px 0;
+      }
+
+      p {
+        font-size: rem-calc(32);
+      }
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    .paragraph--type--homepage-marquee__content {
+      .homepage-marquee__overlay-text {
+        right: calc(85px + 7%);
+      }
+
+      p {
+        font-size: rem-calc(38);
+      }
+    }
+  }
+}

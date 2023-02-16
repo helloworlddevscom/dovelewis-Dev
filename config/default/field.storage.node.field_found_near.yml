@@ -1,0 +1,21 @@
+uuid: 4bce763f-ba67-446e-8cf2-61d7f8cc5f01
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_found_near
+field_name: field_found_near
+entity_type: node
+type: string
+settings:
+  max_length: 510
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

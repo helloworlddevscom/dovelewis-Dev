@@ -1,0 +1,30 @@
+uuid: 7d2a1daf-091c-4e27-b5fc-1479ad3540f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_par_teaser_content
+    - node.type.page
+    - node.type.person
+    - paragraphs.paragraphs_type.teaser
+id: paragraph.teaser.field_par_teaser_content
+field_name: field_par_teaser_content
+entity_type: paragraph
+bundle: teaser
+label: Content
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+      person: person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: page
+field_type: entity_reference

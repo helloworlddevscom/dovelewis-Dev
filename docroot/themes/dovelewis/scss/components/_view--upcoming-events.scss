@@ -1,0 +1,116 @@
+/**
+ * View: Upcoming Events.
+ */
+
+
+// Teaser Block display
+// -----
+
+.view--upcoming-events.view-display-id--teaser_block {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .views-row {
+    padding-top: $spacing--small;
+    padding-bottom: $spacing--small;
+    border-bottom: 2px solid $color--gray6;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  .view-footer {
+    margin-top: $spacing--small;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    max-width: none;
+
+    .views-row {
+      padding-top: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .views-row:last-child {
+      display: none;
+    }
+
+    .view-footer {
+      margin-top: $spacing--large;
+
+      .divider {
+        float: right;
+        display: block;
+        width: 75%;
+        height: 1px;
+        margin-top: 20px;
+        background-color: $color--gray6;
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .views-row:last-child {
+      display: block;
+    }
+
+    .view-footer {
+      .divider {
+        width: 80%;
+      }
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    .view-footer {
+      .divider {
+        width: 85%;
+      }
+    }
+  }
+}
+
+
+// Event Landing Top Block display
+// -----
+
+.view--upcoming-events.view-display-id--landing_top_block {
+  .view-empty {
+    @include container-padding('xlarge', false);
+  }
+}
+
+
+// Event Landing Bottom Block display
+// -----
+
+.view--upcoming-events.view-display-id--landing_bottom_block {
+  .views-row {
+    padding: $spacing--medium 0;
+    border-bottom: 1px solid $color--gray6;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .views-row {
+      padding: $spacing--large 0;
+    }
+  }
+}

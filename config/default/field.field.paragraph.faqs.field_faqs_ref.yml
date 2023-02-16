@@ -1,0 +1,28 @@
+uuid: 0b1ae5f0-79ec-4d3c-a87d-a45fb6239ba7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_faqs_ref
+    - node.type.faq
+    - paragraphs.paragraphs_type.faqs
+id: paragraph.faqs.field_faqs_ref
+field_name: field_faqs_ref
+entity_type: paragraph
+bundle: faqs
+label: FAQs
+description: 'Reference existing FAQ content.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      faq: faq
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

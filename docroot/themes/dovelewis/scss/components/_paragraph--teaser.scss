@@ -1,0 +1,16 @@
+/**
+ * Paragraph - Teaser.
+ */
+
+.paragraph--type--teaser {
+  height: 100%;
+
+  .field--name-field-par-teaser-content,
+  .node--view-mode--generic-teaser {
+    height: 100%;
+  }
+
+  .node {
+    @include teaser-background();
+  }
+}

@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * Template for "Claim your pet" block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-id--' ~ attributes.toArray().id|clean_class,
+    'block-type--' ~ configuration.provider|clean_class,
+    'content-tile',
+    'bg-color--white',
+    'header-bg-color--orange',
+    'border-color--orange',
+    'padding--medium',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+
+  {% if label %}
+    <div class="content-tile__header">
+      <h3 class="header__title">{{ label }}</h3>
+    </div>
+  {% endif %}
+  {% block content %}
+    <div class="content-tile__content">
+      {{ content }}
+
+      <div class="tracking-info">
+        <span class="tracking-label text-style--label--small">
+          {{ 'DoveLewis Tracking #:'|t }}
+        </span>
+        {% if tracking_number %}
+          <span class="tracking-number">
+            {{ tracking_number }}
+          </span>
+        {% endif %}
+      </div>
+
+      <a href="tel:503-228-7281" class="button button-icon--call">(503) 228-7281</a>
+    </div>
+  {% endblock %}
+</div>

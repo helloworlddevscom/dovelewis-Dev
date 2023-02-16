@@ -1,0 +1,200 @@
+uuid: 8bafc9e8-3456-4be9-93df-e1aba5ada6f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_node_content
+    - field.storage.paragraph.field_par_container_content
+    - field.storage.paragraph.field_par_column_content
+    - field.storage.paragraph.field_par_rte_content
+    - field.storage.node.field_sidebar_content
+    - field.storage.node.field_tags
+    - search_api.server.database_server
+  module:
+    - paragraphs
+    - taxonomy
+    - search_api
+    - node
+id: content_index
+name: 'Content Index'
+description: ''
+read_only: false
+field_settings:
+  aggregated_field_title:
+    label: 'Aggregated Title field'
+    property_path: aggregated_field
+    type: text
+    boost: !!float 8
+    configuration:
+      type: concat
+      fields:
+        - 'entity:node/nid'
+        - 'entity:node/title'
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    boost: !!float 2
+    dependencies:
+      config:
+        - field.storage.node.body
+  field_par_rte_content:
+    label: 'Sidebar Content » Paragraph » Content'
+    datasource_id: 'entity:node'
+    property_path: 'field_sidebar_content:entity:field_par_rte_content'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_sidebar_content
+        - field.storage.paragraph.field_par_rte_content
+      module:
+        - paragraphs
+  field_par_rte_content_2:
+    label: 'Content Containers » Paragraph » Columns » Paragraph » Column Content » Paragraph » Content'
+    datasource_id: 'entity:node'
+    property_path: 'field_node_content:entity:field_par_container_content:entity:field_par_column_content:entity:field_par_rte_content'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_node_content
+        - field.storage.paragraph.field_par_container_content
+        - field.storage.paragraph.field_par_column_content
+        - field.storage.paragraph.field_par_rte_content
+      module:
+        - paragraphs
+        - paragraphs
+        - paragraphs
+  name:
+    label: 'Tags » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_tags:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+      module:
+        - taxonomy
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 8
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  highlight:
+    weights:
+      postprocess_query: 0
+    prefix: '<strong>'
+    suffix: '</strong>'
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields:
+      - aggregated_field_title
+      - title
+    highlight: always
+    highlight_partial: false
+  html_filter:
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+    all_fields: true
+    fields:
+      - aggregated_field_title
+      - body
+      - field_par_rte_content
+      - field_par_rte_content_2
+      - name
+      - title
+    title: false
+    alt: false
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+  ignorecase:
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+    all_fields: true
+    fields:
+      - aggregated_field_title
+      - body
+      - field_par_rte_content
+      - field_par_rte_content_2
+      - name
+      - title
+  rendered_item: {  }
+  tokenizer:
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+    all_fields: true
+    fields:
+      - aggregated_field_title
+      - body
+      - field_par_rte_content
+      - field_par_rte_content_2
+      - title
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+  type_boost:
+    weights:
+      preprocess_index: 0
+    boosts:
+      'entity:node':
+        datasource_boost: !!float 1
+        bundle_boosts:
+          blog_post: !!float 2
+          event: !!float 0
+          faq: !!float 0
+          lost_found_pet: !!float 0
+          page: !!float 3
+          person: !!float 0
+          press: !!float 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+server: database_server

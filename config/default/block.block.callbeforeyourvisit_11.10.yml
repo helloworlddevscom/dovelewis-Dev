@@ -1,0 +1,25 @@
+uuid: 750f5449-5cea-4982-a5ff-b24ab4e34347
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:modal:b1a0c4db-baf0-43f0-a687-826ad91168b7'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: callbeforeyourvisit_11.10
+theme: dovelewis
+region: modals
+weight: 0
+provider: null
+plugin: 'block_content:b1a0c4db-baf0-43f0-a687-826ad91168b7'
+settings:
+  id: 'block_content:b1a0c4db-baf0-43f0-a687-826ad91168b7'
+  label: 'Call Before Your Visit_11.10'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

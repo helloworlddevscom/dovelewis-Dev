@@ -1,0 +1,15 @@
+uuid: 4b47f30a-a88e-4403-8ff2-e0e100165e79
+langcode: en
+status: true
+dependencies: {  }
+name: marquee_medium_x2
+label: marquee_medium_x2
+effects:
+  68930526-94a0-4aed-88ff-a5cae9b04c3e:
+    uuid: 68930526-94a0-4aed-88ff-a5cae9b04c3e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1536
+      height: 760
+      anchor: center-center

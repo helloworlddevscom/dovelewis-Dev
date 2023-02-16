@@ -1,0 +1,20 @@
+uuid: 9af00721-9d39-439d-849f-2553f380b85f
+langcode: en
+status: true
+dependencies:
+  module:
+    - dovelewis_footer
+  theme:
+    - dovelewis
+id: footerimages_landing
+theme: dovelewis
+region: footer_left_landing
+weight: -22
+provider: null
+plugin: footer_images
+settings:
+  id: footer_images
+  label: 'Footer - Images'
+  label_display: '0'
+  provider: dovelewis_footer
+visibility: {  }

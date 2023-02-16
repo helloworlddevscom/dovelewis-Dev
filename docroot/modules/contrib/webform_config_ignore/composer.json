@@ -1,0 +1,17 @@
+{
+  "name": "drupal/webform_config_ignore",
+  "description": "Ignores configuration imports and export of existing Webforms.",
+  "type": "drupal-module",
+  "homepage": "http://drupal.org/project/webform_config_ignore",
+  "support": {
+    "issues": "http://drupal.org/project/webform_config_ignore",
+    "irc": "irc://irc.freenode.org/drupal-contribute",
+    "source": "https://git.drupalcode.org/project/webform_config_ignore"
+  },
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "require": {
+    "drupal/config_filter": "^1",
+    "drupal/core": "^8.8 || ^9"
+  }
+}

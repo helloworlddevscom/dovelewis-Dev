@@ -1,0 +1,68 @@
+/**
+ * Blog Post node - View mode: Wellness Tip.
+ */
+
+
+.node--type--blog-post.node--view-mode--wellness-tip {
+  height: 100%;
+
+  .content__image {
+    display: none;
+
+    img {
+      border: 2px solid $color--white;
+    }
+  }
+
+  .content__text {
+    padding-top: 0;
+  }
+
+  .post-date {
+    display: block;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  .node__title {
+    @include h5--mobile-large;
+
+    a {
+      @include link-style--green();
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .node__content {
+      display: flex;
+      flex-flow: row wrap;
+      height: 100%;
+    }
+
+    .content__image {
+      display: block;
+      width: 24.5%;
+    }
+
+    .content__text {
+      width: 75%;
+      padding: 0 0 0 $spacing--small;
+
+      p {
+        @include font-size--paragraph;
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .content__text {
+      padding: 0 0 0 $spacing--medium;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+uuid: 28fe6a70-21fe-4c05-b179-5bcc91b8e002
+langcode: en
+status: true
+dependencies: {  }
+id: resource_file
+label: 'Resource File Reference'
+icon_uuid: null
+description: 'Reference and display existing Resource File content.'
+behavior_plugins: {  }

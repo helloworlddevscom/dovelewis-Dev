@@ -1,0 +1,176 @@
+/**
+ * Contact Emergency block.
+ * Used on "Contact" page.
+ */
+
+.block-id--contact-emergency {
+
+  .contact-info__contact {
+    padding-top: $spacing--medium + 2px;
+    padding-bottom: $spacing--medium;
+  }
+
+  .emergency-label {
+    text-align: center;
+  }
+
+  .emergency-call,
+  .emergency-loss-support,
+  .emergency-24-hours,
+  .emergency-location {
+    text-align: center;
+  }
+
+  .emergency-call {
+    margin-bottom: $spacing--small;
+  }
+
+  .emergency-24-hours {
+    clear: both;
+    padding-top: 33px;
+    padding-bottom: 30px;
+    margin-bottom: $spacing--small;
+    border-bottom: 1px solid $color--gray6;
+  }
+
+  .emergency-24-hours__open-hours {
+    display: block;
+    font-size: rem-calc(16);
+    font-weight: bold;
+  }
+
+  .emergency-24-hours__appointment {
+    font-size: rem-calc(16);
+    font-style: italic;
+  }
+
+  .contact-info__map {
+    iframe {
+      width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  .emergency-message {
+    padding-top: 33px;
+    padding-bottom: 33px;
+    margin-top: 33px;
+    background-color: $color--red;
+    border-top: 4px solid $color--white;
+    border-bottom: 4px solid $color--white;
+
+    .emergency-message__inner {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -59px;
+        left: calc(50% - 40px);
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 37px 37px 37px;
+        border-color: transparent transparent $color--red transparent;
+      }
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.2;
+      font-size: rem-calc(18);
+      text-align: center;
+      color: $color--white;
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .emergency-label {
+      text-align: left;
+    }
+
+    .emergency-call,
+    .emergency-loss-support,
+    .emergency-24-hours,
+    .emergency-location {
+      text-align: left;
+    }
+
+    .emergency-call {
+      float: left;
+      width: 50%;
+      margin-bottom: 0;
+      padding-right: $spacing--xsmall;
+    }
+
+    .emergency-loss-support {
+      float: left;
+      width: 50%;
+      padding-left: $spacing--xsmall;
+    }
+
+    .emergency-24-hours__open-hours {
+      font-size: rem-calc(20);
+    }
+
+    .emergency-24-hours__appointment {
+      font-size: rem-calc(20);
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+
+    .contact-info__contact {
+      padding-top: 75px;
+      padding-bottom: $spacing--large;
+    }
+
+    .emergency-24-hours {
+      clear: both;
+      padding: 55px 0 55px 100px;
+      margin-bottom: 30px;
+      background-image: url('../../images/icons/open-24-hours-red.svg');
+      background-repeat: no-repeat;
+      background-size: 70px;
+      background-position: left center;
+    }
+
+    .emergency-message {
+      padding-top: 55px;
+      padding-bottom: 55px;
+      margin-top: 0;
+
+      .emergency-message__inner {
+        &:before {
+          top: -80px;
+          left: 0;
+        }
+      }
+
+      p {
+        font-size: rem-calc(30);
+        text-align: left;
+      }
+    }
+
+    .contact-info__map {
+      border-left: 4px solid $color--white;
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    .contact-info__contact {
+      padding-right: $spacing--medium;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+uuid: 2900d818-2703-4f3d-b89b-527f7c89f9d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_par_column_width
+    - paragraphs.paragraphs_type.column
+  module:
+    - options
+id: paragraph.column.field_par_column_width
+field_name: field_par_column_width
+entity_type: paragraph
+bundle: column
+label: 'Column Width'
+description: 'Select the width of this Column out of a 12 column grid.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 12
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

@@ -1,0 +1,78 @@
+/**
+ * Foundation Orbit Slider/Carousel.
+ */
+
+
+.orbit {
+
+  .orbit-container {
+    margin: 0;
+  }
+
+  .orbit-next,
+  .orbit-previous {
+    display: none;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+      opacity: 1;
+    }
+
+    span {
+      top: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: .6;
+      transition: opacity .3s ease-in-out;
+    }
+
+    .show-for-sr, .show-on-focus {
+      clip: auto;
+      overflow: hidden;
+      text-indent: 2000px;
+    }
+  }
+
+  .orbit-previous {
+    left: $spacing--large;
+
+    span {
+      background-image: url('../../images/icons/pager-arrow-left-white.svg');
+    }
+  }
+
+  .orbit-next {
+    right: $spacing--large;
+
+    span {
+      background-image: url('../../images/icons/pager-arrow-right-white.svg');
+    }
+  }
+
+  .orbit-bullets {
+    button {
+      transition: background-color .3s ease-in-out;
+      cursor: pointer;
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .orbit-next,
+    .orbit-previous {
+      display: block;
+    }
+  }
+}

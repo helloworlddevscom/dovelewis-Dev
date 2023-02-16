@@ -1,0 +1,15 @@
+uuid: 40add3b5-8ea7-4195-8aa1-e6685536f52e
+langcode: en
+status: true
+dependencies: {  }
+name: marquee_large_2x
+label: marquee_large_2x
+effects:
+  29c6d332-5b26-40df-95bd-51244547a1a8:
+    uuid: 29c6d332-5b26-40df-95bd-51244547a1a8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2560
+      height: 854
+      anchor: center-center

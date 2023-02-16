@@ -1,0 +1,23 @@
+uuid: 4d6be4e5-9e0e-4967-8200-4097f3706585
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_style
+    - paragraphs.paragraphs_type.faqs
+  module:
+    - options
+id: paragraph.faqs.field_style
+field_name: field_style
+entity_type: paragraph
+bundle: faqs
+label: Style
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: qa
+default_value_callback: ''
+settings: {  }
+field_type: list_string

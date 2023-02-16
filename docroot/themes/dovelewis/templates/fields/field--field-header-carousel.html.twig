@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Header Carousel field.
+ * Used on Found Pet node Full view mode.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ *
+ * @see template_preprocess_field()
+ */
+#}
+
+{{ attach_library('dovelewis/foundation-orbit') }}
+
+<div class="orbit" role="region" aria-label="{{ 'Found Pet Photos'|t }}" data-orbit>
+  <div class="orbit-wrapper">
+    <div class="orbit-controls">
+      <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span></button>
+      <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span></button>
+    </div>
+  </div>
+  <ul class="orbit-container">
+
+    {% for item in items %}
+      <li class="orbit-slide">
+        <figure class="orbit-figure">
+          {{ item.content }}
+
+          {% if item.content['#item'].getvalue.alt is not empty %}
+            <figcaption class="orbit-caption">{{ item.content['#item'].getvalue.alt }}</figcaption>
+          {% endif %}
+        </figure>
+      </li>
+    {% endfor %}
+
+  </ul>
+
+
+  <nav class="orbit-bullets">
+    {% for item in items %}
+      <button data-slide="{{ loop.index0 }}" {% if loop.index0 == '0' %}class="is-active"{% endif %}><span class="show-for-sr"></span></button>
+    {% endfor %}
+  </nav>
+
+</div>

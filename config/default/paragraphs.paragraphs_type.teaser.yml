@@ -1,0 +1,9 @@
+uuid: 942677ef-5910-4e72-ad06-3635b932ed54
+langcode: en
+status: true
+dependencies: {  }
+id: teaser
+label: 'Teaser - Reference'
+icon_uuid: null
+description: 'Reference and display existing Page or Person content in a "teaser" format, with an image with text underneath or to the right and a call to action button.'
+behavior_plugins: {  }

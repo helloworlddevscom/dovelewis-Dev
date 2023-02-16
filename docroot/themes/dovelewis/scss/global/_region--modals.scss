@@ -1,0 +1,11 @@
+/**
+ * Theme region: Modals.
+ */
+
+.region--modals {
+  // Hide this region because the purpose is to provide
+  // content which is rendered in a modal at some point.
+  // We do not want to display the content at the location
+  // of this region.
+  display: none;
+}

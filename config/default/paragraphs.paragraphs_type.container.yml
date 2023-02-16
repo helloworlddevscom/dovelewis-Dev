@@ -1,0 +1,9 @@
+uuid: 569b9611-f0fe-4229-b22e-03476d39ade1
+langcode: en
+status: true
+dependencies: {  }
+id: container
+label: Container
+icon_uuid: null
+description: 'A layout Container that uses the Foundation grid system.'
+behavior_plugins: {  }

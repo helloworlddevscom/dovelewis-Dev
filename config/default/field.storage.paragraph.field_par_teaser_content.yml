@@ -1,0 +1,20 @@
+uuid: 2de99614-a80f-4c53-8c0e-1f83f7d5c6bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.field_par_teaser_content
+field_name: field_par_teaser_content
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

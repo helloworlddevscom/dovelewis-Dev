@@ -1,0 +1,166 @@
+/**
+ * Paragraph: FAQs.
+ */
+
+
+// Question and Answer style
+//
+// NOTE: This style is not currently compatible with
+// any breakpoints under XLARGE because there are no comps
+// for this style under XLARGE.
+// ------
+
+.paragraph--type--faqs.paragraph--view-mode--faq-qa {
+  .faqs-qa {
+    display: none;
+    @include breakpoint(large) {
+      display: flex;
+      flex-flow: row nowrap;
+    }
+
+    .faqs-qa__qa-item {
+      margin: 0;
+      padding: 0 $spacing--small 0 0;
+    }
+
+    .faqs-qa__qa-item {
+      &:first-child {
+        width: 32.5%;
+      }
+
+      &:nth-child(2),
+      &:last-child {
+        border-left: 1px solid $color--gray6;
+      }
+
+      &:nth-child(2) {
+        width: 34.5%;
+        padding: 0 $spacing--small;
+      }
+
+      &:last-child {
+        width: 32.5%;
+        padding: 0 0 0 $spacing--small;
+      }
+    }
+
+    .qa-item__question-label,
+    .qa-item__answer-label {
+      font-weight: bold;
+      line-height: 1;
+      font-size: rem-calc(18);
+      color: $color--lightorange;
+      text-transform: uppercase;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .qa-item__question-label {
+      /*
+        position and -5px so the top and bottom
+        of the text will sit flush with the line
+        separators per the provided mock
+        */
+      position: relative;
+      top: -2px;
+    }
+
+    .qa-item__answer-label {
+      margin-top: 32px;
+    }
+
+    .qa-item__question {
+      font-size: rem-calc(18);
+      font-weight: bold;
+    }
+
+    .qa-item__answer {
+      /*
+        position and -5px so the top and bottom
+        of the text will sit flush with the line
+        separators per the provided mock
+        */
+      position: relative;
+      bottom: -5px;
+
+      p, span {
+        font-size: rem-calc(18);
+      }
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    .faqs-qa {
+      .qa-item__question {
+        font-size: rem-calc(20);
+        font-weight: bold;
+      }
+
+      .qa-item__answer {
+        p, span {
+          font-size: rem-calc(20);
+        }
+      }
+    }
+  }
+}
+
+
+// List style
+// -----
+
+.paragraph--type--faqs.paragraph--view-mode--faq-list {
+  .paragraph--type--faq__title {
+    color: $color--lightgreen;
+  }
+
+  .faqs-list {
+    margin: 10px 0;
+    list-style: none;
+
+    .faqs-list__faq-item {
+      margin-bottom: .6rem;
+    }
+
+    a {
+      @include font-size--large;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .faqs-list {
+      margin: $spacing--small 0;
+
+      a {
+        font-size: rem-calc(24);
+      }
+    }
+  }
+}
+
+
+// Accordion style
+// -----
+
+.paragraph--type--faqs.paragraph--view-mode--faq-accordion {
+  .paragraph--type--faq__title {
+    color: $color--lightgreen;
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .paragraph--type--faq__title {
+      margin-bottom: $spacing--medium;
+    }
+  }
+}
+
+

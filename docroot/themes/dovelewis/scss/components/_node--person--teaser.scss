@@ -1,0 +1,48 @@
+/**
+ * Person node - View Mode: Teaser.
+ */
+
+.node--type--person.node--view-mode--teaser {
+
+  .person__name {
+    margin: 0;
+    .field--name-title {
+      color: $color--darkgreen;
+    }
+  }
+
+  .field--name-field-credentials {
+    color: $color--green;
+  }
+
+  .field--name-field-individual-specialties {
+    font-style: italic;
+  }
+
+  .teaser-cta {
+    margin: $spacing--xsmall 0 0 0;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .teaser-cta {
+      margin: 30px 0 0 0;
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+
+  }
+}

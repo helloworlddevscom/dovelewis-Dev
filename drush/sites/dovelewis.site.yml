@@ -1,0 +1,52 @@
+lando:
+  root: /app/docroot
+
+
+# Application 'dovelewis', environment 'dev'.
+dev:
+  root: /var/www/html/dovelewis.dev/docroot
+  ac-site: dovelewis
+  ac-env: dev
+  ac-realm: devcloud
+  uri: dovelewishze2ge4zwu.devcloud.acquia-sites.com
+  dev.livedev:
+    parent: '@dovelewis.dev'
+    root: /mnt/gfs/dovelewis.dev/livedev/docroot
+  host: dovelewishze2ge4zwu.ssh.devcloud.acquia-sites.com
+  user: dovelewis.dev
+  paths:
+    drush-script: drush10
+
+
+# Application 'dovelewis', environment 'prod'.
+prod:
+  root: /var/www/html/dovelewis.prod/docroot
+  ac-site: dovelewis
+  ac-env: prod
+  ac-realm: devcloud
+  uri: dovelewisljfqtm5uu7.devcloud.acquia-sites.com
+  prod.livedev:
+    parent: '@dovelewis.prod'
+    root: /mnt/gfs/dovelewis.prod/livedev/docroot
+  host: dovelewisljfqtm5uu7.ssh.devcloud.acquia-sites.com
+  user: dovelewis.prod
+  paths:
+    drush-script: drush10
+
+
+# Application 'dovelewis', environment 'test'.
+test:
+  root: /var/www/html/dovelewis.test/docroot
+  ac-site: dovelewis
+  ac-env: test
+  ac-realm: devcloud
+  uri: dovelewisckfalsvsfs.devcloud.acquia-sites.com
+  test.livedev:
+    parent: '@dovelewis.test'
+    root: /mnt/gfs/dovelewis.test/livedev/docroot
+  host: dovelewisckfalsvsfs.ssh.devcloud.acquia-sites.com
+  user: dovelewis.test
+  paths:
+    drush-script: drush10
+
+

@@ -1,0 +1,16 @@
+/**
+ * Basic Page node - View mode: Full.
+ *
+ * Inherits most styling from _node--full-with-sidebar.scss.
+ */
+
+.node--type--page.node--view-mode--full {
+
+  .teaser-menu {
+    @include background-2x( '../../images/DL_Pattern_Gray', 'png', 1043px, 1042px, center center, repeat);
+
+    .teaser-menu__inner {
+      @include container-padding('xlarge');
+    }
+  }
+}

@@ -1,0 +1,20 @@
+uuid: 277992c3-ca11-458e-9ef5-936e11c8ab08
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - media
+    - system
+    - video_embed_field
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: -9
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'never autoplay videos'
+  - 'view media'

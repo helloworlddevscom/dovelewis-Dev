@@ -1,0 +1,23 @@
+uuid: 4c3a7497-0eae-43e6-8a63-a3bb3090d33c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_par_container_con_width
+    - paragraphs.paragraphs_type.container
+  module:
+    - options
+id: paragraph.container.field_par_container_con_width
+field_name: field_par_container_con_width
+entity_type: paragraph
+bundle: container
+label: 'Content Width'
+description: 'Select the total width of the combined Columns within this Container.'
+required: true
+translatable: false
+default_value:
+  -
+    value: site
+default_value_callback: ''
+settings: {  }
+field_type: list_string

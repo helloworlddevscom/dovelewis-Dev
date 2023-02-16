@@ -1,0 +1,118 @@
+uuid: a033355c-17a8-4434-accb-2d019ad6f3d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.paragraph.settings
+    - field.field.paragraph.container.field_bg_color
+    - field.field.paragraph.container.field_border_color
+    - field.field.paragraph.container.field_bottom_padding
+    - field.field.paragraph.container.field_center_title
+    - field.field.paragraph.container.field_display_on
+    - field.field.paragraph.container.field_display_title
+    - field.field.paragraph.container.field_par_container_bg_width
+    - field.field.paragraph.container.field_par_container_con_width
+    - field.field.paragraph.container.field_par_container_content
+    - field.field.paragraph.container.field_par_container_title
+    - field.field.paragraph.container.field_top_padding
+    - paragraphs.paragraphs_type.container
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_container_styles:
+      children:
+        - field_par_container_bg_width
+        - field_par_container_con_width
+        - field_top_padding
+        - field_bottom_padding
+        - field_bg_color
+        - field_bg_image
+        - field_bg_image_style
+        - field_border_color
+        - field_display_on
+      label: 'Container Styles'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        label: 'Container Styles'
+        classes: ''
+        id: ''
+        open: false
+        required_fields: false
+id: paragraph.container.settings
+targetEntityType: paragraph
+bundle: container
+mode: settings
+content:
+  field_bg_color:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_border_color:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bottom_padding:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_center_title:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_display_on:
+    type: options_select
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_display_title:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_par_container_bg_width:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_par_container_con_width:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_par_container_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_top_padding:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_par_container_content: true
+  status: true
+  uid: true

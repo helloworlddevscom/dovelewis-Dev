@@ -1,0 +1,25 @@
+uuid: 4455ca24-82c0-4ba1-b2e0-25033f5b60ee
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:48ac6489-d50f-4e12-b97b-00ebe535fea7'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: dovelewis_taxid
+theme: dovelewis
+region: disabled
+weight: 0
+provider: null
+plugin: 'block_content:48ac6489-d50f-4e12-b97b-00ebe535fea7'
+settings:
+  id: 'block_content:48ac6489-d50f-4e12-b97b-00ebe535fea7'
+  label: 'DoveLewis'' Tax ID'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

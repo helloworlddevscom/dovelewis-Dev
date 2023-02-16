@@ -1,0 +1,23 @@
+uuid: 3275fed8-2c17-4464-af74-e0be68c2572d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_on
+    - paragraphs.paragraphs_type.column
+  module:
+    - options
+id: paragraph.column.field_display_on
+field_name: field_display_on
+entity_type: paragraph
+bundle: column
+label: 'Display On'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: desktop-mobile
+default_value_callback: ''
+settings: {  }
+field_type: list_string

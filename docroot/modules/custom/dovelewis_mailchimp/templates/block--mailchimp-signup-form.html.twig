@@ -1,0 +1,109 @@
+{#
+/**
+ * @file
+ * Mailchimp Signup Block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+
+{%
+  set classes = [
+  'block',
+  'block-id--mailchimp-form',
+  'block-type--' ~ configuration.provider|clean_class,
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {% block content %}
+    <div class="block__content">
+      <div class="content__top">
+        {% if label %}
+          <h2{{ title_attributes.addClass('block__title') }}>{{ label }}</h2>
+        {% endif %}
+      </div>
+      <div class="content__bottom">
+		<div id="mc_embed_signup">
+			<form action="https://dovelewis.us5.list-manage.com/subscribe/post?u=ffc9fb9d1e048ee09b8eb9ce8&amp;id=9d19be9e7d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<div id="mc_embed_signup_scroll">
+				<h2>Subscribe</h2>
+			<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+			<div class="mc-field-group">
+				<label for="mce-FNAME">First Name </label>
+				<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+			</div>
+			<div class="mc-field-group">
+				<label for="mce-LNAME">Last Name </label>
+				<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+			</div>
+			<div class="mc-field-group">
+				<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+			</label>
+				<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+			</div>
+			<div class="mc-field-group">
+				<label for="mce-ANIMALNAME">Pet's Name </label>
+				<input type="text" value="" name="ANIMALNAME" class="" id="mce-ANIMALNAME">
+			</div>
+			<div class="mc-field-group input-group">
+				<strong>Pet Species </strong>
+				<ul><li><input type="checkbox" value="131072" name="group[101][131072]" id="mce-group[101]-101-0"><label for="mce-group[101]-101-0">Dog</label></li>
+			<li><input type="checkbox" value="262144" name="group[101][262144]" id="mce-group[101]-101-1"><label for="mce-group[101]-101-1">Cat</label></li>
+			<li><input type="checkbox" value="524288" name="group[101][524288]" id="mce-group[101]-101-2"><label for="mce-group[101]-101-2">Bird</label></li>
+			<li><input type="checkbox" value="1048576" name="group[101][1048576]" id="mce-group[101]-101-3"><label for="mce-group[101]-101-3">Reptile or Other</label></li>
+			</ul>
+			</div>
+			<div class="mc-field-group input-group">
+				<strong>Interests </strong>
+				<ul><li><input type="checkbox" value="64" name="group[89][64]" id="mce-group[89]-89-0"><label for="mce-group[89]-89-0">Pet Health Tips + Program News</label></li>
+			<li><input type="checkbox" value="32" name="group[89][32]" id="mce-group[89]-89-1"><label for="mce-group[89]-89-1">Upcoming DoveLewis Events</label></li>
+			<li><input type="checkbox" value="128" name="group[89][128]" id="mce-group[89]-89-2"><label for="mce-group[89]-89-2">Pet Loss Support Resources + Events</label></li>
+			<li><input type="checkbox" value="256" name="group[89][256]" id="mce-group[89]-89-3"><label for="mce-group[89]-89-3">Job Openings</label></li>
+			<li><input type="checkbox" value="512" name="group[89][512]" id="mce-group[89]-89-4"><label for="mce-group[89]-89-4">Volunteer Opportunities</label></li>
+			</ul>
+			</div>
+			<div style="display:none" class="mc-field-group input-group">
+				<strong>Clients </strong>
+				<ul><li><input type="checkbox" value="4096" name="group[97][4096]" id="mce-group[97]-97-0" checked><label for="mce-group[97]-97-0">DoveList</label></li>
+			<li><input type="checkbox" value="8192" name="group[97][8192]" id="mce-group[97]-97-1"><label for="mce-group[97]-97-1">New Client (ECC)</label></li>
+			<li><input type="checkbox" value="16384" name="group[97][16384]" id="mce-group[97]-97-2"><label for="mce-group[97]-97-2">Returning Client (ECC)</label></li>
+			<li><input type="checkbox" value="32768" name="group[97][32768]" id="mce-group[97]-97-3"><label for="mce-group[97]-97-3">New Specialty Client</label></li>
+			<li><input type="checkbox" value="65536" name="group[97][65536]" id="mce-group[97]-97-4"><label for="mce-group[97]-97-4">Returning Specialty Client</label></li>
+			<li><input type="checkbox" value="2097152" name="group[97][2097152]" id="mce-group[97]-97-5" checked><label for="mce-group[97]-97-5">Website Sign-Up Form</label></li>
+			</ul>
+			</div>
+				<div id="mce-responses" class="clear">
+					<div class="response" id="mce-error-response" style="display:none"></div>
+					<div class="response" id="mce-success-response" style="display:none"></div>
+				</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ffc9fb9d1e048ee09b8eb9ce8_9d19be9e7d" tabindex="-1" value=""></div>
+				<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+				</div>
+			</form>
+			</div>
+			<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='JOB';ftypes[4]='text';fnames[5]='COMPANY';ftypes[5]='text';fnames[6]='ANIMALNAME';ftypes[6]='text';fnames[7]='SPECIES';ftypes[7]='text';fnames[9]='PROGRAM';ftypes[9]='text';fnames[10]='ZIPCODE';ftypes[10]='zip';fnames[11]='EXPERIENCE';ftypes[11]='text';fnames[12]='DEPARTMENT';ftypes[12]='text';fnames[13]='LIFESTATUS';ftypes[13]='text';fnames[14]='REFERRAL';ftypes[14]='text';fnames[15]='ALERTS';ftypes[15]='text';fnames[16]='CLIENTID';ftypes[16]='text';fnames[17]='SALUTATION';ftypes[17]='text';fnames[8]='VALUE';ftypes[8]='text';fnames[18]='PHONE';ftypes[18]='phone';fnames[19]='VALUE2';ftypes[19]='text';fnames[20]='VALUE3';ftypes[20]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>  
+	  </div>
+    </div>
+  {% endblock %}
+</div>

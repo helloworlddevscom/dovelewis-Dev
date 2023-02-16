@@ -1,0 +1,22 @@
+uuid: f3240bad-6af3-42de-a950-fa74c1bb4e52
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.faq
+id: node.faq.status
+field_name: status
+entity_type: node
+bundle: faq
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

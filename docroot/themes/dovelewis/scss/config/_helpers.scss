@@ -1,0 +1,206 @@
+/**
+* Misc mixins.
+*/
+
+
+// Padding & margins
+// ------
+
+// Vertical padding applied to Container Paragraphs and other components that replicate it.
+@mixin container-top-padding($size: 'xlarge') {
+  @if $size == 'large' {
+    padding-top: $spacing--medium;
+
+    // LARGE BREAKPOINT
+
+    @include breakpoint(xlarge) {
+      padding-top: $spacing--large;
+    }
+  }
+  @else if $size == 'xlarge' {
+    padding-top: $spacing--medium;
+
+    // LARGE BREAKPOINT
+
+    @include breakpoint(large) {
+      padding-top: $spacing--xlarge - $spacing--medium;
+    }
+
+    // XLARGE BREAKPOINT
+
+    @include breakpoint(xlarge) {
+      padding-top: $spacing--xlarge;
+    }
+  }
+  @else if $size == 'none' {
+    padding-top: 0;
+  }
+}
+
+@mixin container-bottom-padding($size: 'xlarge', $subtract-bottom: true) {
+  @if $size == 'large' {
+    @if ($subtract-bottom == true) {
+      padding-bottom: 0;
+    }
+    @else {
+      padding-bottom: $spacing--medium;
+    }
+
+    // XLARGE BREAKPOINT
+
+    @include breakpoint(xlarge) {
+
+      @if $subtract-bottom == true {
+        // Subtract the margin-bottom applied to Column Paragraphs.
+        padding-bottom: $spacing--large - map-get($grid-margin-gutters, xlarge);
+      }
+      @else {
+        padding-bottom: $spacing--large;
+      }
+    }
+  }
+  @else if $size == 'xlarge' {
+    @if $subtract-bottom == true {
+      padding-bottom: $spacing--medium - $spacing--medium;
+    }
+    @else {
+      padding-bottom: $spacing--medium;
+    }
+
+    // LARGE BREAKPOINT
+
+    @include breakpoint(large) {
+
+      @if $subtract-bottom == true {
+        padding-bottom: $spacing--xlarge - $spacing--medium - $spacing--medium;
+      }
+      @else {
+        padding-bottom: $spacing--xlarge - $spacing--medium;
+      }
+    }
+
+    // XLARGE BREAKPOINT
+
+    @include breakpoint(xlarge) {
+
+      @if $subtract-bottom == true {
+        padding-bottom: $spacing--xlarge - map-get($grid-margin-gutters, xlarge);
+      }
+      @else {
+        padding-bottom: $spacing--xlarge;
+      }
+    }
+  }
+  @else if $size == 'none' {
+    padding-bottom: 0;
+
+    .cell:first-child:last-child {
+      margin-bottom: 0;
+    }
+
+    // XLARGE BREAKPOINT
+
+    @include breakpoint(xlarge) {
+
+      .cell:first-child:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@mixin container-padding($size: 'xlarge', $subtract-bottom: true) {
+  @if $size == 'large' {
+    @include container-top-padding('large');
+    @include container-bottom-padding('large', $subtract-bottom);
+  }
+  @else if $size == 'xlarge' {
+    @include container-top-padding('xlarge');
+    @include container-bottom-padding('xlarge', $subtract-bottom);
+  }
+}
+
+
+
+// Vertical margins applied to Column Paragraphs and other components that replicate it.
+@mixin column-margins() {
+  margin-bottom: $spacing--medium;
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    margin-bottom: map-get($grid-margin-gutters, xlarge);
+  }
+}
+
+
+// Box shadow
+// -----
+
+@mixin box-shadow() {
+  box-shadow: 0 0 9px -4px #333333;
+}
+
+
+// Teaser view mode
+// ------
+
+// Adds box-shadow, padding and background color commonly used in comps.
+@mixin teaser-background() {
+  height: 100%;
+  @include box-shadow();
+  padding: 4px;
+  background-color: $color--white;
+}
+
+
+// Gradients
+// ------
+
+@mixin horizontal-gradient($from, $to, $stop: 100%) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+
+  /* IE10+ */
+  background: -ms-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Standard */
+  background: linear-gradient(to right, $from 0%, $to $stop);
+
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+}
+
+
+// 2X Background Images
+// ------
+
+@mixin background-2x($path, $ext: "png", $w: auto, $h: auto, $pos: left top, $repeat: no-repeat) {
+
+  $at1x_path: "#{$path}.#{$ext}";
+  $at2x_path: "#{$path}@2x.#{$ext}";
+
+  background-image: url("#{$at1x_path}");
+  background-size: $w $h;
+  background-position: $pos;
+  background-repeat: $repeat;
+
+  @media all and (-webkit-min-device-pixel-ratio : 1.5),
+    all and (-o-min-device-pixel-ratio: 3/2),
+    all and (min--moz-device-pixel-ratio: 1.5),
+    all and (min-device-pixel-ratio: 1.5) {
+      background-image: url("#{$at2x_path}");
+    }
+}

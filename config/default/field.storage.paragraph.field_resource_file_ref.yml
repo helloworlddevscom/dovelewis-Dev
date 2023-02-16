@@ -1,0 +1,20 @@
+uuid: aa374631-b05f-4e71-ad96-2a80e41d39af
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.field_resource_file_ref
+field_name: field_resource_file_ref
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

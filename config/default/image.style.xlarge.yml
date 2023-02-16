@@ -1,0 +1,15 @@
+uuid: 06269027-7208-4068-90f1-39d82e399a0d
+langcode: en
+status: true
+dependencies: {  }
+name: xlarge
+label: 'XLarge (1000x1000)'
+effects:
+  7ec774c5-0c3f-4519-b755-dd8a8c2bb16e:
+    uuid: 7ec774c5-0c3f-4519-b755-dd8a8c2bb16e
+    id: image_scale
+    weight: 1
+    data:
+      width: 1000
+      height: 1000
+      upscale: false

@@ -1,0 +1,15 @@
+uuid: 6ac4f7f3-af8a-4126-9066-ada39434bb6a
+langcode: en
+status: true
+dependencies: {  }
+id: node__event
+label: 'Content: Event'
+tags:
+  geo_position: '45.5331, -122.69138'
+  geo_placename: 'Portland, Oregon'
+  abstract: 'Support DoveLewis Emergency Animal Hospital in Portland, Oregon by attending pet-friendly events, process your grief in our Pet Loss Support Program, or learn the basics of animal first aid. '
+  description: 'DoveLewis Emergency Animal Hospital is a nonprofit, 24-hour veterinary emergency clinic and animal ICU in Portland, Oregon. Support this local business by attending pet-friendly events, process your grief in our Pet Loss Support Program, or learn the basics of animal first aid. '
+  canonical_url: '[current-page:url]'
+  geo_region: US-OR
+  content_language: en-US
+  keywords: 'Pet friendly events, dog events, Portland events, fundraisers, first aid workshops, animal first aid, pet loss, group counseling, art therapy, pet loss support, grieving pets '

@@ -1,0 +1,66 @@
+uuid: dca340f5-549a-451a-b662-037101c7a346
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blog_landing
+    - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_author
+    - field.field.node.blog_post.field_blog_post_image
+    - field.field.node.blog_post.field_date
+    - field.field.node.blog_post.field_hero_image
+    - field.field.node.blog_post.field_post_category
+    - field.field.node.blog_post.field_sidebar_content
+    - field.field.node.blog_post.field_tags
+    - field.field.node.blog_post.field_wellness_tip_category
+    - image.style.blog_post_teaser
+    - node.type.blog_post
+  module:
+    - datetime
+    - svg_image
+    - text
+    - user
+id: node.blog_post.blog_landing
+targetEntityType: node
+bundle: blog_post
+mode: blog_landing
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 260
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_blog_post_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: blog_post_teaser
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short_day_month_year
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_author: true
+  field_hero_image: true
+  field_post_category: true
+  field_sidebar_content: true
+  field_tags: true
+  field_wellness_tip_category: true
+  langcode: true
+  links: true

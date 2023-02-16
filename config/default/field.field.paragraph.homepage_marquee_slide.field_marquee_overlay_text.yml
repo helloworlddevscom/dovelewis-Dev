@@ -1,0 +1,21 @@
+uuid: d2d0dc93-6d1e-4d4f-a19c-68a6b6ae06a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_marquee_overlay_text
+    - paragraphs.paragraphs_type.homepage_marquee_slide
+  module:
+    - text
+id: paragraph.homepage_marquee_slide.field_marquee_overlay_text
+field_name: field_marquee_overlay_text
+entity_type: paragraph
+bundle: homepage_marquee_slide
+label: 'Overlay Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,4 @@
+name: DoveLewis Modal Block
+description: Modal block type related code.
+core_version_requirement: ^8 || ^9
+type: module

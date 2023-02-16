@@ -1,0 +1,15 @@
+uuid: cae565b9-3ce0-4481-b6b7-25b4bad1afaf
+langcode: en
+status: true
+dependencies: {  }
+name: carousel_marquee_small_2x
+label: 'Carousel Marquee - Small @2x (Scale and Crop 1000×494)'
+effects:
+  4f2cd360-2126-4dde-a64c-2c71b8b5ecab:
+    uuid: 4f2cd360-2126-4dde-a64c-2c71b8b5ecab
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1000
+      height: 494
+      anchor: center-center

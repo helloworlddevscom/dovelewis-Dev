@@ -1,0 +1,25 @@
+uuid: 5b2be753-4a8e-470c-a0e3-b653be621b0b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c2bf25b3-b4d6-4105-9bcf-e4dc71f06003'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: footeraccreditation
+theme: dovelewis
+region: footer_right_bottom_right
+weight: -13
+provider: null
+plugin: 'block_content:c2bf25b3-b4d6-4105-9bcf-e4dc71f06003'
+settings:
+  id: 'block_content:c2bf25b3-b4d6-4105-9bcf-e4dc71f06003'
+  label: 'Footer - Accreditation'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,197 @@
+uuid: eea00e2e-504a-41ef-8aab-f76d30a991a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - node.type.blog_post
+    - node.type.donation_case_study
+    - node.type.event
+    - node.type.faq
+    - node.type.lost_found_pet
+    - node.type.page
+    - node.type.person
+    - node.type.resource_file
+    - node.type.sponsor
+    - taxonomy.vocabulary.departments
+    - taxonomy.vocabulary.donation_types
+    - taxonomy.vocabulary.event_categories
+    - taxonomy.vocabulary.faq_categories
+    - taxonomy.vocabulary.people_categories
+    - taxonomy.vocabulary.pet_breeds
+    - taxonomy.vocabulary.pet_species
+    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.wellness_tip_categories
+  module:
+    - block
+    - block_access
+    - block_content
+    - contextual
+    - field_ui
+    - filter
+    - metatag
+    - node
+    - paragraphs
+    - path
+    - pathauto
+    - quickedit
+    - rebuild_cache_access
+    - redirect
+    - roleassign
+    - shortcut
+    - system
+    - taxonomy
+    - toolbar
+    - webform
+id: content_creator
+label: 'Content Creator'
+weight: -8
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access any webform configuration'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access in-place editing'
+  - 'access own webform configuration'
+  - 'access shortcuts'
+  - 'access site in maintenance mode'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access webform overview'
+  - 'access webform submission user'
+  - 'administer block_content display'
+  - 'administer blocks'
+  - 'administer menu'
+  - 'administer meta tags'
+  - 'administer nodes'
+  - 'administer pathauto'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'administer webform'
+  - 'administer webform element access'
+  - 'administer webform submission'
+  - 'assign roles'
+  - 'bypass node access'
+  - 'create blog_post content'
+  - 'create donation_case_study content'
+  - 'create event content'
+  - 'create faq content'
+  - 'create lost_found_pet content'
+  - 'create page content'
+  - 'create person content'
+  - 'create resource_file content'
+  - 'create sponsor content'
+  - 'create terms in departments'
+  - 'create terms in donation_types'
+  - 'create terms in event_categories'
+  - 'create terms in people_categories'
+  - 'create terms in pet_breeds'
+  - 'create terms in pet_species'
+  - 'create terms in tags'
+  - 'create terms in wellness_tip_categories'
+  - 'create url aliases'
+  - 'create webform'
+  - 'customize shortcut links'
+  - 'delete any blog_post content'
+  - 'delete any donation_case_study content'
+  - 'delete any event content'
+  - 'delete any faq content'
+  - 'delete any lost_found_pet content'
+  - 'delete any page content'
+  - 'delete any person content'
+  - 'delete any resource_file content'
+  - 'delete any sponsor content'
+  - 'delete any webform'
+  - 'delete any webform submission'
+  - 'delete blog_post revisions'
+  - 'delete donation_case_study revisions'
+  - 'delete event revisions'
+  - 'delete faq revisions'
+  - 'delete lost_found_pet revisions'
+  - 'delete own blog_post content'
+  - 'delete own donation_case_study content'
+  - 'delete own event content'
+  - 'delete own faq content'
+  - 'delete own lost_found_pet content'
+  - 'delete own page content'
+  - 'delete own person content'
+  - 'delete own resource_file content'
+  - 'delete own sponsor content'
+  - 'delete own webform'
+  - 'delete own webform submission'
+  - 'delete page revisions'
+  - 'delete person revisions'
+  - 'delete resource_file revisions'
+  - 'delete sponsor revisions'
+  - 'delete terms in departments'
+  - 'delete terms in donation_types'
+  - 'delete terms in event_categories'
+  - 'delete terms in people_categories'
+  - 'delete terms in pet_breeds'
+  - 'delete terms in pet_species'
+  - 'delete terms in tags'
+  - 'delete terms in wellness_tip_categories'
+  - 'edit any blog_post content'
+  - 'edit any donation_case_study content'
+  - 'edit any event content'
+  - 'edit any faq content'
+  - 'edit any lost_found_pet content'
+  - 'edit any page content'
+  - 'edit any person content'
+  - 'edit any resource_file content'
+  - 'edit any sponsor content'
+  - 'edit any webform'
+  - 'edit any webform submission'
+  - 'edit own blog_post content'
+  - 'edit own donation_case_study content'
+  - 'edit own event content'
+  - 'edit own faq content'
+  - 'edit own lost_found_pet content'
+  - 'edit own page content'
+  - 'edit own person content'
+  - 'edit own resource_file content'
+  - 'edit own sponsor content'
+  - 'edit own webform'
+  - 'edit own webform submission'
+  - 'edit terms in departments'
+  - 'edit terms in donation_types'
+  - 'edit terms in event_categories'
+  - 'edit terms in faq_categories'
+  - 'edit terms in people_categories'
+  - 'edit terms in pet_breeds'
+  - 'edit terms in pet_species'
+  - 'edit terms in tags'
+  - 'edit terms in wellness_tip_categories'
+  - 'edit webform assets'
+  - 'edit webform source'
+  - 'edit webform twig'
+  - 'rebuild cache access'
+  - 'revert blog_post revisions'
+  - 'revert donation_case_study revisions'
+  - 'revert event revisions'
+  - 'revert faq revisions'
+  - 'revert lost_found_pet revisions'
+  - 'revert page revisions'
+  - 'revert person revisions'
+  - 'revert resource_file revisions'
+  - 'revert sponsor revisions'
+  - 'switch shortcut sets'
+  - 'update any basic block_content'
+  - 'use text format basic_html'
+  - 'view any webform submission'
+  - 'view blog_post revisions'
+  - 'view donation_case_study revisions'
+  - 'view event revisions'
+  - 'view faq revisions'
+  - 'view lost_found_pet revisions'
+  - 'view own unpublished content'
+  - 'view own webform submission'
+  - 'view page revisions'
+  - 'view person revisions'
+  - 'view resource_file revisions'
+  - 'view sponsor revisions'
+  - 'view the administration theme'
+  - 'view unpublished paragraphs'

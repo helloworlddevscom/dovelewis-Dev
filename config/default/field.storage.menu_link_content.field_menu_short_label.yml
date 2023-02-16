@@ -1,0 +1,21 @@
+uuid: 54c3aa53-0732-41b9-9bd3-59b3198d9e41
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.field_menu_short_label
+field_name: field_menu_short_label
+entity_type: menu_link_content
+type: string
+settings:
+  max_length: 13
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

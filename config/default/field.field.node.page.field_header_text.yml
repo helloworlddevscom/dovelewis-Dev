@@ -1,0 +1,19 @@
+uuid: a4c00f74-654e-439a-afc4-114ed33fd11f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_text
+    - node.type.page
+id: node.page.field_header_text
+field_name: field_header_text
+entity_type: node
+bundle: page
+label: 'Header Text'
+description: 'Text that will be displayed next to the page Title.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

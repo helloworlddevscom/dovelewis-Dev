@@ -1,0 +1,69 @@
+/**
+ * View: Pet Health & Wellness Tips.
+ */
+
+.view--pet-health-wellness-tips {
+  .views-row {
+    padding: $spacing--small 0;
+    border-bottom: 1px solid $color--gray6;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  .view-footer {
+    padding-top: $spacing--medium;
+
+    .button--secondary {
+      margin-bottom: 10px;
+    }
+
+    .button--secondary--hollow {
+      margin-right: 0;
+    }
+
+    .blog-link {
+      padding-top: $spacing--small;
+      color: $color--gray3;
+
+      a {
+        @include link-style--gray();
+      }
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .views-row {
+      padding: $spacing--medium 0;
+    }
+
+    .view-footer {
+      margin-bottom: 0;
+      padding-top: $spacing--small;
+
+      .blog-link {
+        display: inline-block;
+        width: 45%;
+        padding-top: 0;
+        margin-left: $spacing--medium;
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .view-footer {
+      padding-top: $spacing--large;
+
+      .blog-link {
+        width: 35%;
+      }
+    }
+  }
+}

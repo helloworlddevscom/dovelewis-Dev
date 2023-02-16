@@ -1,0 +1,26 @@
+uuid: ad82ce0d-b9d3-43ec-a63e-8ad1ee70bae7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block_ref.field_par_block_block
+    - paragraphs.paragraphs_type.block_ref
+id: paragraph.block_ref.default
+targetEntityType: paragraph
+bundle: block_ref
+mode: default
+content:
+  field_par_block_block:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,52 @@
+/**
+ * Landing page footer mission statement block.
+ */
+
+.block-id--footer-landing-mission-statement {
+  margin-bottom: $spacing--small;
+
+  .footer--landing__logo {
+    margin-bottom: 30px;
+
+    img {
+      max-width: 230px;
+    }
+  }
+
+  p {
+    line-height: 1.2;
+    font-size: rem-calc(18);
+    font-family: $ff--sentinel;
+    color: $color--white;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    p {
+      font-size: rem-calc(23);
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    margin-bottom: 30px;
+
+    .footer--landing__logo {
+      margin-bottom: $spacing--medium;
+
+      img {
+        max-width: 290px;
+      }
+    }
+
+
+    p {
+      font-size: rem-calc(35);
+      margin: 0;
+    }
+  }
+}

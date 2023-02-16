@@ -1,0 +1,64 @@
+uuid: fc344eae-f842-4a9d-ae83-29270612aa6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.person.body
+    - field.field.node.person.field_credentials
+    - field.field.node.person.field_individual_petbreed
+    - field.field.node.person.field_individual_portrait
+    - field.field.node.person.field_individual_specialties
+    - field.field.node.person.field_person_availability
+    - field.field.node.person.field_person_category
+    - field.field.node.person.field_person_department
+    - field.field.node.person.field_person_email
+    - field.field.node.person.field_person_phone
+    - field.field.node.person.field_pet_name
+    - node.type.person
+  module:
+    - text
+    - user
+id: node.person.default
+targetEntityType: node
+bundle: person
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_person_availability:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_person_email:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_person_phone:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_credentials: true
+  field_individual_petbreed: true
+  field_individual_portrait: true
+  field_individual_specialties: true
+  field_person_category: true
+  field_person_department: true
+  field_pet_name: true
+  langcode: true
+  links: true

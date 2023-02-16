@@ -1,0 +1,16 @@
+uuid: 6c3df6fc-0045-4692-9d91-a5fe164516cd
+langcode: en
+status: true
+dependencies: {  }
+id: node__person
+label: 'Content: Person'
+tags:
+  geo_position: '45.5331, -122.69138'
+  geo_placename: 'Portland, Oregon'
+  abstract: 'Board-certified specialists and emergency veterinarians at DoveLewis Emergency Animal Hospital are expertly trained to address emergency and referral procedures, 24 hours a day. '
+  description: 'Board-certified specialists and emergency veterinarians at DoveLewis Emergency Animal Hospital are expertly trained to address emergency and referral procedures, 24 hours a day. '
+  canonical_url: '[current-page:url]'
+  title: '[current-page:title] | [site:name]'
+  geo_region: US-OR
+  content_language: en-US
+  keywords: 'Dove lewis, dovelewis, dove lewis emergency, dove lewis hospital, dove lewis ce, animal assisted education, dove lewis lost and found, dove veterinary hospital, 24 hour animal hospital, emergency vet, emergency veterinarian hospitals Oregon, pet safety, 2'

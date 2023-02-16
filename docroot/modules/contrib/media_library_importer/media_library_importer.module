@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * The module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function media_library_importer_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.media_library_importer':
+      return t('
+        <h2>Media Library Importer</h2>
+        <p>A module to import media files from public directory into media library.</p>
+        <h3>Instructions</h3>
+        <p>Unpack in the *modules* folder (currently in the root of your Drupal 8 installation) and enable in `/admin/modules`.</p>
+        <p>Then, visit <strong>`/admin/config/media/media-library-importer-configuration`</strong> to configure module.</p>
+        <p>Last, visit <strong>`/admin/config/media/media-library-importer/import`</strong> for the actual import operation.</p>
+
+        <h3>Attention</h3>
+        <p>You can run import as many times as you like. Once created, media entities will not be duplicated.</p>
+      ');
+  }
+}

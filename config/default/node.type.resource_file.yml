@@ -1,0 +1,17 @@
+uuid: d0e28f46-f750-4e76-a068-b10f4379a19f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Resource File'
+type: resource_file
+description: 'Create a new Resource File to be referenceable by the Resource File component.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

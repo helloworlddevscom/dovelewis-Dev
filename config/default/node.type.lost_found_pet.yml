@@ -1,0 +1,17 @@
+uuid: 69ccf876-3edd-4941-94cc-013410c7c405
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Lost & Found Pet'
+type: lost_found_pet
+description: 'Create a new Found Pet to be displayed on the Found Pets landing page.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

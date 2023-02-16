@@ -1,0 +1,40 @@
+uuid: 9615c717-fd21-48a0-8862-fedd0e4027f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.resource_file.field_content_tile_subtitle
+    - field.field.paragraph.resource_file.field_content_tile_title
+    - field.field.paragraph.resource_file.field_resource_file_ref
+    - paragraphs.paragraphs_type.resource_file
+id: paragraph.resource_file.default
+targetEntityType: paragraph
+bundle: resource_file
+mode: default
+content:
+  field_content_tile_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_content_tile_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_resource_file_ref:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

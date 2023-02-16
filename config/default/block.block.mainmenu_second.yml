@@ -1,0 +1,25 @@
+uuid: 3203bc35-764d-4ae4-9ce7-cc6a294ef747
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main-menu
+  module:
+    - system
+  theme:
+    - dovelewis
+id: mainmenu_second
+theme: dovelewis
+region: menu_secondary
+weight: 0
+provider: null
+plugin: 'system_menu_block:main-menu'
+settings:
+  id: 'system_menu_block:main-menu'
+  label: 'Main Menu - Second Level'
+  label_display: '0'
+  provider: system
+  level: 2
+  depth: 1
+  expand_all_items: false
+visibility: {  }

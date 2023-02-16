@@ -1,0 +1,105 @@
+/**
+* Block - Footer Menu.
+*/
+
+
+.menu--footer {
+
+  &.js-moved {
+    margin-bottom: $spacing--medium;
+  }
+
+  > ul.menu {
+    margin-top: $spacing--xsmall;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .menu-item--expanded {
+    display: block;
+    width: 50%;
+    padding: 0 $spacing--small 0 0;
+    text-align: left;
+    list-style: none;
+    font-weight: bold;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    .menu {
+      margin-top: .7rem;
+      margin-left: 0px;
+      text-align: left;
+    }
+
+    .menu-item {
+      display: block;
+      width: 100%;
+      padding: 0 0 .7rem 0;
+      font-weight: normal;
+      text-align: left;
+      list-style: none;
+    }
+  }
+
+  ul.menu a {
+    @include font-size--large;
+    @include link-style--white;
+    line-height: 1.2;
+    padding: 0;
+
+    &:hover,
+    &:focus,
+    &.is-active {
+      color: $color--green;
+      text-decoration: underline;
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .menu-item--expanded {
+      ul.menu {
+        margin-right: 0;
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    > ul.menu {
+      padding-right: $spacing--large;
+    }
+
+    .menu-item--expanded {
+      &:first-child {
+        width: 65%;
+      }
+
+      &:last-child {
+        width: 35%;
+        padding-right: 0;
+      }
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    .menu-item--expanded {
+      &:first-child {
+        width: 63%;
+      }
+
+      &:last-child {
+        width: 37%;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+/**
+ * Foundation grid.
+ *
+ * Breakpoints:
+ * XX-Large    1440px and above — (Large Desktops)
+ * X-Large    1200px to to 1439px — (Typically Laptops)
+ * Large    768px to 1199px — (Tablets, Vertical iPads, etc.)
+ * Medium    400px to 767px — (Large Phones, iPhone 6+, etc.); fluid layout medium and below
+ * Small    0px to 399px — (Small Phones, iPhone 6, etc.)
+ */
+
+
+.grid-container.full {
+  overflow-x: hidden;
+}
+
+// Set max-widths for breakpoints above medium so that layout is fluid medium and below.
+.grid-container {
+
+  // LARGE AND UP
+
+  @include breakpoint(large) {
+    // Use Sass map-get() to retrieve large breakpoint from $breakpoints variable in _foundation-settings.scss.
+    max-width: map-get($breakpoints, large);
+  }
+
+  // XLARGE AND UP
+
+  @include breakpoint(xlarge) {
+    max-width: map-get($breakpoints, xlarge);
+  }
+
+  // XXLARGE AND UP
+
+  @include breakpoint(xxlarge) {
+    max-width: map-get($breakpoints, xxlarge);
+  }
+}
+

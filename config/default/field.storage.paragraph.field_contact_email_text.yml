@@ -1,0 +1,21 @@
+uuid: a86279ac-9719-4151-8058-839485c07702
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_contact_email_text
+field_name: field_contact_email_text
+entity_type: paragraph
+type: string
+settings:
+  max_length: 60
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

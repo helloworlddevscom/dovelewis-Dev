@@ -1,0 +1,50 @@
+/*
+ * Event node - Event Landing view mode.
+ *
+ * Overrides some shared styling from _node--event--teaser.scss.
+ */
+
+.node--type--event.node--view-mode--event-landing {
+
+  .event__image {
+    display:none;
+  }
+
+  .event__title {
+    margin-bottom: rem-calc(10px);
+  }
+
+  .field--name-field-event-location-name {
+    margin-bottom: $spacing--small;
+    padding-left: 30px;
+    @include font-size--paragraph;
+    color: $color--gray3;
+    background-image: url('../../images/icons/location.svg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+  }
+
+  .event__info {
+
+    .event__body,
+    .teaser-cta {
+      display: block;
+    }
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .event__info {
+      width: calc(60% - 80px);
+      padding-right: $spacing--medium;
+    }
+
+    .event__image {
+      display: block;
+      float: left;
+      width: 40%;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+/**
+ * Donation Case Study node - View mode: Featured Donation Case Study.
+ */
+
+.node--type--donation-case-study.node--view-mode--featured-donation-case-study {
+  height: 100%;
+  padding-top: 88px;
+
+  .node__content {
+    position: relative;
+    height: 100%;
+    padding: 120px $spacing--small $spacing--medium $spacing--small;
+    background-color: $color--white;
+    border-radius: 5px;
+  }
+
+  // Header with centered image
+  .donation__header-image {
+    position: absolute;
+    top: -88px;
+    left: calc(50% - 88px);
+    width: 177px;
+    height: 177px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $color--white;
+    border: 4px solid white;
+  }
+
+  .header-image__link {
+    display: block;
+    transition: opacity .2s ease-in-out;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  .node__title {
+    display: block;
+    margin-bottom: $spacing--small;
+    text-align: center;
+    @include font-size--large;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color--darkgreen;
+  }
+
+  .node__body {
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .node__content {
+      padding: 120px $spacing--medium $spacing--medium $spacing--medium;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .node__content {
+      padding: 120px $spacing--large $spacing--large $spacing--large;
+    }
+  }
+}

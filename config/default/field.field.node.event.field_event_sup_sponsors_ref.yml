@@ -1,0 +1,28 @@
+uuid: 4b6bd455-3313-4f8c-8251-cd8a0ebdb449
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_sup_sponsors_ref
+    - node.type.event
+    - node.type.sponsor
+id: node.event.field_event_sup_sponsors_ref
+field_name: field_event_sup_sponsors_ref
+entity_type: node
+bundle: event
+label: 'Supporting Sponsors'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sponsor: sponsor
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

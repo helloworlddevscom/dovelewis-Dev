@@ -1,0 +1,249 @@
+/**
+ * Misc. reusable Emergency related styling.
+ * Used on "Contact" page and "Emergency" page and dialog/modal.
+ */
+
+// Emergency buttons
+@mixin button--emergency() {
+  display: inline-block;
+  line-height: 1.1;
+  padding: 21px 20px 21px 70px;
+  font-size: rem-calc(20);
+  font-weight: bold;
+  text-align: left;
+  text-decoration: none;
+  border-radius: 3px;
+  color: $color--black;
+  background-size: 30px;
+  background-position: 20px center;
+  background-repeat: no-repeat;
+  background-color: $color--white;
+  transition: background-color .3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $color--black;
+    background-color: darken($color--white, 7%);
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    padding: 16px 20px 16px 70px;
+    font-size: rem-calc(27);
+  }
+}
+
+.button--emergency--call {
+  @include button--emergency;
+  background-image: url('../../images/icons/call-red.svg');
+  background-size: 28px;
+}
+
+.button--emergency--loss-support {
+  @include button--emergency;
+  background-image: url('../../images/icons/loss-support-red.svg');
+  background-size: 27px;
+}
+
+.emergency-location__location {
+  @include button--emergency;
+  padding-left: 60px;
+  background-image: url('../../images/icons/location-red.svg');
+  background-size: 18px;
+
+  &:hover,
+  &:focus {
+    background-color: $color--white;
+  }
+}
+
+.button--emergency--map {
+  display: inline-block;
+  line-height: 1.1;
+  padding: 18px 20px;
+  font-size: rem-calc(16);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color--white;
+  background-color: $color--red;
+  border: 2px solid $color--white;
+  border-radius: 5px;
+  transition: background-color .3s ease-in-out;
+
+  &:hover {
+    color: $color--white;
+    background-color: darken($color--red, 10%);
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    padding: 20px 23px;
+    font-size: rem-calc(18);
+  }
+}
+
+.emergency-label {
+  display: block;
+  margin-bottom: 13px;
+  font-size: rem-calc(14);
+  font-weight: bold;
+  text-transform: uppercase;
+
+  // LARGE
+
+  @include breakpoint(large) {
+    font-size: rem-calc(16);
+  }
+}
+
+
+// Emergency location
+.emergency-location {
+  @include clearfix;
+
+  .emergency-location__location {
+    display: block;
+    margin-bottom: $spacing--small;
+  }
+
+  .emergency-location__located {
+    display: none;
+    font-style: italic;
+  }
+
+  .emergency-location__located {
+    font-size: rem-calc(16);
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .emergency-location__location {
+      float: left;
+    }
+
+    .button--emergency--map {
+      clear: both;
+      float: left;
+    }
+
+    .emergency-location__located {
+      font-size: rem-calc(20);
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .emergency-location__location {
+      float: left;
+      margin-bottom: 30px;
+    }
+
+    .button--emergency--map {
+      clear: both;
+      float: left;
+      margin-right: 30px;
+    }
+
+    .emergency-location__located {
+      display: block;
+      float: left;
+      margin-top: 12px;
+      font-style: italic;
+    }
+  }
+}
+
+
+
+/**
+ * "Emergency" modal/dialog.
+ */
+
+
+.emergency-modal.ui-dialog {
+  width: 100% !important; // sass-lint:disable-line no-important
+  height: 100% !important;  // sass-lint:disable-line no-important
+  font-family: $ff--idealsans;
+  background-color: $color--red;
+
+  // Hide contextual links because they don't work anyways
+  .contextual {
+    display: none !important;  // sass-lint:disable-line no-important
+  }
+
+  .ui-dialog-titlebar {
+    @extend .grid-container;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+    background-color: $color--red;
+  }
+
+  .ui-dialog-title {
+    display: none;
+  }
+
+  .ui-dialog-titlebar-close.ui-button {
+    position: relative;
+    top: 0;
+    right: 0;
+    float: right;
+    width: 180px;
+    height: 40px;
+    padding: 10px 20px 10px 78px;
+    margin: 0;
+    color: $color--black;
+    text-indent: 0;
+    text-align: left;
+    font-weight: bold;
+    font-family: helvetica, arial, sans-serif;
+    font-size: rem-calc(15);
+    text-transform: uppercase;
+    border-radius: 0;
+    background-color: $color--white;
+    background-image: url('../../images/icons/close-circle-black.svg');
+    background-size: 20px;
+    background-position: 45px center;
+    background-repeat: no-repeat;
+    transition: background-color .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
+
+    .ui-icon.ui-icon-closethick {
+      display: none;
+    }
+
+    &:hover {
+      background-color: darken($color--white, 7%);
+    }
+  }
+
+  .ui-dialog-content {
+    height: 100% !important;  // sass-lint:disable-line no-important
+    padding: 0;
+    color: $color--body-text;
+    background-color: $color--red;
+    -webkit-overflow-scrolling: touch;
+
+    .emergency-node__header-top {
+      display: none;
+    }
+
+    ul {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    // Override annoying dialog/modal css
+    .button--emergency--map {
+      color: $color--white;
+    }
+  }
+}

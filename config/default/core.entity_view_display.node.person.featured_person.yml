@@ -1,0 +1,76 @@
+uuid: cd8a51a7-df95-4c0a-885c-46afc2c67c8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featured_person
+    - field.field.node.person.body
+    - field.field.node.person.field_credentials
+    - field.field.node.person.field_individual_petbreed
+    - field.field.node.person.field_individual_portrait
+    - field.field.node.person.field_individual_specialties
+    - field.field.node.person.field_person_availability
+    - field.field.node.person.field_person_category
+    - field.field.node.person.field_person_department
+    - field.field.node.person.field_person_email
+    - field.field.node.person.field_person_phone
+    - field.field.node.person.field_pet_name
+    - node.type.person
+    - responsive_image.styles.teaser
+  module:
+    - responsive_image
+    - text
+    - user
+id: node.person.featured_person
+targetEntityType: node
+bundle: person
+mode: featured_person
+content:
+  field_credentials:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_individual_petbreed:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_individual_portrait:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: teaser
+      image_link: content
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_individual_specialties:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_pet_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  body: true
+  field_person_availability: true
+  field_person_category: true
+  field_person_department: true
+  field_person_email: true
+  field_person_phone: true
+  langcode: true
+  links: true

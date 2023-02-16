@@ -1,0 +1,23 @@
+uuid: fb61132b-d5e9-42a3-aa5c-e5575cf45b2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.lost_found_pet
+  module:
+    - text
+id: node.lost_found_pet.body
+field_name: body
+entity_type: node
+bundle: lost_found_pet
+label: Comments
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

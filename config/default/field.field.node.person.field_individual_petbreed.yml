@@ -1,0 +1,21 @@
+uuid: 1ae264c1-310a-4679-9eec-3d316055a7b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_individual_petbreed
+    - node.type.person
+  module:
+    - text
+id: node.person.field_individual_petbreed
+field_name: field_individual_petbreed
+entity_type: node
+bundle: person
+label: 'Pet Breed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

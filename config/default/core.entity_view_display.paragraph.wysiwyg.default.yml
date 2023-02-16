@@ -1,0 +1,64 @@
+uuid: b784c71b-bb54-44cb-9c2d-0a925250b5ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wysiwyg.field_bg_color
+    - field.field.paragraph.wysiwyg.field_content_tile_bg_image
+    - field.field.paragraph.wysiwyg.field_content_tile_bor_color
+    - field.field.paragraph.wysiwyg.field_content_tile_h_bg_color
+    - field.field.paragraph.wysiwyg.field_content_tile_subtitle
+    - field.field.paragraph.wysiwyg.field_content_tile_title
+    - field.field.paragraph.wysiwyg.field_par_rte_content
+    - field.field.paragraph.wysiwyg.field_wysiwyg_padding
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - svg_image
+    - text
+id: paragraph.wysiwyg.default
+targetEntityType: paragraph
+bundle: wysiwyg
+mode: default
+content:
+  field_content_tile_bg_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_content_tile_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_content_tile_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_par_rte_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_bg_color: true
+  field_content_tile_bor_color: true
+  field_content_tile_h_bg_color: true
+  field_wysiwyg_padding: true

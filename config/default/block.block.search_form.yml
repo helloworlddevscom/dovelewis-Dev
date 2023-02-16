@@ -1,0 +1,20 @@
+uuid: 848f0581-1907-4501-8f8a-821e7736e7a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - dovelewis_search
+  theme:
+    - dovelewis
+id: search_form
+theme: dovelewis
+region: header_dropdown
+weight: 0
+provider: null
+plugin: dovelewis_search_block
+settings:
+  id: dovelewis_search_block
+  label: 'Search Form'
+  label_display: '0'
+  provider: dovelewis_search
+visibility: {  }

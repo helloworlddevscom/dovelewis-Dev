@@ -1,0 +1,30 @@
+uuid: 7d34fd96-7fcf-448e-ba9b-43177e87e793
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - dovelewis
+id: mainmenu_top_second
+theme: dovelewis
+region: menu_secondary
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main Menu - Top Level - Home Page'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

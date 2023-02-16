@@ -1,0 +1,45 @@
+uuid: 795c1991-50b2-483a-af16-63ad07cb7f82
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_column_width_large
+field_name: field_column_width_large
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '12'
+      label: Full
+    -
+      value: '9'
+      label: '9/12 (3/4)'
+    -
+      value: '8'
+      label: '8/12 (2/3)'
+    -
+      value: '7'
+      label: 7/12
+    -
+      value: '6'
+      label: '6/12 (1/2)'
+    -
+      value: '5'
+      label: 5/12
+    -
+      value: '4'
+      label: '4/12 (1/3)'
+    -
+      value: '3'
+      label: '3/12 (1/4)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

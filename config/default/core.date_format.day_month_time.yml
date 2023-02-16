@@ -1,0 +1,8 @@
+uuid: 3577df6f-1e10-46e5-b27f-0985697bfb7c
+langcode: en
+status: true
+dependencies: {  }
+id: day_month_time
+label: 'Day, Month, Time'
+locked: false
+pattern: 'l, F jS \a\t\ g:ia'

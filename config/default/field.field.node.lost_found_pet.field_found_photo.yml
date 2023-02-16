@@ -1,0 +1,38 @@
+uuid: 28effdf4-cbea-43ef-8704-df53a4afea1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_found_photo
+    - node.type.lost_found_pet
+  module:
+    - image
+id: node.lost_found_pet.field_found_photo
+field_name: field_found_photo
+entity_type: node
+bundle: lost_found_pet
+label: Photo
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'found-pets/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

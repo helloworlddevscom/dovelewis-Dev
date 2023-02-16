@@ -1,0 +1,23 @@
+uuid: 2748dbc9-b22b-4a4e-96b2-ef91f61f661b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_width
+    - paragraphs.paragraphs_type.teaser_static
+  module:
+    - options
+id: paragraph.teaser_static.field_image_width
+field_name: field_image_width
+entity_type: paragraph
+bundle: teaser_static
+label: 'Image Width'
+description: 'If Image Position is Left, this will set the image width as compared to the whole Teaser width.'
+required: false
+translatable: false
+default_value:
+  -
+    value: third
+default_value_callback: ''
+settings: {  }
+field_type: list_string

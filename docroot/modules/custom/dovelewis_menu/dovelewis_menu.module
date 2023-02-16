@@ -1,0 +1,291 @@
+<?php
+
+use Drupal\menu_item_extras\Entity\MenuItemExtrasMenuLinkContent;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess html.html.twig.
+ */
+function dovelewis_menu_preprocess_html(&$vars) {
+
+  // If page is a Basic Page node, get value of field_display_secondary_menu
+  // and add class to body to allow hiding/showing secondary main menu in CSS.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node) {
+    if ($node->getType() == 'page') {
+      $field_display_secondary_menu = $node->get('field_display_secondary_menu')->getValue();
+      if (!empty($field_display_secondary_menu)) {
+        if ($field_display_secondary_menu[0]['value']) {
+          $display_secondary_menu = TRUE;
+        }
+        else {
+          $display_secondary_menu = FALSE;
+        }
+      }
+      else {
+        $display_secondary_menu = FALSE;
+      }
+
+      if ($display_secondary_menu) {
+        $vars['attributes']['class'][] = 'secondary-menu--show';
+      }
+      else {
+        $vars['attributes']['class'][] = 'secondary-menu--hide';
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess menu-link-content--main-menu.html.twig.
+ */
+function dovelewis_menu_preprocess_menu_link_content__main_menu(&$vars) {
+  // Remove unwanted classes while leaving data attribute
+  // so that Drupal menu JS doesn't complain.
+  $vars['attributes']['class'] = [];
+
+  // Determine whether to add dropdown toggle class.
+  $vars['dropdown_toggle'] = false;
+  if (isset($vars['content']['#menu_level']) && $vars['content']['#menu_level'] == 0) {
+    $title = $vars['menu_link_content']->getTitle();
+    if ($title !== 'Home' && $title !== 'Contact') {
+      $vars['dropdown_toggle'] = true;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess menu--extras--main.html.twig.
+ */
+function dovelewis_menu_preprocess_menu__extras__main(&$vars) {
+  if ($vars['attributes']['data-region'] == 'header_bottom') {
+    // Set the active item for top level only version of main menu.
+    // We need to do this ourselves because the menu does not know
+    // about its relationship to child menu items within the full
+    // version of the main menu. We need to keep these menus separate
+    // due to an Acquia bug that does not allow us to display multiple instances
+    // of the same menu with different menu level settings.
+
+    // Load current route within main-menu (full version of main menu).
+    $menu_tree = \Drupal::menuTree();
+    $parameters = $menu_tree->getCurrentRouteMenuTreeParameters('main-menu');
+    // Loop through active trail items and get referenced the nid.
+    foreach ($parameters->activeTrail as $active_trail) {
+      $entityTypeManager = \Drupal::entityTypeManager();
+      $entity_uuid = str_replace('menu_link_content:', '', $active_trail);
+      $MenuLinkContent = $entityTypeManager->getStorage('menu_link_content')
+        ->loadByProperties(['uuid' => $entity_uuid]);
+      if (!empty($MenuLinkContent)) {
+        $Url = reset($MenuLinkContent)->getUrlObject();
+        $route_parameters = $Url->getRouteParameters();
+        if (isset($route_parameters['node'])) {
+          $node_entity_id = $route_parameters['node'];
+          // Loop through menu items in current menu (top level only version of main menu)
+          // and see if any point to the same nid. If so, assign active trail class.
+          foreach ($vars['items'] as $key => $MenuLinkContent_top) {
+            $Url = $MenuLinkContent_top['url'];
+            $route_parameters = $Url->getRouteParameters();
+            if (isset($route_parameters['node'])) {
+              if ($route_parameters['node'] == $node_entity_id) {
+                $vars['items'][$key]['in_active_trail'] = TRUE;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess menu--extras--main-menu.html.twig.
+ */
+function dovelewis_menu_preprocess_menu__extras__main_menu(&$vars) {
+
+  // For main menu instance located in mobile_menu_bottom, if a menu item
+  // has children, insert a link to itself as the first child menu item,
+  // because the top level menu items will not be clickable in mobile menu.
+  // @TODO: This doesn't work if render cache is enabled. So instead we'll
+  // just hack it together with jQuery. See: Drupal.behaviors.mobileMenuDuplicate().
+//  if ($vars['attributes']['data-region'] == 'mobile_menu_bottom') {
+//    foreach ($vars['items'] as $menu_link_content_id => $menu_link) {
+//
+//      if (!empty($menu_link['below'])) {
+//        $new_menu_link = $menu_link;
+//        $new_menu_link['is_expanded'] = FALSE;
+//        $new_menu_link['is_collapsed'] = FALSE;
+//        $new_menu_link['below'] = [];
+//        $new_menu_link['content']['children'] = [];
+//        $new_menu_link['menu_level'] = 1;
+//
+//        $entity_uuid = explode('menu_link_content:', $new_menu_link['entity']->getPluginId());
+//        $entity_uuid = $entity_uuid[1];
+//        $entityTypeManager = \Drupal::entityTypeManager();
+//        $MenuItemExtrasMenuLinkContent = $entityTypeManager->getStorage('menu_link_content')
+//          ->loadByProperties(['uuid' => $entity_uuid]);
+//        array_values($MenuItemExtrasMenuLinkContent);
+//        $new_menu_link['entity'] = array_shift($MenuItemExtrasMenuLinkContent);
+//        $new_menu_link['content'] = $entityTypeManager->getViewBuilder('menu_link_content')
+//          ->view($new_menu_link['entity'], 'default');
+//
+//        array_unshift($vars['items'][$menu_link_content_id]['below'], $new_menu_link);
+//        array_unshift($vars['items'][$menu_link_content_id]['content']['children'], $new_menu_link);
+//
+//        unset($vars['items'][$menu_link_content_id]['content']['#pre_render']);
+//        $vars['#cache'] = [];
+//        $vars['#cache']['disabled'] = TRUE;
+//        $vars['#cache']['max-age'] = 0;
+//
+//        foreach ($vars['items'][$menu_link_content_id]['content']['children'] as $child_link_content_id => $child_menu_link) {
+//          $vars['items'][$menu_link_content_id]['content']['children'][$child_link_content_id]['content']['#cache'] = [];
+//          $vars['items'][$menu_link_content_id]['content']['children'][$child_link_content_id]['content']['#cache']['disabled'] = TRUE;
+//          $vars['items'][$menu_link_content_id]['content']['children'][$child_link_content_id]['content']['#cache']['max-age'] = 0;
+//          unset($vars['items'][$menu_link_content_id]['content']['children'][$child_link_content_id]['content']['#pre_render']);
+//        }
+//      }
+//    }
+//  }
+
+  // For main menu instance located in menu_secondary region, jam the parent menu item of
+  // the current active menu item into the front of the menu.
+  if ($vars['attributes']['data-region'] == 'menu_secondary') {
+    // Check if there is an active menu item.
+    // If not, we need to jam the current menu item inside instead of the parent.
+    $active_link_id = FALSE;
+    foreach ($vars['items'] as $menu_link_content_id => $menu_link) {
+      if ($menu_link['in_active_trail'] == TRUE) {
+        $active_link_id = $menu_link_content_id;
+      }
+    }
+
+    $menuLinkManager = \Drupal::service('plugin.manager.menu.link');
+    if ($active_link_id) {
+      // Get parent of active menu item.
+      $parents = $menuLinkManager->getParentIds($active_link_id);
+      // For some reason getParentIds() returns the current menuLinkContent id
+      // as well so we need to make sure we're not using that unless it is
+      // the only link.
+      foreach ($parents as $parent_id) {
+        $parent_link = $menuLinkManager->createInstance($parent_id);
+        if ($parent_link->getPluginId() != $active_link_id) {
+          $menu_link_item = $parent_link;
+        }
+      }
+    }
+    // If there is no active menu item, create menu link to current page.
+    else {
+      $route_name = \Drupal::routeMatch()->getRouteName();
+      if (!empty($route_name)) {
+        $node = \Drupal::routeMatch()->getParameter('node');
+        if ($node instanceof \Drupal\node\NodeInterface) {
+          $nid = $node->id();
+        }
+
+        $menu_link_arr = $menuLinkManager->loadLinksByRoute($route_name, ['node' => $nid], 'main');
+        array_values($menu_link_arr);
+        $menu_link_item = array_shift($menu_link_arr);
+      }
+    }
+
+    // Manually construct menu link.
+    if (isset($menu_link_item)){
+      $new_menu_link = [];
+      $new_menu_link['is_expanded'] = FALSE;
+      $new_menu_link['is_collapsed'] = FALSE;
+      $new_menu_link['below'] = [];
+      $new_menu_link['menu_level'] = 0;
+      $new_menu_link['attributes'] = clone $vars['items'][$menu_link_content_id]['attributes'];
+      $new_menu_link['title'] = $menu_link_item->getTitle();
+      $new_menu_link['url'] = $menu_link_item->getUrlObject();
+      $new_menu_link['original_link'] = $menu_link_item;
+      $entity_uuid = explode('menu_link_content:', $menu_link_item->getPluginId());
+      $entity_uuid = $entity_uuid[1];
+      $entityTypeManager = \Drupal::entityTypeManager();
+      $MenuItemExtrasMenuLinkContent = $entityTypeManager->getStorage('menu_link_content')
+        ->loadByProperties(['uuid' => $entity_uuid]);
+      array_values($MenuItemExtrasMenuLinkContent);
+      $new_menu_link['entity'] = array_shift($MenuItemExtrasMenuLinkContent);
+      $new_menu_link['content'] = $entityTypeManager->getViewBuilder('menu_link_content')
+        ->view($new_menu_link['entity'], 'default');
+      $new_menu_link['#item'] = $new_menu_link;
+
+      if ($active_link_id) {
+        // Remove active trail class from link.
+        $new_menu_link['in_active_trail'] = FALSE;
+        $new_menu_link['#item']['in_active_trail'] = FALSE;
+      }
+      else {
+        $new_menu_link['in_active_trail'] = TRUE;
+        $new_menu_link['#item']['in_active_trail'] = TRUE;
+      }
+
+      array_unshift($vars['items'], $new_menu_link);
+      $vars['#cache'] = [];
+      $vars['#cache']['max-age'] = 0;
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess field--menu-link-content--field-menu-image--main-menu.html.twig.
+ */
+function dovelewis_menu_preprocess_field__menu_link_content__field_menu_image__main_menu(&$vars) {
+
+  // Fix Menu Link Extras module wrapping image field in link to edit instead of to node.
+  if (!empty($vars['element']['#object'])) {
+    if (!empty($vars['element']['#object']->get('uuid')
+      ->getValue()[0]['value'])) {
+      $Url = $vars['element']['#object']->getUrlObject();
+      $vars['items'][0]['content']['#url'] = $Url;
+    }
+  }
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function dovelewis_menu_theme($existing, $type, $theme, $path) {
+  $templates_path = drupal_get_path('module', 'dovelewis_menu') . '/templates';
+
+  return [
+    'block__mobile_menu_logo' => [
+      'template' => 'block--mobile-menu-logo',
+      'base hook' => 'block',
+      'path' => $templates_path,
+    ],
+  ];
+}
+
+
+function dovelewis_menu_preprocess_block(&$vars) {
+  if ($vars['attributes']['id'] == 'block-mainmenu-mobile') {
+    $vars['#cache'] = [];
+    $vars['#cache']['max-age'] = 0;
+  }
+}
+
+
+/**
+ * Implements hook_entity_view().
+ */
+function dovelewis_menu_entity_view(&$build, $entity, $display, $view_mode) {
+  if ($entity->entityTypeId == 'menu_link_content') {
+    unset($build['#cache']['keys']);
+  }
+}
+
+

@@ -1,0 +1,301 @@
+/**
+ * Event node. Full view mode.
+ */
+
+
+.node--type--event.node--view-mode--full {
+  padding: 0;
+
+  // Header image
+  .node--event__detail-header-image {
+    background-color: $color--white;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .link-style--arrow.read-more.teaser-cta {
+    display: initial;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .field__label {
+    padding-bottom: $spacing--small;
+    text-transform: uppercase;
+    font-style: italic;
+    text-align: center;
+    font-size: rem-calc(12);
+    font-weight: bold;
+    color: $color--gray5;
+  }
+
+  // Top details
+  .node--event__detail-top {
+    padding-top: $spacing--medium;
+    padding-bottom: $spacing--medium;
+    background-color: $color--white;
+
+    .event__title {
+      margin-top: 0;
+      margin-bottom: $spacing--medium;
+    }
+
+    .field--name-field-event__details-top-content {
+      padding-bottom: $spacing--small;
+    }
+
+    .event__details {
+      clear: both;
+      padding: 0;
+    }
+
+    .event-details-label {
+      display: none;
+    }
+
+    .field--name-field-event-location-name,
+    .field--name-field-optional-link,
+    .field--name-field-event-date-long,
+    .field--name-field-event-date-time,
+    .field--name-field-event-price {
+      margin-bottom: $spacing--xsmall;
+      padding-left: 30px;
+      @include font-size--paragraph;
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-size: 15px;
+    }
+
+    .field--name-field-event-location-name {
+      margin-bottom: 0;
+      font-weight: bold;
+      background-image: url('../../images/icons/location-green.svg');
+    }
+
+    .field--name-field-event-location-address {
+      margin-bottom: $spacing--xsmall;
+      padding-left: 30px;
+      font-style: italic;
+    }
+
+    .field--name-field-optional-link {
+      background-image: url('../../images/icons/link-green.svg');
+      background-size: 18px;
+    }
+
+    .field--name-field-event-date-long {
+      display: inline-block;
+      background-image: url('../../images/icons/calendar.svg');
+      background-size: 18px;
+    }
+
+    .annual-event {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: $spacing--xsmall;
+      margin-bottom: $spacing--xsmall;
+      padding: 3px 15px;
+      text-transform: uppercase;
+      font-size: rem-calc(13px);
+      background-color: $color--lightgreen;
+      color: $color--white;
+      border-radius: 15px;
+    }
+
+    .field--name-field-event-date-time {
+      background-image: url('../../images/icons/clock.svg');
+      background-size: 18px;
+    }
+
+    .field--name-field-event-price {
+      background-image: url('../../images/icons/ticket.svg');
+      background-size: 19px;
+    }
+
+    .event__rsvp-btn {
+      margin: $spacing--small 0 0 30px;
+    }
+
+    // Primary Sponsors
+    .field--name-field-event-primary-sponsor-wrapper,
+    .field--name-field-event-primary-sponsor-wrapper--old {
+      padding-top: $spacing--small;
+      padding-bottom: $spacing--medium;
+      border-top: 1px solid $color--gray6;
+
+      .field--name-field-event-prim-sponsors-ref > .field__item {
+        text-align: center;
+
+        .field--name-field-sponsor-logo {
+          text-align: center;
+        }
+
+        .sponsor-link {
+          display: inline-block;
+        }
+      }
+
+      // @TODO: Delete after field_primary_sponsor is deleted.
+      .field--name-field-primary-sponsor .field__item {
+        text-align: center;
+      }
+    }
+
+    // Secondary Sponsors
+    .field--name-field-event-secondary-sponsor-wrapper,
+    .field--name-field-event-secondary-sponsor-wrapper--old {
+      padding-top: $spacing--small;
+      padding-bottom: 0;
+      border-top: 1px solid $color--gray6;
+      border-bottom: 1px solid $color--gray6;
+
+      .field--name-field-event-sup-sponsors-ref {
+        > .field__items {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-between;
+
+          > .field__item {
+            width: 50%;
+            margin-bottom: $spacing--medium;
+            padding: 0 10px;
+            text-align: center;
+
+            .field--name-field-sponsor-logo {
+              text-align: center;
+            }
+
+            .sponsor-link {
+              display: inline-block;
+            }
+
+            img {
+              filter: grayscale(100%);
+            }
+          }
+        }
+      }
+
+      // @TODO: Delete after field_secondary_sponsors is deleted.
+      .field--name-field-secondary-sponsors {
+        .field__items {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-between;
+        }
+
+        .field__item {
+          width: 50%;
+          margin-bottom: $spacing--medium;
+          padding: 0 10px;
+          text-align: center;
+
+          img {
+            filter: grayscale(100%);
+          }
+        }
+      }
+    }
+  }
+
+  /* Event description body text */
+  .node--event__detail-info {
+    padding-top: $spacing--medium;
+    padding-bottom: $spacing--medium;
+  }
+
+
+  // LARGE
+  // ----
+
+  @include breakpoint(large) {
+
+  }
+
+
+  // XLARGE
+  // ----
+
+  @include breakpoint(xlarge) {
+    .field--name-field-hero-image {
+      img {
+        margin-bottom: 130px;
+      }
+    }
+
+    .field__label {
+      text-align: left;
+    }
+
+    .node--event__detail-top {
+      position: relative;
+      top: $spacing--large * -1;
+      max-width: 1045px;
+      margin: 0 auto;
+      padding: $spacing--large $spacing--xlarge;
+      @include box-shadow;
+      border-radius: 5px;
+      background-color: $color--white;
+
+      .node--event__detail-top__inner {
+        padding: 0;
+      }
+
+      .event__details__left {
+        padding-right: $spacing--small;
+      }
+
+      .field--name-field-event-primary-sponsor-wrapper {
+        .field__label {
+          text-align: left;
+        }
+      }
+
+      .field--name-field-event-secondary-sponsor-wrapper {
+        .field__label {
+          text-align: left;
+        }
+
+        .field--name-field-event-sup-sponsors-ref > .field__items > .field__item {
+          width: 25%;
+        }
+      }
+
+
+      // @TODO: Delete this when field_primary_sponsor and field_secondary_sponsors
+      // are deleted.
+      .field--name-field-event-primary-sponsor-wrapper--old {
+        .field--name-field-primary-sponsor {
+          .field__label {
+            text-align: left;
+          }
+        }
+      }
+      .field--name-field-event-secondary-sponsor-wrapper--old {
+        .field--name-field-secondary-sponsors {
+          .field__label {
+            text-align: left;
+          }
+
+          .field__item {
+            width: 25%;
+          }
+        }
+      }
+    }
+
+    .node--event__detail-info {
+      position: relative;
+      top: $spacing--large * -1;
+      max-width: 1045px;
+      margin: 0 auto;
+      padding: $spacing--xlarge $spacing--xlarge $spacing--large $spacing--xlarge;
+
+      .node--event__detail-info__inner {
+        padding: 0;
+      }
+    }
+  }
+}

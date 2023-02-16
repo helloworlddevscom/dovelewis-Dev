@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+langcode: en
+uuid: 5cb4b7d6-2d4c-43b3-8f60-dba23b85fa78
+name: DoveLewis
+mail: contact@dovelewis.org
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/46
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: asolomon@dovelewis.org

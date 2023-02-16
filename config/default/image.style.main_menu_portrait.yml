@@ -1,0 +1,15 @@
+uuid: 8ea0c7cc-2dd1-47a5-8299-e2e2a5d5e0c3
+langcode: en
+status: true
+dependencies: {  }
+name: main_menu_portrait
+label: 'Main Menu - Portrait'
+effects:
+  5410f4e3-9bde-45ad-b5d9-c9bfaf6825dc:
+    uuid: 5410f4e3-9bde-45ad-b5d9-c9bfaf6825dc
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 178
+      height: 240
+      anchor: center-center

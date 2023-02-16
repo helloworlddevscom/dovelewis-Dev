@@ -1,0 +1,57 @@
+/**
+ * Blog Post node - View mode: Blog Landing.
+ * Used in Blog Landing view.
+ */
+
+
+.node--type--blog-post.node--view-mode--blog-landing {
+  height: 100%;
+
+  .content__image {
+    display: none;
+  }
+
+  .content__text {
+    padding-top: 0;
+  }
+
+  .field--name-field-blog-post-image img {
+    border: 4px solid $color--white;
+  }
+
+  .post-date {
+    @include font-size--large;
+    display: block;
+    margin-bottom: rem-calc(10);
+    font-style: normal;
+    color: $color--gray3;
+  }
+
+  .node__title {
+    @include h3--mobile-large;
+
+    a {
+      @include link-style--green();
+    }
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .node__content {
+      @include clearfix;
+    }
+
+    .content__image {
+      float: left;
+      display: block;
+      width: 40%;
+    }
+
+    .content__text {
+      float: left;
+      width: 60%;
+      padding-left: 40px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+/**
+ * Paragraph - Teaser Static.
+ */
+
+.paragraph--type--teaser-static {
+  height: 100%;
+  @include teaser-background();
+
+  .teaser-cta {
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+}

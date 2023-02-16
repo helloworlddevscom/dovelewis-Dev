@@ -1,0 +1,25 @@
+uuid: 0c7f297e-70a2-4758-b46d-034546129961
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-landing
+  module:
+    - system
+  theme:
+    - dovelewis
+id: footer_landing
+theme: dovelewis
+region: footer_right_landing
+weight: -19
+provider: null
+plugin: 'system_menu_block:footer-landing'
+settings:
+  id: 'system_menu_block:footer-landing'
+  label: 'There''s More to Dove:'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

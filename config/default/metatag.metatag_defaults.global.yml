@@ -1,0 +1,18 @@
+uuid: 888e0548-9c8f-429c-a213-af492dfc8479
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  geo_position: '45.5331, -122.69138'
+  geo_placename: 'Portland, Oregon'
+  abstract: 'DoveLewis is an Emergency and ICU Animal Hospital providing 24-hour emergency veterinary care and specialty medicine, located in Northwest Portland, Oregon.'
+  description: 'DoveLewis is an Emergency and ICU Animal Hospital providing 24-hour emergency veterinary care and specialty medicine, located in Northwest Portland, Oregon. '
+  canonical_url: '[current-page:url]'
+  title: 'DoveLewis - Emergency Veterinary Animal Hospital - Open 24/7'
+  geo_region: US-OR
+  content_language: en-US
+  keywords: 'Dove lewis, dovelewis, dove lewis emergency, dove lewis hospital, dove lewis ce, animal assisted education, dove lewis lost and found, dove veterinary hospital, 24 hour animal hospital, emergency vet, emergency veterinarian hospitals Oregon, pet safety, 2'

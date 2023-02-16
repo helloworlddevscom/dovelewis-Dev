@@ -1,0 +1,13 @@
+# Ignore node modules
+# Because we're not compiling SCSS > CSS on the server, but instead committing
+# compiled CSS, we don't need most node_modules on the server.
+node_modules/
+
+# Unignore Node modules that our theme relies on
+# because we're not running npm install on deploy.
+!node_modules/foundation-sites
+!node_modules/foundation-sites/*
+!node_modules/foundation-sites/**/*
+!node_modules/slick-carousel
+!node_modules/slick-carousel/*
+!node_modules/slick-carousel/**/*

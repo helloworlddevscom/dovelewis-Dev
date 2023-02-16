@@ -1,0 +1,27 @@
+uuid: c299f176-1128-4693-ab37-d30af10e065b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_content_width
+field_name: field_content_width
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: site
+      label: 'Site Width'
+    -
+      value: narrow
+      label: Narrow
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

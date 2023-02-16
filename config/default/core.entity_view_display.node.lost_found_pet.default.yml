@@ -1,0 +1,113 @@
+uuid: e82f954d-e8b3-4a3a-9573-fc321fc030bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lost_found_pet.body
+    - field.field.node.lost_found_pet.field_found_age
+    - field.field.node.lost_found_pet.field_found_breed
+    - field.field.node.lost_found_pet.field_found_date
+    - field.field.node.lost_found_pet.field_found_near
+    - field.field.node.lost_found_pet.field_found_photo
+    - field.field.node.lost_found_pet.field_found_sex
+    - field.field.node.lost_found_pet.field_found_size
+    - field.field.node.lost_found_pet.field_found_species
+    - field.field.node.lost_found_pet.field_found_weight
+    - field.field.node.lost_found_pet.field_header_carousel
+    - field.field.node.lost_found_pet.field_tracking_number
+    - image.style.hero_image
+    - node.type.lost_found_pet
+  module:
+    - datetime
+    - options
+    - svg_image
+    - text
+    - user
+id: node.lost_found_pet.default
+targetEntityType: node
+bundle: lost_found_pet
+mode: default
+content:
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_found_age:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_found_breed:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_found_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: day_month_time
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_found_near:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_found_sex:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_found_size:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_found_weight:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_header_carousel:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: hero_image
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_found_photo: true
+  field_found_species: true
+  field_tracking_number: true
+  langcode: true
+  links: true

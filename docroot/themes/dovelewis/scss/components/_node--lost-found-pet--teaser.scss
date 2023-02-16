@@ -1,0 +1,106 @@
+/**
+ * Lost Found Pet node - View mode: Teaser.
+ */
+
+.node--type--lost-found-pet.node--view-mode--teaser {
+  .field__label {
+    position: relative;
+    @include text-style--label--small;
+    color: $color--lightgreen;
+  }
+
+  .content__image {
+    margin-bottom: $spacing--small;
+    text-align: center;
+
+    .button--secondary--hollow {
+      margin-top: $spacing--small;
+      margin-right: 0;
+    }
+  }
+
+  .field--title {
+    margin-bottom: $spacing--xsmall;
+
+    .node__title {
+      font-size: rem-calc(20);
+      font-family: $ff--sentinel;
+      font-weight: bold;
+      line-height: 1.3;
+      color: $color--dark-gray;
+    }
+  }
+
+  .field--name-field-found-breed {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    padding-right: $spacing--small;
+    margin-bottom: $spacing--xsmall;
+  }
+
+  .field--name-field-found-sex {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    padding-right: $spacing--small;
+    margin-bottom: $spacing--xsmall;
+  }
+
+  .field--name-field-found-weight {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    margin-bottom: $spacing--xsmall;
+  }
+
+  .field--name-field-found-near {
+    margin-bottom: $spacing--xsmall;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .node__content {
+      @include clearfix;
+    }
+
+    .content__image {
+      float: left;
+      width: 33.33%;
+      margin-bottom: 0;
+    }
+
+    .content__text {
+      float: left;
+      width: 66.66%;
+      padding: 0 $spacing--small;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .content__text {
+      padding: 0 $spacing--medium;
+    }
+
+    .field--name-field-found-photo {
+      text-align: left;
+    }
+
+    .field__label {
+      font-size: rem-calc(13);
+      margin-bottom: 5px;
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+
+  }
+}

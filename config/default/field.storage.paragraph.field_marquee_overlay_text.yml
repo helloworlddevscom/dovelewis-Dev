@@ -1,0 +1,19 @@
+uuid: 5bb10c47-d5ad-4ff3-9685-47c95d7e0bb7
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_marquee_overlay_text
+field_name: field_marquee_overlay_text
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

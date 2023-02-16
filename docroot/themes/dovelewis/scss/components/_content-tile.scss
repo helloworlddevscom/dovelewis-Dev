@@ -1,0 +1,281 @@
+/**
+ * Content tile styling.
+ *
+ * This class is shared amongst Paragraphs that display
+ * content in a "tile" format with a background, title and content.
+ *
+ * Used for Paragraph types:
+ * - WYSIWYG
+ * - Contact
+ * - Resource File
+ *
+ * Used for Blocks:
+ * - "Claim your pet"
+ * - "Learn about microchips"
+ */
+
+.content-tile {
+
+  .content-tile__header {
+  }
+
+  .content-tile__content {
+
+    // If a header is the first item,
+    // try to remove top spacing from line-height.
+    h2, h3, h4, h5, h6 {
+      &:first-child {
+        margin-top: -.3em;
+      }
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .header__title {
+    margin-bottom: 5px;
+  }
+
+  .header__subtitle {
+    display: block;
+    @include text-style--small();
+    line-height: 1.2;
+    font-style: italic;
+  }
+
+  // Padding
+  &.padding--small {
+    .content-tile__content,
+    .content-tile__header {
+      padding: $spacing--small;
+    }
+  }
+
+  &.padding--medium {
+    .content-tile__content,
+    .content-tile__header {
+      padding: $spacing--small;
+    }
+
+    .content-tile__header {
+      padding-bottom: $spacing--small;
+    }
+  }
+
+  &.padding--large {
+    .content-tile__content,
+    .content-tile__header {
+      padding: $spacing--medium;
+    }
+
+    .content-tile__header {
+      padding-bottom: $spacing--small;
+    }
+  }
+
+  // Background colors
+  &.bg-color--gray {
+    .content-tile__content,
+    .content-tile__header {
+      background-color: $color--gray;
+    }
+  }
+
+  &.bg-color--white {
+    .content-tile__content,
+    .content-tile__header {
+      background-color: $color--white;
+    }
+  }
+
+  &.header-bg-color--orange {
+    .content-tile__header {
+      background-color: $color--orange;
+
+      .header__title,
+      .header__subtitle {
+        color: $color--white;
+      }
+    }
+  }
+
+  // Border colors
+  &.border-color--gray {
+    @include box-shadow();
+    border-radius: 5px;
+
+    .content-tile__header {
+      border: 2px solid transparent;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom: 2px solid darken($color--gray, 5%);
+    }
+
+    .content-tile__content {
+      //border: 2px solid darken($color--gray, 5%);
+      border: 2px solid transparent;
+      border-radius: 5px;
+    }
+  }
+
+  &.border-color--orange {
+    @include box-shadow();
+    border-radius: 5px;
+
+    .content-tile__header {
+      border: 2px solid $color--orange;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom: none;
+    }
+
+    .content-tile__content {
+      border: 2px solid $color--orange;
+      border-radius: 5px;
+    }
+  }
+
+  .content-tile__header + .content-tile__content {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  // Header with background image
+  &.header-bg-image {
+    .content-tile__header {
+      padding-left: 80px;
+      background-size: 35px;
+      background-position: 25px center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  // Header with centered image
+  &.header-image {
+    position: relative;
+    height: 100%;
+    padding-top: 40px;
+    box-shadow: none;
+
+    .content-tile__header-image {
+      position: absolute;
+      top: 0;
+      left: calc(50% - 30px);
+      width: 60px;
+      height: 60px;
+    }
+
+    .content-tile__content {
+      height: 100%;
+      padding-top: 50px;
+    }
+
+    // Put box-shadow on content-tile__content div instead
+    &.border-color--gray {
+      .content-tile__content {
+        @include box-shadow();
+      }
+    }
+
+    &.border-color--orange {
+      .content-tile__content {
+        @include box-shadow();
+      }
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    &.padding--large {
+      .content-tile__content,
+      .content-tile__header {
+        padding: $spacing--medium - 8px;
+      }
+
+      .content-tile__header {
+        padding-top: $spacing--large - 5px;
+        padding-bottom: $spacing--small;
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+
+    // Padding
+    &.padding--small {
+      .content-tile__content,
+      .content-tile__header {
+        padding: $spacing--small;
+      }
+    }
+
+    &.padding--medium {
+      .content-tile__content,
+      .content-tile__header {
+        padding: $spacing--medium - 5px;
+      }
+
+      .content-tile__header {
+        padding-top: $spacing--small;
+        padding-bottom: $spacing--small;
+      }
+    }
+
+    &.padding--large {
+      .content-tile__content,
+      .content-tile__header {
+        padding: $spacing--large;
+      }
+
+      .content-tile__header {
+        padding-top: $spacing--large - 5px;
+        padding-bottom: $spacing--small;
+      }
+    }
+
+    // Header with background image
+    &.header-bg-image {
+      .content-tile__header {
+        padding-left: 90px;
+        background-position: 35px center;
+      }
+    }
+
+    // Header with centered image
+    &.header-image {
+      height: 100%;
+
+      .content-tile__header-image {
+        top: 0;
+        left: calc(50% - 40px);
+        width: 80px;
+        height: 80px;
+      }
+
+      .content-tile__content {
+        height: 100%;
+        padding-top: 70px;
+      }
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    h3.header__title {
+      font-size: rem-calc(30);
+    }
+  }
+}

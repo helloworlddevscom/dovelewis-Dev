@@ -1,0 +1,19 @@
+uuid: 70dc6aef-3389-4d5f-8425-ac545e9cca1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_menu_short_label
+    - system.menu.main
+id: menu_link_content.main.field_menu_short_label
+field_name: field_menu_short_label
+entity_type: menu_link_content
+bundle: main
+label: 'Short menu link title'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

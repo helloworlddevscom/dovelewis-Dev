@@ -1,0 +1,10 @@
+uuid: e8589490-fd11-4b4a-ae77-0f5ef4e2ec20
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.event_landing_top
+label: 'Event Landing Top'
+targetEntityType: node
+cache: true

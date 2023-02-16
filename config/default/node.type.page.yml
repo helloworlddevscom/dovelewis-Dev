@@ -1,0 +1,20 @@
+uuid: 3d658528-023d-430d-ad9f-e5615ba30eb8
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: KuyA4NHPXcmKAjRtwa0vQc2ZcyrUJy6IlS2TAyMNRbc
+name: Page
+type: page
+description: 'Create a simple or complex page of content. Used for both "landing" pages with complex components and more simple, text focused pages.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

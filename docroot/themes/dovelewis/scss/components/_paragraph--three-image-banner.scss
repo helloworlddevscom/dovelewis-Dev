@@ -1,0 +1,53 @@
+/**
+ * Paragraph type: Three Image Banner
+ */
+
+.paragraph--type--three-image-banner {
+  .field--name-field-three-image-banner-images {
+    text-align: center;
+    position: relative;
+
+    .field__item {
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+
+      &:first-of-type,
+      &:last-of-type {
+        display: none;
+      }
+
+      img {
+        max-width: none;
+        width: 100%;
+      }
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .field--name-field-three-image-banner-images {
+      .field__item {
+        width: 33%;
+
+        &:first-of-type,
+        &:last-of-type {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .field--name-field-three-image-banner-images {
+      .field__item {
+
+      }
+    }
+  }
+}

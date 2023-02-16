@@ -1,0 +1,93 @@
+/**
+ * Resource File node - View mode: Teaser.
+ */
+
+
+.node--type--resource-file.node--view-mode--teaser {
+  .node__content {
+    @include clearfix();
+  }
+
+  .content__image {
+    text-align: center;
+    background-size: 0;
+
+    a {
+      display: block;
+    }
+
+    img {
+      display: inline-block;
+    }
+  }
+
+  .content__text {
+    padding-top: $spacing--small;
+
+    p {
+      @include font-size--paragraph--small;
+    }
+  }
+
+  .field--name-field-resource-thumbnail {
+
+    img {
+      border: 1px solid $color--gray6;
+    }
+
+    &:hover {
+      img {
+        border: 1px solid $color--lightgreen;
+      }
+    }
+  }
+
+  .resource__title {
+    a {
+      @include link-style--green;
+      line-height: 1.2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+  .resource__details {
+    @include text-style--small;
+    display: block;
+  }
+
+  .teaser-cta {
+    margin-right: 0;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .node__content {
+      display: flex;
+      flex-flow: row wrap;
+      height: 100%;
+    }
+
+    .content__text {
+      width: 63%;
+      padding: 0 0 0 $spacing--medium;
+    }
+
+    .content__image {
+      width: 37%;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .resource__title {
+      a {
+        font-size: rem-calc(18);
+      }
+    }
+  }
+}

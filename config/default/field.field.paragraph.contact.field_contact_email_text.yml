@@ -1,0 +1,19 @@
+uuid: 77eed8c4-55e4-4884-b4b2-16a76c85ab05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contact_email_text
+    - paragraphs.paragraphs_type.contact
+id: paragraph.contact.field_contact_email_text
+field_name: field_contact_email_text
+entity_type: paragraph
+bundle: contact
+label: 'Email Link Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

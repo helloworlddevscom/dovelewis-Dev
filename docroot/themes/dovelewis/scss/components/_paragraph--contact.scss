@@ -1,0 +1,49 @@
+/**
+ * Contact Paragraph type.
+ */
+
+.paragraph--type--contact {
+  .contact-info {
+    margin: 0;
+    list-style: none;
+  }
+
+  .contact-info__item {
+    padding-left: 35px;
+    margin-bottom: 10px;
+    font-size: rem-calc(16);
+    background-size: 18px;
+    background-position: left .3em;
+    background-repeat: no-repeat;
+  }
+
+  .contact-name {
+    background-image: url('../../images/icons/plus-circle-green.svg');
+  }
+
+  .contact-email {
+    background-image: url('../../images/icons/email-green.svg');
+  }
+
+  .contact-phone {
+    background-image: url('../../images/icons/dove-lewis_icon-sidebar-phone.svg');
+  }
+
+  .contact-link {
+    margin-bottom: 0;
+    background-image: url('../../images/icons/link-green.svg');
+  }
+
+  .contact-availability {
+    background-image: url('../../images/icons/calendar.svg');
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .contact-info__item {
+      font-size: rem-calc(18);
+    }
+  }
+}
+

@@ -1,0 +1,65 @@
+uuid: 4c79a856-36e3-4e1b-ac54-867950e2b189
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.person.body
+    - field.field.node.person.field_credentials
+    - field.field.node.person.field_individual_petbreed
+    - field.field.node.person.field_individual_portrait
+    - field.field.node.person.field_individual_specialties
+    - field.field.node.person.field_person_availability
+    - field.field.node.person.field_person_category
+    - field.field.node.person.field_person_department
+    - field.field.node.person.field_person_email
+    - field.field.node.person.field_person_phone
+    - field.field.node.person.field_pet_name
+    - node.type.person
+    - responsive_image.styles.teaser
+  module:
+    - responsive_image
+    - text
+    - user
+id: node.person.teaser
+targetEntityType: node
+bundle: person
+mode: teaser
+content:
+  field_credentials:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_individual_portrait:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: teaser
+      image_link: content
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_individual_specialties:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  field_individual_credentials: true
+  field_individual_petbreed: true
+  field_individual_petname: true
+  field_person_availability: true
+  field_person_category: true
+  field_person_department: true
+  field_person_email: true
+  field_person_phone: true
+  field_pet_name: true
+  langcode: true
+  links: true

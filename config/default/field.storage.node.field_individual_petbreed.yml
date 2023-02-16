@@ -1,0 +1,20 @@
+uuid: 71f94fe9-b173-4c33-b8dc-d368c434427e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_individual_petbreed
+field_name: field_individual_petbreed
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

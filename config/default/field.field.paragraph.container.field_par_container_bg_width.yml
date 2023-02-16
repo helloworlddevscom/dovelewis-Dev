@@ -1,0 +1,23 @@
+uuid: 1e59a702-8689-49ba-a46b-87b2f702a436
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_par_container_bg_width
+    - paragraphs.paragraphs_type.container
+  module:
+    - options
+id: paragraph.container.field_par_container_bg_width
+field_name: field_par_container_bg_width
+entity_type: paragraph
+bundle: container
+label: 'Background Width'
+description: 'Select the width of the background of this Container.'
+required: true
+translatable: false
+default_value:
+  -
+    value: full
+default_value_callback: ''
+settings: {  }
+field_type: list_string

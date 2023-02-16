@@ -1,0 +1,50 @@
+uuid: fdd943da-8ddc-4a35-8d1a-17407dada233
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph_set.paragraph_set.field_image
+    - field.field.paragraph_set.paragraph_set.field_paragraph
+    - image.style.thumbnail
+  module:
+    - paragraphs
+    - paragraphs_frontend_ui
+    - svg_image
+_core:
+  default_config_hash: eVtbBtK6aMOl2CbeczsTjETeKxqyF1AAvyYaZSlWcM0
+id: paragraph_set.paragraph_set.default
+targetEntityType: paragraph_set
+bundle: paragraph_set
+mode: default
+content:
+  field_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_paragraph:
+    type: entity_reference_paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  user_id: true

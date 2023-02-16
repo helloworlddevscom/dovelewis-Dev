@@ -1,0 +1,39 @@
+uuid: 2e0fe2b0-8201-4b60-a076-96e761bf4884
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_bg_color
+field_name: field_bg_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: white
+      label: White
+    -
+      value: gray
+      label: Gray
+    -
+      value: blue
+      label: Blue
+    -
+      value: green
+      label: Green
+    -
+      value: blue_animals
+      label: 'Blue Animals'
+    -
+      value: white_animals
+      label: 'White Animals'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

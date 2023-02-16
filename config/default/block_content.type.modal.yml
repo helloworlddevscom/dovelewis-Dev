@@ -1,0 +1,8 @@
+uuid: 26eade5c-f244-4352-b80e-9f5dd3305e83
+langcode: en
+status: true
+dependencies: {  }
+id: modal
+label: Modal
+revision: 0
+description: 'A block that if placed into the Modals region under Block layout, will display as a modal window pop-up on page load.'

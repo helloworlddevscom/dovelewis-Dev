@@ -1,0 +1,25 @@
+uuid: b2ac9965-eaf4-4b70-8878-a509210b74f2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:30585e3b-ed8d-432b-aa75-88bc774325e4'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: found_pet_safe
+theme: dovelewis
+region: disabled
+weight: 0
+provider: null
+plugin: 'block_content:30585e3b-ed8d-432b-aa75-88bc774325e4'
+settings:
+  id: 'block_content:30585e3b-ed8d-432b-aa75-88bc774325e4'
+  label: 'Is my pet safe at DoveLewis?'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

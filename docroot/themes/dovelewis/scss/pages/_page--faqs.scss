@@ -1,0 +1,213 @@
+/**
+ * FAQs landing page/view.
+ */
+
+
+.path-faqs {
+  // Remove default padding applied to non-node pages.
+  main.main-content {
+    max-width: none;
+    padding: 0;
+  }
+
+  .block-id--block-dovelewis-page-title {
+    display: none;
+  }
+
+  .main-content .block-id--block-dovelewis-content {
+    padding: 0;
+  }
+}
+
+
+// FAQs Landing view
+// -----
+
+$width--faq-content: 610px;
+
+.view--faqs-landing {
+  @include container-bottom-padding('xlarge', false);
+  @include search-form;
+
+  // Page title
+  .view-header {
+    @include container-top-padding('xlarge');
+    background-color: $color--darkergreen;
+
+    .page-title {
+      margin: 0;
+      padding: 0 0 $spacing--large 0;
+      text-align: center;
+      color: $color--lightgreen;
+    }
+  }
+
+  // Form filters
+  .view-filters {
+    margin-bottom: $spacing--large;
+    background-color: $color--darkergreen;
+
+    .views-exposed-form {
+      padding: 0;
+    }
+
+    form {
+      // Search field
+      .form-group--search__inner {
+        @include clearfix();
+        max-width: $width--faq-content;
+        margin: 0 auto;
+        padding-bottom: $spacing--medium;
+      }
+
+      .form-item-search {
+        float: left;
+        display: block;
+        width: calc(100% - 80px);
+        margin-left: 0;
+        margin-right: 0;
+
+        input {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    // Submit field
+    .form-actions {
+      .form-submit {
+        width: 80px;
+        text-indent: 2000px;
+        overflow: hidden;
+        background-position: center;
+      }
+    }
+
+    // Hide desktop categories field
+    .form-group--categories {
+      display: none;
+    }
+
+    // Mobile categories field
+    .form-group--categories--mobile {
+      background-color: $color--gray;
+
+      .form-item-faqs-category {
+        max-width: $width--faq-content;
+        margin: 0 auto;
+        padding-top: $spacing--medium;
+      }
+    }
+  }
+
+  // Results
+  .view-content {
+    .view-content__inner {
+      max-width: $width--faq-content;
+      margin: 0 auto;
+    }
+
+    .category-name {
+      display: none;
+      color: $color--green;
+    }
+  }
+
+  // No results
+  .view-empty {
+    .view-empty__inner {
+      max-width: $width--faq-content;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  // "Didn't find the answer?"
+  .view-footer {
+    .no-answer {
+      max-width: 395px;
+      margin: 100px auto 0 auto;
+      text-align: center;
+
+      p {
+        @include font-size--small;
+      }
+
+      a {
+        margin-top: 10px;
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+
+    .view-filters {
+      margin-bottom: $spacing--xlarge;
+
+      // Hide mobile categories field
+      .form-group--categories--mobile {
+        display: none;
+      }
+
+      // Categories field
+      .form-group--categories {
+        display: block;
+        clear: both;
+        background: linear-gradient($color--darkergreen 50%, $color--gray 50%);
+      }
+
+      .form-type-radio {
+        float: left;
+        position: relative;
+        margin: 70px (map-get($grid-margin-gutters, xlarge) / 2) 0 (map-get($grid-margin-gutters, xlarge) / 2);
+        padding: 60px $spacing--small $spacing--medium $spacing--small;
+        background-color: $color--white;
+        @include box-shadow;
+        border-radius: 5px;
+        text-align: center;
+
+        // Header with centered image
+        .category-option__image {
+          position: absolute;
+          top: -40px;
+          left: calc(50% - 40px);
+          width: 80px;
+          height: 80px;
+        }
+
+        .option {
+          display: block;
+          width: 100%;
+        }
+
+        a {
+          margin-right: 0;
+        }
+      }
+
+      // Hide "All Faqs" option
+      .form-type-radio:first-child {
+        display: none;
+      }
+
+      // Hide inputs
+      .form-radio {
+        display: none;
+      }
+
+      .form-type-radio label.option {
+        margin: 0;
+      }
+    }
+
+    .view-content {
+      .category-name {
+        display: block;
+        margin-bottom: $spacing--medium;
+      }
+    }
+  }
+}

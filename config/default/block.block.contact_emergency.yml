@@ -1,0 +1,25 @@
+uuid: 1fe726bb-e431-4827-822e-5a40409a0361
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4813d7e1-9ea3-48d9-8932-6da7a8429593'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: contact_emergency
+theme: dovelewis
+region: disabled
+weight: 0
+provider: null
+plugin: 'block_content:4813d7e1-9ea3-48d9-8932-6da7a8429593'
+settings:
+  id: 'block_content:4813d7e1-9ea3-48d9-8932-6da7a8429593'
+  label: 'Contact Emergency'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

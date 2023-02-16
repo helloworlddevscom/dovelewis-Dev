@@ -1,0 +1,4 @@
+name: Mailchimp Signup Form
+description: Creates a Mailchimp signup form.
+core_version_requirement: ^8 || ^9
+type: module

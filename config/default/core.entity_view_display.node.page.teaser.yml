@@ -1,0 +1,72 @@
+uuid: 2b870ca2-c8f7-47bb-b1f4-eb04ba2c8c77
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.body
+    - field.field.node.page.field_content_width
+    - field.field.node.page.field_display_secondary_menu
+    - field.field.node.page.field_display_teaser_menu
+    - field.field.node.page.field_header_text
+    - field.field.node.page.field_header_youtube_video
+    - field.field.node.page.field_hero_image
+    - field.field.node.page.field_landing_page
+    - field.field.node.page.field_node_content
+    - field.field.node.page.field_node_content_top
+    - field.field.node.page.field_sidebar_content
+    - field.field.node.page.field_tags
+    - field.field.node.page.field_teaser_cta
+    - field.field.node.page.field_teaser_image
+    - node.type.page
+    - responsive_image.styles.teaser
+  module:
+    - responsive_image
+    - text
+    - user
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 340
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_teaser_cta:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_teaser_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: teaser
+      image_link: content
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_content_width: true
+  field_display_secondary_menu: true
+  field_display_teaser_menu: true
+  field_header_text: true
+  field_header_youtube_video: true
+  field_hero_image: true
+  field_landing_page: true
+  field_node_content: true
+  field_node_content_top: true
+  field_sidebar_content: true
+  field_tags: true
+  langcode: true
+  links: true

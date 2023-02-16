@@ -1,0 +1,19 @@
+uuid: d583c18c-171d-4b87-96e8-c3f803fc3e79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_youtube_video
+    - node.type.page
+id: node.page.field_header_youtube_video
+field_name: field_header_youtube_video
+entity_type: node
+bundle: page
+label: 'Header Youtube Video'
+description: 'Enter a Youtube video ID to display a video in the page header. This will override the Header Image field.<br>You can find the video ID in the URL for a video. For example in the following URL, the ID is the bold part:<br><i>https://www.youtube.com/watch?v=<b>n2LRS1czsxg</b></i>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

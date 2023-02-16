@@ -1,0 +1,23 @@
+uuid: c873f0ab-2e6f-40a7-a1c1-bd8c3494bb84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_start_end_time
+    - node.type.event
+id: node.event.field_hide_start_end_time
+field_name: field_hide_start_end_time
+entity_type: node
+bundle: event
+label: 'Hide Start/End Time'
+description: 'Check to hide start/end times of this Event. '
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Hide
+  off_label: Show
+field_type: boolean

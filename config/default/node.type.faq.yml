@@ -1,0 +1,17 @@
+uuid: f81c9f0b-3776-402c-b99b-366da97c0584
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: FAQ
+type: faq
+description: 'Create a new Frequently Asked Question to be displayed on the FAQs landing page, and to be referenceable by the FAQs component.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

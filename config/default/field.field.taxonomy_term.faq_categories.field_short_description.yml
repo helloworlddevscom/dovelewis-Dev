@@ -1,0 +1,19 @@
+uuid: a5833982-ab7b-4fb9-8858-f808257365ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_short_description
+    - taxonomy.vocabulary.faq_categories
+id: taxonomy_term.faq_categories.field_short_description
+field_name: field_short_description
+entity_type: taxonomy_term
+bundle: faq_categories
+label: 'Short Description'
+description: 'Short version of the Description to be displayed on FAQs landing page.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

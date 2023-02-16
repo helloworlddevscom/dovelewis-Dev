@@ -1,0 +1,14 @@
+uuid: fa6660f4-8c75-4551-9206-15a1bcc89025
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.csr
+  module:
+    - user
+id: user_add_role_action.csr
+label: 'Add the CSR role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: csr

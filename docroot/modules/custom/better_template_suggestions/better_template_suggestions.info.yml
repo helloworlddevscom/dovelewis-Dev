@@ -1,0 +1,4 @@
+name: Better Template Suggestions
+description: Improvements for Drupals template suggestions to allow more context based template names. (hopefully future contrib module)
+core_version_requirement: ^8 || ^9
+type: module

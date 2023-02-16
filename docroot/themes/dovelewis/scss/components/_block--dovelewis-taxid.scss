@@ -1,0 +1,23 @@
+/**
+ * DoveLewis Tax ID block.
+ */
+
+.block-id--dovelewis-taxid {
+  @include container-padding('large', false);
+  background-color: $color--green;
+  border-bottom: 4px solid $color--white;
+
+  h2 {
+    margin: 0;
+    text-align: center;
+    color: $color--white;
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    h2 {
+      font-size: rem-calc(35);
+    }
+  }
+}

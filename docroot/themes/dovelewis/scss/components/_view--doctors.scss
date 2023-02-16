@@ -1,0 +1,81 @@
+/**
+ * View: Doctors.
+ *
+ * Used on "Our Doctors" page.
+ */
+
+.view--doctors {
+  width: 100%;
+  margin: auto;
+
+  .view-filters {
+    @include clearfix;
+    width: 100%;
+    margin-bottom: $spacing--medium;
+
+    .doctors__department-info {
+      float: left;
+    }
+
+    .department-info__department-name {
+      color: $color--doveblue;
+    }
+
+    .department-info__department-link {
+      @include link-style--white();
+    }
+
+    .views-exposed-form {
+      float: left;
+      clear: left;
+      margin-top: $spacing--small;
+
+      .form-item-department {
+        margin: 0;
+      }
+    }
+  }
+
+  .views-row {
+    @include column-margins;
+  }
+
+  .node {
+    @include teaser-background();
+    width: 100%;
+    height: 100%;
+  }
+
+  .node__content {
+    .content__text {
+      .field--name-field-credentials {
+        color: $color--doveblue;
+      }
+    }
+
+    .teaser-cta {
+      @include button-color--blue--hollow;
+    }
+  }
+
+  /*override for doctor name color*/
+  .node--type--person.node--view-mode--teaser .node__content .person__name .field--name-title {
+    color: $color--darkblue;
+  }
+
+
+  // XLARGE
+  // ----
+
+  @include breakpoint(xlarge) {
+    .view-filters {
+      margin-bottom: $spacing--large;
+
+      .views-exposed-form {
+        float: right;
+        clear: none;
+        margin-top: 0;
+      }
+    }
+  }
+}

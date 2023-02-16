@@ -1,0 +1,11 @@
+uuid: 32595532-fdfc-4e78-a367-9340b327abb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.donation_case_study
+id: node.donation_case_study
+target_entity_type_id: node
+target_bundle: donation_case_study
+default_langcode: site_default
+language_alterable: false

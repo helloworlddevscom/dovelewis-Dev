@@ -1,0 +1,29 @@
+uuid: 3f6ccac5-596e-41eb-b799-19c1e8b6ec55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_category
+    - node.type.person
+    - taxonomy.vocabulary.people_categories
+id: node.person.field_person_category
+field_name: field_person_category
+entity_type: node
+bundle: person
+label: 'Person Category'
+description: 'Classify this person. This field will not be visible to site visitors, but will determine whether this person appears on listings of Doctors etc.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      people_categories: people_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

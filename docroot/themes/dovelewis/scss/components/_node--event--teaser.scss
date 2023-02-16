@@ -1,0 +1,135 @@
+/*
+ * Event node - Teaser view mode.
+ *
+ * Also contains some styling for Event Landing
+ * and Event Landing Top view modes since they are so similar.
+ */
+
+.node--type--event.node--view-mode--teaser,
+.node--type--event.node--view-mode--event-landing,
+.node--type--event.node--view-mode--event-landing-top {
+
+  .node__content {
+    @include clearfix;
+  }
+
+  .event__date-wrapper {
+    float: left;
+    width: 60px;
+    padding: 8px 5px 8px;
+    text-align: center;
+    color: #5F6D11; // Yet another green...
+    border: 4px solid $color--lightgreen;
+
+    .month {
+      display: block;
+      font-family: $ff--idealsans;
+      font-size: rem-calc(16);
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .day {
+      display: block;
+      font-family: $ff--sentinel;
+      font-weight: bold;
+      font-size: rem-calc(35);
+      line-height: .8;
+    }
+  }
+
+  .event__info {
+    float: left;
+    width: calc(100% - 60px);
+    padding-left: $spacing--small;
+
+    .event__title {
+      a {
+        @include link-style--green;
+      }
+    }
+
+    .event__body,
+    .teaser-cta {
+      display: none;
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .event__date-wrapper {
+      width: 80px;
+      padding: 8px 15px 8px;
+
+      .month {
+        font-size: rem-calc(20);
+      }
+
+      .day {
+        font-size: rem-calc(40);
+      }
+    }
+
+    .event__info {
+      width: calc(100% - 80px);
+
+      .event__body,
+      .teaser-cta {
+        display: block;
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .event__info {
+      padding-left: $spacing--medium;
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xlarge) {
+    .event__info {
+
+    }
+  }
+}
+
+
+// Teaser view mode only
+// ----
+
+.node--type--event.node--view-mode--teaser {
+  .event__info {
+    .event__title {
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .event__info {
+      .event__title {
+        font-size: rem-calc(24);
+      }
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xlarge) {
+    .event__info {
+      .event__title {
+        font-size: rem-calc(24);
+      }
+    }
+  }
+}

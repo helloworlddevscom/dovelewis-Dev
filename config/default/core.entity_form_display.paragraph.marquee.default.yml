@@ -1,0 +1,37 @@
+uuid: da8c7573-bd4e-4f38-b706-4b0e94edb847
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.marquee.field_marquee_bg_image
+    - field.field.paragraph.marquee.field_marquee_overlay_text
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.marquee
+  module:
+    - svg_image
+    - text
+id: paragraph.marquee.default
+targetEntityType: paragraph
+bundle: marquee
+mode: default
+content:
+  field_marquee_bg_image:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_marquee_overlay_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

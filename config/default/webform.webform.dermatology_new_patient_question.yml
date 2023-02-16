@@ -1,0 +1,637 @@
+uuid: 9503cc70-a13e-460d-a230-90bded0524c0
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 186
+template: false
+archive: false
+id: dermatology_new_patient_question
+title: 'Dermatology New Patient Questionnaire'
+description: ''
+category: ''
+elements: |-
+  processed_text:
+    '#type': processed_text
+    '#text': |
+      <p><span><span><span><span><span>These questions help us gain the most information we can prior to your appointment time to allow for more examination and discussion time. The more detail you can provide in your answers, the more fully we will understand your pet’s situation and determine the best course of assessment and treatment for your pet.</span></span></span></span></span></p>
+    '#format': basic_html
+  horizontal_rule_02:
+    '#type': webform_horizontal_rule
+  your_information_and_appointment_goals:
+    '#type': webform_section
+    '#title': 'Your Information and Appointment Goals'
+    your_pet_s_name:
+      '#type': textfield
+      '#title': 'Your Pet''s Name'
+      '#required': true
+    your_name:
+      '#type': webform_name
+      '#title': 'Your Name'
+      '#title_display': before
+      '#required': true
+      '#title__access': false
+      '#middle__access': false
+      '#suffix__access': false
+      '#degree__access': false
+    your_email:
+      '#type': webform_email_confirm
+      '#title': 'Your Email'
+      '#required': true
+    what_problem_s_would_you_like_us_to_address_at_your_neurology_ap:
+      '#type': textarea
+      '#title': 'What is the goal for this visit? What problem(s) would you like us to address at your dermatology appointment?'
+      '#required': true
+    at_what_age_was_your_pet_s_condition_first_noticed_:
+      '#type': select
+      '#title': 'At what age was your pet''s condition first noticed? '
+      '#options':
+        '0-6 months': '0-6 months'
+        '6-12 months': '6-12 months'
+        '1 year': '1 year'
+        '2 years': '2 years'
+        '3 years': '3 years'
+        '4 years': '4 years'
+        '5 years': '5 years'
+        '6 years': '6 years'
+        '7 years': '7 years'
+        '8 years': '8 years'
+        '9 years': '9 years'
+        '10 years': '10 years'
+        '11 years': '11 years'
+        '12 years': '12 years'
+        '13 years': '13 years'
+        '14 years': '14 years'
+        '15 years': '15 years'
+        '16 years': '16 years'
+        '17 years': '17 years'
+        '18 years': '18 years'
+        '19+ years': '19+ years'
+      '#required': true
+    has_your_pet_ever_had_any_previous_skin_infection_:
+      '#type': webform_buttons
+      '#title': 'Has your pet ever had any previous skin infection? '
+      '#options': yes_no
+      '#required': true
+    select_the_season_in_which_the_dermatitis_is_most_severe_:
+      '#type': checkboxes
+      '#title': 'Select the season in which the dermatitis is most severe. '
+      '#options':
+        Spring: Spring
+        Summer: Summer
+        Faull: Faull
+        Winter: Winter
+        'Symptoms are year round': 'Symptoms are year round'
+      '#options_display': side_by_side
+      '#states':
+        visible:
+          ':input[name="has_your_pet_ever_had_any_previous_skin_infection_"]':
+            value: 'Yes'
+      '#required': true
+    has_your_pet_ever_had_an_ear_infection_:
+      '#type': webform_buttons
+      '#title': 'Has your pet ever had an ear infection? '
+      '#options': yes_no
+      '#required': true
+    what_if_anything_causes_a_worsening_of_symptoms_:
+      '#type': textarea
+      '#title': 'What (if anything) causes a worsening of symptoms? '
+      '#required': true
+    what_if_anything_helps_your_pet_s_symptoms_:
+      '#type': textarea
+      '#title': 'What (if anything) helps your pet''s symptoms? '
+      '#required': true
+  horizontal_rule_01:
+    '#type': webform_horizontal_rule
+  tell_us_about_your_pet:
+    '#type': webform_section
+    '#title': 'Tell Us About Your Pet''s History and Lifestyle'
+    where_and_when_did_you_obtain_your_pet_:
+      '#type': textfield
+      '#title': 'Where and when did you obtain your pet? '
+      '#required': true
+    does_your_pet_have_any_known_or_suspected_allergies_:
+      '#type': webform_buttons
+      '#title': 'Does your pet have any known or suspected allergies?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+      '#required': true
+    do_you_have_other_pets_:
+      '#type': webform_buttons
+      '#title': 'Do you have other pets? '
+      '#options': yes_no
+      '#required': true
+    how_many_pets_do_you_have_:
+      '#type': webform_likert
+      '#title': 'How many pets do you have? '
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="do_you_have_other_pets_"]':
+            value: 'Yes'
+      '#questions':
+        Cats: Cats
+        Dogs: Dogs
+        Birds: Birds
+        Other: Other
+      '#answers':
+        1: '1'
+        2: '2'
+        3: '3'
+        4+: 4+
+      '#na_answer': true
+    do_any_of_your_pet_s_relatives_have_skin_problems_:
+      '#type': webform_buttons
+      '#title': 'Do any of your pet''s relatives have skin problems? '
+      '#options': yes_no
+      '#required': true
+    does_any_human_in_your_household_have_skin_problems_:
+      '#type': webform_buttons
+      '#title': 'Does any human in your household have skin problems? '
+      '#options': yes_no
+      '#required': true
+    where_does_your_pet_sleep_:
+      '#type': textfield
+      '#title': 'Where does your pet sleep? '
+      '#required': true
+    how_much_time_does_your_pet_spend_outside_:
+      '#type': webform_buttons
+      '#title': 'How much time does your pet spend outside? '
+      '#options':
+        '<30 minutes': '<30 minutes'
+        '1-2 hours': '1-2 hours'
+        '3-4 hours': '3-4 hours'
+        '5+ hours ': '5+ hours '
+      '#required': true
+    what_time_of_day_do_you_typically_spend_with_your_pet_:
+      '#type': checkboxes
+      '#title': 'What time of day do you typically spend with your pet? '
+      '#options':
+        Morning: Morning
+        Afternoon: Afternoon
+        Evening: Evening
+        Night: Night
+      '#options_display': side_by_side
+      '#required': true
+  horizontal_rule:
+    '#type': webform_horizontal_rule
+  bathing_and_fleas:
+    '#type': webform_section
+    '#title': 'Bathing and Fleas'
+    are_you_able_to_bathe_your_pet_:
+      '#type': webform_buttons
+      '#title': 'Are you able to bathe your pet? '
+      '#options': yes_no
+      '#required': true
+    does_bathing_:
+      '#type': checkboxes
+      '#title': 'Does bathing...'
+      '#options':
+        Help: Help
+        Hurt: Hurt
+        'Make no difference': 'Make no difference'
+      '#options_display': side_by_side
+      '#required': true
+    how_often_do_you_prefer_to_bathe_your_pet_:
+      '#type': webform_buttons
+      '#title': 'How often do you prefer to bathe your pet? '
+      '#options':
+        Weekly: Weekly
+        Monthly: Monthly
+        Rarely: Rarely
+      '#required': true
+    what_kind_of_shampoo_do_you_use_:
+      '#type': textfield
+      '#title': 'What kind of shampoo do you use?'
+      '#required': true
+    when_was_the_last_time_a_flea_was_seen_on_your_pet_:
+      '#type': webform_buttons
+      '#title': 'When was the last time a flea was seen on your pet? '
+      '#options':
+        'This week': 'This week'
+        'This month': 'This month'
+        ' 2-6 months ago': ' 2-6 months ago'
+        '7-12 months ago': '7-12 months ago'
+        '1+ year ago': '1+ year ago'
+      '#required': true
+    what_is_your_pet_s_current_flea_treatment_:
+      '#type': textfield
+      '#title': 'What is your pet''s current flea treatment? '
+      '#required': true
+    what_flea_treatments_are_used_on_other_pets_:
+      '#type': textfield
+      '#title': 'What flea treatments are used on other pets? '
+      '#states':
+        visible:
+          ':input[name="do_you_have_other_pets_"]':
+            value: 'Yes'
+      '#required': true
+  horizontal_rule_05:
+    '#type': webform_horizontal_rule
+  medication:
+    '#type': webform_section
+    '#title': Medication
+    can_you_give_your_pet_oral_medications_:
+      '#type': webform_buttons
+      '#title': 'Can you give your pet oral medications? '
+      '#options': yes_no
+      '#options_display': side_by_side
+      '#required': true
+    it_is_easier_to_give_:
+      '#type': webform_buttons
+      '#title': 'It is easier to give...'
+      '#options':
+        Tablets: Tablets
+        Liquids: Liquids
+      '#states':
+        visible:
+          ':input[name="can_you_give_your_pet_oral_medications_"]':
+            value: 'Yes'
+      '#required': true
+    is_your_pet_on_heartworm_preventative_:
+      '#type': webform_buttons
+      '#title': 'Is your pet on heartworm preventative?'
+      '#options': yes_no
+      '#options_display': side_by_side
+      '#required': true
+    if_yes_are_they_chewable_or_flavored_:
+      '#type': webform_buttons
+      '#title': 'If yes, are they chewable or flavored?'
+      '#options': yes_no
+      '#states':
+        visible:
+          ':input[name="is_your_pet_on_heartworm_preventative_"]':
+            value: 'Yes'
+      '#required': true
+    name_of_heartworm_preventative:
+      '#type': textfield
+      '#title': 'Name of heartworm preventative'
+      '#states':
+        visible:
+          ':input[name="is_your_pet_on_heartworm_preventative_"]':
+            value: 'Yes'
+      '#required': true
+    please_select_any_current_or_previous_types_of_medication_your_p:
+      '#type': checkboxes
+      '#title': 'Please select any current or previous types of medication your pet has used'
+      '#options':
+        Shampoos: Shampoos
+        Rinses: Rinses
+        Injections: Injections
+        Tablets: Tablets
+        Ointments: Ointments
+      '#options_display': side_by_side
+      '#required': true
+    date_of_last_tablet_given:
+      '#type': date
+      '#title': 'Date of Last Tablet Given'
+      '#states':
+        visible:
+          ':input[name="please_select_any_current_or_previous_types_of_medication_your_p[Tablets]"]':
+            checked: true
+      '#required': true
+    date_of_last_injection_given:
+      '#type': date
+      '#title': 'Date of Last Injection Given'
+      '#states':
+        visible:
+          ':input[name="please_select_any_current_or_previous_types_of_medication_your_p[Injections]"]':
+            checked: true
+      '#required': true
+  horizontal_rule_04:
+    '#type': webform_horizontal_rule
+  diet:
+    '#type': webform_section
+    '#title': Diet
+    my_pet_normally_eats_select_all_that_apply_:
+      '#type': webform_checkboxes_other
+      '#title': 'My pet normally eats (select all that apply)'
+      '#options':
+        'Canned Food': 'Canned Food'
+        'Dry Food': 'Dry Food'
+        'Table Scraps': 'Table Scraps'
+        Meath: Meath
+      '#options_display': side_by_side
+      '#required': true
+    approximately_what_percent_of_their_diet_is_made_up_of_the_food_:
+      '#type': textarea
+      '#title': 'Approximately what percent of their diet is made up of the food above? Please specify brands. '
+      '#required': true
+    list_any_other_foods_treats_or_supplements_egg_vitamins_toast_bi:
+      '#type': textarea
+      '#title': 'List any other foods, treats, or supplements (Egg, vitamins, toast, biscuits, fish oil, etc.) .'
+      '#required': true
+    has_your_pet_ever_been_fed_a_special_diet_:
+      '#type': webform_buttons
+      '#title': 'Has your pet ever been fed a special diet? '
+      '#options': yes_no
+      '#required': true
+    please_specify_your_pet_s_special_diet:
+      '#type': textfield
+      '#title': 'Please specify your pet''s special diet'
+      '#states':
+        visible:
+          ':input[name="has_your_pet_ever_been_fed_a_special_diet_"]':
+            value: 'Yes'
+      '#required': true
+    was_your_pet_on_heartworm_medication_at_the_same_time_:
+      '#type': webform_buttons
+      '#title': 'Was your pet on heartworm medication at the same time? '
+      '#options': yes_no
+      '#states':
+        visible:
+          ':input[name="has_your_pet_ever_been_fed_a_special_diet_"]':
+            value: 'Yes'
+      '#required': true
+  horizontal_rule_03:
+    '#type': webform_horizontal_rule
+  clinical_signs:
+    '#type': webform_section
+    '#title': 'Clinical Signs'
+    upload_any_pictures_of_your_pet_s_skin_leasions:
+      '#type': webform_image_file
+      '#title': 'Upload any pictures of your pet''s skin lesions'
+      '#required': true
+    have_you_experienced_any_of_the_following_in_your_pet_:
+      '#type': checkboxes
+      '#title': 'Which of the following have you experienced in your pet? '
+      '#options':
+        Sores: Sores
+        Scabs: Scabs
+        Dandruff: Dandruff
+        'Hair loss': 'Hair loss'
+        Odor: Odor
+        Hives: Hives
+        Redness: Redness
+        Sweating: Sweating
+        'Ear problems': 'Ear problems'
+        'Watery eyes': 'Watery eyes'
+        '"Heat"': '"Heat"'
+        'Weight loss': 'Weight loss'
+        'Weight gain': 'Weight gain'
+        Vomiting: Vomiting
+        Diarrhea: Diarrhea
+        'Soft stool ': 'Soft stool '
+        Flatulence: Flatulence
+        Tiredness: Tiredness
+        Depression: Depression
+        'Increased appetite': 'Increased appetite'
+        'Increased thirst': 'Increased thirst'
+        None: None
+      '#options_display': side_by_side
+      '#required': true
+    how_many_bowel_movements_does_your_pet_have_per_day_:
+      '#type': select
+      '#title': 'How many bowel movements does your pet have per day? '
+      '#options':
+        0: '0'
+        1: '1'
+        2: '2'
+        3: '3'
+        4+: 4+
+      '#required': true
+    does_your_pet_:
+      '#type': webform_checkboxes_other
+      '#title': 'Does your pet...'
+      '#options':
+        'Rub at their face': 'Rub at their face'
+        'Lick/chew their paws': 'Lick/chew their paws'
+        'Scratch their sides': 'Scratch their sides'
+        'Roll on their back': 'Roll on their back'
+        'Bite their tail area': 'Bite their tail area'
+        'Lick the stomach area': 'Lick the stomach area'
+        Sneeze: Sneeze
+        Snort: Snort
+        Wheeze: Wheeze
+      '#options_display': side_by_side
+      '#required': true
+    what_do_you_think_could_be_the_cause_of_the_problem_:
+      '#type': textarea
+      '#title': 'What do you think could be the cause of the problem? '
+      '#required': true
+  captcha:
+    '#type': captcha
+    '#captcha_type': image_captcha/Image
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  internal_completed_questionnaire_results:
+    id: email
+    handler_id: internal_completed_questionnaire_results
+    label: 'Internal: Completed Questionnaire Results'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: specialtyappts@dovelewis.org
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: 'Dermatology Questionnaire'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Dermatology: New Patient Questionnaire '
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

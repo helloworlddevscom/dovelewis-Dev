@@ -1,0 +1,22 @@
+uuid: 5ca11aa3-69ee-4bfe-b824-0da8d80d2baf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: blog_post
+label: 'Blog Post'
+type: 'canonical_entities:node'
+pattern: 'pet-owners/keeping-pets-healthy/blog/[node:title]'
+selection_criteria:
+  f4b12003-eef2-4b0c-acb2-096d0372b85d:
+    id: node_type
+    negate: false
+    uuid: f4b12003-eef2-4b0c-acb2-096d0372b85d
+    context_mapping:
+      node: node
+    bundles:
+      blog_post: blog_post
+selection_logic: and
+weight: -5
+relationships: {  }

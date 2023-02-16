@@ -1,0 +1,25 @@
+uuid: 2be29998-e515-4fb5-aa7e-e57502515ae3
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:97c18059-988a-4597-ba64-7ea799bbfa3e'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: found_pet_microchips
+theme: dovelewis
+region: disabled
+weight: 0
+provider: null
+plugin: 'block_content:97c18059-988a-4597-ba64-7ea799bbfa3e'
+settings:
+  id: 'block_content:97c18059-988a-4597-ba64-7ea799bbfa3e'
+  label: 'Learn about microchips'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

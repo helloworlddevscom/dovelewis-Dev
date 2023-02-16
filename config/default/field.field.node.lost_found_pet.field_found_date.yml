@@ -1,0 +1,24 @@
+uuid: 9da527d1-b2db-4bc9-913d-0e3ce8c7cc68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_found_date
+    - node.type.lost_found_pet
+  module:
+    - datetime
+id: node.lost_found_pet.field_found_date
+field_name: field_found_date
+entity_type: node
+bundle: lost_found_pet
+label: 'Found On'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

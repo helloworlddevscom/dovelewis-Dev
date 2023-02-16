@@ -1,0 +1,15 @@
+uuid: 19d6c9d9-a8a5-4fa9-a044-a8a7a1f569ac
+langcode: en
+status: true
+dependencies: {  }
+name: carousel_marquee_medium_2x
+label: 'Carousel Marquee - Medium @2x (Scale and Crop 1536×760)'
+effects:
+  21ed0f30-34c7-405c-82be-c49635906db7:
+    uuid: 21ed0f30-34c7-405c-82be-c49635906db7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1536
+      height: 760
+      anchor: center-center

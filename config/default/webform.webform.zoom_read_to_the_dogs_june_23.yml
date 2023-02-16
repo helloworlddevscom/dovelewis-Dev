@@ -1,0 +1,294 @@
+uuid: 9b8eb71c-0e35-408c-82e9-2398a0fd0764
+langcode: en
+status: closed
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 12971
+template: false
+archive: false
+id: zoom_read_to_the_dogs_june_23
+title: 'Zoom Read to the Dogs - June 23'
+description: 'For people interested in registering for our virtual read to the dogs event'
+category: ''
+elements: |-
+  contact:
+    '#type': webform_contact
+    '#title': 'Your Contact Information'
+    '#title_display': before
+    '#required': true
+    '#name__required': true
+    '#company__access': false
+    '#email__access': false
+    '#address__access': false
+    '#address_2__access': false
+    '#postal_code__access': false
+    '#country__access': false
+  your_email:
+    '#type': email
+    '#title': 'Your Email'
+    '#required': true
+  your_pet_s_name:
+    '#type': textfield
+    '#title': 'How many kids will be joining on one computer?'
+    '#title_display': before
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: ''
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace:
+    webform_routes: {  }
+    node_routes: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: Success!
+  confirmation_message: "<p><br />\r\nYou are registered for&nbsp;[current-page:title]. You will receive an email shortly with what to expect for the read to the dogs session.</p>"
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: 10
+  limit_total_interval: null
+  limit_total_message: 'This session will be limited to 10 people so that everyone feels they have an opportunity to participate.'
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email_notification:
+    id: email
+    handler_id: email_notification
+    label: 'Email Notification'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: mlaird@dovelewis.org
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Notification - Zoom - June 23'
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_confirmation:
+    id: email
+    handler_id: email_confirmation
+    label: 'Email Confirmation'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:your_email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Confirmation - Interactive Read to the Dogs'
+      body: "Thank you for registering for the&nbsp;Interactive Read to the Dogs!<br />\r\n<br />\r\nWhen: Tuesday, June 23 | 10-11am (PST)<br />\r\n<br />\r\n<strong>On the day of the session, you will receive an email with a link for the Zoom session. </strong>Please note that our hour session starts at 10am&nbsp;<strong>Pacific Standard Time.&nbsp;</strong>Zoom sessions allow anyone participating to see the participants who have shared their camera, to speak to the group, and to hear anyone speaking.<br />\r\n<br />\r\nMeeting Details:\r\n<ul>\r\n\t<li>One dog and their handler will be in the reading session</li>\r\n\t<li>Up to&nbsp;4 kids will join that team on Zoom. <strong>Each child will get 15 to 20 minutes</strong> to read to the dog while the other kids listen in and wait for their turn to read</li>\r\n\t<li><strong>We ask that everyone who registers to participate to join the session at 10am (PST)</strong> and stay in the session until after they have read or until the end of the time. This ensures that our teams know how many participants they&#39;ll have throughout their session instead of kids coming in and out of the hour-long session.&nbsp;</li>\r\n\t<li>Once your child has read to the dog, they are welcome to leave the session or continue to stay and listen to the other kids.</li>\r\n\t<li>Kids are welcome to interact and ask questions to the teams. We ask that if another child is reading, to wait for them to finish to be respectful of their reading time.</li>\r\n</ul>\r\nIf you have questions or are unsure about how to <a href=\"https://zoom.us/download\">set up Zoom</a> on your device, please email Molly at mlaird@dovelewis.org.<br />\r\n<br />\r\nThank you,<br />\r\n<br />\r\nDoveLewis Veterinary Emergency and Specialty Hospital"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

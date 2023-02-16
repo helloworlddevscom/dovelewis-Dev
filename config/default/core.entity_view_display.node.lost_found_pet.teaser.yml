@@ -1,0 +1,93 @@
+uuid: 104a3960-1b80-43d3-825d-68d74970f853
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lost_found_pet.body
+    - field.field.node.lost_found_pet.field_found_age
+    - field.field.node.lost_found_pet.field_found_breed
+    - field.field.node.lost_found_pet.field_found_date
+    - field.field.node.lost_found_pet.field_found_near
+    - field.field.node.lost_found_pet.field_found_photo
+    - field.field.node.lost_found_pet.field_found_sex
+    - field.field.node.lost_found_pet.field_found_size
+    - field.field.node.lost_found_pet.field_found_species
+    - field.field.node.lost_found_pet.field_found_weight
+    - field.field.node.lost_found_pet.field_header_carousel
+    - field.field.node.lost_found_pet.field_tracking_number
+    - image.style.medium_scale_crop
+    - node.type.lost_found_pet
+  module:
+    - datetime
+    - options
+    - svg_image
+    - user
+id: node.lost_found_pet.teaser
+targetEntityType: node
+bundle: lost_found_pet
+mode: teaser
+content:
+  field_found_breed:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_found_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: long_date_day_month
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_found_near:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_found_photo:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium_scale_crop
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_found_sex:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_found_weight:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  body: true
+  field_found_age: true
+  field_found_size: true
+  field_found_species: true
+  field_header_carousel: true
+  field_tracking_number: true
+  langcode: true
+  links: true

@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Contact page node - View Mode: Full.
+ * Renders Contact form block underneath Body field.
+ */
+#}
+
+{% extends  "node--page--full.html.twig" %}
+{# Set var so that extended template will render this if body field is empy. #}
+{% set body_bottom_block = true %}
+
+{# Replace content_fields #}
+{% block body_bottom %}
+  {{ drupal_entity('block', 'contactblock') }}
+{% endblock %}

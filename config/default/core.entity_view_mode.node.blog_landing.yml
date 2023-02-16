@@ -1,0 +1,10 @@
+uuid: 1f6ebea5-e362-4f18-a490-58e770970705
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.blog_landing
+label: 'Blog Landing'
+targetEntityType: node
+cache: true

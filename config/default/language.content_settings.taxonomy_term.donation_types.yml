@@ -1,0 +1,11 @@
+uuid: bdb69622-2d1a-47ea-88e4-a2b24371c3ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.donation_types
+id: taxonomy_term.donation_types
+target_entity_type_id: taxonomy_term
+target_bundle: donation_types
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,25 @@
+uuid: c4174bc3-35bb-4a04-b06f-e95b14c7c07b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main-menu
+  module:
+    - system
+  theme:
+    - dovelewis
+id: mainmenu_mobile
+theme: dovelewis
+region: mobile_menu_bottom
+weight: 0
+provider: null
+plugin: 'system_menu_block:main-menu'
+settings:
+  id: 'system_menu_block:main-menu'
+  label: 'Main Menu - Mobile'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,23 @@
+uuid: f0ef580b-4ddd-4457-82bc-0980013f8669
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.feedback
+    - field.storage.contact_message.field_subject
+  module:
+    - options
+id: contact_message.feedback.field_subject
+field_name: field_subject
+entity_type: contact_message
+bundle: feedback
+label: 'How may we route your inquiry?'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

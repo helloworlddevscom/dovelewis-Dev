@@ -1,0 +1,16 @@
+uuid: 84119b26-0327-46c5-b660-409d1eb37914
+langcode: en
+status: true
+dependencies: {  }
+id: node__lost_found_pet
+label: 'Content: Lost & Found Pet'
+tags:
+  geo_position: '45.5331, -122.69138'
+  geo_placename: 'Portland, Oregon'
+  abstract: 'If you have lost your pet, check DoveLewis’s Found Animals database to see if your pet was brought to the emergency animal hospital. '
+  description: 'DoveLewis Emergency Animal Hospital is a 24-hour veterinary emergency clinic and intensive care unit in Portland, Oregon.  What do you do if you find a lost or stray animal? If you have lost your pet, check DoveLewis’s Found Animals database to see if your pet was brought to the emergency animal hospital. '
+  canonical_url: '[current-page:url]'
+  title: '[current-page:title] | [site:name]'
+  geo_region: US-OR
+  content_language: en-US
+  keywords: 'Lost pets Portland, lost dogs Portland, lost cats Portland, injured wildlife, sick wildlife, wildlife transport, animal shelters, stray animals, hospitals for hurt animals, hospital for wildlife '

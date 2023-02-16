@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Main Menu - Desktop dropdown and mobile.
+ * Because menus are unaware of what region they are in,
+ * we are forced into using the same template.
+ */
+#}
+
+<ul class="menu menu-level-{{ items|first.menu_level }}">
+  {% for key, item in items if key|first != '#' %}
+    {% set menu_item_classes = [
+      'menu-item',
+      'menu-item--' ~ loop.index,
+      item.in_active_trail ? 'menu-item--active-trail',
+    ] %}
+    {# If link is 'Contact', it should not have children, so we should not add class to toggle dropdown. #}
+
+    <li{{ item.attributes.addClass(menu_item_classes) }}>
+
+      {% set rendered_content = item.content|without('') %}
+      {% if rendered_content|render %}
+        {{ rendered_content }}
+      {% endif %}
+
+      {#{{ link(item.title, item.url) }}#}
+    </li>
+  {% endfor %}
+</ul>
+

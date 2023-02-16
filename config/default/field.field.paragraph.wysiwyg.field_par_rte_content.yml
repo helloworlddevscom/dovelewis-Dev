@@ -1,0 +1,21 @@
+uuid: 43b77e2d-9e4e-4247-a804-67c5c74775d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_par_rte_content
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - text
+id: paragraph.wysiwyg.field_par_rte_content
+field_name: field_par_rte_content
+entity_type: paragraph
+bundle: wysiwyg
+label: Content
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

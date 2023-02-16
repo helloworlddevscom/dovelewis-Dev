@@ -1,0 +1,15 @@
+uuid: e18f8d4f-bed9-4109-ba10-c8261ccce741
+langcode: en
+status: true
+dependencies: {  }
+name: event_sponsor_logo
+label: 'Event Sponsor Logo'
+effects:
+  b16ef991-299c-45a6-baa4-b160c96e0d6f:
+    uuid: b16ef991-299c-45a6-baa4-b160c96e0d6f
+    id: image_scale
+    weight: -9
+    data:
+      width: 140
+      height: 80
+      upscale: true

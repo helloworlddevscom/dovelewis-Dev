@@ -1,0 +1,340 @@
+<?php
+
+use Drupal\image\Entity\ImageStyle;
+use Drupal\file\Entity\File;
+use Drupal\views\Views;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Url;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+use Drupal\responsive_background_image\ResponsiveBackgroundImage;
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess paragraph.html.twig.
+ */
+function dovelewis_paragraph_types_preprocess_paragraph(&$vars) {
+  $paragraph = $vars['paragraph'];
+  $paragraph_type = $paragraph->get('type')->getValue()[0]['target_id'];
+
+  // Add a unique class based on entity ID to all paragraphs.
+  $paragraph_id = $paragraph->get('id')->getValue()[0]['value'];
+  $css_class = 'paragraph--id--' . $paragraph_id;
+  $vars['attributes']['class'][] = $css_class;
+
+  switch($paragraph_type) {
+    // Container Paragraph type.
+    case 'container':
+
+      // Pass title field value to template.
+      if (!empty($paragraph->get('field_par_container_title')->getValue())) {
+        $vars['container_title'] = $paragraph->get('field_par_container_title')
+          ->getValue()[0]['value'];
+      }
+
+      $vars['display_container_title'] = $paragraph->get('field_display_title')
+        ->getValue()[0]['value'];
+
+      // Pass width, padding and color field values to template.
+      $vars['bg_width'] = $paragraph->get('field_par_container_bg_width')->getValue()[0]['value'];
+      $vars['content_width'] = $paragraph->get('field_par_container_con_width')->getValue()[0]['value'];
+
+      if (!empty($paragraph->get('field_top_padding')->getValue())) {
+        $vars['top_padding'] = $paragraph->get('field_top_padding')
+          ->getValue()[0]['value'];
+      }
+      else {
+        $vars['top_padding'] = 'none';
+      }
+
+      if (!empty($paragraph->get('field_bottom_padding')->getValue())) {
+        $vars['bottom_padding'] = $paragraph->get('field_bottom_padding')
+          ->getValue()[0]['value'];
+      }
+      else {
+        $vars['bottom_padding'] = 'none';
+      }
+
+      if (!empty($paragraph->get('field_bg_color')->getValue())) {
+        $vars['bg_color'] = $paragraph->get('field_bg_color')
+          ->getValue()[0]['value'];
+      }
+
+      if (!empty($paragraph->get('field_display_on')->getValue())) {
+        $vars['display_on'] = $paragraph->get('field_display_on')
+          ->getValue()[0]['value'];
+      }
+
+      if (!empty($paragraph->get('field_center_title')->getValue())) {
+        $vars['center_title'] = $paragraph->get('field_center_title')
+          ->getValue()[0]['value'];
+      }
+
+      if (!empty($paragraph->get('field_border_color')->getValue())) {
+        $vars['border_color'] = $paragraph->get('field_border_color')
+          ->getValue()[0]['value'];
+      }
+      else {
+        $vars['border_color'] = 'none';
+      }
+
+      break;
+
+    // Column Paragraph type.
+    case 'column':
+
+      // Pass xlarge width field value to template.
+      if (!empty($paragraph->get('field_par_column_width')->getValue())) {
+        $col_width = $paragraph->get('field_par_column_width')
+          ->getValue()[0]['value'];
+        $vars['col_width_bp_xlarge'] = $col_width;
+
+        // Attempt to automatically set classes for smaller breakpoints
+        // if large width field is not set.
+        if (empty($paragraph->get('field_column_width_large')->getValue())) {
+          if ($col_width <= 4) {
+            $vars['attributes']['class'][] = 'medium-6';
+            $vars['attributes']['class'][] = 'large-6';
+          }
+        }
+      }
+
+      // Pass large width field value to template.
+      if (!empty($paragraph->get('field_column_width_large')->getValue())) {
+        $vars['col_width_bp_large'] = $paragraph->get('field_column_width_large')
+          ->getValue()[0]['value'];;
+      }
+
+      if (!empty($paragraph->get('field_display_on')->getValue())) {
+        $vars['display_on'] = $paragraph->get('field_display_on')
+          ->getValue()[0]['value'];
+      }
+
+      if (!empty($paragraph->get('field_column_center')->getValue())) {
+        if ($paragraph->get('field_column_center')
+          ->getValue()[0]['value']) {
+          $vars['column_center'] = TRUE;
+        }
+      }
+
+      break;
+
+    // WYSIWYG Content Tile Paragraph type.
+    case 'wysiwyg':
+
+      if (!empty($paragraph->get('field_wysiwyg_padding')->getValue())) {
+        $vars['padding'] = $paragraph->get('field_wysiwyg_padding')
+          ->getValue()[0]['value'];
+      }
+
+      // Pass color field values.
+      if (!empty($paragraph->get('field_bg_color')->getValue())) {
+        $vars['bg_color'] = $paragraph->get('field_bg_color')
+          ->getValue()[0]['value'];
+      }
+
+      if (!empty($paragraph->get('field_content_tile_h_bg_color')->getValue())) {
+        $vars['header_bg_color'] = $paragraph->get('field_content_tile_h_bg_color')
+          ->getValue()[0]['value'];
+      }
+
+      if (!empty($paragraph->get('field_content_tile_bor_color')->getValue())) {
+        $vars['border_color'] = $paragraph->get('field_content_tile_bor_color')
+          ->getValue()[0]['value'];
+      }
+
+      if (!empty($paragraph->get('field_content_tile_bg_image')->getValue()[0]['target_id'])) {
+        $file = File::load($paragraph->get('field_content_tile_bg_image')->getValue()[0]['target_id']);
+        $uri = $file->getFileUri();
+        if (!empty($vars['content']['field_content_tile_bg_image'][0]['#image_style'])) {
+          $vars['header_image_path'] = file_url_transform_relative(ImageStyle::load($vars['content']['field_content_tile_bg_image'][0]['#image_style'])->buildUrl($uri));
+        }
+        else {
+          $vars['header_image_path'] = file_url_transform_relative($file->createFileUrl());
+        }
+      }
+
+      break;
+
+    // Marquee Paragraph type.
+    case 'marquee':
+
+      // Use Responsive Background Image module to generate background image media queries and attach styling to head.
+      if (!empty($paragraph->get('field_marquee_bg_image')->getValue()[0]['target_id'])) {
+        $css_selector = '.' . $css_class;
+        $style_tag = ResponsiveBackgroundImage::generateMediaQueries($css_selector, $paragraph, 'field_marquee_bg_image', 'marquee');
+        if ($style_tag) {
+          $vars['#attached']['html_head'][] = $style_tag;
+        }
+      }
+
+      break;
+
+    // Teaser Static type.
+    case 'teaser_static':
+
+      if (!empty($paragraph->get('field_image_width')->getValue())) {
+        $vars['image_width'] = $paragraph->get('field_image_width')
+          ->getValue()[0]['value'];
+      }
+
+      if (!empty($paragraph->get('field_image_position')->getValue())) {
+        $vars['image_position'] = $paragraph->get('field_image_position')
+          ->getValue()[0]['value'];
+
+        // If image is positioned to the top.
+        if ($paragraph->get('field_image_position')
+            ->getValue()[0]['value'] == 'top') {
+          // Apply shorter responsive image style.
+          // Only set image style if there is already an image style.
+          // If there is not it probably means this is an SVG image and setting
+          // an image style will cause an error.
+          if ($vars['content']['field_teaser_image'][0]['#theme'] == 'responsive_image_formatter') {
+            $vars['content']['field_teaser_image'][0]['#responsive_image_style_id'] = 'teaser_top';
+          }
+        }
+        // If image is positioned left, the image needs to be rendered as a background image.
+        else {
+          // Construct path to background image.
+          if (!empty($paragraph->get('field_teaser_image')->getValue()[0]['target_id'])) {
+            // Use Responsive Background Image module to generate background image media queries and attach styling to head.
+            $css_selector = '.paragraph--id--' . $paragraph->get('id')->getValue()[0]['value'] . ' .content__image';
+            $style_tag = ResponsiveBackgroundImage::generateMediaQueries($css_selector, $paragraph, 'field_teaser_image', 'teaser');
+            if ($style_tag) {
+              $vars['#attached']['html_head'][] = $style_tag;
+              $vars['bg_image'] = true;
+            }
+          }
+        }
+      }
+
+      $uri = $paragraph->get('field_teaser_cta')->getValue()[0]['uri'];
+      $vars['cta_url'] = Url::fromUri($uri)->toString();
+
+      break;
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess field.html.twig.
+ */
+function dovelewis_paragraph_types_preprocess_field(&$vars) {
+  $field_name = $vars['field_name'];
+
+  switch($field_name) {
+    // Add classes to CTA button in Teaser - Static Paragraph.
+    case 'field_teaser_cta':
+      if ($vars['entity_type'] == 'paragraph') {
+        $vars['items'][0]['content']['#options']['attributes']['class'] = ['button--secondary--hollow', 'button-size--small', 'teaser-cta'];
+      }
+
+      break;
+  }
+}
+
+
+/**
+ * Implements hook_entity_view().
+ */
+function dovelewis_paragraph_types_entity_view(&$build, $entity, $display, $view_mode) {
+  // Disable view cache for Teaser view mode. This will allow us to reliably use _referringItem
+  // to access parent entities, which we need to do when a Teaser is referenced by a Paragraph.
+  if ($view_mode == 'teaser'){
+    unset($build['#cache']['keys']);
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess node.html.twig.
+ */
+function dovelewis_paragraph_types_preprocess_node(&$vars) {
+  $node = $vars['node'];
+  $node_type = $node->getType();
+  $view_mode = $vars['view_mode'];
+
+  // Modifications based on view mode.
+  switch ($view_mode) {
+    case 'teaser':
+      // If this node is being rendered inside of a Teaser Paragraph,
+      // pass value from field_image_position and field_image_width.
+      // This will determine if the image is positioned to the top or to the left.
+      // If positioned to the left, field_image_width is used to determine how much horizontal
+      // space the image should take up within the Teaser Paragraph.
+      // This could apply to any content type that can be referenced by a Teaser Paragraph:
+      // - Page
+      // - Person
+      if (!empty($node->_referringItem)) {
+        if (!empty($node->_referringItem->getParent())) {
+          if (!empty($node->_referringItem->getParent()
+            ->getParent())) {
+            $paragraph = $node->_referringItem->getParent()
+              ->getParent()
+              ->getValue();
+            if ($paragraph->getEntityTypeId() == 'paragraph') {
+              if ($paragraph->get('type')->getValue()[0]['target_id'] == 'teaser') {
+
+                if (!empty($paragraph->get('field_image_width')->getValue())) {
+                  $vars['image_width'] = $paragraph->get('field_image_width')
+                    ->getValue()[0]['value'];
+                }
+
+                if (!empty($paragraph->get('field_image_position')->getValue())) {
+                  $vars['image_pos'] = $paragraph->get('field_image_position')->getValue()[0]['value'];
+
+                  // Set field to use based on content type.
+                  $image_field_name = 'field_teaser_image';
+                  switch ($node_type) {
+                    case 'page':
+                      $image_field_name = 'field_teaser_image';
+                      break;
+
+                    case 'person':
+                      $image_field_name = 'field_individual_portrait';
+                      break;
+                  }
+
+                  // If image is positioned to the top.
+                  if ($paragraph->get('field_image_position')
+                      ->getValue()[0]['value'] == 'top') {
+                    // If content type is page.
+                    if ($node_type == 'page') {
+                      // Apply shorter responsive image style.
+                      // Only set image style if there is already an image style.
+                      // If there is not it probably means this is an SVG image and setting
+                      // an image style will cause an error.
+                      if ($vars['content'][$image_field_name][0]['#theme'] == 'responsive_image_formatter') {
+                        $vars['content'][$image_field_name][0]['#responsive_image_style_id'] = 'teaser_top';
+                      }
+                    }
+                  }
+                  // If image is positioned left, the image needs to be rendered as a background image.
+                  else {
+                    // Construct path to background image.
+                    if (!empty($node->get($image_field_name)->getValue()[0]['target_id'])) {
+                      // Use Responsive Background Image module to generate background image media queries and attach styling to head.
+                      $css_selector = '.paragraph--id--' . $paragraph->get('id')->getValue()[0]['value'] . ' .content__image';
+                      $style_tag = ResponsiveBackgroundImage::generateMediaQueries($css_selector, $node, $image_field_name, 'teaser');
+                      if ($style_tag) {
+                        $vars['#attached']['html_head'][] = $style_tag;
+                        $vars['bg_image'] = true;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      break;
+  }
+}

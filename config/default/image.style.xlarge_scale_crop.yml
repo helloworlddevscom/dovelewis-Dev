@@ -1,0 +1,15 @@
+uuid: 3960f96c-679b-496a-b89d-22b71c7e831a
+langcode: en
+status: true
+dependencies: {  }
+name: xlarge_scale_crop
+label: 'XLarge (Scale & Crop 1000x1000)'
+effects:
+  944dc653-673e-44c8-b43c-5331f0731129:
+    uuid: 944dc653-673e-44c8-b43c-5331f0731129
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1000
+      height: 1000
+      anchor: center-center

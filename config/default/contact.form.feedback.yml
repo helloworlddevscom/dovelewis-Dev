@@ -1,0 +1,14 @@
+uuid: 36c5b52f-295c-49b7-a181-2f6cff11947f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vymHlgJy26BuI5GGj9-IXjwR3dRC5C0tij4BpWJnoqw
+id: feedback
+label: 'Send us your feedback'
+recipients:
+  - chat@dovelewis.org
+reply: ''
+weight: 0
+message: 'Thank you. Your message has been sent.'
+redirect: /contact

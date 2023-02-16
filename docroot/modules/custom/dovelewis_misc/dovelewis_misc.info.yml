@@ -1,0 +1,4 @@
+name: Dove Lewis Misc.
+description: Misc. database updates for site.
+core_version_requirement: ^8 || ^9
+type: module

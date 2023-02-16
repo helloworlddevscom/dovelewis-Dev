@@ -1,0 +1,29 @@
+uuid: 4e277c0a-a342-4c55-9acd-62010d843cb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_found_breed
+    - node.type.lost_found_pet
+    - taxonomy.vocabulary.pet_breeds
+id: node.lost_found_pet.field_found_breed
+field_name: field_found_breed
+entity_type: node
+bundle: lost_found_pet
+label: Breed
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      pet_breeds: pet_breeds
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

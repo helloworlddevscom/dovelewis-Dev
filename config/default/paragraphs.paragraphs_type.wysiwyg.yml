@@ -1,0 +1,9 @@
+uuid: b07dd9d5-a2da-4c77-bf6a-8e9ce2c8d115
+langcode: en
+status: true
+dependencies: {  }
+id: wysiwyg
+label: 'WYSIWYG Content Tile'
+icon_uuid: null
+description: 'A WYSIWYG (What You See Is What You Get) editor and options to allow creating a "tile" of content.'
+behavior_plugins: {  }

@@ -1,0 +1,9 @@
+uuid: 7d51dc32-7c67-4b1c-b920-e8aa594bda0d
+langcode: en
+status: true
+dependencies: {  }
+id: contact
+label: Contact
+icon_uuid: null
+description: 'Create static content and display it as a contact card with contact information.'
+behavior_plugins: {  }

@@ -1,0 +1,62 @@
+uuid: 05cfe8ab-ccdf-46c7-98f4-1e1c07c708b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sidebar_content
+    - node.type.page
+    - paragraphs.paragraphs_type.contact
+    - paragraphs.paragraphs_type.resource_file
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - entity_reference_revisions
+id: node.page.field_sidebar_content
+field_name: field_sidebar_content
+entity_type: node
+bundle: page
+label: 'Sidebar Content'
+description: 'Content that will be displayed in a sidebar to the right of the Body field.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      contact: contact
+      wysiwyg: wysiwyg
+      resource_file: resource_file
+    negate: 0
+    target_bundles_drag_drop:
+      block_ref:
+        weight: 9
+        enabled: false
+      column:
+        weight: 10
+        enabled: false
+      contact:
+        weight: 12
+        enabled: true
+      container:
+        weight: 11
+        enabled: false
+      faqs:
+        weight: 12
+        enabled: false
+      marquee:
+        weight: 13
+        enabled: false
+      resource_file:
+        weight: 17
+        enabled: true
+      teaser:
+        weight: 14
+        enabled: false
+      view:
+        weight: 15
+        enabled: false
+      wysiwyg:
+        weight: 16
+        enabled: true
+field_type: entity_reference_revisions

@@ -1,0 +1,22 @@
+uuid: 57dcf905-cc72-4efe-a293-23572e28f7ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: individual
+label: Person
+type: 'canonical_entities:node'
+pattern: '[node:field_person_category:entity:name]/[node:title]'
+selection_criteria:
+  45de6dc9-9bd1-4a3a-9497-5a1517f7b7ab:
+    id: node_type
+    negate: false
+    uuid: 45de6dc9-9bd1-4a3a-9497-5a1517f7b7ab
+    context_mapping:
+      node: node
+    bundles:
+      person: person
+selection_logic: and
+weight: -5
+relationships: {  }

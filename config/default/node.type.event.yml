@@ -1,0 +1,17 @@
+uuid: 397f96c9-1470-42b7-a724-1e875beeebf6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Event
+type: event
+description: 'Create a new Event.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

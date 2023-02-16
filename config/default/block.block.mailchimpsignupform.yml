@@ -1,0 +1,20 @@
+uuid: 8e809e18-0c2c-4a73-831d-4867a099a0b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - dovelewis_mailchimp
+  theme:
+    - dovelewis
+id: mailchimpsignupform
+theme: dovelewis
+region: disabled
+weight: 0
+provider: null
+plugin: mailchimp_signup_form
+settings:
+  id: mailchimp_signup_form
+  label: 'Get health and wellness tips straight to your inbox - and become a better pet parent.'
+  label_display: visible
+  provider: dovelewis_mailchimp
+visibility: {  }

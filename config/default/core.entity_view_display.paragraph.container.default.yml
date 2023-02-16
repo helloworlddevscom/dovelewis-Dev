@@ -1,0 +1,44 @@
+uuid: a3315cd5-80f3-4868-8490-6f6b738fcc6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.container.field_bg_color
+    - field.field.paragraph.container.field_border_color
+    - field.field.paragraph.container.field_bottom_padding
+    - field.field.paragraph.container.field_center_title
+    - field.field.paragraph.container.field_display_on
+    - field.field.paragraph.container.field_display_title
+    - field.field.paragraph.container.field_par_container_bg_width
+    - field.field.paragraph.container.field_par_container_con_width
+    - field.field.paragraph.container.field_par_container_content
+    - field.field.paragraph.container.field_par_container_title
+    - field.field.paragraph.container.field_top_padding
+    - paragraphs.paragraphs_type.container
+  module:
+    - entity_reference_revisions
+id: paragraph.container.default
+targetEntityType: paragraph
+bundle: container
+mode: default
+content:
+  field_par_container_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_bg_color: true
+  field_border_color: true
+  field_bottom_padding: true
+  field_center_title: true
+  field_display_on: true
+  field_display_title: true
+  field_par_container_bg_width: true
+  field_par_container_con_width: true
+  field_par_container_title: true
+  field_top_padding: true

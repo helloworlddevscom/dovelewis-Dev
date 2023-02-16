@@ -1,0 +1,32 @@
+uuid: bcc30651-0e83-41c2-bf2a-7a119c159adb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.column.field_column_center
+    - field.field.paragraph.column.field_column_width_large
+    - field.field.paragraph.column.field_display_on
+    - field.field.paragraph.column.field_par_column_content
+    - field.field.paragraph.column.field_par_column_width
+    - paragraphs.paragraphs_type.column
+  module:
+    - entity_reference_revisions
+id: paragraph.column.default
+targetEntityType: paragraph
+bundle: column
+mode: default
+content:
+  field_par_column_content:
+    type: entity_reference_revisions_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_column_center: true
+  field_column_width_large: true
+  field_display_on: true
+  field_par_column_width: true

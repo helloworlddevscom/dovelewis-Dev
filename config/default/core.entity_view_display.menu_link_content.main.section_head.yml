@@ -1,0 +1,28 @@
+uuid: 83473d89-64b2-4226-9013-f1e12f0b914d
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.menu_link_content.section_head
+    - field.field.menu_link_content.main.field_menu_short_label
+    - system.menu.main
+id: menu_link_content.main.section_head
+targetEntityType: menu_link_content
+bundle: main
+mode: section_head
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_menu_short_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

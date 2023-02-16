@@ -1,0 +1,17 @@
+uuid: bf3a537f-2823-459c-a99e-3a220bcceb5a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Person
+type: person
+description: 'Create a new Person to be displayed on the site. Used for DoveLewis Doctors and Blog Post authors.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

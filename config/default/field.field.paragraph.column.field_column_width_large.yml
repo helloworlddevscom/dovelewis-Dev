@@ -1,0 +1,21 @@
+uuid: 264d2d1c-b270-41d2-8232-9a3db5363fc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_column_width_large
+    - paragraphs.paragraphs_type.column
+  module:
+    - options
+id: paragraph.column.field_column_width_large
+field_name: field_column_width_large
+entity_type: paragraph
+bundle: column
+label: 'Column Width - Breakpoint Large'
+description: 'Select the width of this column at the Large breakpoint (tablet size).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,28 @@
+uuid: bcf7a713-2061-4a4f-bb6e-6c18339ba4d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author
+    - node.type.blog_post
+    - node.type.person
+id: node.blog_post.field_author
+field_name: field_author
+entity_type: node
+bundle: blog_post
+label: Author
+description: 'Start typing the name of a Person to set them as the author. Leave this field blank if you would like the author to be anonymous.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

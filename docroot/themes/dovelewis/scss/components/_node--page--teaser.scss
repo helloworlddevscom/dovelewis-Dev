@@ -1,0 +1,31 @@
+/**
+ * Basic Page node - View mode: Teaser.
+ *
+ * Inherits most styling from _node--teaser-with-image.scss.
+ */
+
+
+.node--type--page.node--view-mode--teaser {
+  height: 100%;
+
+  .teaser-cta {
+    margin-top: 3px;
+    margin-bottom: 0;
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .teaser-cta {
+      margin-top: 9px;
+    }
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .teaser-cta {
+      margin-top: 13px;
+    }
+  }
+}

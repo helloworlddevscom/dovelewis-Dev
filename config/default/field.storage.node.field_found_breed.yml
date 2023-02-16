@@ -1,0 +1,20 @@
+uuid: 5aa9384f-b73a-4e6e-8809-88de4d732cd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_found_breed
+field_name: field_found_breed
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,112 @@
+/**
+* Block - Footer Donate.
+*/
+
+
+.block-id--block-footerdonate {
+  width: 100%;
+  color: $color--white;
+  border: 4px solid;
+  border-color: $color--green;
+  padding: $spacing--small;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  &.display-on--desktop {
+    display: none;
+  }
+
+  .donation-image {
+    display: none;
+  }
+
+  h3 {
+    @include font-size--large;
+    color: $color--palegreen;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: $ff--idealsans;
+    font-weight: bold;
+    margin-bottom: $spacing--small;
+  }
+
+  p {
+    font-style: normal;
+    font-size: 1rem;
+  }
+
+  .button {
+    margin-bottom: 0;
+    border: 2px solid white;
+  }
+
+  .button--white--hollow {
+    display: none;
+    margin-bottom: 0;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    padding: 25px;
+    text-align: left;
+
+    h3 {
+      text-align: left;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    padding: $spacing--medium;
+
+    .block__content {
+      @include clearfix;
+    }
+
+    .donation-image {
+      display: block;
+      float: left;
+      width: 220px + 40px;
+      padding-right: 40px;
+    }
+
+    .field--name-body {
+      float: left;
+      width: calc(100% - (220px + #{40px}));
+    }
+
+    h3 {
+      font-size: rem-calc(25);
+    }
+
+    .button {
+      display: inline-block;
+      margin-right: $spacing--small;
+    }
+
+    .button--white--hollow {
+      display: inline-block;
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    padding: 50px;
+
+    .donation-image {
+      width: 240px + 50px;
+      padding-right: 50px;
+    }
+
+    .field--name-body {
+      width: calc(100% - (240px + #{50px}));
+    }
+  }
+}

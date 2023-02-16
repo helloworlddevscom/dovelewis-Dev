@@ -1,0 +1,15 @@
+uuid: 0633517d-6c23-45d9-8781-0dedeb5837de
+langcode: en
+status: true
+dependencies: {  }
+name: teaser_top_medium_1x
+label: teaser_top_medium_1x
+effects:
+  06e7521d-5936-4362-a1bc-864cae3b10eb:
+    uuid: 06e7521d-5936-4362-a1bc-864cae3b10eb
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 452
+      height: 339
+      anchor: center-center

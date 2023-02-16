@@ -1,0 +1,13 @@
+/**
+ * View: Teaser Menu.
+ */
+
+.view--teaser-menu {
+  .views-row {
+    @include column-margins;
+  }
+
+  .node {
+    @include teaser-background();
+  }
+}

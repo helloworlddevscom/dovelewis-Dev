@@ -1,0 +1,25 @@
+uuid: c4207dc3-6cd8-4154-9f31-b31b06021a2a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:422039cb-5960-4933-84c1-346496ebe4f1'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: donatetoday
+theme: dovelewis
+region: disabled
+weight: 0
+provider: null
+plugin: 'block_content:422039cb-5960-4933-84c1-346496ebe4f1'
+settings:
+  id: 'block_content:422039cb-5960-4933-84c1-346496ebe4f1'
+  label: 'Donate Today'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

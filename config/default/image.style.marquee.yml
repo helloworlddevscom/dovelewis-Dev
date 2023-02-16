@@ -1,0 +1,15 @@
+uuid: 5bcd63dc-846f-44a2-8804-fe7b04cff861
+langcode: en
+status: true
+dependencies: {  }
+name: marquee
+label: 'Marquee (1730x577)'
+effects:
+  33f83127-7bff-4d33-9c98-e75b339fa602:
+    uuid: 33f83127-7bff-4d33-9c98-e75b339fa602
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1730
+      height: 577
+      anchor: center-center

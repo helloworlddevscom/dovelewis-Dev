@@ -1,0 +1,38 @@
+uuid: d4e8d0a9-bcb2-41a5-aa1a-21e349f636f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_marquee_bg_image
+    - paragraphs.paragraphs_type.marquee
+  module:
+    - image
+id: paragraph.marquee.field_marquee_bg_image
+field_name: field_marquee_bg_image
+entity_type: paragraph
+bundle: marquee
+label: 'Background Image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: marquee-images
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

@@ -1,0 +1,113 @@
+name: dovelewis
+recipe: drupal8
+config:
+  framework: drupal8
+  php: "7.4"
+  via: nginx
+  database: mariadb
+  webroot: docroot
+  xdebug: false
+  config:
+    # Custom PHP config overrides.
+    php: lando/php-conf/php.ini
+proxy:
+  appserver_nginx:
+    # Add reliable domain. Requires adding to /etc/hosts on local machine to work.
+    - dovelewis.lando
+services:
+  appserver:
+    build_as_root:
+      # Configure PHP.
+      # For some reason php.ini keeps being copied as a directory.
+      # To fix this on rebuild where it's already happened, we need to remove the directory.
+      - rm -rf /app/lando/php-conf/php.ini
+      - rm -f /app/lando/php-conf/php.ini
+      - cp /app/lando/php-conf/default.php.ini /app/lando/php-conf/php.ini
+      # Create error logs.
+      - mkdir -p /app/lando/logs
+      - rm -f /app/lando/logs/php_errors.log
+      - touch /app/lando/logs/php_errors.log
+      - rm -f /app/lando/logs/xdebug.log
+      - touch /app/lando/logs/xdebug.log
+      # Install older version of Xdebug more compatible.
+
+      # Install Nano for debugging purposes.
+      - mkdir -p /var/lib/apt/lists/partial
+      - apt-get update && apt install nano
+      # Start developer out with reasonable Drupal local config.
+      - cp /app/docroot/sites/default/default.settings.local.php /app/docroot/sites/default/settings.local.php;
+      - cp /app/docroot/sites/default.development.services.yml /app/docroot/sites/development.services.yml
+    build:
+      # Copy Drush aliases into correct place in container.
+      - cp -r /app/lando/drush-aliases/.drush ~/
+      - cp -r /app/lando/drush-aliases/.acquia ~/
+    overrides:
+      environment:
+        # Support debugging Drush with Xdebug.
+        PHP_IDE_CONFIG: "serverName=appserver"
+        DRUSH_OPTIONS_URI: "https://dovelewis.lando"
+  database:
+    type: mariadb
+    portforward: 32812
+    creds:
+      database: dovelewis
+      user: dovelewis
+      password: dovelewis
+      host: database
+      port: 3306
+  node:
+    type: node:11
+    build:
+      - cd /app/docroot/themes/dovelewis && npm install
+      - cd /app/docroot/themes/dovelewis && npm rebuild node-sass
+      - cd /app/docroot/themes/dovelewis && gulp build
+    globals:
+      gulp-cli: latest
+  mailhog:
+    type: mailhog:v1.0.0
+    portforward: false
+    hogfrom:
+      - appserver
+tooling:
+  xdebug-on:
+    service: appserver
+    description: Enables xdebug
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disables xdebug
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+    user: root
+    # @TODO: Write scripts for Acquia Cloud.
+  #  db-pull:
+  #    service: appserver
+  #    description: Pulls database from Pantheon env and replaces your local database
+  #    cmd:
+  #      - /app/lando/scripts/db-pull.sh
+  #  files-pull:
+  #    service: appserver
+  #    description: Pulls files directory from Pantheon env and replaces your local files directory
+  #    cmd:
+  #      - /app/lando/scripts/files-pull.sh
+  #  env-deploy:
+  #    service: appserver
+  #    description: Deploys to test or live Pantheon env (deploys code, updates database, reverts features and clears caches)
+  #    cmd:
+  #      - /app/lando/scripts/env-deploy.sh
+  env-config-import:
+    service: appserver
+    description: Updates database, imports config and clears caches on a remote Acquia environment
+    cmd:
+      - /app/lando/scripts/env-config-import.sh
+  drupal-config-import:
+    service: appserver
+    description: Updates database, imports config and clears caches on your local Lando env
+    cmd:
+      - /app/lando/scripts/config-import.sh
+  npm:
+    service: node
+  node:
+    service: node
+  gulp:
+    service: node

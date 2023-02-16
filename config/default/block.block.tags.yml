@@ -1,0 +1,23 @@
+uuid: 691343df-419b-4410-b96f-13d09115d91c
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.tags
+  module:
+    - facets
+  theme:
+    - dovelewis
+id: tags
+theme: dovelewis
+region: disabled
+weight: 0
+provider: null
+plugin: 'facet_block:tags'
+settings:
+  id: 'facet_block:tags'
+  label: 'Filter results by...'
+  label_display: '0'
+  provider: facets
+  block_id: tags
+visibility: {  }

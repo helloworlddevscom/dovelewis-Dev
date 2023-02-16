@@ -1,0 +1,250 @@
+uuid: 7bed534e-1f1c-4329-b763-77b07c81d59d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_content_width
+    - field.field.node.page.field_display_secondary_menu
+    - field.field.node.page.field_display_teaser_menu
+    - field.field.node.page.field_header_text
+    - field.field.node.page.field_header_youtube_video
+    - field.field.node.page.field_hero_image
+    - field.field.node.page.field_landing_page
+    - field.field.node.page.field_node_content
+    - field.field.node.page.field_node_content_top
+    - field.field.node.page.field_sidebar_content
+    - field.field.node.page.field_tags
+    - field.field.node.page.field_teaser_cta
+    - field.field.node.page.field_teaser_image
+    - image.style.thumbnail
+    - node.type.page
+  module:
+    - field_group
+    - paragraphs
+    - path
+    - svg_image
+    - text
+third_party_settings:
+  field_group:
+    group_teaser_display:
+      children:
+        - field_teaser_image
+        - field_teaser_cta
+      label: 'Teaser View Mode'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        label: 'Teaser View Mode'
+        classes: ''
+        id: ''
+        open: false
+        required_fields: true
+    group_full_display:
+      children:
+        - field_display_secondary_menu
+        - field_display_teaser_menu
+      label: 'Secondary and Teaser Menu'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        label: 'Secondary and Teaser Menu'
+        classes: ''
+        id: ''
+        open: false
+        required_fields: true
+    group_header:
+      children:
+        - field_hero_image
+        - field_header_youtube_video
+        - field_header_text
+      label: Header
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: details
+      format_settings:
+        label: Header
+        classes: ''
+        id: ''
+        open: true
+        required_fields: true
+    group_site_footer:
+      children:
+        - field_landing_page
+      label: 'Site Footer'
+      region: content
+      parent_name: ''
+      weight: 10
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: false
+        required_fields: true
+_core:
+  default_config_hash: sb0qCkzU_8mNq29NehYAU8jCBXWPLeX0UN8sYFVGVcw
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 7
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_content_width:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_display_secondary_menu:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_display_teaser_menu:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_header_text:
+    type: string_textarea
+    weight: 8
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_header_youtube_video:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_hero_image:
+    type: image_image
+    weight: 5
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_landing_page:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_node_content:
+    type: entity_reference_paragraphs
+    weight: 9
+    region: content
+    settings:
+      title: Container
+      title_plural: Containers
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  field_node_content_top:
+    type: entity_reference_paragraphs
+    weight: 6
+    region: content
+    settings:
+      title: Container
+      title_plural: Containers
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  field_sidebar_content:
+    type: entity_reference_paragraphs
+    weight: 8
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_teaser_cta:
+    type: string_textfield
+    weight: 9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_teaser_image:
+    type: image_image
+    weight: 8
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  promote: true
+  sticky: true
+  uid: true

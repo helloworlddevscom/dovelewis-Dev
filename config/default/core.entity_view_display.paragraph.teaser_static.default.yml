@@ -1,0 +1,60 @@
+uuid: d7de5d71-e94e-4f7d-9303-d0ff2184efd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.teaser_static.field_image_position
+    - field.field.paragraph.teaser_static.field_image_width
+    - field.field.paragraph.teaser_static.field_teaser_cta
+    - field.field.paragraph.teaser_static.field_teaser_description
+    - field.field.paragraph.teaser_static.field_teaser_image
+    - field.field.paragraph.teaser_static.field_teaser_title
+    - paragraphs.paragraphs_type.teaser_static
+    - responsive_image.styles.teaser_top
+  module:
+    - link
+    - responsive_image
+id: paragraph.teaser_static.default
+targetEntityType: paragraph
+bundle: teaser_static
+mode: default
+content:
+  field_teaser_cta:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_teaser_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_teaser_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: teaser_top
+      image_link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_teaser_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_image_position: true
+  field_image_width: true

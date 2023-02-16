@@ -1,0 +1,40 @@
+uuid: cb66b5bc-43e4-4329-bb23-04ce6b8cd3ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.teaser.field_image_position
+    - field.field.paragraph.teaser.field_image_width
+    - field.field.paragraph.teaser.field_par_teaser_content
+    - paragraphs.paragraphs_type.teaser
+id: paragraph.teaser.default
+targetEntityType: paragraph
+bundle: teaser
+mode: default
+content:
+  field_image_position:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_width:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_par_teaser_content:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

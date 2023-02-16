@@ -1,0 +1,10 @@
+uuid: 51555fa7-72c8-4e52-ba92-d05db933939e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
+id: main
+label: 'Main Menu - Top Level Only'
+description: 'Only top level of main menu'
+locked: true

@@ -1,0 +1,4 @@
+exclude_styles: 1
+import_unmanaged_files: 1
+media_field: field_media_image
+import_folder: sites/default/files

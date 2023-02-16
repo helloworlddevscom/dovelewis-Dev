@@ -1,0 +1,26 @@
+uuid: 388e7931-8411-43c6-a1b4-be515273414d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lost_found_pet
+  module:
+    - node
+    - system
+    - toolbar
+id: csr
+label: CSR
+weight: -6
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access toolbar'
+  - 'create lost_found_pet content'
+  - 'delete any lost_found_pet content'
+  - 'delete own lost_found_pet content'
+  - 'edit own lost_found_pet content'
+  - 'revert lost_found_pet revisions'
+  - 'view lost_found_pet revisions'
+  - 'view the administration theme'

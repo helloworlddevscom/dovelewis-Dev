@@ -1,0 +1,20 @@
+uuid: 6669335a-c233-474e-b84b-60a886eff52e
+langcode: en
+status: true
+dependencies:
+  module:
+    - dovelewis_footer
+  theme:
+    - dovelewis
+id: footer_landing_contact
+theme: dovelewis
+region: footer_center_landing
+weight: 0
+provider: null
+plugin: footer_landing_contact
+settings:
+  id: footer_landing_contact
+  label: 'Contact Dove:'
+  label_display: visible
+  provider: dovelewis_footer
+visibility: {  }

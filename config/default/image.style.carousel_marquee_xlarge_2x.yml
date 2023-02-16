@@ -1,0 +1,15 @@
+uuid: 45113bc8-f5c5-4471-8f0f-9c6cdb4542ff
+langcode: en
+status: true
+dependencies: {  }
+name: carousel_marquee_xlarge_2x
+label: 'Carousel Marquee - XLarge @2x (Scale and Crop 3460×1710)'
+effects:
+  a897e9bf-7cb7-4683-adda-9d48e244eda7:
+    uuid: a897e9bf-7cb7-4683-adda-9d48e244eda7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 3460
+      height: 1710
+      anchor: center-center

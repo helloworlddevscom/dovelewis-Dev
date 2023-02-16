@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * Footer Social Links block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{%
+  set classes = [
+  'block',
+  'block-id--footer-social-links',
+  'block-type--' ~ configuration.provider|clean_class,
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h4{{ title_attributes.addClass('block__title') }}>{{ label }}</h4>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div class="block__content">
+      <ul class="social-links">
+        <li class="social-link facebook"><a href="http://www.facebook.com/fortheloveofdove" target="_blank">Facebook</a></li>
+        <li class="social-link twitter"><a href="http://www.twitter.com/DoveLewis" target="_blank">Twitter</a></li>
+        <li class="social-link instagram"><a href="http://www.instagram.com/dovelewispdx" target="_blank">Instagram</a></li>
+        <li class="social-link youtube"><a href="https://www.youtube.com/channel/UCE_x3mUxGG3hqeKsd4kJQaQ" target="_blank">Youtube</a></li>
+        <li class="social-link flickr"><a href="https://www.flickr.com/photos/dovelewis/" target="_blank">Flickr</a></li>
+        <li class="social-link linked-in"><a href="https://www.linkedin.com/company/dove-lewis-emergency-animal-hospital" target="_blank">LinkedIn</a></li>
+        <li class="social-link email"><a href="/contact">Email</a></li>
+      </ul>
+    </div>
+  {% endblock %}
+</div>

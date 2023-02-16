@@ -1,0 +1,9 @@
+uuid: d5d113ed-5c86-4ff8-a5d0-e7dbd849237b
+langcode: en
+status: true
+dependencies: {  }
+id: marquee
+label: Marquee
+icon_uuid: null
+description: 'Create static content and display it as a marquee.'
+behavior_plugins: {  }

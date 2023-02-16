@@ -1,0 +1,23 @@
+uuid: 16681a31-73e6-4698-96e8-e65fd29e2d74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_landing_page
+    - node.type.page
+id: node.page.field_landing_page
+field_name: field_landing_page
+entity_type: node
+bundle: page
+label: 'Landing Page'
+description: 'Toggles display of the alternate landing page site footer.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

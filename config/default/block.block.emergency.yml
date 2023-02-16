@@ -1,0 +1,25 @@
+uuid: ce0c4eb4-2a25-43c4-b701-6a91c6fbb0d2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:676be7db-4c57-488f-ab9b-d83978f2bfba'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: emergency
+theme: dovelewis
+region: disabled
+weight: 0
+provider: null
+plugin: 'block_content:676be7db-4c57-488f-ab9b-d83978f2bfba'
+settings:
+  id: 'block_content:676be7db-4c57-488f-ab9b-d83978f2bfba'
+  label: Emergency
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

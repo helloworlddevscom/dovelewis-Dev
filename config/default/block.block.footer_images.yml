@@ -1,0 +1,20 @@
+uuid: de824305-46e4-43d1-a8ac-088a9544919a
+langcode: en
+status: true
+dependencies:
+  module:
+    - dovelewis_footer
+  theme:
+    - dovelewis
+id: footer_images
+theme: dovelewis
+region: footer_left
+weight: -16
+provider: null
+plugin: footer_images
+settings:
+  id: footer_images
+  label: 'Footer - Images'
+  label_display: '0'
+  provider: dovelewis_footer
+visibility: {  }

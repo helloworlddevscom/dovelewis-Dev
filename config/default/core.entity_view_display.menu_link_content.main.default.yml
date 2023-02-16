@@ -1,0 +1,27 @@
+uuid: 96711819-9347-4745-a7eb-f74a0c829c8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.main.field_menu_short_label
+    - system.menu.main
+id: menu_link_content.main.default
+targetEntityType: menu_link_content
+bundle: main
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_menu_short_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

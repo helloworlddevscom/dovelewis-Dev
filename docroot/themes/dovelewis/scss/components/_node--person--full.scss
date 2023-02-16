@@ -1,0 +1,35 @@
+/**
+ * Person node - View Mode: Full.
+ *
+ * Inherits most styling from _node--full-with-sidebar.scss.
+ */
+
+
+.node--type--person.node--view-mode--full {
+  .node--full__sidebar {
+    .node {
+      @include teaser-background();
+      border-bottom: 2px solid darken($color--gray, 5%);
+
+      .person__label {
+        display: none;
+      }
+    }
+
+    .content-tile__content {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .node--full__sidebar {
+      .node {
+
+      }
+    }
+  }
+}

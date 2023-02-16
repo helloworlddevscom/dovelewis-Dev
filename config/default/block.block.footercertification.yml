@@ -1,0 +1,25 @@
+uuid: 9e629f2c-ab5a-423e-9faa-0900d8969690
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f9f06da4-d932-4aef-9f2a-098520e60d04'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: footercertification
+theme: dovelewis
+region: footer_right_bottom_left
+weight: -13
+provider: null
+plugin: 'block_content:f9f06da4-d932-4aef-9f2a-098520e60d04'
+settings:
+  id: 'block_content:f9f06da4-d932-4aef-9f2a-098520e60d04'
+  label: 'Certification & Accreditation:'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

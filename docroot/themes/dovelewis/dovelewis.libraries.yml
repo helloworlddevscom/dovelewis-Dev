@@ -1,0 +1,82 @@
+# Global CSS and JS.
+# Loaded on every page. Please only add files necessary for all pages here.
+global:
+  version: 1.x
+  css:
+    theme:
+      'https://cloud.typography.com/7352236/6856192/css/fonts.css': { type: external }
+      build/css/style.min.css: {}
+  js:
+    build/js/global.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+
+# Foundation Orbit Carousel.
+# To use, add in template: {{ attach_library('dovelewis/foundation-orbit') }}.
+# @TODO: We're trying to deprecate this because it's buggy AF. Please use slick-carousel instead.
+foundation-orbit:
+  js:
+    node_modules/foundation-sites/dist/js/plugins/foundation.core.min.js: {}
+    node_modules/foundation-sites/dist/js/plugins/foundation.util.keyboard.min.js: {}
+    node_modules/foundation-sites/dist/js/plugins/foundation.util.motion.min.js: {}
+    node_modules/foundation-sites/dist/js/plugins/foundation.util.timer.min.js: {}
+    node_modules/foundation-sites/dist/js/plugins/foundation.util.imageLoader.min.js: {}
+    node_modules/foundation-sites/dist/js/plugins/foundation.util.touch.min.js: {}
+    node_modules/foundation-sites/dist/js/plugins/foundation.orbit.min.js: {}
+
+# Foundation Accordion.
+# To use, add in template: {{ attach_library('dovelewis/foundation-accordion') }}.
+foundation-accordion:
+  js:
+    node_modules/foundation-sites/dist/js/plugins/foundation.core.min.js: {}
+    node_modules/foundation-sites/dist/js/plugins/foundation.util.keyboard.min.js: {}
+    node_modules/foundation-sites/dist/js/plugins/foundation.accordion.min.js: {}
+  dependencies:
+    - core/jquery
+
+# jQuery Modal.
+# https://jquerymodal.com/
+# To use, add in template: {{ attach_library('dovelewis/jquery-modal') }}.
+jquery-modal:
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js: { type: external }
+    build/js/jquery-modal-init.min.js: {}
+#    js/jquery-modal-init.js: {} # When done with active development, comment this, uncomment previous line.
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css: { type: external }
+  dependencies:
+    - core/jquery
+    - core/js-cookie # Include js-cookie library so we can determine whether to open modals based on cookies.
+
+# Slick Slider/Carousel.
+# https://kenwheeler.github.io/slick/
+# To use, add in template: {{ attach_library('dovelewis/slick-carousel') }}.
+slick-carousel:
+  js:
+    node_modules/slick-carousel/slick/slick.min.js: {}
+    build/js/slick-carousel-init.min.js: {}
+  css:
+    theme:
+      node_modules/slick-carousel/slick/slick.css: {}
+      node_modules/slick-carousel/slick/slick-theme.css: {}
+  dependencies:
+    - core/jquery
+
+# Styling overrides for Adminimal admin theme.
+# Loaded when using admin theme by oh_admin module.
+admin-styling:
+  version: 1.x
+  css:
+    theme:
+      build/css/style-admin.min.css: {}
+
+# Styling overrides for admin related UI on the frontend (dovelewis) theme.
+admin-styling-frontend:
+  version: 1.x
+  css:
+    theme:
+      build/css/style-admin-frontend.min.css: {}

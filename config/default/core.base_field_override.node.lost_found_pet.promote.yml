@@ -1,0 +1,22 @@
+uuid: 2a603297-e649-4223-b188-e647132928cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lost_found_pet
+id: node.lost_found_pet.promote
+field_name: promote
+entity_type: node
+bundle: lost_found_pet
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

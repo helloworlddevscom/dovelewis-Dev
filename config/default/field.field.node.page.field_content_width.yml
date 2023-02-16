@@ -1,0 +1,23 @@
+uuid: 395ea8c8-c523-4477-b634-dfec26418e2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_width
+    - node.type.page
+  module:
+    - options
+id: node.page.field_content_width
+field_name: field_content_width
+entity_type: node
+bundle: page
+label: 'Content Width'
+description: 'Sets the display width for the Body, Title and Header Text fields. This setting is ignored if Sidebar Content field is not empty.'
+required: true
+translatable: false
+default_value:
+  -
+    value: site
+default_value_callback: ''
+settings: {  }
+field_type: list_string

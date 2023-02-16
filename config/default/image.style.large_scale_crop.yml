@@ -1,0 +1,15 @@
+uuid: 3d038ea1-5846-4274-b7ed-09a9d13d5ff9
+langcode: en
+status: true
+dependencies: {  }
+name: large_scale_crop
+label: 'Large (Scale & Crop 480 x 480)'
+effects:
+  49a49c3e-5a8c-43e3-9eb7-894252a05f3b:
+    uuid: 49a49c3e-5a8c-43e3-9eb7-894252a05f3b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 480
+      height: 480
+      anchor: center-center

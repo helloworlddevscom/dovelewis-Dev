@@ -1,0 +1,9 @@
+uuid: 4ab4c579-e949-4226-b764-a4e2f58c3b55
+langcode: en
+status: true
+dependencies: {  }
+id: teaser_static
+label: Teaser
+icon_uuid: null
+description: 'Create static content and display it in a "teaser" format, with an image with text underneath or to the right and a call to action button.'
+behavior_plugins: {  }

@@ -1,0 +1,144 @@
+/**
+ * Lost Found Pet node - View mode: Full.
+ */
+
+.node--type--lost-found-pet.node--view-mode--full {
+
+  .orbit-slider {
+
+  }
+
+  .found-pet__body {
+    padding: $spacing--xsmall;
+    margin-bottom: $spacing--medium;
+    background-color: $color--white;
+    @include box-shadow;
+    border-radius: 5px;
+
+    .field {
+      margin-bottom: $spacing--xsmall;
+    }
+
+    .field__label {
+      position: relative;
+      @include text-style--label--small;
+      color: $color--lightgreen;
+    }
+
+    .field--name-field-found-breed,
+    .field--name-field-found-age,
+    .field--name-field-found-sex,
+    .field--name-field-found-size,
+    .field--name-field-found-weight,
+    .field--name-field-found-date {
+      .field__item {
+        font-size: rem-calc(18);
+        font-weight: bold;
+      }
+    }
+
+    .field--name-body,
+    .field--name-field-found-near {
+      padding: $spacing--small 0;
+      border-top: 1px solid $color--gray6;
+    }
+
+    .field--name-body {
+      margin: $spacing--small 0 0 0;
+
+      p:last-child {
+        margin: 0;
+      }
+    }
+
+    .field--name-field-found-near {
+      padding-bottom: 0;
+      margin-bottom: 0;
+
+      .field__item {
+        @include font-size--paragraph;
+      }
+
+      .found-near__text {
+        display: block;
+        margin-bottom: $spacing--xsmall;
+      }
+    }
+
+  }
+
+
+  // Sidebar
+  // -----
+
+  // "Claim your pet" block
+  .block-id--block-found-pet-claim {
+    .content-tile__header {
+      padding-left: 90px;
+      background-image: url('../../images/icons/lost-pet.svg');
+      background-size: 35px;
+      background-position: 35px center;
+      background-repeat: no-repeat;
+    }
+
+    .tracking-info {
+      margin: $spacing--small 0 0;
+    }
+
+    .tracking-number {
+      font-family: $ff--sentinel;
+      font-weight: bold;
+    }
+  }
+
+
+  // Found Pets view
+  // ----
+
+  .view--found-pets {
+    .found-pets__info {
+      color: $color--white;
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .found-pet__body {
+      .field {
+        display: inline-block;
+        width: 50%;
+        padding-right: $spacing--small;
+        white-space: normal;
+
+        &:nth-child(even) {
+          margin-left: -4px;
+        }
+      }
+
+      .field--name-body,
+      .field--name-field-found-near {
+        display: block;
+        width: 100%;
+        padding-right: 0;
+        margin-left: 0;
+
+        &:nth-child(even) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .found-pet__body {
+      padding: $spacing--medium;
+      margin-bottom: $spacing--large;
+    }
+  }
+}
+

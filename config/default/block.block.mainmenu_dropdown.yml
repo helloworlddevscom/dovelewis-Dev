@@ -1,0 +1,25 @@
+uuid: 11fb4bcd-65d5-44b2-87c8-1600dcfd9cc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main-menu
+  module:
+    - system
+  theme:
+    - dovelewis
+id: mainmenu_dropdown
+theme: dovelewis
+region: header_dropdown
+weight: 0
+provider: null
+plugin: 'system_menu_block:main-menu'
+settings:
+  id: 'system_menu_block:main-menu'
+  label: 'Main Menu - Dropdown'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

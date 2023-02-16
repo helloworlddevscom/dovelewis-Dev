@@ -1,0 +1,22 @@
+/**
+ * Global layout related styling that effects most of the site.
+ */
+
+
+// Apply Foundation .grid-container class to main content region
+// for non-node pages.
+body.default-layout {
+  .main-content {
+    @extend .grid-container;
+  }
+
+  // Apply some default padding to content and title blocks.
+  .block-id--block-dovelewis-page-title {
+    @include container-padding('large', false);
+  }
+
+  .block-id--block-dovelewis-content {
+    @include container-bottom-padding('xlarge', false);
+  }
+
+}

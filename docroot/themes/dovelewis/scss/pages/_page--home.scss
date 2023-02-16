@@ -1,0 +1,151 @@
+/**
+ * Styling specific to the home page.
+ */
+
+.path-frontpage {
+
+  // @TODO Decide out how to hide page titles through config.
+  .node--view-mode--full > .node--full__header {
+    > .header__text {
+      display: none;
+    }
+  }
+
+  // Secondary menu
+  .secondary-menu {
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      display: none;
+    }
+  }
+
+
+  // "Do You Need to Come in?"
+  // -----
+
+  .paragraph--id--256 {
+    h2 {
+      color: $color--orange;
+    }
+
+    .button, .button--hollow {
+      margin-bottom: 0;
+    }
+
+    // MEDIUM & BELOW
+
+    @include breakpoint(medium down) {
+      padding-left: $spacing--small;
+      padding-right: $spacing--small;
+
+      h3 {
+        @include h3--mobile-large;
+      }
+    }
+
+    // LARGE
+
+    @include breakpoint(large only) {
+      max-width: 477px;
+      padding: 0;
+      margin: 0 auto;
+    }
+  }
+
+
+  // "For Veterinarians"
+  // -----
+
+  .paragraph--id--321 {
+    @extend .large-order-1;
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      h2 {
+        margin-bottom: 57px;
+      }
+    }
+  }
+
+  // "atdove.org"
+  .paragraph--id--346 {
+    @extend .large-order-2;
+    @extend .xlarge-order-3;
+  }
+
+  .paragraph--id--341 {
+    p {
+      @include font-size--paragraph--small;
+
+      &:first-child {
+        margin-bottom: 33px;
+      }
+    }
+  }
+
+  // "Quick Links"
+  .paragraph--id--336 {
+    @extend .large-order-3;
+    @extend .xlarge-order-2;
+  }
+
+  .paragraph--id--331 {
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      margin-top: $spacing--large;
+    }
+  }
+
+
+  // "Our Expert Team"
+  // -----
+
+  .paragraph--id--361 {
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      width: 36.2%;
+    }
+  }
+
+  .paragraph--id--376 {
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      width: 56.3%;
+    }
+  }
+
+
+  // "Have Questions?"
+  // -----
+
+  .paragraph--id--286.xlarge-5 {
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      // Because the narrower Container width
+      // gives us a different grid system inside of the Container,
+      // we have to set the max-width here to align with the main site grid
+      // as the designer expects it to.
+      width: 36.2%;;
+    }
+  }
+
+  .paragraph--id--296 {
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      width: 56.3%;
+    }
+  }
+}

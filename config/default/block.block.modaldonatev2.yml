@@ -1,0 +1,25 @@
+uuid: 69fbb8d9-34c6-4675-8d63-cfc3bbc67624
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:modal:cb8d0e9a-c336-4829-aae7-12c580c98b67'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: modaldonatev2
+theme: dovelewis
+region: modals
+weight: 0
+provider: null
+plugin: 'block_content:cb8d0e9a-c336-4829-aae7-12c580c98b67'
+settings:
+  id: 'block_content:cb8d0e9a-c336-4829-aae7-12c580c98b67'
+  label: 'Modal - Donate V2'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

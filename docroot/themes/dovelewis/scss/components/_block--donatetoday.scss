@@ -1,0 +1,81 @@
+/**
+ * DoveLewis Tax ID block.
+ */
+
+.block-id--donatetoday {
+  background-color: $color--white;
+
+  .block__inner {
+    min-height: 160px;
+    padding: 37px 0;
+    background-color: $color--palegreen;
+  }
+
+  .animal-image {
+    height: 220px;
+
+    img {
+      height: 100%;
+      display: none;
+    }
+
+    img.show {
+      display: block;
+    }
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.2;
+    font-size: rem-calc(25);
+    font-weight: 600;
+    font-family: $ff--sentinel;
+    color: $color--darkergreen;
+  }
+
+  .donate-button {
+    padding: $spacing--xsmall 0 0 0;
+  }
+
+  .button {
+    margin: 0;
+    border: 2px solid white;
+
+    &:hover,
+    &:focus {
+      border-color: $color--white;
+    }
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    p {
+      font-size: rem-calc(35);
+    }
+
+    .donate-button {
+      padding: 12px 0 0 0;
+    }
+
+    .button {
+      margin: 0;
+      padding: 21px;
+      font-size: rem-calc(19);
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    position: relative;
+    padding-top: 120px;
+
+    .animal-image {
+      position: absolute;
+      bottom: 0;
+      height: 233px;
+    }
+  }
+}

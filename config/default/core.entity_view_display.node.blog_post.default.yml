@@ -1,0 +1,87 @@
+uuid: 70a615ea-7105-48f2-9289-53bc952f4e5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_author
+    - field.field.node.blog_post.field_blog_post_image
+    - field.field.node.blog_post.field_date
+    - field.field.node.blog_post.field_hero_image
+    - field.field.node.blog_post.field_post_category
+    - field.field.node.blog_post.field_sidebar_content
+    - field.field.node.blog_post.field_tags
+    - field.field.node.blog_post.field_wellness_tip_category
+    - image.style.hero_image
+    - node.type.blog_post
+  module:
+    - datetime
+    - entity_reference_revisions
+    - svg_image
+    - text
+    - user
+id: node.blog_post.default
+targetEntityType: node
+bundle: blog_post
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_author:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short_day_month_year
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_hero_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: hero_image
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_sidebar_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_wellness_tip_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  field_blog_post_image: true
+  field_post_category: true
+  field_tags: true
+  langcode: true
+  links: true

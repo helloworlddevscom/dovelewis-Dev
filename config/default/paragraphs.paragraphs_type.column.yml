@@ -1,0 +1,9 @@
+uuid: 047819d4-29a6-44ec-b9d3-a39c0dbf4514
+langcode: en
+status: true
+dependencies: {  }
+id: column
+label: Column
+icon_uuid: null
+description: 'A layout Column that goes inside of a layout Container and uses the Foundation grid system.'
+behavior_plugins: {  }

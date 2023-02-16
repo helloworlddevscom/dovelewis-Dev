@@ -1,0 +1,53 @@
+/**
+ * Shared styling for instances of the Search form
+ * in various blocks/views.
+ */
+
+
+@mixin search-form() {
+  form .form--inline {
+    @include clearfix;
+    width: 100%;
+
+    .form-item-search {
+      float: left;
+      width: calc(100% - 120px);
+      margin: 0;
+
+      input {
+        height: 47px;
+        margin: 0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .form-actions {
+    float: left;
+    clear: none;
+    margin: 0;
+
+    .form-submit {
+      width: 120px;
+      height: 47px;
+      margin: 0;
+      padding-left: 40px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background-image: url('../../images/icons/search-white.svg');
+      background-size: 17px;
+      background-repeat: no-repeat;
+      background-position: 15px center;
+    }
+  }
+}
+
+.block-id--block-search-form,
+.block-id--block-search-form-mobile,
+.view-display-id--block_search {
+  @include search-form;
+}

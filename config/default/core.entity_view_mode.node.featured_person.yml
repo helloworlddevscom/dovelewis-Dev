@@ -1,0 +1,10 @@
+uuid: f45beba7-6862-496b-a37e-ba723bca62e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.featured_person
+label: 'Featured Person'
+targetEntityType: node
+cache: true

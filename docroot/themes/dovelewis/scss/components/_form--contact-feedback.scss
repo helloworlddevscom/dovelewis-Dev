@@ -1,0 +1,73 @@
+/**
+ * Contact Feedback form.
+ */
+
+.contact-message-feedback-form {
+  max-width: 960px;
+  margin: 0 auto;
+
+  #edit-preview {
+    display: none;
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+
+    .field--name-field-subject {
+      width: 50%;
+      padding-right: $spacing--small;
+    }
+
+    .field--name-field-name,
+    .field--name-field-name-last {
+      .form-item {
+        margin: 0;
+      }
+    }
+
+    .field--name-field-name,
+    .field--name-field-name-last,
+    .field--name-field-email,
+    .field--name-field-phone {
+      float: left;
+      display: block;
+      width: 50%;
+    }
+
+    .field--name-field-name,
+    .field--name-field-email {
+      padding-right: $spacing--small;
+    }
+
+    .field--name-field-name-last,
+    .field--name-field-phone {
+      padding-left: $spacing--small;
+    }
+
+    .field--name-field-email {
+      clear: left;
+    }
+
+    .field--name-field-name-last {
+      padding-top: 34px;
+
+      label {
+        display: none;
+      }
+    }
+
+    .field--name-field-feedback {
+
+      clear: both;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    //flex-flow: row wrap;
+    //justify-content: space-between;
+  }
+}

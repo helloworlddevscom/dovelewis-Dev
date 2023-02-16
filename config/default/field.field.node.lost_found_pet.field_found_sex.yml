@@ -1,0 +1,23 @@
+uuid: 8113ea13-0d77-4078-86bd-23e9b6defb45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_found_sex
+    - node.type.lost_found_pet
+  module:
+    - options
+id: node.lost_found_pet.field_found_sex
+field_name: field_found_sex
+entity_type: node
+bundle: lost_found_pet
+label: Sex
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: male
+default_value_callback: ''
+settings: {  }
+field_type: list_string

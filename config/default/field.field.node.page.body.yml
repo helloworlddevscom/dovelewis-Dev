@@ -1,0 +1,25 @@
+uuid: e357d2d8-9df3-44b8-9288-17c34b4ccb11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.page
+  module:
+    - text
+_core:
+  default_config_hash: rUop-8b6hvxxDYbv-KobTfNIBNbPY9qOPl8f6kBNSpw
+id: node.page.body
+field_name: body
+entity_type: node
+bundle: page
+label: Body
+description: 'Use this field for the main text of the page.<br>You can edit the Summary above to specify what is shown when this page is displayed in Teaser view mode.<br>You may need to leave this field blank in order to achieve a certain layout.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

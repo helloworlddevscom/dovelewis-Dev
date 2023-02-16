@@ -1,0 +1,38 @@
+uuid: 54079814-cbf4-4412-9494-54b5319e2338
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_thumbnail
+    - node.type.resource_file
+  module:
+    - image
+id: node.resource_file.field_resource_thumbnail
+field_name: field_resource_thumbnail
+entity_type: node
+bundle: resource_file
+label: 'Resource Thumbnail'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: resource-thumbnails
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: 8756ac32-4a19-47fc-8d79-8d9531c63215
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

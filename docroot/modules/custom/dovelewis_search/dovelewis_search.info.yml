@@ -1,0 +1,4 @@
+name: Dove Lewis Search
+description: Search related code.
+core_version_requirement: ^8 || ^9
+type: module

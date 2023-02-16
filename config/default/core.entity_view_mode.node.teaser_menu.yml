@@ -1,0 +1,10 @@
+uuid: ce0af0f7-879c-4420-8cf7-95ef955906e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_menu
+label: 'Teaser Menu'
+targetEntityType: node
+cache: true

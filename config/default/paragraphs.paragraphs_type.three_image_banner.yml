@@ -1,0 +1,9 @@
+uuid: 3f3e9509-bdc4-44fa-975a-d6ed46398e31
+langcode: en
+status: true
+dependencies: {  }
+id: three_image_banner
+label: 'Three Image Banner'
+icon_uuid: null
+description: 'Field to upload images to Basic Node Pages'
+behavior_plugins: {  }

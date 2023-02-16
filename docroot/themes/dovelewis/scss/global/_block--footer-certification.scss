@@ -1,0 +1,69 @@
+/**
+ * Block - Footer Certification.
+ */
+
+.block-id--block-footercertification {
+  color: $color--gray6;
+
+  h5 {
+    @include font-size--large;
+    text-align: center;
+    font-weight: bold;
+    font-family: $ff--idealsans;
+    color: $color--palegreen;
+  }
+
+  p {
+    text-align: left;
+    font-style: normal;
+    margin-bottom: auto;
+  }
+
+  a {
+    color: $color--gray6;
+
+    &:hover,
+    &:focus {
+      color: $color--green;
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    h5 {
+      text-align: left;
+    }
+
+    p {
+      font-size: .975rem;
+    }
+  }
+
+  // XLARGE
+
+  // LARGE
+
+  //@include breakpoint(large) {
+  //
+  //  div {
+  //    display: inline-block;
+  //  }
+  //
+  //  h4 {
+  //    font-size: 1.125em;
+  //    text-align: left;
+  //    line-height: 2em;
+  //  }
+  //
+  //  h5 {
+  //    text-align: left;
+  //  }
+  //
+  //  p {
+  //    font-size: 1em;
+  //  }
+  //}
+}
+

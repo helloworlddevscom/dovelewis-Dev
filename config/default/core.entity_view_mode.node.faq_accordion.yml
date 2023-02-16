@@ -1,0 +1,10 @@
+uuid: 55041469-1066-42af-ac45-66229887c440
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.faq_accordion
+label: 'FAQ Accordion'
+targetEntityType: node
+cache: true

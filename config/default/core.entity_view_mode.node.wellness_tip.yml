@@ -1,0 +1,10 @@
+uuid: cf00ce7c-0c13-4a57-b012-252ef5ae2cce
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.wellness_tip
+label: 'Wellness Tip'
+targetEntityType: node
+cache: true

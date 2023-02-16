@@ -1,0 +1,20 @@
+uuid: 866d30eb-6580-4b0d-bf56-ef51be5b4c13
+langcode: en
+status: true
+dependencies:
+  module:
+    - dovelewis_footer
+  theme:
+    - dovelewis
+id: footersociallinks
+theme: dovelewis
+region: footer_left
+weight: -18
+provider: null
+plugin: footer_social_links
+settings:
+  id: footer_social_links
+  label: 'Let''s Connect:'
+  label_display: visible
+  provider: dovelewis_footer
+visibility: {  }

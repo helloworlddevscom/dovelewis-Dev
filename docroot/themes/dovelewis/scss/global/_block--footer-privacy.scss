@@ -1,0 +1,54 @@
+/**
+ * Block - Footer privacy.
+ */
+
+
+.block-id--footer-privacy {
+  color: $color--gray1;
+  text-decoration: none;
+  margin: 25px 0 $spacing--medium 0;
+  text-align: center;
+
+  a {
+    color: $color--gray1;
+
+    &:hover,
+    &:focus {
+      color: $color--green;
+      text-decoration: underline;
+    }
+  }
+
+  .privacy-links {
+    margin-bottom: .2rem;
+
+    a {
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $color--green;
+        text-decoration: underline;
+      }
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    text-align: left;
+
+    .copyright {
+      font-size: .9em;
+    }
+
+    .designed-by {
+      font-size: .9rem;
+
+      a {
+        font-size: .9rem;
+      }
+    }
+  }
+}

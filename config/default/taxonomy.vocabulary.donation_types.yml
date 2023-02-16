@@ -1,0 +1,8 @@
+uuid: 14d13e83-7e7d-4d1e-bc48-0ad8b2af90b1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Donation Types'
+vid: donation_types
+description: ''
+weight: 0

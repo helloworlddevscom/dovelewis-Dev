@@ -1,0 +1,106 @@
+uuid: 5e95f700-957a-4146-b91f-4517fa362549
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wysiwyg.field_bg_color
+    - field.field.paragraph.wysiwyg.field_content_tile_bg_image
+    - field.field.paragraph.wysiwyg.field_content_tile_bor_color
+    - field.field.paragraph.wysiwyg.field_content_tile_h_bg_color
+    - field.field.paragraph.wysiwyg.field_content_tile_subtitle
+    - field.field.paragraph.wysiwyg.field_content_tile_title
+    - field.field.paragraph.wysiwyg.field_par_rte_content
+    - field.field.paragraph.wysiwyg.field_wysiwyg_padding
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - field_group
+    - svg_image
+    - text
+third_party_settings:
+  field_group:
+    group_wysiwyg_styles:
+      children:
+        - field_content_tile_title
+        - field_content_tile_subtitle
+        - field_wysiwyg_padding
+        - field_bg_color
+        - field_content_tile_h_bg_color
+        - field_content_tile_bg_image
+        - field_content_tile_bor_color
+      label: 'Content Tile Styles'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        label: 'Content Tile Styles'
+        classes: ''
+        id: ''
+        open: false
+        required_fields: false
+id: paragraph.wysiwyg.default
+targetEntityType: paragraph
+bundle: wysiwyg
+mode: default
+content:
+  field_bg_color:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_content_tile_bg_image:
+    type: image_image
+    weight: 6
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_content_tile_bor_color:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_content_tile_h_bg_color:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_content_tile_subtitle:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_content_tile_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_par_rte_content:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_wysiwyg_padding:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

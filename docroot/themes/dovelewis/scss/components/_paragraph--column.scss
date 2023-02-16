@@ -1,0 +1,95 @@
+/**
+ * Paragraph - Column.
+ */
+
+
+.paragraph--type--column {
+  @include column-margins();
+
+  &.display-on--desktop,
+  &.display-on--tablet,
+  &.display-on--tablet-desktop {
+    display: none;
+  }
+
+  // Padding
+  &.padding--small {
+    padding: $spacing--small;
+  }
+
+  &.padding--medium {
+    padding: $spacing--small;
+  }
+
+  &.padding--large {
+    padding: $spacing--medium;
+  }
+
+  // Background colors
+  &.bg-color--gray {
+    background-color: $color--gray;
+  }
+
+  &.bg-color--white {
+    background-color: $white;
+  }
+
+  // Position
+  &.column-pos--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    &.display-on--mobile {
+      display: none;
+    }
+
+    &.display-on--tablet,
+    &.display-on--tablet-desktop {
+      display: block;
+    }
+
+    // Padding
+    &.padding--small {
+      padding: $spacing--small;
+    }
+
+    &.padding--medium {
+      padding: $spacing--medium;
+    }
+
+    &.padding--large {
+      padding: $spacing--large;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    &.display-on--mobile,
+    &.display-on--tablet {
+      display: none;
+    }
+
+    &.display-on--desktop {
+      display: block;
+    }
+  }
+}
+
+// If there is only one Column inside a Container with no bottom padding, remove Column bottom margin.
+.paragraph--type--container.bottom-padding--none > .container__inner > .container__content > .grid-x {
+  > .paragraph--type--column:first-child:last-child {
+    margin-bottom: 0;
+  }
+
+  // When logged in, account for Contextual menu link.
+  > .contextual + .paragraph--type--column:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,10 @@
+uuid: 6e958101-3f45-4544-9957-17b4cc6af724
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.section_head
+label: 'Section Head'
+targetEntityType: menu_link_content
+cache: true

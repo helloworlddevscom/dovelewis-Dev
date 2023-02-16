@@ -1,0 +1,25 @@
+uuid: 53d5d24d-d220-4681-9911-165dfdb34f35
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2077c8b3-cc6b-4f47-b101-58b67e2ce0a7'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: footerdonate
+theme: dovelewis
+region: footer_right_top
+weight: -13
+provider: null
+plugin: 'block_content:2077c8b3-cc6b-4f47-b101-58b67e2ce0a7'
+settings:
+  id: 'block_content:2077c8b3-cc6b-4f47-b101-58b67e2ce0a7'
+  label: 'Footer - Donate'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,63 @@
+uuid: 4fdb5654-815d-44cf-93ff-a53759c5ecd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.resource_file.body
+    - field.field.node.resource_file.field_resource_cta
+    - field.field.node.resource_file.field_resource_details
+    - field.field.node.resource_file.field_resource_file
+    - field.field.node.resource_file.field_resource_thumbnail
+    - image.style.resource_file_thumbnail
+    - node.type.resource_file
+  module:
+    - file
+    - svg_image
+    - user
+id: node.resource_file.teaser
+targetEntityType: node
+bundle: resource_file
+mode: teaser
+content:
+  field_resource_cta:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_resource_details:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_resource_file:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_resource_thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: resource_file_thumbnail
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  langcode: true
+  links: true

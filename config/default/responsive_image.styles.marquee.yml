@@ -1,0 +1,68 @@
+uuid: f42b0d85-6c16-4103-8ed8-254610e0c332
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.marquee_large_1x
+    - image.style.marquee_large_2x
+    - image.style.marquee_medium_x1
+    - image.style.marquee_medium_x2
+    - image.style.marquee_small_x1
+    - image.style.marquee_small_x2
+  theme:
+    - dovelewis
+id: marquee
+label: Marquee
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: marquee_large_1x
+    breakpoint_id: dovelewis.xxlarge
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: marquee_large_2x
+    breakpoint_id: dovelewis.xxlarge
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: marquee_large_1x
+    breakpoint_id: dovelewis.xlarge
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: marquee_large_2x
+    breakpoint_id: dovelewis.xlarge
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: marquee_large_1x
+    breakpoint_id: dovelewis.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: marquee_large_2x
+    breakpoint_id: dovelewis.large
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: marquee_medium_x1
+    breakpoint_id: dovelewis.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: marquee_medium_x2
+    breakpoint_id: dovelewis.medium
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: marquee_small_x1
+    breakpoint_id: dovelewis.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: marquee_small_x2
+    breakpoint_id: dovelewis.small
+    multiplier: 2x
+breakpoint_group: dovelewis
+fallback_image_style: marquee_small_x1

@@ -1,0 +1,190 @@
+// Import custom variables
+@import "config/variables";
+
+
+// Import Foundation and Foundation components
+// -----
+
+// Import our Foundation variables overrides
+@import "config/foundation-settings";
+
+// Import Foundation
+@import 'foundation';
+
+// Global styles
+@include foundation-global-styles
+@include foundation-forms
+@include foundation-typography
+
+// Grids (choose one)
+@include foundation-xy-grid-classes
+// @include foundation-grid;
+// @include foundation-flex-grid;
+
+// Generic components
+@include foundation-button;
+//@include foundation-button-group;
+//@include foundation-close-button;
+//@include foundation-label;
+//@include foundation-progress-bar;
+//@include foundation-slider;
+//@include foundation-switch;
+@include foundation-table
+// Basic components
+//@include foundation-badge;
+//@include foundation-breadcrumbs;
+//@include foundation-callout;
+//@include foundation-card;
+//@include foundation-dropdown;
+@include foundation-pagination
+@include foundation-tooltip
+
+// Containers
+@include foundation-accordion;
+//@include foundation-media-object;
+@include foundation-orbit;
+//@include foundation-responsive-embed;
+@include foundation-tabs;
+//@include foundation-thumbnail;
+// Menu-based containers
+@include foundation-menu;
+//@include foundation-menu-icon;
+//@include foundation-accordion-menu;
+//@include foundation-drilldown-menu;
+//@include foundation-dropdown-menu;
+
+// Layout components
+//@include foundation-off-canvas;
+//@include foundation-reveal;
+//@include foundation-sticky;
+//@include foundation-title-bar;
+//@include foundation-top-bar;
+
+// Helpers
+@include foundation-float-classes
+@include foundation-flex-classes
+@include foundation-visibility-classes
+// @include foundation-prototype-classes;
+
+@import "../node_modules/motion-ui/motion-ui";
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+
+// Custom mixins
+// ----
+
+@import "config/helpers";
+
+
+// Base styling
+// ----
+
+@import "base/fonts";
+@import "base/buttons-links";
+@import "base/typography";
+@import "base/base";
+@import "base/grid";
+@import "base/form";
+
+
+// Global components or layout
+// ----
+
+@import "global/header--mobile-style";
+@import "global/header--desktop-style";
+@import "global/secondary-main-menu";
+@import "global/layout";
+@import "global/footer";
+@import "global/region--modals";
+@import "global/block--footer-emergency";
+@import "global/block--footer-donate";
+@import "global/block--footer-certification";
+@import "global/block--footer-menu";
+@import "global/block--footer-privacy";
+@import "global/block--footer-sociallinks";
+@import "global/block--footer-accreditation";
+@import "global/block--footer-landing-mission-statement";
+@import "global/block--footer-landing-contact";
+@import "global/block--footer-menu-landing";
+
+
+// Components
+// ----
+
+// Misc.
+@import "components/search-form";
+@import "components/breadcrumbs";
+@import "components/content-tile";
+@import "components/pager";
+@import "components/form--contact-feedback";
+@import "components/accordion";
+@import "components/orbit";
+@import "components/slick";
+@import "components/jquery-modal";
+@import "components/emergency-modal";
+
+// Content types/nodes
+@import "components/node--full-with-sidebar";
+@import "components/node--teaser-with-image";
+@import "components/node--page--full";
+@import "components/node--page--teaser";
+@import "components/node--person--full";
+@import "components/node--person--featured-person";
+@import "components/node--person--teaser";
+@import "components/node--blog-post--full";
+@import "components/node--blog-post--teaser";
+@import "components/node--blog-post--wellness-tip";
+@import "components/node--blog-post--blog-landing";
+@import "components/node--event--teaser";
+@import "components/node--event--full";
+@import "components/node--event--event-landing";
+@import "components/node--event--event-landing-top";
+@import "components/node--lost-found-pet--full";
+@import "components/node--lost-found-pet--teaser";
+@import "components/node--resource-file--teaser";
+@import "components/node--donation-case-study--featured-donation-case-study";
+
+// Paragraphs
+@import "components/paragraph--container";
+@import "components/paragraph--column";
+@import "components/paragraph--marquee";
+@import "components/paragraph--teaser";
+@import "components/paragraph--contact";
+@import "components/paragraph--faq-qa";
+@import "components/paragraph--resource-file";
+@import "components/paragraph--teaser-static";
+@import "components/paragraph--three-image-banner";
+@import "components/paragraph--carousel-marquee";
+
+// Block types
+@import "components/block-type--modal";
+
+// Blocks
+@import "components/block--local-tasks";
+@import "components/block--constant-contact-form";
+@import "components/block--dovelewis-taxid";
+@import "components/block--donatetoday";
+@import "components/block--contact-emergency";
+@import "components/block--mailchimp-form";
+
+// Views
+@import "components/view--teaser-menu";
+@import "components/view--doctors";
+@import "components/view--pet-health-wellness-tips";
+@import "components/view--blog-landing";
+@import "components/view--upcoming-events";
+@import "components/view--found-pets";
+@import "components/view--recent-blog-posts";
+@import "components/view--featured-donation-case-studies";
+
+
+// Specific pages
+// ----
+
+@import "pages/page--home";
+@import "pages/page--search";
+@import "pages/page--faqs";
+@import "pages/page--donation";
+@import "pages/page--404";
+@import "pages/page--emergency";

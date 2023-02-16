@@ -1,0 +1,15 @@
+uuid: df179fc0-4fcf-4e16-b623-4910c293ea22
+langcode: en
+status: true
+dependencies: {  }
+name: resource_file_thumbnail
+label: 'Resource File Thumbnail (Scale & Crop 150x190)'
+effects:
+  3b2e3c25-8be9-462c-b7cf-d570d8a11894:
+    uuid: 3b2e3c25-8be9-462c-b7cf-d570d8a11894
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 150
+      height: 190
+      anchor: center-center

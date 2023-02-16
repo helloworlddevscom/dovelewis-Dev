@@ -1,0 +1,28 @@
+uuid: 5733b6ed-3943-4440-8fc5-1cc7865ca136
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.faq_accordion
+    - field.field.node.faq.field_faq_answer
+    - field.field.node.faq.field_faq_catagory
+    - node.type.faq
+  module:
+    - text
+    - user
+id: node.faq.faq_accordion
+targetEntityType: node
+bundle: faq
+mode: faq_accordion
+content:
+  field_faq_answer:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_faq_catagory: true
+  langcode: true
+  links: true

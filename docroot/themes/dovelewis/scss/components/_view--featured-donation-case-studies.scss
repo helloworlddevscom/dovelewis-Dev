@@ -1,0 +1,41 @@
+/**
+ * View - Featured Donation Case Studies.
+ */
+
+.view--featured-donation-case-studies {
+
+  .views-row {
+    margin-bottom: $spacing--medium;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .view-footer {
+    margin-top: $spacing--medium;
+    text-align: center;
+
+    a {
+      margin: 0;
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .views-row {
+      margin-bottom: 0;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .view-footer {
+      margin-top: $spacing--large;
+    }
+  }
+}

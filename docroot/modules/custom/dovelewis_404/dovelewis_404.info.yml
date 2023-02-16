@@ -1,0 +1,4 @@
+name: Dove Lewis 404 Page
+description: Allow for use of custom 404 twig template.
+core_version_requirement: ^8 || ^9
+type: module

@@ -1,0 +1,68 @@
+uuid: f897e0f7-b9cf-4daa-9c85-91010e707101
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.teaser_top_large_1x
+    - image.style.teaser_top_large_2x
+    - image.style.teaser_top_medium_1x
+    - image.style.teaser_top_medium_2x
+    - image.style.teaser_top_small_1x
+    - image.style.teaser_top_small_2x
+  theme:
+    - dovelewis
+id: teaser_top
+label: 'Teaser Top'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_top_large_1x
+    breakpoint_id: dovelewis.xxlarge
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_top_large_2x
+    breakpoint_id: dovelewis.xxlarge
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_top_large_1x
+    breakpoint_id: dovelewis.xlarge
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_top_large_2x
+    breakpoint_id: dovelewis.xlarge
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_top_large_1x
+    breakpoint_id: dovelewis.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_top_large_2x
+    breakpoint_id: dovelewis.large
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_top_medium_1x
+    breakpoint_id: dovelewis.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_top_medium_2x
+    breakpoint_id: dovelewis.medium
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_top_small_1x
+    breakpoint_id: dovelewis.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_top_small_2x
+    breakpoint_id: dovelewis.small
+    multiplier: 2x
+breakpoint_group: dovelewis
+fallback_image_style: teaser_top_small_1x

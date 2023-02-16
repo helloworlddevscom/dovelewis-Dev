@@ -1,0 +1,9 @@
+uuid: bdd454f8-1384-4f31-a52e-daed1b55e5bd
+langcode: en
+status: true
+dependencies: {  }
+id: homepage_marquee_slide
+label: 'Carousel Marquee - Slide'
+icon_uuid: null
+description: 'Individual slide for Carousel Marquee.'
+behavior_plugins: {  }

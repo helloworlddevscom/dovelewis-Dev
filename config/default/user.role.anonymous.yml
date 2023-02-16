@@ -1,0 +1,20 @@
+uuid: 9446cec9-2711-447f-9d81-7cde60455edf
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - media
+    - system
+    - video_embed_field
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: -10
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'never autoplay videos'
+  - 'view media'

@@ -1,0 +1,192 @@
+/**
+ * Base HTML element styling.
+ * Super basic styling could go here. For example styling for <html>, <body>, <img> etc.
+ */
+
+
+// Body
+// -----
+
+body {
+  // Set min-width to 320 to support 320px width phones
+  min-width: 320px;
+
+  &.js-stop-scroll {
+    overflow-y: hidden;
+    height: 100%;
+  }
+
+  // Prevent CSS animations until DOM is loaded.
+  &.preload * {
+    -webkit-transition: none !important; // sass-lint:disable-line no-important
+    -moz-transition: none !important; // sass-lint:disable-line no-important
+    -ms-transition: none !important; // sass-lint:disable-line no-important
+    -o-transition: none !important; // sass-lint:disable-line no-important
+  }
+}
+
+// Image
+// -----
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Image inside WYSIWYG field
+.text-formatted img {
+  //margin-top: $spacing--small;
+  margin-bottom: $spacing--small;
+
+  &.align-left,
+  &.align-right {
+    display: block;
+    float: none;
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    &.align-right {
+      float: right;
+      margin-left: $spacing--small;
+    }
+
+    &.align-left {
+      float: left;
+      margin-right: $spacing--small;
+    }
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    &.align-right {
+      margin-left: $spacing--medium;
+    }
+
+    &.align-left {
+      margin-right: $spacing--medium;
+    }
+  }
+}
+
+// Image with caption
+.caption-img {
+  margin: 20px 0;
+
+  img {
+    margin: 0;
+  }
+
+  figcaption {
+    display: block;
+    font-size: 1rem;
+    padding: $spacing--xsmall 0;
+    border-bottom: 1px solid $color--gray6;
+    @include text-style--small;
+  }
+
+  &.align-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.align-left,
+  &.align-right {
+    display: block;
+    float: none;
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    margin: 40px 0;
+
+    &.align-right {
+      float: right;
+      margin-left: $spacing--small;
+    }
+
+    &.align-left {
+      float: left;
+      margin-right: $spacing--small;
+    }
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    &.align-right {
+      margin-left: $spacing--medium;
+    }
+
+    &.align-left {
+      margin-right: $spacing--medium;
+    }
+  }
+}
+
+
+// Quotes
+// -----
+
+q { quotes: '\201c' '\201d'; }
+q:before { content: open-quote; }
+q:after  { content: close-quote; }
+
+
+// Blockquotes
+// -----
+
+blockquote {
+  margin: $spacing--small 0;
+  padding: $spacing--xsmall $spacing--small;
+  border: none;
+  background-color: $color--white;
+
+  p {
+    margin: 0;
+    line-height: 1.2;
+    font-family: $ff--sentinel;
+    font-size: rem-calc(18);
+    color: $color--darkgreen;
+  }
+
+  // XLARGE
+
+  @include breakpoint(large) {
+    padding: 35px $spacing--medium;
+
+    p {
+      font-size: rem-calc(26);
+    }
+  }
+}
+
+// Small blockquote
+blockquote.blockquote--small {
+  padding: 10px $spacing--small;
+
+  p {
+    @include text-style--paragraph;
+    margin-bottom: 0;
+    font-family: $ff--idealsans;
+    color: $color--body-text;
+  }
+}
+
+
+// HR
+// -----
+
+hr {
+  margin: 25px 0 $spacing--small 0;
+  color: $color--gray6;
+
+  // XLARGE
+
+  @include breakpoint(large) {
+    margin: 50px 0 45px 0;
+  }
+}

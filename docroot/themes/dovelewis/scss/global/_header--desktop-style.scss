@@ -1,0 +1,409 @@
+/**
+ * Header and main menu - Desktop style.
+ * Inherits styling from _header--mobile-style.scss.
+ */
+
+
+.header {
+
+  // XLARGE AND UP
+
+  @include breakpoint(xlarge) {
+    position: relative;
+
+    // Quick menu
+    .region--header-top {
+      padding: 0;
+      background-color: $color--white;
+
+      .menu--quick {
+
+        .menu-item {
+          border-left: 1px solid $color--gray;
+
+          a {
+            height: 40px;
+            padding: 13px 15px;
+            font-size: rem-calc(16);
+          }
+        }
+
+        // Donate
+        .menu-item:first-child {
+          display: list-item;
+          padding: 0;
+
+          a {
+            width: auto;
+            min-width: 135px;
+            height: 40px;
+            padding-left: 47px;
+            background-color: transparent;
+            background-image: url('../../images/icons/heart-green.svg');
+            background-size: 20px;
+            background-position: 19px center;
+            background-repeat: no-repeat;
+          }
+        }
+
+        // Contact
+        .menu-item:nth-child(2) {
+          padding: 0;
+
+          a {
+            width: auto;
+            min-width: 225px;
+            height: 40px;
+            overflow: visible;
+            text-indent: 0;
+            padding-left: 47px;
+            background-color: transparent;
+            background-image: url('../../images/icons/info-green.svg');
+            background-size: 20px;
+            background-position: 19px center;
+            background-repeat: no-repeat;
+          }
+        }
+
+        // Directions
+        .menu-item:nth-child(3) {
+          display: none;
+        }
+
+        // Emergency
+        .menu-item:last-child {
+          a {
+            width: 200px;
+            height: 40px;
+            padding: 13px 15px 13px 58px;
+            font-size: rem-calc(16);
+            background-position: 28px center;
+          }
+        }
+      }
+    }
+
+    // Logo
+    .block-id--block-dovelewis-branding {
+      float: left;
+
+      .site-logo,
+      img {
+        display: block;
+        width: 237px;
+        height: 80px;
+        margin-top: -10px;
+      }
+    }
+
+    // Main menu - Top level
+    .region--header-bottom {
+      height: 120px;
+      padding: 24px 0 10px;
+      background-color: $color--gray;
+    }
+
+    .region--header-bottom .menu--main--top-level {
+      display: block;
+      float: right;
+      margin-top: 21px;
+
+      > .menu {
+        margin: 0;
+
+        .menu-item {
+          padding: 0;
+        }
+
+        // Active item
+        .menu-item--active-trail {
+          .title--short {
+            color: $color--green;
+          }
+        }
+
+        .menu-item:first-child {
+          display: none;
+        }
+
+        .menu-item:last-child .dropdown-toggle-arrow {
+          display: none;
+        }
+      }
+
+      .title--short {
+        @include link-style--black;
+        padding: 10px 30px 5px;
+        font-size: rem-calc(22);
+        //pointer-events: none;
+      }
+
+      .dropdown-toggle-arrow {
+        width: 100%;
+        height: 33px;
+        padding-top: 7px;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+          .dropdown-toggle-arrow__arrow {
+            border-color: darken(#D5D7D4, 10%) transparent transparent transparent;
+          }
+        }
+      }
+
+      .dropdown-toggle-arrow__arrow {
+        width: 0;
+        height: 0;
+        margin: 0 auto;
+        border-style: solid;
+        border-width: 7px 6px 0 6px;
+        border-color: #D5D7D4 transparent transparent transparent;
+        transition: border-color .3s;
+      }
+
+
+      // @TODO: Can't find a way to not render the images for this instance
+      // of the menu, so we'll have to hide it.
+      .field--name-field-menu-image {
+        display: none;
+      }
+
+      .title--long {
+        display: none;
+      }
+    }
+
+    // Main menu - Top level - Open state
+    .desktop-menu-open & {
+      .region--header-bottom .menu--main--top-level {
+        .menu-item--open {
+          position: relative;
+
+          .dropdown-toggle-arrow__arrow {
+            transform: scaleY(-1);
+            border-color: darken(#D5D7D4, 10%) transparent transparent transparent;
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            left: calc(50% - 45px);
+            height: 3px;
+            width: 90px;
+            background-color: $color--lightgreen;
+          }
+        }
+      }
+    }
+
+    .search-toggle {
+      display: block;
+      float: right;
+      width: 18px;
+      height: 18px;
+      margin-top: 33px;
+      margin-left: 30px;
+      margin-right: 10px;
+      text-indent: 2000px;
+      overflow: hidden;
+      background-image: url('../../images/icons/search.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+    // Main menu - Dropdown
+    .region--header-dropdown {
+      display: none;
+      position: absolute;
+      width: 100%;
+
+      .menu--main--dropdown {
+        border-top: 1px solid $color--lightgreen;
+      }
+
+      .menu {
+        margin: 0;
+        list-style-type: none;
+        white-space: nowrap; // This is a hack for Edge.
+      }
+
+      // Top level
+      .menu-level-0 {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 30px 0;
+
+        > .menu-item > .menu-item__inner > .menu-item__inner__parent-wrapper {
+          float: left;
+          padding-right: 30px;
+        }
+      }
+
+      // Second level
+      .menu-level-1 {
+        .menu-item {
+          padding-right: 30px;
+          padding-bottom: 31px;
+        }
+
+        // Active item
+        .menu-item--active-trail {
+          .title--long {
+            color: $color--green;
+          }
+        }
+      }
+
+      .menu-item {
+        padding: 0;
+      }
+
+      // Hover states
+      .menu-item__inner__parent-wrapper {
+        &:hover,
+        &:focus {
+          .field--name-field-menu-image img {
+            border: 1px solid $color--green;
+          }
+
+          .title--long {
+            color: $color--green;
+          }
+        }
+      }
+
+      .field--name-field-menu-image {
+        a {
+          padding: 0;
+          margin-bottom: $spacing--small;
+        }
+
+        img {
+          border: 1px solid $color--gray;
+        }
+      }
+
+      .title--long {
+        @include link-style--black;
+        padding: 0;
+      }
+
+      .title--short {
+        display: none;
+      }
+    }
+
+    // Main menu - Dropdown - Open state
+    .desktop-menu-open & {
+      .region--header-dropdown {
+        display: block;
+        z-index: 50;
+        border-bottom: 1px solid $color--gray3;
+
+        // Hide search
+        .block-id--block-search-form {
+          display: none;
+        }
+
+        // Show menu
+        .menu--main--dropdown {
+          display: block;
+        }
+
+        .menu--main--dropdown > .menu > .menu-item {
+          display: none;
+
+          &.menu-item--open {
+            display: block;
+          }
+        }
+      }
+    }
+
+    // Search - Dropdown - Open
+    .desktop-search-open & {
+      .region--header-dropdown {
+        display: block;
+        z-index: 50;
+        border-bottom: 1px solid $color--gray3;
+
+        // Hide menu
+        .menu--main--dropdown {
+          display: none;
+        }
+
+        // Show search
+        .block-id--block-search-form {
+          display: block;
+        }
+      }
+    }
+
+    // Search - Dropdown
+    .block-id--block-search-form {
+      border-top: 1px solid $color--lightgreen;
+
+      .block__content {
+        max-width: 830px;
+        margin: 0 auto;
+        padding: $spacing--large 0;
+      }
+
+      .form-item-search {
+        label {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+// Faded overlay effect when dropdown is open.
+
+@include breakpoint(xlarge) {
+
+  .header {
+    z-index: 50;
+  }
+
+  .layout-container {
+    position: relative;
+
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: auto;
+      height: 0;
+      background-color: black;
+      opacity: 0;
+      transition: opacity .2s ease-in-out, height .1s ease-in-out .2s, bottom .1s ease-in-out .2s;
+      pointer-events: none;
+    }
+  }
+
+  // Main menu - Dropdown - Open state
+  .desktop-menu-open,
+  .desktop-search-open {
+
+    .layout-container {
+      position: relative;
+
+      &:after {
+        bottom: 0;
+        height: 100%;
+        opacity: .6;
+        transition: opacity .2s ease-in-out;
+        pointer-events: all;
+      }
+    }
+  }
+}

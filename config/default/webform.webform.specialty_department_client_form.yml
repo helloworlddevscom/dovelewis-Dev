@@ -1,0 +1,2391 @@
+uuid: 95695cb9-893d-4316-b6cb-f8dfbfa57a3f
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 186
+template: false
+archive: false
+id: specialty_department_client_form
+title: 'Specialty Appointments + Rx Refills'
+description: ''
+category: ''
+elements: |-
+  clientcontact:
+    '#type': webform_section
+    '#title': 'Tell Us About Yourself'
+    your_contact_information:
+      '#type': webform_contact
+      '#title': 'Your Contact Information'
+      '#required': true
+      '#name__title': 'Your Name'
+      '#name__required': true
+      '#company__access': false
+      '#email__access': false
+      '#email__title': 'Your Email'
+      '#phone__access': false
+      '#phone__title': 'Your Phone Number'
+      '#address__access': false
+      '#address_2__access': false
+      '#city__access': false
+      '#state_province__access': false
+      '#postal_code__access': false
+      '#country__access': false
+    your_email:
+      '#type': webform_email_confirm
+      '#title': 'Your Email'
+      '#required': true
+      '#confirm__title': 'Confirm Your Email'
+    your_phone:
+      '#type': tel
+      '#title': 'Your Phone'
+      '#required': true
+  horizontal_rule:
+    '#type': webform_horizontal_rule
+  your_pet_s_information:
+    '#type': webform_section
+    '#title': 'Your Pet''s Information'
+    your_name:
+      '#type': webform_name
+      '#title': 'Your Pet''s Information'
+      '#required': true
+      '#title__access': false
+      '#first__title': 'Your Pet''s Name'
+      '#first__required': true
+      '#middle__access': false
+      '#last__access': false
+      '#suffix__access': false
+      '#degree__access': false
+    select_your_hospital:
+      '#type': webform_select_other
+      '#title': 'Select Your Primary Veterinary Clinic'
+      '#options':
+        info@aplaceforhealingVM.com: 'A Place For Healing'
+        abiquaanimalclinic@gmail.com: 'Abiqua Animal Clinic'
+        catclinic@comcast.net: 'Accent On Cats - Cat Clinic'
+        albanyanimalhospital@gmail.com: 'Albany Animal Hospital'
+        customerservice@albertavetcare.com: 'Alberta Veterinary Care'
+        staff@allaboutcatsclinic.com: 'All About Cats'
+        team@allanimalhoodriver.com: 'All Animal Care Clinic'
+        doc@ACGSvetclinic.com: 'All Creatures Great And Small Veterinary Clinic'
+        info@alohadogandcat.com: 'Aloha Dog and  Cat Hospital'
+        alpineanimalhospital@comcast.net: 'Alpine Animal Hospital (Corvallis)'
+        hoodriveralpine@gmail.com: 'Alpine Veterinary (Hood River, Oregon)'
+        AAEC4150@gmail.com: 'Animal Allergy & Ear Clinic Of Oregon '
+        info@animalbehaviorclinic.net: 'Animal Behavior Clinic'
+        accvetclinic.com@comcast.net: 'Animal Care Center - Salem'
+        customercare@animalcarevets.com: 'Animal Care Clinic - Wilsonville'
+        info@acglo.com: 'Animal Care Group of Lake Oswego'
+        surgery@acglo.com: 'Animal Care Surgical Specialists'
+        animalclinic@acobmt.com: 'Animal Clinic of Billings'
+        AnimalDentalNW@gmail.com: 'Animal Dental Clinic'
+        leuvet@yahoo.com: 'Animal Dermatology Clinic Beaverton'
+        animaldermpdx@gmail.com: 'Animal Dermatology Clinic Portland'
+        contact@bendanimalemergency.com: 'Animal Emergency Center- Bend'
+        skirschnerdvm@gmail.com: 'Animal Eye Doctor'
+        records@ahapdx.com: 'Animal Healing Arts Of Portland'
+        anmed@peak.org: 'Animal Medical Care - Newport'
+        alohaanimalmedical@gmail.com: 'Animal Medical Center - Aloha'
+        argaycatclinic@yahoo.com: 'Argay Cat Clinic'
+        clinic@arkanimalcare.org: 'Ark Animal Care'
+        ashcreekanimalclinic2@gmail.com: 'Ash Creek Animal Clinic'
+        drtesluk@ashlandveterinary.net: 'Ashland Veterinary Hospital'
+        contact@astoriaveterinarian.com: 'Astoria Animal Hospital'
+        dvm@PDXhomevet.com: 'At Home Veterinary Services'
+        Aumsvillepet@hotmail.com: 'Aumsville Animal Clinic'
+        info@avianexoticvetcare.com: 'Avian And Exotic Veterinary Care'
+        backontrackvetrehab@yahoo.com: 'Back On Track Veterinary Rehabilitation'
+        Banfield0385@gmail.com: 'Banfield 82nd Clackamas'
+        banfieldclassic@gmail.com: 'Banfield 82nd Portland'
+        banfieldbelmont5179@banfield.com: 'Banfield Belmont'
+        hospitaldoctors-5014@banfield.com: 'Banfield Burlingame'
+        morgan.whitcomb@banfield.net: 'Banfield Glisan St'
+        miranda.breninger@banfield.net: 'Banfield Gresham'
+        BanfieldIrvington5023@Banfield.com: 'Banfield Irvington@Banfield.com'
+        'bandfieldlakeoswego5021@banfield.com ': 'Banfield Lake Oswego'
+        stephany.phillips@banfield.com: 'Banfield Progress Ridge'
+        uptown5017@gmail.com: 'Banfield Uptown'
+        timberly.johnson@banfield.net: 'Banfield West Hills'
+        banksvet@gmail.com: 'Banks Veterinary Service'
+        mclaughry@barburvet.com: 'Barbur Boulevard Veterinary Hospital'
+        barclayhills@hotmail.com: 'Barclay Hills Animal Clinic'
+        basecamp@barlowtrailvet.com: 'Barlow Trail Veterinary Clinic'
+        csr@bayshoreanimalcare.com: 'Bayshore Animal Hospital'
+        bcac1955@gmail.com: 'Bear Creek Animal Clinic'
+        clientservices@beavertonpetclinic.com: 'Beaverton Pet Clinic'
+        bendanimalhospital@bendbroadband.com: 'Bend Animal Hospital'
+        healthyadventuresawait@gmail.com: 'Bend Veterinary Clinic'
+        bvs@bendbroadband.com: 'Bend Veterinary Specialists'
+        Bhvc_staff@hotmail.com: 'Berry Hill Veterinary Center'
+        bestcarevet@frontier.com: 'Best Care Animal Hospital'
+        bestfriendsveterinary@gmail.com: 'Best Friends - Portland'
+        bsahtalent@gmail.com: 'Best Friends - Talent'
+        staff.bfpc@gmail.com: 'Bethany Family Pet Clinic'
+        information@birchstreetanimalclinic.com: 'Birch Street Animal Clinic'
+        info@bluedoorvet.com: 'Blue Door Veterinary Services'
+        blueskyveterinaryclinic@gmail.com: 'Blue Sky Veterinary Clinic'
+        vetclinic@brightsideanimals.org: 'BrightSide Animal Center'
+        broadwayvet@gmail.com: 'Broadway Veterinary Clinic'
+        hello@brooklynyardvet.com: 'Brooklyn Yard Vet'
+        PetVet@brookswoodanimalclinic.com: 'Brookswood Animal Clinic'
+        brownsvilleanimalclinic@yahoo.com: 'Brownsville Animal Clinic'
+        buckmanvet@gmail.com: 'Buckman Veterinary Clinic'
+        burlingamevet@gmail.com: 'Burlingame Veterinary Clinic'
+        eugenebushvet@gmail.com: 'Bush Animal Hospital'
+        cahos71@msn.com: 'Canterbury Animal Hospital'
+        canyonpet2004@frontier.com: 'Canyon Pet Hospital'
+        info@heartvet.com: 'Cardiology Northwest'
+        vetmed@oregonstate.edu: 'Carlson College of Veterinary Medicine OSU'
+        staff@carltonvethospital.com: 'Carlton Veterinary Hospital'
+        contact@cascadeanimal.com: 'Cascade Animal Clinic'
+        cascadesummitvets@comcast.net: 'Cascade Summit Animal Hospital'
+        cvrc@cascadevrc.com: 'Cascade Veterinary Referral Center'
+        contactus@catadoptionteam.org: 'Cat Adoption Team'
+        info@mycatsvet.com: 'Cat Care Professionals'
+        info@portlandcats.com: 'Cat Hospital Of Portland'
+        thecatsmeowcatclinic@aol.com: 'Cat''s Meow Cat Clinic'
+        contact@cathedralanimalhospital.com: 'Cathedral Animal Hospital'
+        mariannembdvm@aol.com: 'Cedar Creek Veterinary Acupuncture'
+        Reception@cedarmillvet.com: 'Cedar Mill Veterinary Hospital'
+        info@centraloregonvet.com: 'Central Oregon Veterinary Group'
+        docdave55@hotmail.com: 'Christenson Vet Services'
+        cinderrockrecords@gmail.com: 'Cinder Rock Vet Clinic'
+        info@citypetsvet.net: 'City Pets Vet'
+        ClackamasPetClinic1@gmail.com: 'Clackamas Pet Clinic'
+        columbiavet14@yahoo.com: 'Columbia Veterinary Clinic - St. Helens'
+        cvhthedalles@gmail.com: 'Columbia Veterinary Hospital - The Dalles'
+        communitypetinfo@gmail.com: 'Community Pet Hospital - Tigard'
+        info@cpcnepdx.com: 'Companion 82nd'
+        companionanimal@nvanet.com: 'Companion Animal Hospital Hillsboro'
+        cpcbend@gmail.com: 'Companion Bend'
+        cpcforestgrove@yahoo.com: 'Companion Forest Grove'
+        cpc.gresham@yahoo.com: 'Companion Gresham'
+        reception@CPC-MAC.com: 'Companion Mcminnville'
+        companionpetclinicsalem@gmail.com: 'Companion North Salem'
+        cpcbeaverton@yahoo.com: 'Companion Pet Clinic Beaverton'
+        receptionist@cpcaloha.com: 'Companion Pet Clinic Of Aloha'
+        scappoosecpc@gmail.com: 'Companion Scappoose'
+        CPCStJohns97203@gmail.com: 'Companion St. Johns'
+        team@compassvet.com: 'Compass Veterinary Clinic'
+        compassionatecarepet@gmail.com: 'Compassionate Care'
+        hello@corneliusvet.com: 'Cornelius Veterinary Clinic'
+        petinfo@cornellcentervet.com: 'Cornell Center Animal Hospital'
+        crvcrecords@gmail.com: 'Cornell Road Veterinary Clinic'
+        reception@corvalliscatcare.com: 'Corvallis Cat Care'
+        countrysidepetvet@yahoo.com: 'Countryside Veterinary Service'
+        clinic@creeksideveterinary.com: 'Creekside Vet Clinic'
+        bethany@crookedtails.com: 'Crooked Tails Veterinary Clinic'
+        cvh@crossroadsvet.com: 'Crossroads Veterinary Hospital'
+        thedallesvet@gmail.com: 'Dalles Veterinary Hospital'
+        info@dogwoodpet.vet: 'Dogwood Pet Hospital'
+        info@eaglefernequine.com: 'Eagle Fern Equine Hospital'
+        clientservices@eaglefernvet.com: 'Eagle Fern Veterinary Hospital'
+        eastbendvet@gmail.com: 'East Bend Animal Hospital'
+        EastLaneELVH@aol.com: 'East Lane Veterinary Hospital'
+        info@eastpadden.com: 'East Padden Animal Hospital'
+        epvclinic@gmail.com: 'East Portland Veterinary Clinic'
+        info@eastridgeanimal.com: 'East Ridge Animal Hospital'
+        edgewoodanimalclinic@comcast.net: 'Edgewood Animal Clinic'
+        emergencyvethosp@gmail.com: 'Emergency Vet Hospital - Springfield'
+        evcot@evcot.com: 'Emergency Veterinary Clinic Of Tualatin'
+        Reception@eugeneanimalhospital.net: 'Eugene Animal Hospital'
+        Infoeverettveterinary@gmail.com: 'Everett Veterinary Hospital'
+        evergreenveterinaryhospital@gmail.com: 'Evergreen Veterinary Hospital- Salem'
+        extramilevet@gmail.com: 'Extra Mile Veterinary Care'
+        faithful2friends@gmail.com: 'Faithful Friends Animal Clinic'
+        familypetclinicnewberg@yahoo.com: 'Family Pet Clinic Of Newberg'
+        info@feralcats.com: 'Feral Cat Coalition'
+        homevet1@gmail.com: 'Fetch & Heal Home Vet. Care'
+        forestheightsvet@gmail.com: 'Forest Heights Veterinary Clinic'
+        fvmanager@fvvet.com: 'Forest Valley Veterinary Clinic'
+        info2@foreverpetdental.com: 'Forever Pet Dental Beaverton'
+        reception@fourcornersvetclinic.com: 'Four Corners Veterinary Clinic'
+        info@4riversvet.com: 'Four Rivers Veterinary Clinic'
+        admin@fremontvet.com: 'Fremont Veterinary Clinic'
+        clientservices@frontiervet.com: 'Frontier Veterinary Hospital'
+        customercare@fullcirclevets.com: 'Full Circle Veterinary Care'
+        gabrielparkvet@gmail.com: 'Gabriel Park Veterinary Clinic'
+        gatewayvet@gmail.com: 'Gateway Veterinary Hospital'
+        reception@gladstonevets.com: 'Gladstone Veterinary Clinic'
+        staff@goosehollowvet.com: 'Goose Hollow Veterinary Clinic'
+        hello@gratefulheartvethospital.com: 'Grateful Heart Vet Hospital'
+        gahrecord@gmail.com: 'Gresham Animal Hospital'
+        grovevetclinic@gmail.com: 'Grove Veterinary Clinic'
+        guardmans@peaks.org: 'Guardman''s Veterinary Service'
+        vetsupport@guidedogs.com: 'Guide Dogs For The Blind'
+        halseyeast@gmail.com: 'Halsey East Animal Clinic'
+        MembershipTeam@HannahSociety.com: 'Hannah Pet Society'
+        hansonmeekins@gmail.com: 'Hanson-Meekins Animal Hospital'
+        HappyValleyVetHospital@gmail.com: 'Happy Valley Veterinary Hospital'
+        hartroadanimalhospital@comcast.net: 'Hart Road Animal Hospital'
+        info@hawthornevet.com: 'Hawthorne Veterinary Clinic'
+        hmpet@aol.com: 'Hayden Meadows Pet Clinic'
+        healingartsvet@yahoo.com: 'Healing Arts Animal Care'
+        healingpawscenter@gmail.com: 'Healing Paws Wellness Center'
+        info@heartoregon.com: 'Heart Of Oregon Veterinary Cardiology'
+        info@heartfeltvet.com: 'Heartfelt Veterinary Hospital'
+        hillsboroveterinary@gmail.com: 'Hillsboro Veterinary Clinic'
+        info@hillsdalevet.com: 'Hillsdale Veterinary Hospital'
+        hoberglisa33@gmail.com: 'Holistic House Call Veterinary Services'
+        holisticpetrecords@gmail.com: 'Holistic Pet Vet Clinic'
+        hollywood.pet.hospital@comcast.net: 'Hollywood Pet Hospital'
+        service@hometownvet.net: 'Hometown Animal Hospital'
+        hopeanimalhospital@molalla.net: 'Hope Animal Hospital'
+        info@hopeveterinarycare.org: 'Hope Veterinary Care'
+        drjenniferbarrington@gmail.com: 'House Call Pet Service'
+        Info@irvingtonveterinary.com: 'Irvington Veterinary Clinic'
+        roxleydvm.jcvs@gmail.com: 'Juniper Country Vet Services'
+        kennedyvetreception@gmail.com: 'Kennedy T Patrick DVM'
+        contact@kentonanimalhospital.com: 'Kenton Animal Hospital'
+        pets@kindnessfamilypetclinic.com: 'Kindness Family Pet Clinic'
+        klamathanimalclinic@yahoo.com: 'Klamath Animal Clinic'
+        lgvet@comcast.net: 'Lake Grove Veterinary Clinic'
+        info@laurelwoodvets.com: 'Laurelwood Animal Hospital'
+        libertyahsalem@gmail.com: 'Liberty Animal Hospital'
+        lcac2009@live.com: 'Lincoln City Animal Clinic'
+        info@lincolnroadvet.com: 'Lincoln Road Veterinary Clinic'
+        linnveterinary@gmail.com: 'Linn Veterinary Hospital'
+        ivanslac@yahoo.com: 'Linwood Animal Clinic'
+        wecare@lombardanimalhospital.com: 'Lombard Animal Hospital'
+        rovervet@yahoo.com: 'McMinnville Veterinary Hospital'
+        MAH@medfordanimalhospital.com: 'Medford Animal Hospital'
+        info@gometrovet.com: 'MetroVET Portland'
+        mvvc97385@gmail.com: 'Mid-valley Veterinary Clinic'
+        milnerstaff@gmail.com: 'Milner Veterinary Hospital'
+        staff@milwaukieanimalclinic.com: 'Milwaukie Animal Clinic'
+        snaidoo@mobilevetpdx.com: 'Mobile Veterinary Internal Medicine'
+        morelandvethospital@comcast.net: 'Moreland Veterinary Hospital'
+        mvah00@gmail.com: 'Mountain View Animal Hospital'
+        mtviewvet@canby.com: 'Mountain View Veterinary Hospital Canby'
+        mt.hoodmobilevet@gmail.com: 'Mt. Hood Mobile Veterinary Clinic'
+        mthoodpet@gmail.com: 'Mt. Hood Pet Medical Center'
+        Info@mtsanimalclinic.com: 'Mt. Scott Animal Clinic'
+        info@mttaborvetcare.com: 'Mt. Tabor Veterinary Care'
+        animal-health@multco.us: 'Multnomah Co. Animal Control'
+        vcamurrayhill@vca.com: 'Murrayhill Veterinary Hospital (VCA)'
+        nehalemanimalhealing@gmail.com: 'Nehalem Animal Healing'
+        NeighborhoodVet@comcast.net: 'Neighborhood Animal Hospital'
+        newberganimals@gmail.com: 'Newberg Animal Shelter'
+        newbergcaninerehab@gmail.com: 'Newberg Canine Rehabilitation Center'
+        frontdesk@newbergvet.com: 'Newberg Veterinary Hospital'
+        newportvethospital@gmail.com: 'Newport Veterinary Hospital'
+        mfultondvm@aol.com: 'No Frills Pet Clinic'
+        clientcare@northplainsvetclinic.com: 'North Plains Veterinary Clinic'
+        nwexoticpetvet@hotmail.com: 'Northwest Exotic Pet Vet'
+        info@NWneighborhoodVet.com: 'Northwest Neighborhood Veterinary Hospital'
+        ohvc@oakhillsvetclinic.com: 'Oak Hills Veterinary Clinic'
+        oceanlakevet@yahoo.com: 'Oceanlake Veterinary Clinic'
+        info@ovvcsalem.com: 'Orchard View Veterinary Center'
+        oregoncityveterinaryclinic@comcast.net: 'Oregon City Veterinary Clinic'
+        admissions@oregonhumane.org: 'Oregon Humane Society'
+        sa.reception@oregonstate.edu: 'Oregon State University'
+        info@oregontrailvet.com: 'Oregon Trail Veterinary Clinic'
+        xrays4ovra@gmail.com: 'Oregon Vet Ref. Associates'
+        info@ovshosp.com: 'Oregon Veterinary Specialty Hospital'
+        records@orev.vet: 'OREV Specialty Vet Care'
+        info@florenceveterinary.com: 'Osburn Veterinary Clinic'
+        rehab@acglo.com: 'Oswego Animal Physiotherapy & Rehab'
+        reception@oswegovet.com: 'Oswego Veterinary Hospital'
+        info@overlookvet.com: 'Overlook Veterinary Hospital'
+        pacificavevet@hotmail.com: 'Pacific Avenue Veterinary Clinic'
+        clientcare@pacvh.com: 'Pacific Veterinary Hospital'
+        rayholmgren@aol.com: 'Parkrose Veterinary Clinic'
+        Parkwayanimalhosp@yahoo.com: 'Parkway Animal Hospital'
+        parkwayvet@parkwayvet.com: 'Parkway Veterinary Hospital'
+        medical@pawteam.org: 'Paw Team'
+        staff@pawsandclawsvet.com: 'Paws and Claws Pet Medical Center'
+        info@pawswellvet.com: 'Pawsitive Wellness Veterinary Care'
+        pearblossomvet@qwestoffice.net: 'Pear Blossom Veterinary Clinic'
+        ask_us@pearlanimalhospital.com: 'Pearl Animal Hospital'
+        staff@peninsulapet.net: 'Peninsula Dog and Cat Clinic'
+        periwinklepetclinic@gmail.com: 'Periwinkle Pet Clinic'
+        petsamaritan@nva.com: 'Pet Samaritan Clinic'
+        petvetoc@gmail.com: 'Pet Vet'
+        pheonixanimalhospital@gmail.com: 'Pheonix Animal Hospital'
+        appointments@pahcares.com: 'Pioneer Animal Hospital'
+        pioneervethospital@gmail.com: 'Pioneer Veterinary Hospital'
+        pioneervet@att.net: 'Pioneer Veterinary Services'
+        info@pixieproject.org: 'Pixie Project'
+        info@plateauveterinary.net: 'Plateau Veterinary Hospital & Orthopedic Center'
+        portlandanimalclinic@gmail.com: 'Portland Animal Clinic'
+        portlandcardiology@gmail.com: 'Portland Veterinary Cardiology'
+        portvetonc@yahoo.com: 'Portland Veterinary Oncology Center'
+        reception@powellvet.com: 'Powell Boulevard Veterinary Clinic'
+        customercare@powellvet.com: 'Powell Veterinary Center In Westmoreland'
+        PremierPetVet@gmail.com: 'Premier Pet Dental'
+        reception@prinevillevetclinic.com: 'Prineville Veterinary Clinic'
+        thayv@aol.com: 'Purrfect Practice'
+        vet@ramblingvet.com: 'Rambling Veterinary'
+        EAH_INC@Frontier.com: 'Red Barn Veterinary'
+        reception@redmondvet.net: 'Redmond Veterinary Clinic'
+        reidvethospital@comcast.net: 'Reid Veterinary Hospital'
+        repmctech@gmail.com: 'River''s Edge Pet Medical Center'
+        info@riversidevetbend.com: 'Riverside Animal Hosp - Bend'
+        rogersvetservice@gmail.com: 'Rogers Veterinary Service'
+        info@rosecityvet.com: 'Rose City Veterinary Hospital'
+        info@rosewayvet.com: 'Roseway Veterinary Hospital'
+        safeharbor.haase@gmail.com: 'Safe Harbor Animal Hospital'
+        info@soarvet.com: 'Salem Oregon Animal Rehabilitation'
+        vet@SalemParkVet.comcastbiz.net: 'Salem Park Veterinary Clinic'
+        santaclara@nvanet.com: 'Santa Clara Animal Hospital'
+        santiamequine@yahoo.com: 'Santiam Equine'
+        scalesandtailsexoticpetclinic@gmail.com: 'Scales and Tails Exotic Pet Clinic'
+        info@sherwoodfamilypetclinic.com: 'Sherwood Family Pet Clinic'
+        info@silvercreekanimalclinic.com: 'Silver Creek Animal Clinic'
+        sisqvet@gmail.com: 'Siskiyou Veterinary Hospital'
+        Sistersveterinaryclinic@gmail.com: 'Sisters Veterinary Clinic'
+        info@skinvetclinic.com: 'SkinVet Clinic'
+        customerservice.sorrento@gmail.com: 'Sorrento Animal Hospital'
+        Southclackamas@outlook.com: 'South Clackamas Veterinary Service'
+        swvcstaff@swvetclinic.com: 'South Willamette Vet Clinic'
+        SOVSC@SOVSC.com: 'Southern Oregon Veterinary Speciality '
+        southgateanimalclinic@live.com: 'Southgate Animal Clinic'
+        burgess@swanimalhospital.net: 'Southwest Animal Hospital'
+        pets@stjohnsvc.com: 'St. Johns Veterinary Clinic'
+        staff@staytonveterinary.com: 'Stayton Veterinary Hospital'
+        svac@svanimal.com: 'Sun Valley Animal Center'
+        sunnyvet@sunnysidevet.net: 'Sunnyside Veterinary Hospital'
+        info@sunrivervet.com: 'Sunriver Veterinary Clinic'
+        sunset@sunsetanimal.com: 'Sunset Animal Clinic'
+        clientcare@sunstonevets.com: 'Sunstone Veterinary Specialists'
+        surgery4pets@gmail.com: 'Surgery 4 Pets'
+        info@synergybehavior.com: 'Synergy Behavior Solutions'
+        records@tanasbourneveter.com: 'Tanasbourne Veterinary Emergency'
+        reception@thevethosp.com: 'The Veterinary Hospital'
+        headquarters@villagevet-llc.net: 'The Village Vet - Damascus'
+        thirdstreetvet@onlinemac.com: 'Third Street Veterinary Hospital'
+        tigardanimal@NVANET.com: 'Tigard Animal Hospital'
+        tvh@tvh1.net: 'Tillamook Veterinary Hospital'
+        timberlandanimalclinic@yahoo.com: 'Timberland Animal Clinic'
+        townandcountryanimal@yahoo.com: 'Town and Country Animal Hospital'
+        tualatinAC@gmail.com: 'Tualatin Animal Clinic'
+        tualatinparkvet@gmail.com: 'Tualatin Park Veterinary Clinic'
+        animalhospital@gorge.net: 'Tucker Road Animal Hospital'
+        TumaloAH@gmail.com: 'Tumalo Animal Hospital'
+        twinoaksvet@yahoo.com: 'Twin Oaks Veterinary Hospital'
+        info@tworiversvet.com: 'Two Rivers Veterinary Clinic'
+        valleyveterinaryclinic@yahoo.com: 'Valley Veterinary Clinic - All'
+        Au657@vca.com: 'VCA Clackamas'
+        au1136@vca.com: 'VCA Iris Animal Hospital'
+        au1017@vca.com: 'VCA Laurelhurst Animal Hospital'
+        mckenzievet@gmail.com: 'VCA Mckenzie Animal Hospital'
+        au947@vca.com: 'VCA North Portland'
+        NWVSRecords@vca.com: 'VCA Northwest Veterinary Specialists NWVS'
+        au587@vca.com: 'VCA Raleigh Hills'
+        au924@vca.com: 'VCA Rock Creek'
+        au672@vca.com: 'VCA Salem'
+        au1140@vca.com: 'VCA Sandy Animal Clinic'
+        au537@vca.com: 'VCA Southeast Portland (SEPAH)'
+        au673@vca.com: 'VCA Twelve Mile'
+        laura.erbach@vca.com: 'VCA West Linn'
+        westmorelandanimalhospital@gmail.com: 'VCA Westmoreland'
+        AU1136@VCA.com: 'VCA Willamette Valley Animal Hospital of Keizer'
+        au540@vca.com: 'VCA Woodstock'
+        vdicrequests@gmail.com: VDIC
+        midwayveterinaryhospital@gmail.com: 'Midway Veterinary Clinic'
+        admin@vetanesthesiaspecialists.com: 'Veterinary Anesthesia Specialists, Llc'
+        info@vcsspdx.com: 'Veterinary Cancer & Surgery Specialists'
+        info@vrcvet.com: 'Veterinary Referral and Emergency Center of Central Oregon'
+        vetsrgn@yahoo.com: 'Veterinary Surgical Center Of Portland'
+        info@vikingveterinarycare.com: 'Viking Veterinary Care'
+        customercare@vamvh.com: 'Village At Main Veterinary Hospital'
+        vistapetstaff@gmail.com: 'Vista Pet Hospital'
+        vitalitypethospital@gmail.com: 'Vitality Pet Hospital'
+        info@vivapetcare.com: 'Viva Pet Care'
+        cedarhills@wellhavenpethealth.com: 'Wellhaven Pet Health Cedar Hills'
+        starkstreetpethospital@gmail.com: 'WellHaven Pet Health Stark Street'
+        info@eugenevet.com: 'West Eugene Animal Hospital'
+        westhillsanimalclinicdvm@gmail.com: 'West Hills Animal Clinic'
+        business@westhillsanimalhospital.com: 'West Hills Animal Hospital - Corvallis'
+        info@wmainah.com: 'West Main Animal Hospital'
+        reception@westsalemac.com: 'West Salem Animal Clinic'
+        Choate_Jennifer@yahoo.com: 'West Valley Veterinary Hospital'
+        drshaw@westsidepethospitalbend.com: 'Westside Pet Hospital'
+        info@wholepetvetcare.com: 'Whole Pet Veterinary Care, Llc'
+        wildwoodvet@wildwoodanimalhospital.com: 'Wildwood Animal Hospital'
+        wildwoodvetstaff@gmail.com: 'Wildwood Veterinary Clinic'
+        willakenzieac@hotmail.com: 'Willakenzie Animal Clinic'
+        tualatin@wvah.net: 'Willamette Valley Animal Hospital - Tualatin'
+        gladstone@wvah.net: 'Willamette Valley Animal Hospital - Gladstone'
+        battlecreekvet@gmail.com: 'Willamette Valley Animal Hospital - Salem'
+        info@wilvet.com: 'Willamette Veterinary Hospital'
+        staff@willowbrookvet.com: 'Willowbrook Veterinary Hospital '
+        info@wilsonvilleveterinaryclinic.com: 'Wilsonville Veterinary Clinic'
+        info@wbpet.com: 'Woodburn Pet Hospital'
+        woodburnvetclinic@gmail.com: 'Woodburn Veterinary Clinic'
+      '#sort_options': true
+      '#other__option_label': 'Other '
+      '#other__placeholder': 'Enter Your Primary Veterinary Clinic''s Name'
+      '#required': true
+    additional_veterinary_clinics:
+      '#type': webform_select_other
+      '#title': 'Additional Veterinary Clinics'
+      '#options':
+        info@aplaceforhealingVM.com: 'A Place For Healing'
+        abiquaanimalclinic@gmail.com: 'Abiqua Animal Clinic'
+        catclinic@comcast.net: 'Accent On Cats - Cat Clinic'
+        albanyanimalhospital@gmail.com: 'Albany Animal Hospital'
+        customerservice@albertavetcare.com: 'Alberta Veterinary Care'
+        staff@allaboutcatsclinic.com: 'All About Cats'
+        team@allanimalhoodriver.com: 'All Animal Care Clinic'
+        doc@ACGSvetclinic.com: 'All Creatures Great And Small Veterinary Clinic'
+        info@alohadogandcat.com: 'Aloha Dog and  Cat Hospital'
+        alpineanimalhospital@comcast.net: 'Alpine Animal Hospital (Corvallis)'
+        hoodriveralpine@gmail.com: 'Alpine Veterinary (Hood River, Oregon)'
+        AAEC4150@gmail.com: 'Animal Allergy & Ear Clinic Of Oregon '
+        info@animalbehaviorclinic.net: 'Animal Behavior Clinic'
+        accvetclinic.com@comcast.net: 'Animal Care Center - Salem'
+        customercare@animalcarevets.com: 'Animal Care Clinic - Wilsonville'
+        info@acglo.com: 'Animal Care Group of Lake Oswego'
+        surgery@acglo.com: 'Animal Care Surgical Specialists'
+        animalclinic@acobmt.com: 'Animal Clinic of Billings'
+        AnimalDentalNW@gmail.com: 'Animal Dental Clinic'
+        leuvet@yahoo.com: 'Animal Dermatology Clinic Beaverton'
+        animaldermpdx@gmail.com: 'Animal Dermatology Clinic Portland'
+        contact@bendanimalemergency.com: 'Animal Emergency Center- Bend'
+        skirschnerdvm@gmail.com: 'Animal Eye Doctor'
+        records@ahapdx.com: 'Animal Healing Arts Of Portland'
+        anmed@peak.org: 'Animal Medical Care - Newport'
+        alohaanimalmedical@gmail.com: 'Animal Medical Center - Aloha'
+        argaycatclinic@yahoo.com: 'Argay Cat Clinic'
+        clinic@arkanimalcare.org: 'Ark Animal Care'
+        ashcreekanimalclinic2@gmail.com: 'Ash Creek Animal Clinic'
+        drtesluk@ashlandveterinary.net: 'Ashland Veterinary Hospital'
+        contact@astoriaveterinarian.com: 'Astoria Animal Hospital'
+        dvm@PDXhomevet.com: 'At Home Veterinary Services'
+        Aumsvillepet@hotmail.com: 'Aumsville Animal Clinic'
+        info@avianexoticvetcare.com: 'Avian And Exotic Veterinary Care'
+        backontrackvetrehab@yahoo.com: 'Back On Track Veterinary Rehabilitation'
+        Banfield0385@gmail.com: 'Banfield 82nd Clackamas'
+        banfieldclassic@gmail.com: 'Banfield 82nd Portland'
+        banfieldbelmont5179@banfield.com: 'Banfield Belmont'
+        hospitaldoctors-5014@banfield.com: 'Banfield Burlingame'
+        morgan.whitcomb@banfield.net: 'Banfield Glisan St'
+        miranda.breninger@banfield.net: 'Banfield Gresham'
+        BanfieldIrvington5023@Banfield.com: 'Banfield Irvington@Banfield.com'
+        'bandfieldlakeoswego5021@banfield.com ': 'Banfield Lake Oswego'
+        stephany.phillips@banfield.com: 'Banfield Progress Ridge'
+        uptown5017@gmail.com: 'Banfield Uptown'
+        timberly.johnson@banfield.net: 'Banfield West Hills'
+        banksvet@gmail.com: 'Banks Veterinary Service'
+        mclaughry@barburvet.com: 'Barbur Boulevard Veterinary Hospital'
+        barclayhills@hotmail.com: 'Barclay Hills Animal Clinic'
+        basecamp@barlowtrailvet.com: 'Barlow Trail Veterinary Clinic'
+        csr@bayshoreanimalcare.com: 'Bayshore Animal Hospital'
+        bcac1955@gmail.com: 'Bear Creek Animal Clinic'
+        clientservices@beavertonpetclinic.com: 'Beaverton Pet Clinic'
+        bendanimalhospital@bendbroadband.com: 'Bend Animal Hospital'
+        healthyadventuresawait@gmail.com: 'Bend Veterinary Clinic'
+        bvs@bendbroadband.com: 'Bend Veterinary Specialists'
+        Bhvc_staff@hotmail.com: 'Berry Hill Veterinary Center'
+        bestcarevet@frontier.com: 'Best Care Animal Hospital'
+        bestfriendsveterinary@gmail.com: 'Best Friends - Portland'
+        bsahtalent@gmail.com: 'Best Friends - Talent'
+        staff.bfpc@gmail.com: 'Bethany Family Pet Clinic'
+        information@birchstreetanimalclinic.com: 'Birch Street Animal Clinic'
+        info@bluedoorvet.com: 'Blue Door Veterinary Services'
+        blueskyveterinaryclinic@gmail.com: 'Blue Sky Veterinary Clinic'
+        vetclinic@brightsideanimals.org: 'BrightSide Animal Center'
+        broadwayvet@gmail.com: 'Broadway Veterinary Clinic'
+        hello@brooklynyardvet.com: 'Brooklyn Yard Vet'
+        PetVet@brookswoodanimalclinic.com: 'Brookswood Animal Clinic'
+        brownsvilleanimalclinic@yahoo.com: 'Brownsville Animal Clinic'
+        buckmanvet@gmail.com: 'Buckman Veterinary Clinic'
+        burlingamevet@gmail.com: 'Burlingame Veterinary Clinic'
+        eugenebushvet@gmail.com: 'Bush Animal Hospital'
+        cahos71@msn.com: 'Canterbury Animal Hospital'
+        canyonpet2004@frontier.com: 'Canyon Pet Hospital'
+        info@heartvet.com: 'Cardiology Northwest'
+        vetmed@oregonstate.edu: 'Carlson College of Veterinary Medicine OSU'
+        staff@carltonvethospital.com: 'Carlton Veterinary Hospital'
+        contact@cascadeanimal.com: 'Cascade Animal Clinic'
+        cascadesummitvets@comcast.net: 'Cascade Summit Animal Hospital'
+        cvrc@cascadevrc.com: 'Cascade Veterinary Referral Center'
+        contactus@catadoptionteam.org: 'Cat Adoption Team'
+        info@mycatsvet.com: 'Cat Care Professionals'
+        info@portlandcats.com: 'Cat Hospital Of Portland'
+        thecatsmeowcatclinic@aol.com: 'Cat''s Meow Cat Clinic'
+        contact@cathedralanimalhospital.com: 'Cathedral Animal Hospital'
+        mariannembdvm@aol.com: 'Cedar Creek Veterinary Acupuncture'
+        Reception@cedarmillvet.com: 'Cedar Mill Veterinary Hospital'
+        info@centraloregonvet.com: 'Central Oregon Veterinary Group'
+        docdave55@hotmail.com: 'Christenson Vet Services'
+        cinderrockrecords@gmail.com: 'Cinder Rock Vet Clinic'
+        info@citypetsvet.net: 'City Pets Vet'
+        ClackamasPetClinic1@gmail.com: 'Clackamas Pet Clinic'
+        columbiavet14@yahoo.com: 'Columbia Veterinary Clinic - St. Helens'
+        cvhthedalles@gmail.com: 'Columbia Veterinary Hospital - The Dalles'
+        communitypetinfo@gmail.com: 'Community Pet Hospital - Tigard'
+        info@cpcnepdx.com: 'Companion 82nd'
+        companionanimal@nvanet.com: 'Companion Animal Hospital Hillsboro'
+        cpcbend@gmail.com: 'Companion Bend'
+        cpcforestgrove@yahoo.com: 'Companion Forest Grove'
+        cpc.gresham@yahoo.com: 'Companion Gresham'
+        reception@CPC-MAC.com: 'Companion Mcminnville'
+        companionpetclinicsalem@gmail.com: 'Companion North Salem'
+        cpcbeaverton@yahoo.com: 'Companion Pet Clinic Beaverton'
+        receptionist@cpcaloha.com: 'Companion Pet Clinic Of Aloha'
+        scappoosecpc@gmail.com: 'Companion Scappoose'
+        CPCStJohns97203@gmail.com: 'Companion St. Johns'
+        team@compassvet.com: 'Compass Veterinary Clinic'
+        compassionatecarepet@gmail.com: 'Compassionate Care'
+        hello@corneliusvet.com: 'Cornelius Veterinary Clinic'
+        petinfo@cornellcentervet.com: 'Cornell Center Animal Hospital'
+        crvcrecords@gmail.com: 'Cornell Road Veterinary Clinic'
+        reception@corvalliscatcare.com: 'Corvallis Cat Care'
+        countrysidepetvet@yahoo.com: 'Countryside Veterinary Service'
+        clinic@creeksideveterinary.com: 'Creekside Vet Clinic'
+        bethany@crookedtails.com: 'Crooked Tails Veterinary Clinic'
+        cvh@crossroadsvet.com: 'Crossroads Veterinary Hospital'
+        thedallesvet@gmail.com: 'Dalles Veterinary Hospital'
+        info@dogwoodpet.vet: 'Dogwood Pet Hospital'
+        info@eaglefernequine.com: 'Eagle Fern Equine Hospital'
+        clientservices@eaglefernvet.com: 'Eagle Fern Veterinary Hospital'
+        eastbendvet@gmail.com: 'East Bend Animal Hospital'
+        EastLaneELVH@aol.com: 'East Lane Veterinary Hospital'
+        info@eastpadden.com: 'East Padden Animal Hospital'
+        epvclinic@gmail.com: 'East Portland Veterinary Clinic'
+        info@eastridgeanimal.com: 'East Ridge Animal Hospital'
+        edgewoodanimalclinic@comcast.net: 'Edgewood Animal Clinic'
+        emergencyvethosp@gmail.com: 'Emergency Vet Hospital - Springfield'
+        evcot@evcot.com: 'Emergency Veterinary Clinic Of Tualatin'
+        Reception@eugeneanimalhospital.net: 'Eugene Animal Hospital'
+        Infoeverettveterinary@gmail.com: 'Everett Veterinary Hospital'
+        evergreenveterinaryhospital@gmail.com: 'Evergreen Veterinary Hospital- Salem'
+        extramilevet@gmail.com: 'Extra Mile Veterinary Care'
+        faithful2friends@gmail.com: 'Faithful Friends Animal Clinic'
+        familypetclinicnewberg@yahoo.com: 'Family Pet Clinic Of Newberg'
+        info@feralcats.com: 'Feral Cat Coalition'
+        homevet1@gmail.com: 'Fetch & Heal Home Vet. Care'
+        forestheightsvet@gmail.com: 'Forest Heights Veterinary Clinic'
+        fvmanager@fvvet.com: 'Forest Valley Veterinary Clinic'
+        info2@foreverpetdental.com: 'Forever Pet Dental Beaverton'
+        reception@fourcornersvetclinic.com: 'Four Corners Veterinary Clinic'
+        info@4riversvet.com: 'Four Rivers Veterinary Clinic'
+        admin@fremontvet.com: 'Fremont Veterinary Clinic'
+        clientservices@frontiervet.com: 'Frontier Veterinary Hospital'
+        customercare@fullcirclevets.com: 'Full Circle Veterinary Care'
+        gabrielparkvet@gmail.com: 'Gabriel Park Veterinary Clinic'
+        gatewayvet@gmail.com: 'Gateway Veterinary Hospital'
+        reception@gladstonevets.com: 'Gladstone Veterinary Clinic'
+        staff@goosehollowvet.com: 'Goose Hollow Veterinary Clinic'
+        hello@gratefulheartvethospital.com: 'Grateful Heart Vet Hospital'
+        gahrecord@gmail.com: 'Gresham Animal Hospital'
+        grovevetclinic@gmail.com: 'Grove Veterinary Clinic'
+        guardmans@peaks.org: 'Guardman''s Veterinary Service'
+        vetsupport@guidedogs.com: 'Guide Dogs For The Blind'
+        halseyeast@gmail.com: 'Halsey East Animal Clinic'
+        MembershipTeam@HannahSociety.com: 'Hannah Pet Society'
+        hansonmeekins@gmail.com: 'Hanson-Meekins Animal Hospital'
+        HappyValleyVetHospital@gmail.com: 'Happy Valley Veterinary Hospital'
+        hartroadanimalhospital@comcast.net: 'Hart Road Animal Hospital'
+        info@hawthornevet.com: 'Hawthorne Veterinary Clinic'
+        hmpet@aol.com: 'Hayden Meadows Pet Clinic'
+        healingartsvet@yahoo.com: 'Healing Arts Animal Care'
+        healingpawscenter@gmail.com: 'Healing Paws Wellness Center'
+        info@heartoregon.com: 'Heart Of Oregon Veterinary Cardiology'
+        info@heartfeltvet.com: 'Heartfelt Veterinary Hospital'
+        hillsboroveterinary@gmail.com: 'Hillsboro Veterinary Clinic'
+        info@hillsdalevet.com: 'Hillsdale Veterinary Hospital'
+        hoberglisa33@gmail.com: 'Holistic House Call Veterinary Services'
+        holisticpetrecords@gmail.com: 'Holistic Pet Vet Clinic'
+        hollywood.pet.hospital@comcast.net: 'Hollywood Pet Hospital'
+        service@hometownvet.net: 'Hometown Animal Hospital'
+        hopeanimalhospital@molalla.net: 'Hope Animal Hospital'
+        info@hopeveterinarycare.org: 'Hope Veterinary Care'
+        drjenniferbarrington@gmail.com: 'House Call Pet Service'
+        Info@irvingtonveterinary.com: 'Irvington Veterinary Clinic'
+        roxleydvm.jcvs@gmail.com: 'Juniper Country Vet Services'
+        kennedyvetreception@gmail.com: 'Kennedy T Patrick DVM'
+        contact@kentonanimalhospital.com: 'Kenton Animal Hospital'
+        pets@kindnessfamilypetclinic.com: 'Kindness Family Pet Clinic'
+        klamathanimalclinic@yahoo.com: 'Klamath Animal Clinic'
+        lgvet@comcast.net: 'Lake Grove Veterinary Clinic'
+        info@laurelwoodvets.com: 'Laurelwood Animal Hospital'
+        libertyahsalem@gmail.com: 'Liberty Animal Hospital'
+        lcac2009@live.com: 'Lincoln City Animal Clinic'
+        info@lincolnroadvet.com: 'Lincoln Road Veterinary Clinic'
+        linnveterinary@gmail.com: 'Linn Veterinary Hospital'
+        ivanslac@yahoo.com: 'Linwood Animal Clinic'
+        wecare@lombardanimalhospital.com: 'Lombard Animal Hospital'
+        rovervet@yahoo.com: 'McMinnville Veterinary Hospital'
+        MAH@medfordanimalhospital.com: 'Medford Animal Hospital'
+        info@gometrovet.com: 'MetroVET Portland'
+        mvvc97385@gmail.com: 'Mid-valley Veterinary Clinic'
+        milnerstaff@gmail.com: 'Milner Veterinary Hospital'
+        staff@milwaukieanimalclinic.com: 'Milwaukie Animal Clinic'
+        snaidoo@mobilevetpdx.com: 'Mobile Veterinary Internal Medicine'
+        morelandvethospital@comcast.net: 'Moreland Veterinary Hospital'
+        mvah00@gmail.com: 'Mountain View Animal Hospital'
+        mtviewvet@canby.com: 'Mountain View Veterinary Hospital Canby'
+        mt.hoodmobilevet@gmail.com: 'Mt. Hood Mobile Veterinary Clinic'
+        mthoodpet@gmail.com: 'Mt. Hood Pet Medical Center'
+        Info@mtsanimalclinic.com: 'Mt. Scott Animal Clinic'
+        info@mttaborvetcare.com: 'Mt. Tabor Veterinary Care'
+        animal-health@multco.us: 'Multnomah Co. Animal Control'
+        vcamurrayhill@vca.com: 'Murrayhill Veterinary Hospital (VCA)'
+        nehalemanimalhealing@gmail.com: 'Nehalem Animal Healing'
+        NeighborhoodVet@comcast.net: 'Neighborhood Animal Hospital'
+        newberganimals@gmail.com: 'Newberg Animal Shelter'
+        newbergcaninerehab@gmail.com: 'Newberg Canine Rehabilitation Center'
+        frontdesk@newbergvet.com: 'Newberg Veterinary Hospital'
+        newportvethospital@gmail.com: 'Newport Veterinary Hospital'
+        mfultondvm@aol.com: 'No Frills Pet Clinic'
+        clientcare@northplainsvetclinic.com: 'North Plains Veterinary Clinic'
+        nwexoticpetvet@hotmail.com: 'Northwest Exotic Pet Vet'
+        info@NWneighborhoodVet.com: 'Northwest Neighborhood Veterinary Hospital'
+        ohvc@oakhillsvetclinic.com: 'Oak Hills Veterinary Clinic'
+        oceanlakevet@yahoo.com: 'Oceanlake Veterinary Clinic'
+        info@ovvcsalem.com: 'Orchard View Veterinary Center'
+        oregoncityveterinaryclinic@comcast.net: 'Oregon City Veterinary Clinic'
+        admissions@oregonhumane.org: 'Oregon Humane Society'
+        sa.reception@oregonstate.edu: 'Oregon State University'
+        info@oregontrailvet.com: 'Oregon Trail Veterinary Clinic'
+        xrays4ovra@gmail.com: 'Oregon Vet Ref. Associates'
+        info@ovshosp.com: 'Oregon Veterinary Specialty Hospital'
+        records@orev.vet: 'OREV Specialty Vet Care'
+        info@florenceveterinary.com: 'Osburn Veterinary Clinic'
+        rehab@acglo.com: 'Oswego Animal Physiotherapy & Rehab'
+        reception@oswegovet.com: 'Oswego Veterinary Hospital'
+        info@overlookvet.com: 'Overlook Veterinary Hospital'
+        pacificavevet@hotmail.com: 'Pacific Avenue Veterinary Clinic'
+        clientcare@pacvh.com: 'Pacific Veterinary Hospital'
+        rayholmgren@aol.com: 'Parkrose Veterinary Clinic'
+        Parkwayanimalhosp@yahoo.com: 'Parkway Animal Hospital'
+        parkwayvet@parkwayvet.com: 'Parkway Veterinary Hospital'
+        medical@pawteam.org: 'Paw Team'
+        staff@pawsandclawsvet.com: 'Paws and Claws Pet Medical Center'
+        info@pawswellvet.com: 'Pawsitive Wellness Veterinary Care'
+        pearblossomvet@qwestoffice.net: 'Pear Blossom Veterinary Clinic'
+        ask_us@pearlanimalhospital.com: 'Pearl Animal Hospital'
+        staff@peninsulapet.net: 'Peninsula Dog and Cat Clinic'
+        periwinklepetclinic@gmail.com: 'Periwinkle Pet Clinic'
+        petsamaritan@nva.com: 'Pet Samaritan Clinic'
+        petvetoc@gmail.com: 'Pet Vet'
+        pheonixanimalhospital@gmail.com: 'Pheonix Animal Hospital'
+        appointments@pahcares.com: 'Pioneer Animal Hospital'
+        pioneervethospital@gmail.com: 'Pioneer Veterinary Hospital'
+        pioneervet@att.net: 'Pioneer Veterinary Services'
+        info@pixieproject.org: 'Pixie Project'
+        info@plateauveterinary.net: 'Plateau Veterinary Hospital & Orthopedic Center'
+        portlandanimalclinic@gmail.com: 'Portland Animal Clinic'
+        portlandcardiology@gmail.com: 'Portland Veterinary Cardiology'
+        portvetonc@yahoo.com: 'Portland Veterinary Oncology Center'
+        reception@powellvet.com: 'Powell Boulevard Veterinary Clinic'
+        customercare@powellvet.com: 'Powell Veterinary Center In Westmoreland'
+        PremierPetVet@gmail.com: 'Premier Pet Dental'
+        reception@prinevillevetclinic.com: 'Prineville Veterinary Clinic'
+        thayv@aol.com: 'Purrfect Practice'
+        vet@ramblingvet.com: 'Rambling Veterinary'
+        EAH_INC@Frontier.com: 'Red Barn Veterinary'
+        reception@redmondvet.net: 'Redmond Veterinary Clinic'
+        reidvethospital@comcast.net: 'Reid Veterinary Hospital'
+        repmctech@gmail.com: 'River''s Edge Pet Medical Center'
+        info@riversidevetbend.com: 'Riverside Animal Hosp - Bend'
+        rogersvetservice@gmail.com: 'Rogers Veterinary Service'
+        info@rosecityvet.com: 'Rose City Veterinary Hospital'
+        info@rosewayvet.com: 'Roseway Veterinary Hospital'
+        safeharbor.haase@gmail.com: 'Safe Harbor Animal Hospital'
+        info@soarvet.com: 'Salem Oregon Animal Rehabilitation'
+        vet@SalemParkVet.comcastbiz.net: 'Salem Park Veterinary Clinic'
+        santaclara@nvanet.com: 'Santa Clara Animal Hospital'
+        santiamequine@yahoo.com: 'Santiam Equine'
+        scalesandtailsexoticpetclinic@gmail.com: 'Scales and Tails Exotic Pet Clinic'
+        info@sherwoodfamilypetclinic.com: 'Sherwood Family Pet Clinic'
+        info@silvercreekanimalclinic.com: 'Silver Creek Animal Clinic'
+        sisqvet@gmail.com: 'Siskiyou Veterinary Hospital'
+        Sistersveterinaryclinic@gmail.com: 'Sisters Veterinary Clinic'
+        info@skinvetclinic.com: 'SkinVet Clinic'
+        customerservice.sorrento@gmail.com: 'Sorrento Animal Hospital'
+        Southclackamas@outlook.com: 'South Clackamas Veterinary Service'
+        swvcstaff@swvetclinic.com: 'South Willamette Vet Clinic'
+        SOVSC@SOVSC.com: 'Southern Oregon Veterinary Speciality '
+        southgateanimalclinic@live.com: 'Southgate Animal Clinic'
+        burgess@swanimalhospital.net: 'Southwest Animal Hospital'
+        pets@stjohnsvc.com: 'St. Johns Veterinary Clinic'
+        staff@staytonveterinary.com: 'Stayton Veterinary Hospital'
+        svac@svanimal.com: 'Sun Valley Animal Center'
+        sunnyvet@sunnysidevet.net: 'Sunnyside Veterinary Hospital'
+        info@sunrivervet.com: 'Sunriver Veterinary Clinic'
+        sunset@sunsetanimal.com: 'Sunset Animal Clinic'
+        clientcare@sunstonevets.com: 'Sunstone Veterinary Specialists'
+        surgery4pets@gmail.com: 'Surgery 4 Pets'
+        info@synergybehavior.com: 'Synergy Behavior Solutions'
+        records@tanasbourneveter.com: 'Tanasbourne Veterinary Emergency'
+        reception@thevethosp.com: 'The Veterinary Hospital'
+        headquarters@villagevet-llc.net: 'The Village Vet - Damascus'
+        thirdstreetvet@onlinemac.com: 'Third Street Veterinary Hospital'
+        tigardanimal@NVANET.com: 'Tigard Animal Hospital'
+        tvh@tvh1.net: 'Tillamook Veterinary Hospital'
+        timberlandanimalclinic@yahoo.com: 'Timberland Animal Clinic'
+        townandcountryanimal@yahoo.com: 'Town and Country Animal Hospital'
+        tualatinAC@gmail.com: 'Tualatin Animal Clinic'
+        tualatinparkvet@gmail.com: 'Tualatin Park Veterinary Clinic'
+        animalhospital@gorge.net: 'Tucker Road Animal Hospital'
+        TumaloAH@gmail.com: 'Tumalo Animal Hospital'
+        twinoaksvet@yahoo.com: 'Twin Oaks Veterinary Hospital'
+        info@tworiversvet.com: 'Two Rivers Veterinary Clinic'
+        valleyveterinaryclinic@yahoo.com: 'Valley Veterinary Clinic - All'
+        Au657@vca.com: 'VCA Clackamas'
+        au1136@vca.com: 'VCA Iris Animal Hospital'
+        au1017@vca.com: 'VCA Laurelhurst Animal Hospital'
+        mckenzievet@gmail.com: 'VCA Mckenzie Animal Hospital'
+        au947@vca.com: 'VCA North Portland'
+        NWVSRecords@vca.com: 'VCA Northwest Veterinary Specialists NWVS'
+        au587@vca.com: 'VCA Raleigh Hills'
+        au924@vca.com: 'VCA Rock Creek'
+        au672@vca.com: 'VCA Salem'
+        au1140@vca.com: 'VCA Sandy Animal Clinic'
+        au537@vca.com: 'VCA Southeast Portland (SEPAH)'
+        au673@vca.com: 'VCA Twelve Mile'
+        laura.erbach@vca.com: 'VCA West Linn'
+        westmorelandanimalhospital@gmail.com: 'VCA Westmoreland'
+        AU1136@VCA.com: 'VCA Willamette Valley Animal Hospital of Keizer'
+        au540@vca.com: 'VCA Woodstock'
+        vdicrequests@gmail.com: VDIC
+        midwayveterinaryhospital@gmail.com: 'Midway Veterinary Clinic'
+        admin@vetanesthesiaspecialists.com: 'Veterinary Anesthesia Specialists, Llc'
+        info@vcsspdx.com: 'Veterinary Cancer & Surgery Specialists'
+        info@vrcvet.com: 'Veterinary Referral and Emergency Center of Central Oregon'
+        vetsrgn@yahoo.com: 'Veterinary Surgical Center Of Portland'
+        info@vikingveterinarycare.com: 'Viking Veterinary Care'
+        customercare@vamvh.com: 'Village At Main Veterinary Hospital'
+        vistapetstaff@gmail.com: 'Vista Pet Hospital'
+        vitalitypethospital@gmail.com: 'Vitality Pet Hospital'
+        info@vivapetcare.com: 'Viva Pet Care'
+        cedarhills@wellhavenpethealth.com: 'Wellhaven Pet Health Cedar Hills'
+        starkstreetpethospital@gmail.com: 'WellHaven Pet Health Stark Street'
+        info@eugenevet.com: 'West Eugene Animal Hospital'
+        westhillsanimalclinicdvm@gmail.com: 'West Hills Animal Clinic'
+        business@westhillsanimalhospital.com: 'West Hills Animal Hospital - Corvallis'
+        info@wmainah.com: 'West Main Animal Hospital'
+        reception@westsalemac.com: 'West Salem Animal Clinic'
+        Choate_Jennifer@yahoo.com: 'West Valley Veterinary Hospital'
+        drshaw@westsidepethospitalbend.com: 'Westside Pet Hospital'
+        info@wholepetvetcare.com: 'Whole Pet Veterinary Care, Llc'
+        wildwoodvet@wildwoodanimalhospital.com: 'Wildwood Animal Hospital'
+        wildwoodvetstaff@gmail.com: 'Wildwood Veterinary Clinic'
+        willakenzieac@hotmail.com: 'Willakenzie Animal Clinic'
+        tualatin@wvah.net: 'Willamette Valley Animal Hospital - Tualatin'
+        gladstone@wvah.net: 'Willamette Valley Animal Hospital - Gladstone'
+        battlecreekvet@gmail.com: 'Willamette Valley Animal Hospital - Salem'
+        info@wilvet.com: 'Willamette Veterinary Hospital'
+        staff@willowbrookvet.com: 'Willowbrook Veterinary Hospital '
+        info@wilsonvilleveterinaryclinic.com: 'Wilsonville Veterinary Clinic'
+        info@wbpet.com: 'Woodburn Pet Hospital'
+        woodburnvetclinic@gmail.com: 'Woodburn Veterinary Clinic'
+      '#sort_options': true
+      '#other__option_label': 'Other '
+      '#other__placeholder': ''
+    client_history:
+      '#type': radios
+      '#title': 'Has Your Pet Been to DoveLewis Before? '
+      '#options': yes_no
+      '#options_display': side_by_side
+      '#required': true
+  horizontal_rule_01:
+    '#type': webform_horizontal_rule
+  tell_us_why_you_re_contacting_us:
+    '#type': webform_section
+    '#title': 'Tell Us Why You''re Contacting Us'
+    specialty_departments:
+      '#type': select
+      '#title': 'Which specialty department would you like to contact? '
+      '#description': 'If your pet needs care in our ER or ICU, please call our team directly at&nbsp;<a href="tel:(503)228-7281">503-228-7281</a>&nbsp;and do not complete the remainder of this form.&nbsp;'
+      '#title_display': before
+      '#description_display': after
+      '#options':
+        Cardiology: Cardiology
+        'Dermatology + Allergy': 'Dermatology + Allergy'
+        'Internal Medicine': 'Internal Medicine'
+        Neurology: Neurology
+        Radiology: Radiology
+        Surgery: Surgery
+      '#required': true
+    reason_for_contact:
+      '#type': webform_select_other
+      '#title': 'Reason for Contact'
+      '#description': |-
+        <ul>
+        	<li>Select&nbsp; &quot;First-time Specialty Appointment&quot; if your pet has not had an appointment with the requested department before.&nbsp;</li>
+        	<li>Select &quot;Returning Specialty Patient Appointment&quot; if your pet&nbsp;has already had an appointment with the requested department.&nbsp;</li>
+        </ul>
+      '#description_display': before
+      '#options':
+        'Schedule First-time Specialty Appointment': 'Schedule First-time Specialty Appointment'
+        'Schedule Returning Specialty Patient Appointment': 'Schedule Returning Specialty Patient Appointment'
+        'Rx Refill': 'Rx Refill'
+        'Appointment Follow-up': 'Appointment Follow-up'
+      '#required': true
+    tell_us_more:
+      '#type': textarea
+      '#title': 'Tell Us More'
+      '#description': 'Tell us more about your pet&#39;s condition and your reason for seeking specialty veterinary care.&nbsp;'
+      '#help_title': 'Why are you seeking specialty care? '
+      '#help': 'Tell us more about your pet&#39;s condition and your reason for seeking specialty veterinary care.&nbsp;'
+      '#title_display': before
+      '#description_display': before
+      '#states':
+        invisible:
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Rx Refill'
+  prescription_information:
+    '#type': webform_section
+    '#title': 'Prescription Information'
+    '#states':
+      visible:
+        ':input[name="reason_for_contact[select]"]':
+          value: 'Rx Refill'
+    medications_needed:
+      '#type': textarea
+      '#title': 'Medications Needed'
+    tablet_strength_mg_:
+      '#type': textfield
+      '#title': 'Tablet Strength (mg)'
+    where_would_you_like_to_refill_your_prescription_:
+      '#type': radios
+      '#title': 'Where would you like to refill your prescription? '
+      '#options':
+        DoveLewis: DoveLewis
+        'Outside Pharmacy': 'Outside Pharmacy'
+      '#options_display': side_by_side
+    outsidepharmacyaddress:
+      '#type': webform_address
+      '#title': 'What is the address of your pharmacy? '
+      '#title_display': before
+      '#states':
+        visible:
+          ':input[name="where_would_you_like_to_refill_your_prescription_"]':
+            value: 'Outside Pharmacy'
+      '#address__required': true
+      '#address_2__access': false
+      '#city__required': true
+      '#country__access': false
+    how_is_your_pet_doing_:
+      '#type': textarea
+      '#title': 'How is your pet doing? '
+    do_you_have_any_questions_concerns_regarding_the_prescription_s_:
+      '#type': textarea
+      '#title': 'Do you have any questions/concerns regarding the prescription(s)?'
+  captcha:
+    '#type': captcha
+    '#captcha_type': image_captcha/Image
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: 'Message Sent Successfully'
+  confirmation_message: "<span style=\"font-size:11pt\"><span style=\"line-height:107%\"><span style=\"font-family:Calibri,sans-serif\">Thank you for contacting the DoveLewis&#39; Specialty teams. We have received your submission and will respond as soon as we are able. If your pet is experiencing an emergency,&nbsp; please call <a href=\"tel:(503) 228-7281\">(503) 228-7281</a> to speak with our emergency department.</span></span></span><br />\r\n&nbsp;"
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: 'New and Recheck Appointments '
+    notes: ''
+    status: true
+    conditions:
+      enabled:
+        -
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Schedule New Appointment'
+        - xor
+        -
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Schedule Recheck Appointment'
+        - xor
+        -
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Follow-up from ER visit'
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:your_email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: specialtyappts@dovelewis.org
+      from_options: {  }
+      from_name: 'DoveLewis Specialty Teams'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Next Steps for [webform_submission:values:your_name]''s appointment'
+      body: "[webform_submission:values:your_contact_information],<br />\r\n<br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\">Thank you for contacting DoveLewis. We&rsquo;ve received your submission.&nbsp;<br />\r\n<br />\r\n<strong>What happens next?&nbsp;</strong></span></span></span>\r\n<ol>\r\n\t<li><span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\">If this is your first time visiting DoveLewis, please <a href=\"https://dovelewis.usw2.ezyvet.com/external/portal/main/login\">create an account through our client portal</a> to streamline your future check-in process. &nbsp;</span></span></span></li>\r\n\t<li><span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\">We&rsquo;ve contacted your primary veterinarian requesting your pet&#39;s records. It can take some time to receive records, so we&rsquo;ll follow up with your veterinarian if we have not heard back from them after two days. If you have your pet&rsquo;s records, you&rsquo;re welcome to email them to us at <a href=\"mailto:specialtyappts@dovelewis.org?subject=Patient%20Records%20Attached\">specialtyappts@dovelewis.org</a> to expedite the process.&nbsp;</span></span></span></li>\r\n\t<li><span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\">Once we&rsquo;ve received the records, we&rsquo;ll contact you to schedule an appointment. This process may take several days, and we appreciated your patience.</span></span></span></li>\r\n</ol>\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><strong>Please note that COVID-19 has had a significant impact on our team. </strong>As one of the only fully functioning hospitals in the area, we often treat over 500 animals each week. Factors such as patients&rsquo; conditions, fluctuating COVID-19 requirements, staff availability, and other veterinary clinic&rsquo;s services all influence our team&rsquo;s ability to respond quickly.&nbsp;<br />\r\n<br />\r\nWe appreciate your patience under these circumstances and are grateful that you&rsquo;re entrusting us with your pet&rsquo;s care.<br />\r\n<br />\r\nDoveLewis Veterinary Emergency &amp; Specialty Teams<br />\r\n<br />\r\n<strong>If this is an emergency or your pet&rsquo;s condition changes, please call <a href=\"tel:(503) 228-7281\">(503) 228-7281</a> to speak with our emergency department.</strong></span></span></span>"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_1:
+    id: email
+    handler_id: email_1
+    label: 'Rx and Followup '
+    notes: ''
+    status: true
+    conditions:
+      enabled:
+        -
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Rx Refill'
+        - or
+        -
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Appointment Follow-up'
+        - or
+        -
+          ':input[name="reason_for_contact[other]"]':
+            checked: true
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:your_email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: specialist@dovelewis.org
+      from_options: {  }
+      from_name: 'DoveLewis Specialty Teams'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Your Message Has Been Received'
+      body: "[webform_submission:values:your_contact_information],&nbsp;<br />\r\n<br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\">Thank you for contacting DoveLewis. &nbsp;We have received your request and will respond as soon as we are able.&nbsp;<br />\r\n<br />\r\n<strong>Please note that COVID-19 has had a significant impact on our team. </strong>As one of the only fully functioning hospitals in the area, we often treat over 500 animals each week. Factors such as patients&rsquo; conditions, fluctuating COVID-19 requirements, staff availability, and other veterinary clinic&rsquo;s services all influence our team&rsquo;s ability to respond quickly.&nbsp;<br />\r\n<br />\r\nWe appreciate your patience under these circumstances and are grateful that you&rsquo;re entrusting us with your pet&rsquo;s care.</span></span></span><br />\r\n<br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\">DoveLewis Veterinary Emergency &amp; Specialty Teams<br />\r\n<br />\r\n<strong>If this is an emergency or your pet&rsquo;s condition changes, please call </strong><a href=\"tel:(503)%20228-7281%20\"><strong><span style=\"color:blue\">(503) 228-7281</span></strong></a><strong> to speak with our Emergency department.</strong></span></span></span>"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_2:
+    id: email
+    handler_id: email_2
+    label: 'Records Request - New and Recheck Appointments'
+    notes: ''
+    status: true
+    conditions:
+      enabled:
+        -
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Schedule New Appointment'
+        - or
+        -
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Schedule Recheck Appointment'
+        - or
+        -
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Follow-up from ER visit'
+        - or
+        -
+          ':input[name="select_your_hospital"]':
+            filled: true
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:select_your_hospital:raw]'
+      to_options:
+        -
+          value: info@aplaceforhealingVM.com
+          text: info@aplaceforhealingVM.com
+        -
+          value: abiquaanimalclinic@gmail.com
+          text: abiquaanimalclinic@gmail.com
+        -
+          value: catclinic@comcast.net
+          text: catclinic@comcast.net
+        -
+          value: albanyanimalhospital@gmail.com
+          text: albanyanimalhospital@gmail.com
+        -
+          value: customerservice@albertavetcare.com
+          text: customerservice@albertavetcare.com
+        -
+          value: staff@allaboutcatsclinic.com
+          text: staff@allaboutcatsclinic.com
+        -
+          value: team@allanimalhoodriver.com
+          text: team@allanimalhoodriver.com
+        -
+          value: doc@ACGSvetclinic.com
+          text: doc@ACGSvetclinic.com
+        -
+          value: info@alohadogandcat.com
+          text: info@alohadogandcat.com
+        -
+          value: alpineanimalhospital@comcast.net
+          text: alpineanimalhospital@comcast.net
+        -
+          value: hoodriveralpine@gmail.com
+          text: hoodriveralpine@gmail.com
+        -
+          value: AAEC4150@gmail.com
+          text: AAEC4150@gmail.com
+        -
+          value: info@animalbehaviorclinic.net
+          text: accvetclinic.com@comcast.net
+        -
+          value: accvetclinic.com@comcast.net
+          text: customercare@animalcarevets.com
+        -
+          value: customercare@animalcarevets.com
+          text: customercare@animalcarevets.com
+        -
+          value: info@acglo.com
+          text: info@acglo.com
+        -
+          value: surgery@acglo.com
+          text: surgery@acglo.com
+        -
+          value: animalclinic@acobmt.com
+          text: animalclinic@acobmt.com
+        -
+          value: AnimalDentalNW@gmail.com
+          text: AnimalDentalNW@gmail.com
+        -
+          value: leuvet@yahoo.com
+          text: leuvet@yahoo.com
+        -
+          value: animaldermpdx@gmail.com
+          text: animaldermpdx@gmail.com
+        -
+          value: contact@bendanimalemergency.com
+          text: contact@bendanimalemergency.com
+        -
+          value: skirschnerdvm@gmail.com
+          text: skirschnerdvm@gmail.com
+        -
+          value: records@ahapdx.com
+          text: records@ahapdx.com
+        -
+          value: anmed@peak.org
+          text: anmed@peak.org
+        -
+          value: alohaanimalmedical@gmail.com
+          text: alohaanimalmedical@gmail.com
+        -
+          value: argaycatclinic@yahoo.com
+          text: argaycatclinic@yahoo.com
+        -
+          value: clinic@arkanimalcare.org
+          text: clinic@arkanimalcare.org
+        -
+          value: ashcreekanimalclinic2@gmail.com
+          text: ashcreekanimalclinic2@gmail.com
+        -
+          value: drtesluk@ashlandveterinary.net
+          text: drtesluk@ashlandveterinary.net
+        -
+          value: contact@astoriaveterinarian.com
+          text: contact@astoriaveterinarian.com
+        -
+          value: dvm@PDXhomevet.com
+          text: dvm@PDXhomevet.com
+        -
+          value: Aumsvillepet@hotmail.com
+          text: Aumsvillepet@hotmail.com
+        -
+          value: info@avianexoticvetcare.com
+          text: info@avianexoticvetcare.com
+        -
+          value: backontrackvetrehab@yahoo.com
+          text: backontrackvetrehab@yahoo.com
+        -
+          value: Banfield0385@gmail.com
+          text: Banfield0385@gmail.com
+        -
+          value: banfieldclassic@gmail.com
+          text: banfieldclassic@gmail.com
+        -
+          value: banfieldbelmont5179@banfield.com
+          text: banfieldbelmont5179@banfield.com
+        -
+          value: hospitaldoctors-5014@banfield.com
+          text: hospitaldoctors-5014@banfield.com
+        -
+          value: morgan.whitcomb@banfield.net
+          text: morgan.whitcomb@banfield.net
+        -
+          value: miranda.breninger@banfield.net
+          text: miranda.breninger@banfield.net
+        -
+          value: BanfieldIrvington5023@Banfield.com
+          text: BanfieldIrvington5023@Banfield.com
+        -
+          value: stephany.phillips@banfield.com
+          text: stephany.phillips@banfield.com
+        -
+          value: uptown5017@gmail.com
+          text: uptown5017@gmail.com
+        -
+          value: timberly.johnson@banfield.net
+          text: timberly.johnson@banfield.net
+        -
+          value: banksvet@gmail.com
+          text: banksvet@gmail.com
+        -
+          value: mclaughry@barburvet.com
+          text: mclaughry@barburvet.com
+        -
+          value: barclayhills@hotmail.com
+          text: barclayhills@hotmail.com
+        -
+          value: basecamp@barlowtrailvet.com
+          text: basecamp@barlowtrailvet.com
+        -
+          value: csr@bayshoreanimalcare.com
+          text: csr@bayshoreanimalcare.com
+        -
+          value: bcac1955@gmail.com
+          text: bcac1955@gmail.com
+        -
+          value: clientservices@beavertonpetclinic.com
+          text: clientservices@beavertonpetclinic.com
+        -
+          value: bendanimalhospital@bendbroadband.com
+          text: bendanimalhospital@bendbroadband.com
+        -
+          value: healthyadventuresawait@gmail.com
+          text: healthyadventuresawait@gmail.com
+        -
+          value: bvs@bendbroadband.com
+          text: bvs@bendbroadband.com
+        -
+          value: Bhvc_staff@hotmail.com
+          text: Bhvc_staff@hotmail.com
+        -
+          value: bestcarevet@frontier.com
+          text: bestcarevet@frontier.com
+        -
+          value: bestfriendsveterinary@gmail.com
+          text: bestfriendsveterinary@gmail.com
+        -
+          value: bsahtalent@gmail.com
+          text: bsahtalent@gmail.com
+        -
+          value: staff.bfpc@gmail.com
+          text: staff.bfpc@gmail.com
+        -
+          value: information@birchstreetanimalclinic.com
+          text: information@birchstreetanimalclinic.com
+        -
+          value: info@bluedoorvet.com
+          text: info@bluedoorvet.com
+        -
+          value: blueskyveterinaryclinic@gmail.com
+          text: blueskyveterinaryclinic@gmail.com
+        -
+          value: vetclinic@brightsideanimals.org
+          text: vetclinic@brightsideanimals.org
+        -
+          value: broadwayvet@gmail.com
+          text: broadwayvet@gmail.com
+        -
+          value: hello@brooklynyardvet.com
+          text: hello@brooklynyardvet.com
+        -
+          value: PetVet@brookswoodanimalclinic.com
+          text: PetVet@brookswoodanimalclinic.com
+        -
+          value: brownsvilleanimalclinic@yahoo.com
+          text: brownsvilleanimalclinic@yahoo.com
+        -
+          value: buckmanvet@gmail.com
+          text: buckmanvet@gmail.com
+        -
+          value: burlingamevet@gmail.com
+          text: burlingamevet@gmail.com
+        -
+          value: eugenebushvet@gmail.com
+          text: eugenebushvet@gmail.com
+        -
+          value: cahos71@msn.com
+          text: cahos71@msn.com
+        -
+          value: canyonpet2004@frontier.com
+          text: canyonpet2004@frontier.com
+        -
+          value: info@heartvet.com
+          text: info@heartvet.com
+        -
+          value: vetmed@oregonstate.edu
+          text: vetmed@oregonstate.edu
+        -
+          value: staff@carltonvethospital.com
+          text: staff@carltonvethospital.com
+        -
+          value: contact@cascadeanimal.com
+          text: contact@cascadeanimal.com
+        -
+          value: cascadesummitvets@comcast.net
+          text: cascadesummitvets@comcast.net
+        -
+          value: cvrc@cascadevrc.com
+          text: cvrc@cascadevrc.com
+        -
+          value: contactus@catadoptionteam.org
+          text: contactus@catadoptionteam.org
+        -
+          value: info@mycatsvet.com
+          text: info@mycatsvet.com
+        -
+          value: info@portlandcats.com
+          text: info@portlandcats.com
+        -
+          value: thecatsmeowcatclinic@aol.com
+          text: thecatsmeowcatclinic@aol.com
+        -
+          value: contact@cathedralanimalhospital.com
+          text: contact@cathedralanimalhospital.com
+        -
+          value: mariannembdvm@aol.com
+          text: mariannembdvm@aol.com
+        -
+          value: Reception@cedarmillvet.com
+          text: Reception@cedarmillvet.com
+        -
+          value: info@centraloregonvet.com
+          text: info@centraloregonvet.com
+        -
+          value: docdave55@hotmail.com
+          text: docdave55@hotmail.com
+        -
+          value: cinderrockrecords@gmail.com
+          text: cinderrockrecords@gmail.com
+        -
+          value: info@citypetsvet.net
+          text: info@citypetsvet.net
+        -
+          value: ClackamasPetClinic1@gmail.com
+          text: ClackamasPetClinic1@gmail.com
+        -
+          value: columbiavet14@yahoo.com
+          text: columbiavet14@yahoo.com
+        -
+          value: cvhthedalles@gmail.com
+          text: cvhthedalles@gmail.com
+        -
+          value: communitypetinfo@gmail.com
+          text: communitypetinfo@gmail.com
+        -
+          value: info@cpcnepdx.com
+          text: info@cpcnepdx.com
+        -
+          value: companionanimal@nvanet.com
+          text: companionanimal@nvanet.com
+        -
+          value: cpcbend@gmail.com
+          text: cpcbend@gmail.com
+        -
+          value: cpcforestgrove@yahoo.com
+          text: cpcforestgrove@yahoo.com
+        -
+          value: cpc.gresham@yahoo.com
+          text: cpc.gresham@yahoo.com
+        -
+          value: reception@CPC-MAC.com
+          text: reception@CPC-MAC.com
+        -
+          value: companionpetclinicsalem@gmail.com
+          text: companionpetclinicsalem@gmail.com
+        -
+          value: cpcbeaverton@yahoo.com
+          text: cpcbeaverton@yahoo.com
+        -
+          value: receptionist@cpcaloha.com
+          text: receptionist@cpcaloha.com
+        -
+          value: scappoosecpc@gmail.com
+          text: scappoosecpc@gmail.com
+        -
+          value: CPCStJohns97203@gmail.com
+          text: CPCStJohns97203@gmail.com
+        -
+          value: team@compassvet.com
+          text: team@compassvet.com
+        -
+          value: compassionatecarepet@gmail.com
+          text: compassionatecarepet@gmail.com
+        -
+          value: hello@corneliusvet.com
+          text: hello@corneliusvet.com
+        -
+          value: petinfo@cornellcentervet.com
+          text: petinfo@cornellcentervet.com
+        -
+          value: crvcrecords@gmail.com
+          text: crvcrecords@gmail.com
+        -
+          value: reception@corvalliscatcare.com
+          text: reception@corvalliscatcare.com
+        -
+          value: countrysidepetvet@yahoo.com
+          text: countrysidepetvet@yahoo.com
+        -
+          value: clinic@creeksideveterinary.com
+          text: clinic@creeksideveterinary.com
+        -
+          value: bethany@crookedtails.com
+          text: bethany@crookedtails.com
+        -
+          value: cvh@crossroadsvet.com
+          text: cvh@crossroadsvet.com
+        -
+          value: thedallesvet@gmail.com
+          text: thedallesvet@gmail.com
+        -
+          value: info@dogwoodpet.vet
+          text: info@dogwoodpet.vet
+        -
+          value: info@eaglefernequine.com
+          text: info@eaglefernequine.com
+        -
+          value: clientservices@eaglefernvet.com
+          text: clientservices@eaglefernvet.com
+        -
+          value: eastbendvet@gmail.com
+          text: eastbendvet@gmail.com
+        -
+          value: EastLaneELVH@aol.com
+          text: EastLaneELVH@aol.com
+        -
+          value: epvclinic@gmail.com
+          text: epvclinic@gmail.com
+        -
+          value: info@eastridgeanimal.com
+          text: info@eastridgeanimal.com
+        -
+          value: edgewoodanimalclinic@comcast.net
+          text: edgewoodanimalclinic@comcast.net
+        -
+          value: emergencyvethosp@gmail.com
+          text: emergencyvethosp@gmail.com
+        -
+          value: evcot@evcot.com
+          text: evcot@evcot.com
+        -
+          value: Reception@eugeneanimalhospital.net
+          text: Reception@eugeneanimalhospital.net
+        -
+          value: Infoeverettveterinary@gmail.com
+          text: Infoeverettveterinary@gmail.com
+        -
+          value: evergreenveterinaryhospital@gmail.com
+          text: evergreenveterinaryhospital@gmail.com
+        -
+          value: extramilevet@gmail.com
+          text: extramilevet@gmail.com
+        -
+          value: faithful2friends@gmail.com
+          text: faithful2friends@gmail.com
+        -
+          value: familypetclinicnewberg@yahoo.com
+          text: familypetclinicnewberg@yahoo.com
+        -
+          value: info@feralcats.com
+          text: info@feralcats.com
+        -
+          value: homevet1@gmail.com
+          text: homevet1@gmail.com
+        -
+          value: forestheightsvet@gmail.com
+          text: forestheightsvet@gmail.com
+        -
+          value: fvmanager@fvvet.com
+          text: fvmanager@fvvet.com
+        -
+          value: info2@foreverpetdental.com
+          text: info2@foreverpetdental.com
+        -
+          value: reception@fourcornersvetclinic.com
+          text: reception@fourcornersvetclinic.com
+        -
+          value: info@4riversvet.com
+          text: info@4riversvet.com
+        -
+          value: admin@fremontvet.com
+          text: admin@fremontvet.com
+        -
+          value: clientservices@frontiervet.com
+          text: clientservices@frontiervet.com
+        -
+          value: customercare@fullcirclevets.com
+          text: customercare@fullcirclevets.com
+        -
+          value: gabrielparkvet@gmail.com
+          text: gabrielparkvet@gmail.com
+        -
+          value: gatewayvet@gmail.com
+          text: gatewayvet@gmail.com
+        -
+          value: reception@gladstonevets.com
+          text: reception@gladstonevets.com
+        -
+          value: staff@goosehollowvet.com
+          text: staff@goosehollowvet.com
+        -
+          value: hello@gratefulheartvethospital.com
+          text: hello@gratefulheartvethospital.com
+        -
+          value: gahrecord@gmail.com
+          text: gahrecord@gmail.com
+        -
+          value: grovevetclinic@gmail.com
+          text: grovevetclinic@gmail.com
+        -
+          value: guardmans@peaks.org
+          text: guardmans@peaks.org
+        -
+          value: vetsupport@guidedogs.com
+          text: vetsupport@guidedogs.com
+        -
+          value: halseyeast@gmail.com
+          text: halseyeast@gmail.com
+        -
+          value: MembershipTeam@HannahSociety.com
+          text: MembershipTeam@HannahSociety.com
+        -
+          value: hansonmeekins@gmail.com
+          text: hansonmeekins@gmail.com
+        -
+          value: HappyValleyVetHospital@gmail.com
+          text: HappyValleyVetHospital@gmail.com
+        -
+          value: hartroadanimalhospital@comcast.net
+          text: hartroadanimalhospital@comcast.net
+        -
+          value: info@hawthornevet.com
+          text: info@hawthornevet.com
+        -
+          value: hmpet@aol.com
+          text: hmpet@aol.com
+        -
+          value: healingartsvet@yahoo.com
+          text: healingartsvet@yahoo.com
+        -
+          value: healingpawscenter@gmail.com
+          text: healingpawscenter@gmail.com
+        -
+          value: info@heartoregon.com
+          text: info@heartoregon.com
+        -
+          value: info@heartfeltvet.com
+          text: info@heartfeltvet.com
+        -
+          value: hillsboroveterinary@gmail.com
+          text: hillsboroveterinary@gmail.com
+        -
+          value: info@hillsdalevet.com
+          text: info@hillsdalevet.com
+        -
+          value: hoberglisa33@gmail.com
+          text: hoberglisa33@gmail.com
+        -
+          value: holisticpetrecords@gmail.com
+          text: holisticpetrecords@gmail.com
+        -
+          value: hollywood.pet.hospital@comcast.net
+          text: hollywood.pet.hospital@comcast.net
+        -
+          value: service@hometownvet.net
+          text: service@hometownvet.net
+        -
+          value: hopeanimalhospital@molalla.net
+          text: hopeanimalhospital@molalla.net
+        -
+          value: info@hopeveterinarycare.org
+          text: info@hopeveterinarycare.org
+        -
+          value: drjenniferbarrington@gmail.com
+          text: drjenniferbarrington@gmail.com
+        -
+          value: Info@irvingtonveterinary.com
+          text: Info@irvingtonveterinary.com
+        -
+          value: roxleydvm.jcvs@gmail.com
+          text: roxleydvm.jcvs@gmail.com
+        -
+          value: kennedyvetreception@gmail.com
+          text: kennedyvetreception@gmail.com
+        -
+          value: contact@kentonanimalhospital.com
+          text: contact@kentonanimalhospital.com
+        -
+          value: pets@kindnessfamilypetclinic.com
+          text: pets@kindnessfamilypetclinic.com
+        -
+          value: klamathanimalclinic@yahoo.com
+          text: klamathanimalclinic@yahoo.com
+        -
+          value: lgvet@comcast.net
+          text: lgvet@comcast.net
+        -
+          value: info@laurelwoodvets.com
+          text: info@laurelwoodvets.com
+        -
+          value: libertyahsalem@gmail.com
+          text: libertyahsalem@gmail.com
+        -
+          value: lcac2009@live.com
+          text: lcac2009@live.com
+        -
+          value: info@lincolnroadvet.com
+          text: info@lincolnroadvet.com
+        -
+          value: linnveterinary@gmail.com
+          text: linnveterinary@gmail.com
+        -
+          value: ivanslac@yahoo.com
+          text: ivanslac@yahoo.com
+        -
+          value: wecare@lombardanimalhospital.com
+          text: wecare@lombardanimalhospital.com
+        -
+          value: rovervet@yahoo.com
+          text: rovervet@yahoo.com
+        -
+          value: MAH@medfordanimalhospital.com
+          text: MAH@medfordanimalhospital.com
+        -
+          value: info@gometrovet.com
+          text: info@gometrovet.com
+        -
+          value: mvvc97385@gmail.com
+          text: mvvc97385@gmail.com
+        -
+          value: milnerstaff@gmail.com
+          text: milnerstaff@gmail.com
+        -
+          value: staff@milwaukieanimalclinic.com
+          text: staff@milwaukieanimalclinic.com
+        -
+          value: snaidoo@mobilevetpdx.com
+          text: snaidoo@mobilevetpdx.com
+        -
+          value: morelandvethospital@comcast.net
+          text: morelandvethospital@comcast.net
+        -
+          value: mvah00@gmail.com
+          text: mvah00@gmail.com
+        -
+          value: mtviewvet@canby.com
+          text: mtviewvet@canby.com
+        -
+          value: mt.hoodmobilevet@gmail.com
+          text: mt.hoodmobilevet@gmail.com
+        -
+          value: mthoodpet@gmail.com
+          text: mthoodpet@gmail.com
+        -
+          value: Info@mtsanimalclinic.com
+          text: Info@mtsanimalclinic.com
+        -
+          value: info@mttaborvetcare.com
+          text: info@mttaborvetcare.com
+        -
+          value: animal-health@multco.us
+          text: animal-health@multco.us
+        -
+          value: vcamurrayhill@vca.com
+          text: vcamurrayhill@vca.com
+        -
+          value: nehalemanimalhealing@gmail.com
+          text: nehalemanimalhealing@gmail.com
+        -
+          value: NeighborhoodVet@comcast.net
+          text: NeighborhoodVet@comcast.net
+        -
+          value: newberganimals@gmail.com
+          text: newberganimals@gmail.com
+        -
+          value: newbergcaninerehab@gmail.com
+          text: newbergcaninerehab@gmail.com
+        -
+          value: frontdesk@newbergvet.com
+          text: frontdesk@newbergvet.com
+        -
+          value: newportvethospital@gmail.com
+          text: newportvethospital@gmail.com
+        -
+          value: mfultondvm@aol.com
+          text: mfultondvm@aol.com
+        -
+          value: clientcare@northplainsvetclinic.com
+          text: clientcare@northplainsvetclinic.com
+        -
+          value: nwexoticpetvet@hotmail.com
+          text: nwexoticpetvet@hotmail.com
+        -
+          value: info@NWneighborhoodVet.com
+          text: info@NWneighborhoodVet.com
+        -
+          value: ohvc@oakhillsvetclinic.com
+          text: ohvc@oakhillsvetclinic.com
+        -
+          value: oceanlakevet@yahoo.com
+          text: oceanlakevet@yahoo.com
+        -
+          value: info@ovvcsalem.com
+          text: info@ovvcsalem.com
+        -
+          value: oregoncityveterinaryclinic@comcast.net
+          text: oregoncityveterinaryclinic@comcast.net
+        -
+          value: admissions@oregonhumane.org
+          text: admissions@oregonhumane.org
+        -
+          value: sa.reception@oregonstate.edu
+          text: sa.reception@oregonstate.edu
+        -
+          value: info@oregontrailvet.com
+          text: info@oregontrailvet.com
+        -
+          value: xrays4ovra@gmail.com
+          text: xrays4ovra@gmail.com
+        -
+          value: info@ovshosp.com
+          text: info@ovshosp.com
+        -
+          value: records@orev.vet
+          text: records@orev.vet
+        -
+          value: info@florenceveterinary.com
+          text: info@florenceveterinary.com
+        -
+          value: rehab@acglo.com
+          text: rehab@acglo.com
+        -
+          value: reception@oswegovet.com
+          text: reception@oswegovet.com
+        -
+          value: info@overlookvet.com
+          text: info@overlookvet.com
+        -
+          value: pacificavevet@hotmail.com
+          text: pacificavevet@hotmail.com
+        -
+          value: clientcare@pacvh.com
+          text: clientcare@pacvh.com
+        -
+          value: rayholmgren@aol.com
+          text: rayholmgren@aol.com
+        -
+          value: Parkwayanimalhosp@yahoo.com
+          text: Parkwayanimalhosp@yahoo.com
+        -
+          value: parkwayvet@parkwayvet.com
+          text: parkwayvet@parkwayvet.com
+        -
+          value: medical@pawteam.org
+          text: medical@pawteam.org
+        -
+          value: staff@pawsandclawsvet.com
+          text: staff@pawsandclawsvet.com
+        -
+          value: info@pawswellvet.com
+          text: info@pawswellvet.com
+        -
+          value: pearblossomvet@qwestoffice.net
+          text: pearblossomvet@qwestoffice.net
+        -
+          value: ask_us@pearlanimalhospital.com
+          text: ask_us@pearlanimalhospital.com
+        -
+          value: staff@peninsulapet.net
+          text: staff@peninsulapet.net
+        -
+          value: periwinklepetclinic@gmail.com
+          text: periwinklepetclinic@gmail.com
+        -
+          value: petsamaritan@nva.com
+          text: petsamaritan@nva.com
+        -
+          value: petvetoc@gmail.com
+          text: petvetoc@gmail.com
+        -
+          value: pheonixanimalhospital@gmail.com
+          text: pheonixanimalhospital@gmail.com
+        -
+          value: appointments@pahcares.com
+          text: appointments@pahcares.com
+        -
+          value: pioneervethospital@gmail.com
+          text: pioneervethospital@gmail.com
+        -
+          value: pioneervet@att.net
+          text: pioneervet@att.net
+        -
+          value: info@pixieproject.org
+          text: info@pixieproject.org
+        -
+          value: info@plateauveterinary.net
+          text: info@plateauveterinary.net
+        -
+          value: portlandanimalclinic@gmail.com
+          text: portlandanimalclinic@gmail.com
+        -
+          value: portlandcardiology@gmail.com
+          text: portlandcardiology@gmail.com
+        -
+          value: portvetonc@yahoo.com
+          text: portvetonc@yahoo.com
+        -
+          value: reception@powellvet.com
+          text: reception@powellvet.com
+        -
+          value: customercare@powellvet.com
+          text: customercare@powellvet.com
+        -
+          value: PremierPetVet@gmail.com
+          text: PremierPetVet@gmail.com
+        -
+          value: reception@prinevillevetclinic.com
+          text: reception@prinevillevetclinic.com
+        -
+          value: thayv@aol.com
+          text: thayv@aol.com
+        -
+          value: vet@ramblingvet.com
+          text: vet@ramblingvet.com
+        -
+          value: EAH_INC@Frontier.com
+          text: EAH_INC@Frontier.com
+        -
+          value: reception@redmondvet.net
+          text: reception@redmondvet.net
+        -
+          value: reidvethospital@comcast.net
+          text: reidvethospital@comcast.net
+        -
+          value: repmctech@gmail.com
+          text: repmctech@gmail.com
+        -
+          value: info@riversidevetbend.com
+          text: info@riversidevetbend.com
+        -
+          value: rogersvetservice@gmail.com
+          text: rogersvetservice@gmail.com
+        -
+          value: info@rosecityvet.com
+          text: info@rosecityvet.com
+        -
+          value: info@rosewayvet.com
+          text: info@rosewayvet.com
+        -
+          value: safeharbor.haase@gmail.com
+          text: safeharbor.haase@gmail.com
+        -
+          value: info@soarvet.com
+          text: info@soarvet.com
+        -
+          value: vet@SalemParkVet.comcastbiz.net
+          text: vet@SalemParkVet.comcastbiz.net
+        -
+          value: santaclara@nvanet.com
+          text: santaclara@nvanet.com
+        -
+          value: santiamequine@yahoo.com
+          text: santiamequine@yahoo.com
+        -
+          value: scalesandtailsexoticpetclinic@gmail.com
+          text: scalesandtailsexoticpetclinic@gmail.com
+        -
+          value: info@sherwoodfamilypetclinic.com
+          text: info@sherwoodfamilypetclinic.com
+        -
+          value: info@silvercreekanimalclinic.com
+          text: info@silvercreekanimalclinic.com
+        -
+          value: sisqvet@gmail.com
+          text: sisqvet@gmail.com
+        -
+          value: Sistersveterinaryclinic@gmail.com
+          text: Sistersveterinaryclinic@gmail.com
+        -
+          value: info@skinvetclinic.com
+          text: info@skinvetclinic.com
+        -
+          value: customerservice.sorrento@gmail.com
+          text: customerservice.sorrento@gmail.com
+        -
+          value: Southclackamas@outlook.com
+          text: Southclackamas@outlook.com
+        -
+          value: swvcstaff@swvetclinic.com
+          text: swvcstaff@swvetclinic.com
+        -
+          value: SOVSC@SOVSC.com
+          text: SOVSC@SOVSC.com
+        -
+          value: southgateanimalclinic@live.com
+          text: southgateanimalclinic@live.com
+        -
+          value: burgess@swanimalhospital.net
+          text: burgess@swanimalhospital.net
+        -
+          value: pets@stjohnsvc.com
+          text: pets@stjohnsvc.com
+        -
+          value: staff@staytonveterinary.com
+          text: staff@staytonveterinary.com
+        -
+          value: svac@svanimal.com
+          text: svac@svanimal.com
+        -
+          value: sunnyvet@sunnysidevet.net
+          text: sunnyvet@sunnysidevet.net
+        -
+          value: info@sunrivervet.com
+          text: info@sunrivervet.com
+        -
+          value: sunset@sunsetanimal.com
+          text: sunset@sunsetanimal.com
+        -
+          value: clientcare@sunstonevets.com
+          text: clientcare@sunstonevets.com
+        -
+          value: surgery4pets@gmail.com
+          text: surgery4pets@gmail.com
+        -
+          value: info@synergybehavior.com
+          text: info@synergybehavior.com
+        -
+          value: records@tanasbourneveter.com
+          text: records@tanasbourneveter.com
+        -
+          value: reception@thevethosp.com
+          text: reception@thevethosp.com
+        -
+          value: headquarters@villagevet-llc.net
+          text: headquarters@villagevet-llc.net
+        -
+          value: thirdstreetvet@onlinemac.com
+          text: thirdstreetvet@onlinemac.com
+        -
+          value: tigardanimal@NVANET.com
+          text: tigardanimal@NVANET.com
+        -
+          value: tvh@tvh1.net
+          text: tvh@tvh1.net
+        -
+          value: timberlandanimalclinic@yahoo.com
+          text: timberlandanimalclinic@yahoo.com
+        -
+          value: townandcountryanimal@yahoo.com
+          text: townandcountryanimal@yahoo.com
+        -
+          value: tualatinAC@gmail.com
+          text: tualatinAC@gmail.com
+        -
+          value: tualatinparkvet@gmail.com
+          text: tualatinparkvet@gmail.com
+        -
+          value: animalhospital@gorge.net
+          text: animalhospital@gorge.net
+        -
+          value: TumaloAH@gmail.com
+          text: TumaloAH@gmail.com
+        -
+          value: twinoaksvet@yahoo.com
+          text: twinoaksvet@yahoo.com
+        -
+          value: info@tworiversvet.com
+          text: info@tworiversvet.com
+        -
+          value: valleyveterinaryclinic@yahoo.com
+          text: valleyveterinaryclinic@yahoo.com
+        -
+          value: Au657@vca.com
+          text: Au657@vca.com
+        -
+          value: au1136@vca.com
+          text: au1136@vca.com
+        -
+          value: au1017@vca.com
+          text: au1017@vca.com
+        -
+          value: mckenzievet@gmail.com
+          text: mckenzievet@gmail.com
+        -
+          value: au947@vca.com
+          text: au947@vca.com
+        -
+          value: NWVSRecords@vca.com
+          text: NWVSRecords@vca.com
+        -
+          value: au587@vca.com
+          text: au587@vca.com
+        -
+          value: au924@vca.com
+          text: au924@vca.com
+        -
+          value: au672@vca.com
+          text: au672@vca.com
+        -
+          value: au1140@vca.com
+          text: au1140@vca.com
+        -
+          value: au537@vca.com
+          text: au537@vca.com
+        -
+          value: au673@vca.com
+          text: au673@vca.com
+        -
+          value: laura.erbach@vca.com
+          text: laura.erbach@vca.com
+        -
+          value: westmorelandanimalhospital@gmail.com
+          text: westmorelandanimalhospital@gmail.com
+        -
+          value: AU1136@VCA.com
+          text: AU1136@VCA.com
+        -
+          value: au540@vca.com
+          text: au540@vca.com
+        -
+          value: vdicrequests@gmail.com
+          text: vdicrequests@gmail.com
+        -
+          value: midwayveterinaryhospital@gmail.com
+          text: midwayveterinaryhospital@gmail.com
+        -
+          value: admin@vetanesthesiaspecialists.com
+          text: admin@vetanesthesiaspecialists.com
+        -
+          value: info@vcsspdx.com
+          text: info@vcsspdx.com
+        -
+          value: info@vrcvet.com
+          text: info@vrcvet.com
+        -
+          value: vetsrgn@yahoo.com
+          text: vetsrgn@yahoo.com
+        -
+          value: info@vikingveterinarycare.com
+          text: info@vikingveterinarycare.com
+        -
+          value: customercare@vamvh.com
+          text: customercare@vamvh.com
+        -
+          value: vistapetstaff@gmail.com
+          text: vistapetstaff@gmail.com
+        -
+          value: vitalitypethospital@gmail.com
+          text: vitalitypethospital@gmail.com
+        -
+          value: info@vivapetcare.com
+          text: info@vivapetcare.com
+        -
+          value: cedarhills@wellhavenpethealth.com
+          text: cedarhills@wellhavenpethealth.com
+        -
+          value: starkstreetpethospital@gmail.com
+          text: starkstreetpethospital@gmail.com
+        -
+          value: info@eugenevet.com
+          text: info@eugenevet.com
+        -
+          value: westhillsanimalclinicdvm@gmail.com
+          text: westhillsanimalclinicdvm@gmail.com
+        -
+          value: business@westhillsanimalhospital.com
+          text: business@westhillsanimalhospital.com
+        -
+          value: info@wmainah.com
+          text: info@wmainah.com
+        -
+          value: reception@westsalemac.com
+          text: reception@westsalemac.com
+        -
+          value: Choate_Jennifer@yahoo.com
+          text: Choate_Jennifer@yahoo.com
+        -
+          value: drshaw@westsidepethospitalbend.com
+          text: drshaw@westsidepethospitalbend.com
+        -
+          value: info@wholepetvetcare.com
+          text: info@wholepetvetcare.com
+        -
+          value: wildwoodvet@wildwoodanimalhospital.com
+          text: wildwoodvet@wildwoodanimalhospital.com
+        -
+          value: wildwoodvetstaff@gmail.com
+          text: wildwoodvetstaff@gmail.com
+        -
+          value: willakenzieac@hotmail.com
+          text: willakenzieac@hotmail.com
+        -
+          value: tualatin@wvah.net
+          text: tualatin@wvah.net
+        -
+          value: gladstone@wvah.net
+          text: gladstone@wvah.net
+        -
+          value: battlecreekvet@gmail.com
+          text: battlecreekvet@gmail.com
+        -
+          value: info@wilvet.com
+          text: info@wilvet.com
+        -
+          value: staff@willowbrookvet.com
+          text: staff@willowbrookvet.com
+        -
+          value: info@wilsonvilleveterinaryclinic.com
+          text: info@wilsonvilleveterinaryclinic.com
+        -
+          value: info@wbpet.com
+          text: info@wbpet.com
+        -
+          value: woodburnvetclinic@gmail.com
+          text: woodburnvetclinic@gmail.com
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: doctor@dovelewis.org
+      from_options: {  }
+      from_name: 'DoveLewis Specialty CSR'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'New Record Request for [webform_submission:values:your_name] - Please Submit Online'
+      body: "<p><span style=\"font-size:11pt\"><span style=\"line-height:107%\"><span style=\"font-family:Calibri,sans-serif\">Your client [webform_submission:values:your_contact_information] has requested an appointment for [webform_submission:values:your_name] with DoveLewis&#39; [webform_submission:values:specialty_departments] department.</span></span></span></p>\r\n<span style=\"font-size:11pt\"><span style=\"line-height:107%\"><span style=\"font-family:Calibri,sans-serif\"><strong>Please send all relevant records to our team via our <a href=\"https://www.dovelewis.org/veterinarians/specialty-services/veterinary-portal\">veterinary portal</a> so we can review the information and schedule this patient&rsquo;s appointment. </strong></span></span></span><br />\r\n<br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:107%\"><span style=\"font-family:Calibri,sans-serif\"><strong>If you do not have a password for the <a href=\"https://www.dovelewis.org/veterinarians/specialty-services/veterinary-portal\">veterinary portal</a>, c</strong>ontact us at <a href=\"tel:(503) 228-7281\">(503) 228-7281</a> and we will email you a username and a temporary password to use to login to the portal. Please note, every username and password are issued per clinic, not per individual.</span></span></span><br />\r\n<br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\">Thank you for trusting us with this patient&rsquo;s care. If you&rsquo;re interested in receiving updates from DoveLewis, including new services, major updates, CE resources, and more, <a href=\"https://mailchi.mp/0d1d1074892e/p1yzm70vr6\" style=\"color:blue; text-decoration:underline\">subscribe to our email list here.</a></span></span></span><br />\r\n<br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\">DoveLewis Veterinary Emergency &amp; Specialty Teams</span></span></span>"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_3:
+    id: email
+    handler_id: email_3
+    label: 'Unknown rDVM - Internal - New and Recheck Appointments'
+    notes: ''
+    status: true
+    conditions:
+      enabled:
+        ':input[name="select_your_hospital[other]"]':
+          filled: true
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: specialtyappts@dovelewis.org
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: 'Specialty Contact Form'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Follow Up Needed - [webform_submission:values:specialty_departments], [webform_submission:values:reason_for_contact] '
+      body: "<strong>The client below entered an rDVM whose contact information is not in our records. Please contact the rDVM to request records.&nbsp;</strong><br />\r\n<br />\r\n&lt;p&gt;Submitted on [webform_submission:created]&lt;/p&gt;<br />\r\n&lt;p&gt;Submitted by: [webform_submission:user]&lt;/p&gt;<br />\r\n&lt;p&gt;Submitted values are:&lt;/p&gt;<br />\r\n[webform_submission:values]<br />\r\n&nbsp;"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_4:
+    id: email
+    handler_id: email_4
+    label: 'Internal CSR Email - Less Unknown DVM, Rx, and Recheck'
+    notes: ''
+    status: true
+    conditions:
+      disabled:
+        -
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Rx Refill'
+        - or
+        -
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Appointment Follow-up'
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: specialtyappts@dovelewis.org
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: 'Specialty Contact Form'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: '[webform_submission:values:specialty_departments], [webform_submission:values:reason_for_contact]'
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  internal_csr_email_less_unknown_dvm_rx_and_recheck:
+    id: email
+    handler_id: internal_csr_email_less_unknown_dvm_rx_and_recheck
+    label: 'Internal CSR Email - Only Rx or Recheck'
+    notes: ''
+    status: true
+    conditions:
+      enabled:
+        -
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Rx Refill'
+        - or
+        -
+          ':input[name="reason_for_contact[select]"]':
+            value: 'Appointment Follow-up'
+    weight: 5
+    settings:
+      states:
+        - completed
+      to_mail: specialist@dovelewis.org
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: 'Specialty Contact Form'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: '[webform_submission:values:specialty_departments], [webform_submission:values:reason_for_contact]'
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

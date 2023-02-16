@@ -1,0 +1,9 @@
+uuid: 11520877-2980-4841-8d62-eff2137f779f
+langcode: en
+status: true
+dependencies: {  }
+id: faqs
+label: 'FAQs Reference'
+icon_uuid: null
+description: 'Reference and display existing FAQs content.'
+behavior_plugins: {  }

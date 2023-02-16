@@ -1,0 +1,23 @@
+uuid: dd28de76-8dde-44c5-beb7-feed7631c51d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_link
+    - taxonomy.vocabulary.departments
+  module:
+    - link
+id: taxonomy_term.departments.field_link
+field_name: field_link
+entity_type: taxonomy_term
+bundle: departments
+label: Link
+description: 'Enter a path to the landing page for this Department.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 1
+field_type: link

@@ -1,0 +1,44 @@
+/**
+ * Blog Post node - View mode: Teaser.
+ */
+
+
+.node--type--blog-post.node--view-mode--teaser {
+  height: 100%;
+
+  .content__image {
+    display: none;
+  }
+
+  .content__text {
+    padding: 0;
+  }
+
+  .post-date {
+    display: block;
+    margin-bottom: 10px;
+    font-style: italic;
+    color: $color--gray3;
+  }
+
+  .node__title {
+    @include h5--mobile-large();
+
+    a {
+      @include link-style--green();
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .content__image {
+      display: block;
+    }
+
+    .content__text {
+      padding-top: $spacing--xsmall;
+    }
+  }
+}

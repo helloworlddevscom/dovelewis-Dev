@@ -1,0 +1,45 @@
+{
+  "name": "dovelewis",
+  "version": "1.0.0",
+  "description": "Gulpfile for DoveLewis theme.",
+  "author": "Hello World",
+  "private": true,
+  "license": "ISC",
+  "engines": {
+    "node": ">= 11.0.0",
+    "npm": ">= 6.4.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.6.1",
+    "eyeglass": "^1.6.0",
+    "gulp": "^4.0.2",
+    "gulp-add-src": "^1.0.0",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^3.0.0",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "n": "^2.1.12",
+    "natives": "^1.1.6",
+    "nodemon": "^1.19.1",
+    "run-sequence": "^1.1.2",
+    "sass-lint-auto-fix": "^0.16.2"
+  },
+  "dependencies": {
+    "foundation-sites": "^6.5.0",
+    "motion-ui": "^2.0.3",
+    "slick-carousel": "^1.8.1"
+  },
+  "scripts": {
+    "lint": "sass-lint -v -q",
+    "lint:fix": "sass-lint-auto-fix --config .sass-lint-auto-fix.yml;"
+  }
+}

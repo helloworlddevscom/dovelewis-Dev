@@ -1,0 +1,4 @@
+name: Constant Contact Signup Form
+description: Creates a Constant Contact signup form.
+core: 8.x
+type: module

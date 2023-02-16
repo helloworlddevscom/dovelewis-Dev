@@ -1,0 +1,11 @@
+uuid: 27dd2bcb-f397-4c73-a55a-1be406af6e43
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pet_species
+id: taxonomy_term.pet_species
+target_entity_type_id: taxonomy_term
+target_bundle: pet_species
+default_langcode: site_default
+language_alterable: false

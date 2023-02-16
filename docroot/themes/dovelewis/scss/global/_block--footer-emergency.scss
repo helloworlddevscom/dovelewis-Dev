@@ -1,0 +1,169 @@
+/**
+ * Block - Footer Emergency.
+ */
+
+
+.region--footer-top {
+  background-color: $color--red;
+  border-bottom: 4px solid;
+  border-color: $white;
+}
+
+.block-id--block-footeremergency {
+  padding: $spacing--medium 0;
+  text-align: center;
+  color: $color--white;
+
+  .emergency-section {
+    margin-bottom: $spacing--small;
+  }
+
+  .emergency-care-img {
+    display:inline-block;
+    vertical-align: top;
+    width: 90px;
+    padding-right: 20px;
+  }
+
+  .emergency-care {
+    display: inline-block;
+    max-width: 200px;
+    width: calc(100% - 90px);
+    font-family: $ff--idealsans;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .tel-button, .map-button {
+    display: inline-block;
+    margin-bottom: 25px;
+    margin-top: 12px;
+  }
+
+  .address {
+    display: block;
+    max-width: 186px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $spacing--small;
+    font-size: 1.05em;
+  }
+
+  .notice-section p {
+    font-size: rem-calc(15);
+    font-style: italic;
+    display: block;
+    margin-bottom: 0;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    padding: $spacing--medium 0;
+    text-align: left;
+
+    .emergency-section {
+      margin-bottom: 0;
+    }
+
+    .emergency-care-img {
+      width: 100px;
+    }
+
+    .emergency-care {
+      width: calc(100% - 100px);
+    }
+
+    .address-section {
+      padding-left: 20px;
+    }
+
+    .address {
+      display: block;
+      margin: 0;
+    }
+
+    .tel-button, .map-button {
+      margin: $spacing--medium $spacing--medium 0 0;
+    }
+
+    .tel-button {
+      margin-right: 0;
+    }
+
+    .notice-section {
+      margin-top: -40px;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .emergency-care-img {
+      float: left;
+    }
+
+    .emergency-care {
+      float: left;
+      max-width: 200px;
+      font-size: 1rem;
+      padding-top: 5px;
+    }
+
+    .address-section {
+      padding-left: 0;
+    }
+
+    .address {
+      display: inline-block;
+      vertical-align: bottom;
+      margin: 0 $spacing--small 0 0;
+      font-size: 1.125rem;
+    }
+
+    .tel-button, .map-button {
+      margin: 12px $spacing--small 0 0;
+    }
+
+    .tel-button {
+      margin-right: 0;
+    }
+
+    .notice-section {
+      margin-top: 0;
+    }
+
+    .notice-section p {
+      font-size: rem-calc(15);
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    .emergency-care {
+      font-size: 1.125rem;
+    }
+
+    .address {
+      margin: 0 $spacing--medium 0 0;
+    }
+
+    .tel-button, .map-button {
+      margin: 12px $spacing--medium 0 0;
+    }
+
+    .tel-button {
+      margin-right: 0;
+    }
+
+    .notice-section p {
+      padding-top: 15px;
+    }
+  }
+}

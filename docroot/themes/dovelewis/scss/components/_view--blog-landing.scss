@@ -1,0 +1,136 @@
+/**
+ * View: Blog Landing.
+ */
+
+
+// Top block display
+// ----
+
+.view--blog-landing.view-display-id--block_blog_top,
+.view--blog-landing.view-display-id--block_press_top {
+  .views-row {
+    .views-field-field-hero-image {
+      img {
+        width: 100%;
+        max-width: none;
+      }
+    }
+
+    .views-row__text {
+      padding: $spacing--medium 0;
+    }
+
+    .text__title {
+      margin-bottom: $spacing--xsmall;
+    }
+
+    .post-title {
+      @include h2--mobile-large;
+      margin-bottom: $spacing--xsmall;
+      font-weight: 600;
+
+      a {
+        @include link-style--green;
+      }
+    }
+
+    .views-label-field-date,
+    .post-date {
+      @include font-size--large;
+      color: $color--gray3;
+    }
+
+    .post-date {
+      font-weight: bold;
+    }
+
+    .post-author {
+      font-size: rem-calc(18);
+      color: $color--gray3;
+
+      a {
+        @include link-style--gray;
+      }
+    }
+
+    .text__body {
+
+      p {
+
+      }
+
+      .cta {
+        margin: 0;
+      }
+    }
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .views-row {
+      .text__title {
+        margin-bottom: 0;
+        padding-right: $spacing--medium;
+      }
+    }
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .views-row {
+      .views-row__text {
+        padding-top: 100px;
+        padding-bottom: 80px;
+      }
+
+      .post-title {
+        margin-bottom: $spacing--medium;
+      }
+
+      .text__body p {
+        @include text-style--lead();
+      }
+    }
+  }
+}
+
+
+// Bottom block display,
+// By Author display,
+// By Topic display
+// ----
+
+.view--blog-landing.view-display-id--block_blog_bottom,
+.view--blog-landing.view-display-id--block_press_bottom,
+.view--blog-landing.view-display-id--block_blog_author,
+.view--blog-landing.view-display-id--block_blog_topic {
+  .view-filters {
+    .form-item-type {
+      margin-top: 0;
+    }
+  }
+
+  .view-header {
+    margin-bottom: $spacing--medium;
+  }
+
+  .views-row {
+    padding: 30px 0;
+    border-bottom: 1px solid $color--gray6;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .views-row {
+      padding: $spacing--medium 0;
+    }
+  }
+}

@@ -1,0 +1,152 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function dovelewis_events_theme($existing, $type, $theme, $path) {
+  return [
+    // Fields.
+    'field__node__field_event_location_address__event__full' => [
+      'template' => 'field--node--field-event-location-address--event--full',
+      'base hook' => 'field',
+      'path' => $path . '/templates/fields',
+    ],
+    // Nodes.
+    'node__event__event_landing' => [
+      'template' => 'node--event--event-landing',
+      'base hook' => 'node',
+      'path' => $path . '/templates/nodes',
+    ],
+    'node__event__event_landing_top' => [
+      'template' => 'node--event--event-landing-top',
+      'base hook' => 'node',
+      'path' => $path . '/templates/nodes',
+    ],
+    'node__event__full' => [
+      'template' => 'node--event--full',
+      'base hook' => 'node',
+      'path' => $path . '/templates/nodes',
+    ],
+    'node__event__teaser' => [
+      'template' => 'node--event--teaser',
+      'base hook' => 'node',
+      'path' => $path . '/templates/nodes',
+    ],
+    // Views.
+    'views_view__upcoming_events__teaser_block' => [
+      'template' => 'views-view--upcoming-events--teaser-block',
+      'base hook' => 'views_view',
+      'path' => $path . '/templates/views',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess field.html.twig.
+ */
+function dovelewis_events_preprocess_field(&$vars) {
+  $field_name = $vars['field_name'];
+
+  switch ($field_name) {
+    // Modify markup of field_event_date when it is displayed in Event node Teaser view mode.
+    case 'field_event_date':
+      $view_modes = [
+        'teaser',
+        'event_landing',
+        'event_landing_top',
+      ];
+
+      if (in_array($vars['element']['#view_mode'], $view_modes) && $vars['element']['#bundle'] == 'event') {
+        $date_arr = explode(' ', $vars['items'][0]['content']['#text']);
+        $markup = '<span class="month">' . $date_arr[0] . '</span><span class="day">' . $date_arr[1] . '</span>';
+
+        $vars['items'][0]['content']['#text'] = array(
+          '#markup' => $markup,
+        );
+      }
+
+      break;
+
+    // Set Event node Optional Link field to open in new window.
+    case 'field_optional_link':
+      $vars['items']['0']['content']['#attributes']['target'] = '_blank';
+
+      break;
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess field--node--field-event-location-address--event--full.html.twig.
+ */
+function dovelewis_events_preprocess_field__node__field_event_location_address__event__full(&$vars) {
+  // Add Google Maps link to event address field when displayed in Event node Full view mode.
+  // URL encode address argument for Google Maps API.
+  $location_name = $vars['element']['#object']->get('field_event_location_name')->getValue()[0]['value'];
+  $location_address = $vars['items'][0]['content']['#context']['value'];
+  $google_maps_arg = str_replace(' ', '+', $location_name);
+  $google_maps_arg .= '+'.str_replace(' ', '+', $location_address);
+  $google_maps_arg = urlencode($google_maps_arg);
+  $vars['items'][0]['google_maps_arg'] = $google_maps_arg;
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess node.html.twig.
+ */
+function dovelewis_events_preprocess_node(&$vars) {
+  $node = $vars['node'];
+  $node_type = $node->getType();
+  $view_mode = $vars['view_mode'];
+
+  // Modifications based on content type.
+  switch($node_type) {
+    // Event.
+    case 'event':
+
+      // Duplicate field_event_date to allow rendering as longer date format.
+      $vars['content']['field_event_date_long'] = $vars['node']->getFields()['field_event_date']->view();
+      $vars['content']['field_event_date_long']['#theme'] = 'field__field_event_date_long';
+      $vars['content']['field_event_date_long']['#field_name'] = 'field_event_date_long';
+      $vars['content']['field_event_date_long']['#label_display'] = 'hidden';
+      $start_date = new DateTime($node->get('field_event_date')->getValue()[0]['value'], new \DateTimeZone('UTC'));
+      $start_date->setTimezone(new \DateTimeZone(	date_default_timezone_get() ));
+      $end_date = new DateTime($node->get('field_event_date')->getValue()[0]['end_value'], new \DateTimeZone('UTC'));
+      $end_date->setTimezone(new \DateTimeZone(	date_default_timezone_get() ));
+      $start_timestamp = $start_date->getTimestamp();
+      $end_timestamp = $end_date->getTimestamp();
+
+      // Check if event ends on same day.
+      // If same day, render as regular date field with only start date instead of daterange field.
+      if ($start_date->format('Y-m-d') == $end_date->format('Y-m-d')) {
+        $vars['content']['field_event_date_long']['#field_type'] = 'date';
+        $vars['content']['field_event_date_long'][0] = $vars['content']['field_event_date_long'][0]['start_date'];
+        $vars['content']['field_event_date_long'][0]['#text'] = \Drupal::service('date.formatter')->format($start_timestamp, 'long_date_day_month_year', date_default_timezone_get() );
+      }
+      // Otherwise, render as daterange.
+      else {
+        $vars['content']['field_event_date_long'][0]['start_date']['#text'] = \Drupal::service('date.formatter')->format($start_timestamp, 'long_date_day_month_year', date_default_timezone_get() );
+        $vars['content']['field_event_date_long'][0]['end_date']['#text'] = \Drupal::service('date.formatter')->format($end_timestamp, 'long_date_day_month_year', date_default_timezone_get() );
+      }
+
+      // Duplicate field_event_date again to allow rendering as time only format.
+      $vars['content']['field_event_date_time'] = $vars['node']->getFields()['field_event_date']->view();
+      $vars['content']['field_event_date_time']['#theme'] = 'field__field_event_date_time';
+      $vars['content']['field_event_date_time']['#field_name'] = 'field_event_date_time';
+      $vars['content']['field_event_date_time']['#label_display'] = 'hidden';
+      $vars['content']['field_event_date_time'][0]['start_date']['#text'] = \Drupal::service('date.formatter')->format($start_timestamp, 'time', date_default_timezone_get() );
+      $vars['content']['field_event_date_time'][0]['end_date']['#text'] = \Drupal::service('date.formatter')->format($end_timestamp, 'time', date_default_timezone_get() );
+
+      // Render field_event_date as regular date field with only start date instead of daterange field.
+      $vars['content']['field_event_date']['#field_type'] = 'date';
+      $vars['content']['field_event_date'][0] = $vars['content']['field_event_date'][0]['start_date'];
+
+      break;
+  }
+}

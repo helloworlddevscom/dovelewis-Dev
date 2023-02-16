@@ -1,0 +1,9 @@
+uuid: 8ba147a9-727d-4926-b74c-337c6686ab67
+langcode: en
+status: true
+dependencies: {  }
+id: view
+label: 'View Reference'
+icon_uuid: null
+description: 'Reference and display an existing View.'
+behavior_plugins: {  }

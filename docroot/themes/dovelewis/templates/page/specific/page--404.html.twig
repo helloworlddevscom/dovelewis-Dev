@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * 404 page.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+
+{% extends 'page.html.twig' %}
+
+{% block main_content %}
+  <main class="main-content--404 page--404" role="main">
+    <a id="main-content--404" tabindex="-1"></a>{# link is in html.html.twig #}
+    <div class="grid-container page--404__inner">
+      <div class="grid-x grid-margin-x">
+        <div class="page--404__content--left cell xlarge-6">
+          <img class="page--404__content--desktop-image" src="/{{ directory }}/images/Illustration_404_XXL@2x.png" alt="404 Pet Illustration"/>
+        </div>
+        <div class="page--404__content--right cell xlarge-6">
+          <h1>404</h1>
+          <img class="page--404__content--mobile-image" src="/{{ directory }}/images/illustration_404_dog_S@2x.png" alt="404 basset hound">
+          <h4>{{ 'Ruh Roh! Looks like you\'re lost.'|t }}</h4>
+          <p class="paragraph-size--lead">{{ 'The page you\'re looking for was not found. In the meantime, check the <a href="/found-pets">animals that we have found.'|t }}</a></p>
+          {{ drupal_entity('block', 'search_form') }}
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

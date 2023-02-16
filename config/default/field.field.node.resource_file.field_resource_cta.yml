@@ -1,0 +1,21 @@
+uuid: 6c6e48fe-b0ee-40a5-9e6d-a3a1f0fbab65
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_cta
+    - node.type.resource_file
+id: node.resource_file.field_resource_cta
+field_name: field_resource_cta
+entity_type: node
+bundle: resource_file
+label: 'Download Button Text'
+description: 'When this content is displayed inside a Resource File component, this text will be used for the download button.'
+required: true
+translatable: false
+default_value:
+  -
+    value: Download
+default_value_callback: ''
+settings: {  }
+field_type: string

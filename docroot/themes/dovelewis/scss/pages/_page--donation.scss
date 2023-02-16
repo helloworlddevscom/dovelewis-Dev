@@ -1,0 +1,14 @@
+/**
+ * Donation pages.
+ */
+
+
+.page--node--76,
+.page--node--296,
+.page--node--301 {
+  // Remove bottom border from header/page title area
+  // to make room for random animal image.
+  .node--full-with-sidebars > .node--full__header {
+    border-bottom: 0;
+  }
+}

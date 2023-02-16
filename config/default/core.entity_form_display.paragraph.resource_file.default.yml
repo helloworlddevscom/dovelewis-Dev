@@ -1,0 +1,44 @@
+uuid: 96f9dd33-ce1c-455e-a892-6cd373945ff4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.resource_file.field_content_tile_subtitle
+    - field.field.paragraph.resource_file.field_content_tile_title
+    - field.field.paragraph.resource_file.field_resource_file_ref
+    - paragraphs.paragraphs_type.resource_file
+id: paragraph.resource_file.default
+targetEntityType: paragraph
+bundle: resource_file
+mode: default
+content:
+  field_content_tile_subtitle:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_content_tile_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_resource_file_ref:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

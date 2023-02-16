@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Main Menu - Desktop top level only.
+ */
+#}
+
+<ul class="menu menu-level-{{ items|first.menu_level }}">
+  {% for key, item in items if key|first != '#' %}
+    {% set menu_item_classes = [
+      'menu-item',
+      'menu-item--' ~ loop.index,
+      item.in_active_trail ? 'menu-item--active-trail',
+      item.menu_level == 0 and item.title != 'Contact' and item.title != 'Home' ? 'menu-item--dropdown-toggle'
+    ] %}
+    {# If link is 'Contact', it should not have children, so we should not add class to toggle dropdown. #}
+
+    <li{{ item.attributes.addClass(menu_item_classes) }}>
+
+      {% set rendered_content = item.content|without('') %}
+      {% if rendered_content|render %}
+        {{ rendered_content }}
+      {% endif %}
+
+      {#{{ link(item.title, item.url) }}#}
+    </li>
+  {% endfor %}
+</ul>
+

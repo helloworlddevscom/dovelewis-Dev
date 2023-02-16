@@ -1,0 +1,25 @@
+uuid: b64744ee-46ea-4750-aa57-d58757fcc5e9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:bb4387cd-9c03-4aee-a8e9-0aa733bdc4c8'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: found_pet_claim
+theme: dovelewis
+region: disabled
+weight: 0
+provider: null
+plugin: 'block_content:bb4387cd-9c03-4aee-a8e9-0aa733bdc4c8'
+settings:
+  id: 'block_content:bb4387cd-9c03-4aee-a8e9-0aa733bdc4c8'
+  label: 'Claim Your Pet'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

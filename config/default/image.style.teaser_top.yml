@@ -1,0 +1,15 @@
+uuid: d5f7629d-d06d-405b-8581-b6ba05fa709b
+langcode: en
+status: true
+dependencies: {  }
+name: teaser_top
+label: 'Teaser Top (Scale & Crop 480x360)'
+effects:
+  e2331eef-fa26-4ad1-af9a-6bbfe838e579:
+    uuid: e2331eef-fa26-4ad1-af9a-6bbfe838e579
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 480
+      height: 360
+      anchor: center-center

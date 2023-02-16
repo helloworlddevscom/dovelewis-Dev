@@ -1,0 +1,15 @@
+uuid: d7868597-a2d4-4d9b-8f70-d59b8a9d2f89
+langcode: en
+status: true
+dependencies: {  }
+name: carousel_marquee_large_1x
+label: 'Carousel Marquee - Large @1x (Scale and Crop 1280×633)'
+effects:
+  6cd131ba-fff5-46ab-a4e7-d2867b69c348:
+    uuid: 6cd131ba-fff5-46ab-a4e7-d2867b69c348
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1280
+      height: 633
+      anchor: center-center

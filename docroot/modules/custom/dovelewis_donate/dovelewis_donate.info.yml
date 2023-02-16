@@ -1,0 +1,4 @@
+name: DoveLewis Donate
+description: Donation related code.
+core_version_requirement: ^8 || ^9
+type: module

@@ -1,0 +1,11 @@
+uuid: 3f258b89-d5ed-4ae1-950f-3a7d249856c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lost_found_pet
+id: node.lost_found_pet
+target_entity_type_id: node
+target_bundle: lost_found_pet
+default_langcode: site_default
+language_alterable: false

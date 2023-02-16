@@ -1,0 +1,68 @@
+uuid: 92c9dce1-fabb-4bf3-bd9d-277fc90a591a
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.hero_image_large_1x
+    - image.style.hero_image_large_2x
+    - image.style.hero_image_medium_1x
+    - image.style.hero_image_medium_2x
+    - image.style.hero_image_small_1x
+    - image.style.hero_image_small_2x
+  theme:
+    - dovelewis
+id: hero
+label: Hero
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_image_large_1x
+    breakpoint_id: dovelewis.xxlarge
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_image_large_2x
+    breakpoint_id: dovelewis.xxlarge
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_image_large_1x
+    breakpoint_id: dovelewis.xlarge
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_image_large_2x
+    breakpoint_id: dovelewis.xlarge
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_image_large_1x
+    breakpoint_id: dovelewis.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_image_large_2x
+    breakpoint_id: dovelewis.large
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_image_medium_1x
+    breakpoint_id: dovelewis.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_image_medium_2x
+    breakpoint_id: dovelewis.medium
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_image_small_1x
+    breakpoint_id: dovelewis.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_image_small_2x
+    breakpoint_id: dovelewis.small
+    multiplier: 2x
+breakpoint_group: dovelewis
+fallback_image_style: hero_image_small_1x

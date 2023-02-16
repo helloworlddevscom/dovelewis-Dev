@@ -1,0 +1,23 @@
+uuid: ec6bc3bc-f04a-4242-88de-43b99ca45cd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_found_weight
+    - node.type.lost_found_pet
+id: node.lost_found_pet.field_found_weight
+field_name: field_found_weight
+entity_type: node
+bundle: lost_found_pet
+label: Weight
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: lbs
+field_type: integer

@@ -1,0 +1,121 @@
+/**
+ * Main Menu - Second level/secondary.
+ * This is the secondary level menu that displays as gray tabs.
+ */
+
+
+// Hide secondary menu if it is disabled for current node.
+body.secondary-menu--hide {
+  .region--menu-secondary {
+    display: none;
+  }
+}
+
+.region--menu-secondary {
+  background-color: $color--white;
+}
+
+.region--menu-secondary .menu--main--second-level {
+  position: relative;
+
+  &:after {
+    content: '';
+    height: 100%;
+    width: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include horizontal-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  }
+
+  .menu {
+    display: block;
+    margin: 0;
+    white-space: nowrap;
+    overflow-x: scroll;
+
+    .menu-item {
+      display: inline-block;
+      padding: 0;
+      //border-left: 2px solid transparent;
+
+      a {
+        @include link-style--black;
+        padding: 15px;
+        font-size: 15px;
+        // @TODO Should this be a variable?
+        background-color: #EEEEEE;
+      }
+    }
+
+    .menu-item:first-child {
+      .title--short {
+        display: none;
+      }
+
+      .title--long {
+        display: block;
+      }
+    }
+
+    .menu-item:last-child {
+      margin-right: 15px;
+    }
+
+    .menu-item--active-trail {
+      a {
+        color: $color--green;
+        background-color: $color--white;
+      }
+    }
+
+    //.menu-item:nth-child(n+5) {
+    //  display: none;
+    //}
+  }
+
+  .field--name-field-menu-image,
+  .title--long {
+    display: none;
+  }
+
+  // Home page only version
+  &.menu--main--second-level--home-page {
+    .menu .menu-item--1 {
+      display: none;
+    }
+  }
+
+
+  // MEDIUM & BELOW
+
+  @include breakpoint(medium down) {
+    margin-left: -#{map-get($grid-container-padding, small) / 2};
+    margin-right: -#{map-get($grid-container-padding, small) / 2};
+  }
+
+
+  // LARGE AND UP
+
+  @include breakpoint(large) {
+    .menu {
+      //.menu-item:nth-child(n+5) {
+      //  display: inline-block;
+      //}
+      //
+      //.menu-item:nth-child(n+7) {
+      //  display: none;
+      //}
+    }
+  }
+
+  // XLARGE AND UP
+
+  @include breakpoint(xlarge) {
+    .menu {
+      //.menu-item:nth-child(n+7) {
+      //  display: inline-block;
+      //}
+    }
+  }
+}

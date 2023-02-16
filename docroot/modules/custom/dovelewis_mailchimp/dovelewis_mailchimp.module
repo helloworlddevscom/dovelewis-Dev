@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function dovelewis_mailchimp_theme($existing, $type, $theme, $path) {
+  $templates_path = drupal_get_path('module', 'dovelewis_mailchimp') . '/templates';
+
+  return [
+    'block__mailchimp_signup_form' => [
+      'template' => 'block--mailchimp-signup-form',
+      'base hook' => 'block',
+      'path' => $templates_path,
+    ],
+  ];
+}

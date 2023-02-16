@@ -1,0 +1,84 @@
+/**
+ * Views pager.
+ */
+
+
+// Full Pager
+// ----
+
+.pager ul.pager__items {
+  margin: $spacing--small 0 0 0;
+  text-align: left;
+
+  .pager__item {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+    text-align: center;
+
+    a {
+      display: block;
+      min-height: 27px;
+      padding: 5px 10px;
+      text-decoration: none;
+      line-height: 1;
+      font-family: $ff--sentinel;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+  }
+
+  .pager__item.is-active {
+    a {
+
+      color: $color--white;
+      background-color: $color--lightgreen;
+    }
+  }
+
+  .pager__item--next {
+    a {
+      width: 40px;
+      min-height: 30px;
+      background-image: url('../../images/icons/arrow.svg');
+      background-repeat: no-repeat;
+      background-size: 18px;
+      background-position: center;
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .pager__item--last,
+  pager__item--first {
+    display: none;
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    margin: $spacing--medium 0 0 0;
+  }
+}
+
+
+// Inifinite Scroll Pager
+// ----
+
+ul.pager--infinite-scroll {
+  margin-top: $spacing--xsmall;
+  margin-bottom: 0;
+
+  .pager__item {
+    display: block;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .button {
+    margin: 0;
+  }
+}

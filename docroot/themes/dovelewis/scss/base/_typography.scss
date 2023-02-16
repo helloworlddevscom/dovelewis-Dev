@@ -1,0 +1,528 @@
+/**
+ * Typography.
+ *
+ * Foundation recommends using their rem-calc() function to convert pixel to rem.
+ */
+
+body {
+  font-family: $ff--idealsans;
+  color: $color--body-text;
+}
+
+
+// Paragraphs and Spans
+// Creates mixins to allow applying font-sizes to non <p> & <span> elements if necessary.
+// Most of these classes can be added through Drupal WYSIWYG editor.
+// --------
+
+// Default paragraph size
+@mixin font-size--paragraph() {
+  font-size: rem-calc(16);
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(19);
+  }
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    font-size: rem-calc(22);
+  }
+}
+
+// Default paragraph style
+@mixin text-style--paragraph() {
+  @include font-size--paragraph;
+  line-height: 1.45;
+  margin-bottom: 1.5rem;
+
+  // XLARGE
+
+  @include breakpoint(xxlarge) {
+    line-height: 1.4;
+  }
+}
+
+// Default paragraph
+p {
+  @include text-style--paragraph;
+}
+
+// Slightly smaller paragraph size
+@mixin font-size--paragraph--small() {
+  font-size: rem-calc(16);
+
+  // LARGE
+
+  @include breakpoint(large) {
+    font-size: rem-calc(14);
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(19);
+  }
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    font-size: rem-calc(20);
+  }
+}
+
+// Lead (larger) style paragraph
+// Overrides Foundation .lead class.
+@mixin font-size--lead() {
+  font-size: rem-calc(18);
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(21.5);
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(24);
+  }
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    font-size: rem-calc(24);
+  }
+}
+
+// Lead (larger) style paragraph
+// Overrides Foundation .lead class.
+@mixin text-style--lead() {
+  @include font-size--lead;
+  line-height: 1.3;
+  margin-bottom: 1.2rem;
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    margin-bottom: 2rem;
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+  }
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+  }
+}
+p.lead,
+p.paragraph-size--lead {
+  @include text-style--lead;
+}
+
+// Large font-size
+@mixin font-size--large() {
+  font-size: rem-calc(16);
+
+  // LARGE
+
+  @include breakpoint(large) {
+    font-size: rem-calc(17);
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(20);
+  }
+}
+p.font-size--large,
+span.font-size--large,
+a.font-size--large {
+  @include font-size--large;
+}
+
+// Small font-size
+@mixin font-size--small() {
+  font-size: rem-calc(15);
+}
+p.font-size--small,
+span.font-size--small,
+a.font-size--small {
+  @include font-size--small();
+}
+
+// Small font-size with gray font
+@mixin text-style--small() {
+  @include font-size--small();
+  color: $color--gray3;
+}
+p.text-style--small,
+span.text-style--small,
+a.text-style--small {
+  @include text-style--small();
+}
+
+// Label style text
+@mixin text-style--label() {
+  display: block;
+  font-family: $ff--idealsans;
+  font-size: rem-calc(14);
+  font-weight: normal;
+  font-style: italic;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: $color--orange;
+  margin-bottom: rem-calc(10);
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(18);
+    margin-bottom: rem-calc(15);
+  }
+}
+p.text-style--label,
+span.text-style--label {
+  @include text-style--label;
+}
+
+// Small label style text
+@mixin text-style--label--small() {
+  @include text-style--label;
+  font-size: rem-calc(13);
+  margin-bottom: 7px;
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(14);
+  }
+}
+p.text-style--label--small,
+span.text-style--label--small {
+  @include text-style--label--small;
+}
+
+
+// Headers
+// --------
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $ff--sentinel;
+  line-height: 1.2;
+  color: $color--green;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-size: rem-calc(24);
+  font-weight: 700;
+  margin-bottom: rem-calc(16px);
+
+  // MEDIUM
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(24);
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    font-size: rem-calc(34);
+    font-weight: 600;
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(46);
+  }
+}
+
+
+h2 {
+  font-size: rem-calc(25);
+  font-weight: normal;
+  margin-bottom: 1.1rem;
+
+  // MEDIUM
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(25);
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    font-size: rem-calc(30);
+    margin-bottom: 1.6rem;
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(38);
+    margin-bottom: 2rem;
+  }
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    font-size: rem-calc(42);
+    margin-bottom: 2.3rem;
+  }
+
+
+  // Title style H2.
+  // Used in Container Paragraph template & WYSIWYG.
+  &.h2--title {
+    font-size: rem-calc(30);
+    color: $color--darkgreen;
+
+    // MEDIUM
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(30);
+    }
+
+    // LARGE
+
+    @include breakpoint(large) {
+      font-size: rem-calc(30);
+    }
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      font-size: rem-calc(43);
+      margin-bottom: 1.5rem;
+    }
+
+    // XXLARGE
+
+    @include breakpoint(xxlarge) {
+      font-size: rem-calc(46);
+    }
+  }
+
+
+  // Smaller style H2
+  &.h2--small {
+    font-size: rem-calc(24);
+    font-weight: bold;
+    margin-bottom: .5rem;
+
+    // MEDIUM
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(28);
+    }
+
+    // LARGE
+
+    @include breakpoint(large) {
+      font-size: rem-calc(28);
+    }
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      font-size: rem-calc(32);
+      margin-bottom: .8rem;
+    }
+
+    // XXLARGE
+
+    @include breakpoint(xxlarge) {
+      font-size: rem-calc(36);
+    }
+  }
+}
+
+h3 {
+  font-size: rem-calc(21);
+  font-weight: 600;
+  margin-bottom: .8rem;
+
+  // LARGE
+
+  @include breakpoint(large) {
+    font-size: rem-calc(24);
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(29);
+    margin-bottom: .7rem;
+  }
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    font-size: rem-calc(32);
+    margin-bottom: .7rem;
+  }
+
+
+  // Title style H3.
+  // Used in WYSIWYG.
+  &.h3--title {
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      font-size: rem-calc(32);
+      margin-bottom: 1.2rem;
+    }
+
+    // XXLARGE
+
+    @include breakpoint(xxlarge) {
+      font-size: rem-calc(36);
+      margin-bottom: 1.2rem;
+    }
+  }
+
+
+  // Orange style h3
+  &.h3--orange {
+    color: $color--orange;
+
+    a {
+      @include link-style--orange;
+    }
+  }
+
+
+  a {
+    @include link-style--green;
+  }
+}
+
+
+h4 {
+  font-size: rem-calc(20);
+  font-weight: 600;
+  color: $color--darkgreen;
+  margin-bottom: .7rem;
+
+  // LARGE
+
+  @include breakpoint(large) {
+    font-size: rem-calc(23);
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(25);
+    margin-bottom: .8rem;
+  }
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    font-size: rem-calc(28);
+  }
+}
+
+h5 {
+  font-size: rem-calc(18);
+  font-weight: 700;
+  color: $color--darkgreen;
+
+  // LARGE
+
+  @include breakpoint(large) {
+    font-size: rem-calc(20);
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(22);
+    margin-bottom: .9rem;
+  }
+}
+
+h6 {
+  font-size: rem-calc(16);
+  font-family: $ff--idealsans;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $color--darkgreen;
+
+  // LARGE
+
+  @include breakpoint(large) {
+    font-size: rem-calc(16);
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(18);
+    margin-bottom: .7rem;
+  }
+}
+
+// Header mixins
+
+// Mixin for H2 that remains large at mobile breakpoints
+@mixin h2--mobile-large() {
+
+  // MEDIUM & SMALLER
+
+  @include breakpoint(medium down) {
+    font-size: rem-calc(26);
+  }
+}
+
+// Mixin for H3 that remains large at mobile breakpoints
+@mixin h3--mobile-large() {
+
+  // MEDIUM & SMALLER
+
+  @include breakpoint(medium down) {
+    font-size: rem-calc(24);
+  }
+}
+
+// Mixin for H5 that remains large at mobile breakpoints
+@mixin h5--mobile-large() {
+
+  // MEDIUM & SMALLER
+
+  @include breakpoint(medium down) {
+    font-size: rem-calc(22);
+  }
+}
+
+
+// Lists
+// ------
+
+// Need to scope list styling to content area.
+.main-content {
+  ul, ol {
+    @include font-size--paragraph();
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    li {
+      margin-bottom: .4rem;
+    }
+  }
+}
+

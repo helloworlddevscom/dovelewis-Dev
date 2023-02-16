@@ -1,0 +1,43 @@
+name: DoveLewis
+type: theme
+description: This is a DoveLewis sub theme of Classy
+core_version_requirement: ^8 || ^9
+# Defines the base theme
+base theme: classy
+
+libraries:
+  - dovelewis/global
+  - dovelewis/admin-styling-frontend
+
+libraries-override:
+  classy/base:
+    css:
+      component:
+        css/components/button.css: false
+
+regions:
+  header_top: 'Header - Top'
+  header_bottom: 'Header - Bottom'
+  header_dropdown: 'Header - Dropdown'
+  mobile_menu_top: 'Mobile Menu - Top'
+  mobile_menu_bottom: 'Mobile Menu - Bottom'
+  menu_secondary: 'Secondary Menu'
+  local_tasks_tabs: 'Local Tasks Tabs'
+  content: 'Content'
+  footer_top: 'Footer - Top'
+  footer_left: 'Footer - Left'
+  footer_right: 'Footer - Right'
+  footer_right_top: 'Footer - Right Top'
+  footer_right_bottom_left: 'Footer - Right Bottom Left'
+  footer_right_bottom_right: 'Footer - Right Bottom Right'
+  footer_left_landing: 'Footer Landing - Left'
+  footer_center_landing: 'Footer Landing - Center'
+  footer_right_landing: 'Footer Landing - Right'
+  modals: 'Modals' # Place blocks in this region that will make up the content of a modal. This region will be hidden.
+  disabled: 'Referenceable in Block Paragraphs' # Place blocks in this region that need to be rendered by Block Paragraph.
+
+ckeditor_stylesheets:
+  # - https://fonts.googleapis.com/css?family=Open+Sans
+  # - css/font-family.css
+  - build/css/style.min.css
+  - https://cloud.typography.com/7352236/6856192/css/fonts.css

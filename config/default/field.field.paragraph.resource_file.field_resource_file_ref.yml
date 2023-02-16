@@ -1,0 +1,28 @@
+uuid: edd93948-1de1-47e4-870c-f4995692b999
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_resource_file_ref
+    - node.type.resource_file
+    - paragraphs.paragraphs_type.resource_file
+id: paragraph.resource_file.field_resource_file_ref
+field_name: field_resource_file_ref
+entity_type: paragraph
+bundle: resource_file
+label: 'Resource File'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      resource_file: resource_file
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

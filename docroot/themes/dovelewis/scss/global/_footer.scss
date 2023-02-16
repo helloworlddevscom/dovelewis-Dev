@@ -1,0 +1,145 @@
+/**
+ * General footer styling.
+ */
+
+
+// Basic & Landing Page Footer
+// ----
+
+.footer {
+  @include container-top-padding('xlarge');
+  padding-bottom: 0;
+  background-color: $color--charcoal;
+  color: $color--white;
+
+  .block__title {
+    @include text-style--label;
+    margin-bottom: 25px;
+    text-align: center;
+    color: $color--darkgreen;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .block__title {
+      text-align: left;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .block__title {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+
+// Basic Page Footer
+// ----
+
+.footer--basic {
+  .footer__right__bottom-left {
+    margin-top: $spacing--medium;
+  }
+
+  .footer__right__bottom-right {
+    margin-top: $spacing--small;
+  }
+
+  .block-id--footer-images .footer-image {
+    margin-top: $spacing--medium;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .footer__right {
+      padding-left: $spacing--medium;
+    }
+
+    .footer__right__bottom-right {
+      margin-bottom: $spacing--medium;
+    }
+
+    .block-id--footer-images .footer-image {
+      margin-top: 120px;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .footer__right {
+      padding-left: 105px;
+    }
+
+    .footer__right__bottom-left {
+      margin-top: $spacing--large;
+      margin-bottom: $spacing--medium;
+    }
+
+    .footer__right__bottom-right {
+      margin-top: 90px;
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    .footer__right {
+      padding-left: 121px;
+    }
+  }
+}
+
+
+// Landing Page Footer
+// ---
+
+.footer--landing {
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+
+    .footer__center {
+      padding-left: $spacing--small;
+    }
+
+    .footer__right {
+      padding-left: $spacing--small;
+    }
+
+    .block-id--footer-images {
+      display: none;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+
+    .footer__center {
+      padding-left: 0;
+    }
+
+    .footer__right {
+      padding-left: 0;
+    }
+
+    .block-id--footer-images {
+      display: block;
+      margin-top: 70px;
+    }
+  }
+}

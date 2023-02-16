@@ -1,0 +1,33 @@
+uuid: 066eef59-dae2-4a72-8056-d35efec4028c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_par_container_con_width
+field_name: field_par_container_con_width
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: full
+      label: 'Full Width'
+    -
+      value: site
+      label: 'Site Width'
+    -
+      value: narrow
+      label: Narrow
+    -
+      value: very-narrow
+      label: 'Very Narrow'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

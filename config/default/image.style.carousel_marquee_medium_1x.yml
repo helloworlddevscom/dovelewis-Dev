@@ -1,0 +1,15 @@
+uuid: bfa15507-8737-4e0e-99f6-19d0d0f4ac3a
+langcode: en
+status: true
+dependencies: {  }
+name: carousel_marquee_medium_1x
+label: 'Carousel Marquee - Medium @1x (Scale and Crop 768×380)'
+effects:
+  c3d99c84-b7aa-47bb-8b1b-184324c6444a:
+    uuid: c3d99c84-b7aa-47bb-8b1b-184324c6444a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 768
+      height: 380
+      anchor: center-center

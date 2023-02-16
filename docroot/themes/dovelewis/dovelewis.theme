@@ -1,0 +1,335 @@
+<?php
+/**
+ * Theme file for DoveLewis.
+ *
+ * @TODO: Move as much code as we can out of here and into separate custom modules
+ * based loosely around the content types the code is for. See Overlake for reference.
+ */
+
+use Drupal\image\Entity\ImageStyle;
+use Drupal\file\Entity\File;
+use Drupal\views\Views;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Url;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+use Drupal\responsive_background_image\ResponsiveBackgroundImage;
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess html.twig.html.
+ */
+function dovelewis_preprocess_html(&$vars) {
+  // Add class to body containing node id.
+  $path = \Drupal::service('path.current')->getPath();
+  $path_args = explode('/', $path);
+  if (isset($path_args[1]) && isset($path_args[2]) && ($path_args[1] == 'node') && (is_numeric($path_args[2]))) {
+    $vars['attributes']['class'][] = 'page--node--' . $path_args[2];
+  }
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (!$node) {
+    // Add class to body if page is not a node.
+    $vars['attributes']['class'][] = 'default-layout';
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess node.html.twig.
+ */
+function dovelewis_preprocess_node(&$vars) {
+  $node = $vars['node'];
+  $node_type = $node->getType();
+  $view_mode = $vars['view_mode'];
+
+  // Assign vars related to body field.
+  if (!empty($node->hasField('body'))) {
+    // Assign body field summary to var.
+    if (!empty($node->get('body')->getValue()[0]['summary'])) {
+      $vars['body_summary'] = $node->get('body')->getValue()[0]['summary'];
+    }
+
+    // Determine whether body field has value and assign to var.
+    // Checking whether body field has value in template has been unreliable.
+    $vars['body_has_value'] = !empty($node->get('body')->getValue()[0]['value']) ? TRUE : FALSE;
+  }
+
+  // Modifications based on view mode.
+  switch($view_mode) {
+    // Full.
+    case 'full':
+      // Render breadcrumbs block;
+      $breadcrumbs_render = _render_breadcrumbs();
+
+      // If there is only two breadcrumbs, do not render
+      // because one is just a link to the homepage and the second
+      // is a link the current page.
+      if (isset($breadcrumbs_render['#links'])) {
+        if (count($breadcrumbs_render['#links']) > 2) {
+          $vars['breadcrumbs_block'] = $breadcrumbs_render;
+        }
+      }
+
+      break;
+  }
+
+  // Modifications based on content type.
+  switch($node_type) {
+    // Page.
+    case 'page':
+      // Full view mode.
+      if ($view_mode == 'full') {
+        // Pass value of field_content_width to template.
+        if ($node->hasField('field_content_width')) {
+          $vars['content_width'] = $node->get('field_content_width')
+            ->getValue()[0]['value'];
+        }
+
+        // Render Teaser Menu view if enabled.
+        if ($node->get('field_display_teaser_menu')->getValue()[0]['value']) {
+          $args = [$node->id()];
+          $view = Views::getView('teaser_menu');
+          if (is_object($view)) {
+            $view->setArguments($args);
+            $view->setDisplay('block_teaser_menu');
+            $view->preExecute();
+            $view->execute();
+            $view_render = $view->buildRenderable('block_teaser_menu', $args);
+            if (!empty($view_render['#view']->result)) {
+              $vars['teaser_menu_block'] = $view_render;
+            }
+          }
+        }
+      }
+
+      break;
+
+    // Person.
+    case 'person':
+      // Full view mode.
+      if ($view_mode == 'full') {
+        $vars['breadcrumbs_block'] = _render_breadcrumbs();
+
+
+        // Render node in featured_person view mode so it can be displayed in sidebar.
+        $vars['featured_person'] = \Drupal::entityTypeManager()
+          ->getViewBuilder('node')
+          ->view($node, 'featured_person');
+      }
+
+      break;
+
+    // Blog Post.
+    case 'blog_post':
+      // Full view mode.
+      if ($view_mode == 'full') {
+        $vars['breadcrumbs_block'] = _render_breadcrumbs();
+
+        // Get author info from field_author.
+        if ($node->get('field_author')->getValue()[0]['target_id']) {
+          $author = Node::load($node->get('field_author')
+            ->getValue()[0]['target_id']);
+          $display_options = array(
+            'label' => 'hidden',
+            'settings' => array(
+              'link' => FALSE,
+              'image_style' => 'thumbnail_scale_crop',
+            ),
+          );
+          $vars['author_image'] = $author->get('field_individual_portrait')
+            ->view($display_options);
+          $vars['author_name'] = $author->getTitle();
+          $vars['author_position'] = $author->get('field_credentials')
+            ->getValue()[0]['value'];
+
+          // Create URLs for read more links.
+          $vars['author_url'] = Url::fromRoute('entity.node.canonical', ['node' => $author->id()])
+            ->toString();
+          $vars['more_by_author_url'] = '/community/blog/by-author?author=' . $author->id();
+
+          $topics = $node->get('field_tags')->getValue();
+          if (!empty($topics)) {
+            $vars['more_by_topic_url'] = '/community/blog/by-topic?';
+            foreach ($topics as $key => $topic) {
+              $vars['more_by_topic_url'] .= 'topic[' . $key . ']=' . $topic['target_id'] . '&';
+            }
+          }
+        }
+      }
+
+      break;
+
+    // Resource File.
+    case 'resource_file':
+      // Teaser view mode.
+      if ($view_mode == 'teaser') {
+        $file_id = $node->get('field_resource_file')->getValue()[0]['target_id'];
+        $file = File::load($file_id);
+        $vars['resource_file_url'] = $file->createFileUrl(FALSE);
+      }
+
+      break;
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_TEMPLATE().
+ *
+ * Preprocess block.html.twig (all blocks).
+ */
+function dovelewis_preprocess_block(&$vars) {
+  // Pass block bundle/type to template so we can have block type based CSS classes.
+  if (isset($vars['elements']['content']['#block_content'])) {
+    $block_type = $vars['elements']['content']['#block_content']->bundle();
+    $vars['bundle'] = $block_type;
+  }
+}
+
+/**
+ * @return array. Render array for breadcrumbs block.
+ */
+function _render_breadcrumbs() {
+  $block_manager = \Drupal::service('plugin.manager.block');
+  $config = [];
+
+  $plugin_block = $block_manager->createInstance('system_breadcrumb_block', $config);
+  $access_result = $plugin_block->access(\Drupal::currentUser());
+  if (is_object($access_result) && $access_result->isForbidden() || is_bool($access_result) && !$access_result) {
+    return [];
+  }
+
+  $build = $plugin_block->build();
+
+  // Sometimes we get mysterious links with no text. Lets just remove them.
+  if (isset($build['#links'])) {
+    foreach ($build['#links'] as $key => $link) {
+      if (!$link->getText()) {
+        unset($build['#links'][$key]);
+        array_keys($build);
+      }
+      elseif ($link->getText() == 'Node') {
+        unset($build['#links'][$key]);
+        array_keys($build);
+      }
+    }
+  }
+
+  return $build;
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess field.html.twig.
+ */
+function dovelewis_preprocess_field(&$vars) {
+  $field_name = $vars['field_name'];
+
+  switch($field_name) {
+    // Add Orbit Slider class to images.
+    case 'field_header_carousel':
+      foreach($vars['items'] as $key => $item){
+        $vars['items'][ $key ]['content']['#item_attributes']['class'][] = 'orbit-image';
+      }
+
+      break;
+  }
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function dovelewis_theme_suggestions_field_alter(array &$suggestions, array $vars) {
+  // Add view mode to field suggestions.
+  if (!empty($vars['element']['#view_mode'])) {
+    $suggestions[] = end($suggestions).'__'.$vars['element']['#view_mode'];
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * For Doctors view, get value of exposed filter and display it in template.
+ * Preprocess views-view--doctor.html.twig.
+ */
+function dovelewis_preprocess_views_view__doctors(&$vars) {
+  if (!empty($vars['exposed']['department']['#value'])) {
+    $department_name = $vars['exposed']['department']['#options'][$vars['exposed']['department']['#value']];
+
+    if ($department_name !== 'All Departments') {
+      $department_name .= t(' Department');
+
+      // Load taxonomy term to get link field value.
+      $term = Term::load($vars['exposed']['department']['#value']);
+      $uri = $term->get('field_link')->getValue()[0]['uri'];
+      $vars['department_url'] = Url::fromUri($uri)->toString();
+    }
+
+    $vars['department_name'] = $department_name;
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * For Blog Landing By Topic view, get value of contextual args to display in template.
+ * Preprocess views-view--blog-landing--block-blog-topic.html.twig.
+ */
+function dovelewis_preprocess_views_view__blog_landing__block_blog_topic(&$vars) {
+  if (!empty($vars['view']->args)) {
+    $args_arr = explode(',', $vars['view']->args[0]);
+    $topics = [];
+    foreach ($args_arr as $key => $arg) {
+      if (!empty($arg)) {
+        $term = Term::load($arg);
+        if (!empty($term)) {
+          $topics[] = $term->getName();
+        }
+      }
+    }
+    $vars['topics'] = $topics;
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * For Blog Landing By Author view, get value of contextual args to display in template.
+ * Preprocess views-view--blog-landing--block-blog-author.html.twig.
+ */
+function dovelewis_preprocess_views_view__blog_landing__block_blog_author(&$vars) {
+  if (!empty($vars['view']->args)) {
+    $args_arr = explode(',', $vars['view']->args[0]);
+    if (!empty($args_arr)) {
+      $author_node = Node::load($args_arr[0]);
+      if (!empty($author_node)) {
+        $blog_author = $author_node->getTitle();
+      }
+    }
+    $vars['author'] = $blog_author;
+  }
+}
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function dovelewis_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Disable auto submit for all Views exposed form search text fields.
+  if ($form_id == 'views_exposed_form') {
+    if (isset($form['search'])) {
+      $form['search']['#attributes']['data-bef-auto-submit-exclude'] = '1';
+    }
+  }
+}

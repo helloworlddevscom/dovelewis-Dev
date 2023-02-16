@@ -1,0 +1,27 @@
+uuid: 5a9a3319-d98e-4620-a69a-9fe65fc25f02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_file
+    - node.type.resource_file
+  module:
+    - file
+id: node.resource_file.field_resource_file
+field_name: field_resource_file
+entity_type: node
+bundle: resource_file
+label: 'Resource File'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: resource-files
+  file_extensions: 'txt pdf'
+  max_filesize: ''
+  description_field: false
+field_type: file

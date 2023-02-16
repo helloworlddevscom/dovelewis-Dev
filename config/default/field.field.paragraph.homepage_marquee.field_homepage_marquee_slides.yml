@@ -1,0 +1,70 @@
+uuid: 666f91ea-4388-4342-b014-2cf00b4cdef3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_homepage_marquee_slides
+    - paragraphs.paragraphs_type.homepage_marquee
+    - paragraphs.paragraphs_type.homepage_marquee_slide
+  module:
+    - entity_reference_revisions
+id: paragraph.homepage_marquee.field_homepage_marquee_slides
+field_name: field_homepage_marquee_slides
+entity_type: paragraph
+bundle: homepage_marquee
+label: 'Carousel Marquee Slides'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      homepage_marquee_slide: homepage_marquee_slide
+    negate: 0
+    target_bundles_drag_drop:
+      block_ref:
+        weight: 15
+        enabled: false
+      column:
+        weight: 16
+        enabled: false
+      contact:
+        weight: 17
+        enabled: false
+      container:
+        weight: 18
+        enabled: false
+      faqs:
+        weight: 19
+        enabled: false
+      homepage_marquee:
+        weight: 20
+        enabled: false
+      homepage_marquee_slide:
+        weight: 21
+        enabled: true
+      marquee:
+        weight: 22
+        enabled: false
+      resource_file:
+        weight: 23
+        enabled: false
+      teaser:
+        weight: 24
+        enabled: false
+      teaser_static:
+        weight: 25
+        enabled: false
+      three_image_banner:
+        weight: 26
+        enabled: false
+      view:
+        weight: 27
+        enabled: false
+      wysiwyg:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,221 @@
+/**
+* Paragraph - Container.
+*/
+
+
+.paragraph--type--container {
+  width: 100%;
+  background-repeat: repeat;
+
+  &.display-on--desktop,
+  &.display-on--tablet,
+  &.display-on--tablet-desktop {
+    display: none;
+  }
+
+  // Padding
+  &.top-padding--large {
+    .container__inner {
+      @include container-top-padding('large');
+    }
+  }
+
+  &.top-padding--xlarge {
+    .container__inner {
+      @include container-top-padding('xlarge');
+    }
+  }
+
+  &.bottom-padding--large {
+    .container__inner {
+      @include container-bottom-padding('large');
+    }
+
+    &.subtract-bottom--false {
+      .container__inner {
+        @include container-bottom-padding('large', false);
+      }
+    }
+  }
+
+  &.bottom-padding--xlarge {
+    .container__inner {
+      @include container-bottom-padding('xlarge');
+    }
+
+    &.subtract-bottom--false {
+      .container__inner {
+        @include container-bottom-padding('xlarge', false);
+      }
+    }
+  }
+
+  // No bottom padding
+  &.bottom-padding--none {
+    &.subtract-bottom--true {
+      .container__inner {
+        @include container-bottom-padding('none', true);
+      }
+    }
+  }
+
+  // Background colors
+  &.bg-color--gray {
+    background-color: $color--gray;
+  }
+
+  &.bg-color--white {
+    background-color: $white;
+  }
+
+  &.bg-color--blue {
+    background-color: $color--darkblue;
+
+    .container__title {
+      color: $color--doveblue;
+    }
+
+    // Automatically change colors for WYSIWYG Paragraphs
+    .paragraph--type--wysiwyg {
+      h1, h2, h3, h4, h5, h6 {
+        color: $color--blue;
+      }
+
+      .button--secondary {
+        @include button-color--blue;
+      }
+
+      .button--secondary--hollow {
+        @include button-color--blue--hollow;
+      }
+    }
+  }
+
+  &.bg-color--green {
+    background-color: $color--darkergreen;
+
+    .container__title {
+      color: $color--lightgreen;
+    }
+  }
+
+  // Background with blue animals illustration
+  &.bg-color--blue-animals {
+    background-color: $color--darkblue;
+    @include background-2x( '../../images/DL_Pattern_Blue', 'png', 1043px, 1042px, center center, repeat);
+  }
+
+  // Background with white animals illustration
+  &.bg-color--white-animals {
+    background-color: $color--white;
+    @include background-2x( '../../images/DL_Pattern_Gray', 'png', 1043px, 1042px, center center, repeat);
+  }
+
+  // Background image
+  &.bg-image-style--cover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+
+  // Border colors
+  &.border-color--green {
+    border-top: 2px solid $color--lightgreen;
+  }
+
+  // Title and content
+  .container__content,
+  .container__title {
+  }
+
+  .container__title {
+    margin-top: -.2em;
+    margin-bottom: $spacing--medium;
+    text-align: center;
+  }
+
+  &.title-align--center .container__title {
+    text-align: center;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    &.display-on--mobile {
+      display: none;
+    }
+
+    &.display-on--tablet,
+    &.display-on--tablet-desktop {
+      display: block;
+    }
+
+    .container__content,
+    .container__title {
+      // Narrow width
+      &.width--narrow,
+      &.width--very-narrow {
+        padding-left: (map-get($grid-margin-gutters, small) / 2) * 3;
+        padding-right: (map-get($grid-margin-gutters, small) / 2) * 3;
+      }
+    }
+
+    .container__title {
+      margin-bottom: $spacing--medium;
+      text-align: left;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    &.display-on--mobile,
+    &.display-on--tablet {
+      display: none;
+    }
+
+    &.display-on--desktop {
+      display: block;
+    }
+
+    .container__content,
+    .container__title {
+
+      // Narrow width
+      // @TODO: How can we get this to align with the same grid structure?
+      &.width--narrow,
+      &.width--very-narrow {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: (map-get($grid-margin-gutters, xlarge) / 2);
+        padding-right: (map-get($grid-margin-gutters, xlarge) / 2);
+      }
+
+      &.width--narrow {
+        max-width: 1068px;
+      }
+
+      &.width--very-narrow {
+        max-width: 870px;
+      }
+    }
+
+    .container__title {
+      margin-bottom: $spacing--large + 28px;
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    .container__content,
+    .container__title {
+      &.width--narrow {
+        max-width: 1200px;
+      }
+    }
+  }
+}

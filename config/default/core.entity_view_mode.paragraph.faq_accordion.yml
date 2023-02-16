@@ -1,0 +1,10 @@
+uuid: ebc8ff8f-7a0f-43a2-b129-ed1e565da827
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.faq_accordion
+label: 'FAQ Accordion'
+targetEntityType: paragraph
+cache: true

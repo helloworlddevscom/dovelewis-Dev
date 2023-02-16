@@ -1,0 +1,23 @@
+uuid: a0553a9a-9904-4064-afa0-d2a60c659337
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_on
+    - paragraphs.paragraphs_type.container
+  module:
+    - options
+id: paragraph.container.field_display_on
+field_name: field_display_on
+entity_type: paragraph
+bundle: container
+label: 'Display On Breakpoints'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: desktop-mobile
+default_value_callback: ''
+settings: {  }
+field_type: list_string

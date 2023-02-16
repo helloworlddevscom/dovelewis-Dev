@@ -1,0 +1,25 @@
+uuid: e67a5602-6f2b-42ae-982c-53d0264b57a1
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c7dbbda2-0f96-48f1-8329-fee99155c3c3'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: footer_privacy_policy_2
+theme: dovelewis
+region: footer_right_landing
+weight: -17
+provider: null
+plugin: 'block_content:c7dbbda2-0f96-48f1-8329-fee99155c3c3'
+settings:
+  id: 'block_content:c7dbbda2-0f96-48f1-8329-fee99155c3c3'
+  label: 'Footer - Privacy Policy'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

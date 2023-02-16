@@ -1,0 +1,10 @@
+uuid: f3034253-5b61-455d-bc65-f285f7b1d82c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.event_landing
+label: 'Event Landing'
+targetEntityType: node
+cache: true

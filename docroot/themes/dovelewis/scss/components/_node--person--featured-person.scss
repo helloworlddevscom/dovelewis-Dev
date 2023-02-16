@@ -1,0 +1,138 @@
+/**
+ * Person node - View mode: Featured Person
+ */
+
+.node--type--person.node--view-mode--featured-person {
+
+  .node__content {
+    @include clearfix();
+  }
+
+  .content__image {
+    text-align: center;
+    background-size: 0;
+
+    a {
+      display: block;
+    }
+
+    img {
+      display: inline-block;
+    }
+  }
+
+  .content__text {
+    padding: $spacing--small;
+
+    h3.node__title {
+      font-weight: bold;
+    }
+
+    p {
+      @include font-size--paragraph--small;
+    }
+  }
+
+  .teaser-cta {
+    margin: 12px 0 0 0;
+  }
+
+  .text-style--label {
+    color: $color--lightgreen;
+  }
+
+  .node__title {
+    a {
+      @include link-style--darkgreen;
+    }
+  }
+
+  .field--name-field-credentials {
+    margin-bottom: rem-calc(5);
+    font-weight: bold;
+    color: $color--darkgreen;
+  }
+
+  .field--name-field-individual-specialties {
+    margin-bottom: rem-calc(25);
+    font-style: italic;
+    font-size: rem-calc(18);
+  }
+
+  .field--name-field-individual-petbreed {
+    font-size: rem-calc(18);
+    font-style: italic;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    // Image left
+    &.teaser-image-pos--left,
+    .teaser-image-pos--left & {
+      .node__content {
+        display: flex;
+        flex-flow: row wrap;
+        height: 100%;
+      }
+
+      .content__image {
+        width: 45%;
+      }
+
+      .content__text {
+        width: 55%;
+        padding: 0 0 0 $spacing--small;
+
+        p {
+          @include font-size--paragraph;
+        }
+      }
+    }
+
+    // Image top
+    &.teaser-image-pos--top,
+    .teaser-image-pos--top & {
+      .content__text {
+        padding: $spacing--small;
+        padding-top: $spacing--small;
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    // Image left
+    .teaser-image-pos--left &,
+    &.teaser-image-pos--left {
+      .content__text {
+        padding: $spacing--xsmall 0 0 $spacing--medium;
+      }
+    }
+
+    // Image top
+    &.teaser-image-pos--top,
+    .teaser-image-pos--top & {
+      .content__text {
+        padding: $spacing--medium - 10px;
+        padding-top: $spacing--medium - 5px;
+      }
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    // Image left
+    .teaser-image-pos--left &,
+    &.teaser-image-pos--left {
+      .content__text {
+        padding-top: $spacing--xsmall;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+uuid: d6204a17-1811-416c-90c0-0ea578f9075e
+langcode: en
+status: true
+dependencies: {  }
+id: block_ref
+label: 'Block Reference'
+icon_uuid: null
+description: 'Reference and display an existing Block.'
+behavior_plugins: {  }

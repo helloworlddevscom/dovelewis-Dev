@@ -1,0 +1,30 @@
+/**
+* Block - Landing page Footer Menu.
+*/
+
+.menu--footer-landing {
+  ul.menu {
+    display: block;
+    column-count: 2;
+    margin: 0;
+
+    .menu-item {
+      display: block;
+      padding: 0 0 .5rem 0;
+
+      a {
+        @include link-style--white;
+        line-height: 1.2;
+        padding: 0;
+        font-size: rem-calc(19);
+
+        &:hover,
+        &:focus,
+        &.is-active {
+          color: $color--green;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

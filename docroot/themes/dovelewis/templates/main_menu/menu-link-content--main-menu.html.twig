@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Main Menu theme implementation to present a menu link entity entity.
+ *
+ * Available variables:
+ * - menu_link_content: Menu link entity.
+ * - show_item_link: Indicator for menu item link.
+ *
+ * @see template_preprocess_menu_link_content()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div {{ attributes.addClass('menu-item__inner') }} >
+  {% if content %}
+    <div class="menu-item__inner__parent-wrapper {% if dropdown_toggle %}dropdown-toggle{% endif %}">
+      {{ content.field_menu_image }}
+      {{ link(menu_link_content.getTitle(), menu_link_content.getUrlObject(), { 'class':['title--long']}) }}
+      {{ link(content.field_menu_short_label.0, menu_link_content.getUrlObject(), { 'class':['title--short']}) }}
+    </div>
+
+    {{ content.children }}
+
+    {% if dropdown_toggle %}
+      <div class="dropdown-toggle-arrow">
+        <div class="dropdown-toggle-arrow__arrow"></div>
+      </div>
+    {% endif %}
+
+  {% endif %}
+</div>

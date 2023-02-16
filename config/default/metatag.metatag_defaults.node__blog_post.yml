@@ -1,0 +1,16 @@
+uuid: b3c490ed-4f3e-4e3f-8913-5bc243c457d8
+langcode: en
+status: true
+dependencies: {  }
+id: node__blog_post
+label: 'Content: Blog Post'
+tags:
+  geo_position: '45.5331, -122.69138'
+  geo_placename: 'Portland, Oregon'
+  abstract: 'Find out how to protect your pets in extreme heat or learn how to live with pets in urban environments. All of your questions about pets are answered.'
+  description: 'DoveLewis Emergency Animal Hospital is a 24-hour veterinary emergency clinic and intensive care unit in Portland, Oregon that helps people keep their pets healthy. Find out how to protect your pets in extreme heat or learn how to live with pets in urban environments. All of your questions about pets are answered.'
+  canonical_url: '[current-page:url]'
+  title: '[current-page:title] | [site:name]'
+  geo_region: US-OR
+  content_language: en-US
+  keywords: 'fall pet safety tips, pet safety tips, pet health, pet care, sick pets, pet safety, safe pets, living downtown with pets, downtown dogs, cat health, cat illnesses, dog illnesses, summer pet safety tips, winter pet safety tips, pets in hot weather'

@@ -1,0 +1,4 @@
+name: DoveLewis Found Pets
+description: Found Pets related code and templates.
+core_version_requirement: ^8 || ^9
+type: module

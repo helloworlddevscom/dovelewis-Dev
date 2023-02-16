@@ -1,0 +1,153 @@
+/**
+ * Base form styling.
+ */
+
+
+.layout-container form {
+
+  // Labels
+  // ----
+
+  label,
+  legend {
+    font-family: $ff--idealsans;
+    font-size: rem-calc(16);
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: $color--charcoal;
+  }
+
+  // General form items
+  // ----
+
+  .form-item {
+    margin: 30px 0;
+
+    [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'],
+    [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'],
+    [type='time'], [type='url'], [type='color'], textarea, select {
+      margin-bottom: 0;
+      font-size: 1.2rem;
+    }
+
+    .description {
+      margin-top: 8px;
+    }
+  }
+
+  // Checkboxes and Radios
+  // ----
+
+  [type="checkbox"] + label,
+  [type="radio"] + label {
+    margin-left: 0;
+    font-weight: normal;
+    white-space: break-spaces;
+  }
+
+  // Checkboxes
+  // ----
+
+  input[type="checkbox"] {
+    position: relative;
+    margin-top: 6px;
+    margin-right: $spacing--small;
+
+  }
+
+  // checkboxes on mobile
+  @media only screen and (min-width:320px) {
+    [type="checkbox"] {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+  /* custom checkboxes */
+  input[type="checkbox"]::after {
+    content: "\2714";
+    position: relative;
+    top: 0;
+    padding: 0 4px 0 4px;
+    background-color: white;
+    color: white;
+    border: 1px solid $color--dark-gray;
+    box-shadow: inset 1px 1px 0px 1px rgba(187, 187, 187, 0.7);
+  }
+
+  input[type="checkbox"]:checked::after {
+    content: "\2713";
+    position: relative;
+    background-color: $color--gray3;
+    color: white;
+    box-shadow: none;
+  }
+  /* end checkbox */
+
+  // Text, Email fields
+  // ----
+
+  [type='text'],
+  [type='password'],
+  [type='date'],
+  [type='datetime'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='week'],
+  [type='email'],
+  [type='number'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='url'],
+  [type='color'] {
+    height: 45px;
+    margin-bottom: 0;
+    padding: 11px 15px 9px;
+    border: 1px solid $color--gray6;
+    box-shadow: inset 1px 1px 0px 1px rgba(187, 187, 187, 0.6);
+  }
+
+
+  // Textareas
+  // ----
+
+  .field--type-string-long {
+    textarea {
+      box-sizing: border-box;
+      border: 1px solid $color--gray6;
+      box-shadow: inset 1px 1px 0px 1px rgba(187, 187, 187, 0.7);
+    }
+
+    @include breakpoint(xlarge) {
+      width: 100%;
+    }
+  }
+
+
+  // Select
+  // ----
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    position: relative;
+    height: 45px;
+    margin-bottom: 0;
+    border-radius: 0;
+    border-color: $color--gray6;
+  }
+
+
+  // Submit
+  // ----
+
+  .form-actions {
+    margin-top: 0;
+
+    .form-submit {
+      margin-top: 0;
+    }
+  }
+}

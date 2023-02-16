@@ -1,0 +1,445 @@
+/**
+ * Buttons and links.
+ */
+
+
+// Buttons
+//
+// Overrides Foundation button classes. Used in WYSIWYG Editor.
+// -------
+
+@mixin button-size--normal() {
+  display: inline-block;
+  line-height: 1;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-style: normal;
+  font-family: $ff--idealsans;
+  font-weight: bold;
+  font-size: rem-calc(12.5);
+  text-decoration: none;
+  padding: 12px 15px;
+  margin: $spacing--xsmall 10px 0 0;
+  vertical-align: top;
+  transition: background-color .3s, color .3s, border-color .3s;
+
+  // MEDIUM
+
+  @include breakpoint(medium) {
+    margin-bottom: $spacing--xsmall;
+  }
+
+  // LARGE
+
+  @include breakpoint(large) {
+    margin-right: $spacing--small + 5px;
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(16);
+    padding: 15px 15px 13px 15px;
+    margin-top: $spacing--small;
+    margin-right: $spacing--small + 5px;
+  }
+}
+
+@mixin button-size--small() {
+  font-size: rem-calc(12);
+  padding-top: 12px;
+  padding-bottom: 11px;
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    font-size: rem-calc(13);
+  }
+}
+
+@mixin button-color--primary() {
+  color: $color--white;
+  background-color: $color--orange;
+  border: 2px solid $color--orange;
+
+  &:hover,
+  &:focus {
+    color: $color--white;
+    border-color: darken($color--orange, 7%);
+    background-color: darken($color--orange, 7%);
+  }
+}
+
+@mixin button-color--primary--hollow() {
+  color: $color--dark-gray;
+  border-width: 2px;
+  border: 2px solid $color--orange;
+
+  &:hover,
+  &:focus {
+    color: $color--white;
+    background-color: $color--orange;
+    border-color: $color--orange;
+  }
+}
+
+@mixin button-color--secondary() {
+  color: $color--white;
+  border: 2px solid;
+  border-color: darken($color--lightgreen, 7%);
+  background-color: darken($color--lightgreen, 7%);
+
+
+  &:hover,
+  &:focus {
+    color: $color--white;
+    background-color: $color--lightgreen;
+    border: 2px solid $color--lightgreen;
+
+  }
+}
+
+@mixin button-color--secondary--hollow() {
+  color: $color--dark-gray;
+  background-color: $color--white;
+  border-width: 2px;
+  border: 2px solid $color--lightgreen;
+
+  &:hover,
+  &:focus {
+    color: $color--white;
+    background-color: $color--lightgreen;
+    border-color: $color--lightgreen;
+  }
+}
+
+@mixin button-color--white() {
+  background-color: $color--white;
+  color: $color--dark-gray;
+  border: 2px solid $color--white;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color--white, 7%);
+    color: $color--dark-gray;
+  }
+}
+
+@mixin button-color--white--hollow() {
+  color: $color--white;
+  background-color: transparent;
+  border: 2px solid $color--white;
+
+  &:hover,
+  &:focus {
+    color: $color--dark-gray;
+    background-color: $color--white;
+    border-color: $color--white;
+  }
+}
+
+@mixin button-color--blue() {
+  background-color: $color--doveblue;
+  color: $white;
+  border: 2px solid $color--doveblue;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color--doveblue, 7%);
+    color: $color--white;
+  }
+}
+
+@mixin button-color--blue--hollow() {
+  color: $color--dark-gray;
+  background-color: transparent;
+  border: 2px solid $color--lightblue;
+
+  &:hover,
+  &:focus {
+    color: $color--dark-gray;
+    background-color: darken($color--white, 10%);
+    border-color: $color--lightblue;
+  }
+}
+
+// Primary/Default button
+a.button,
+input.button {
+  @include button-size--normal;
+  @include button-color--primary;
+}
+
+// Primary hollow
+a.button--hollow,
+input.button--hollow {
+  @include button-size--normal;
+  @include button-color--primary--hollow;
+}
+
+// Secondary
+a.button--secondary,
+input.button--secondary {
+  @include button-size--normal;
+  @include button-color--secondary;
+}
+
+// Secondary hollow
+a.button--secondary--hollow,
+input.button--secondary--hollow {
+  @include button-size--normal;
+  @include button-color--secondary--hollow;
+}
+
+// White
+a.button--white,
+input.button--white {
+  @include button-size--normal;
+  @include button-color--white;
+}
+
+// White hollow
+a.button--white--hollow,
+input.button--white--hollow {
+  @include button-size--normal;
+  @include button-color--white--hollow;
+}
+
+// Blue
+a.button--blue,
+input.button--blue {
+  @include button-size--normal;
+  @include button-color--blue;
+}
+
+// Blue hollow
+a.button--blue--hollow,
+input.button--blue--hollow {
+  @include button-size--normal;
+  @include button-color--blue--hollow;
+}
+
+// Smaller button
+a.button-size--small {
+  @include button-size--small;
+}
+
+// Button with call icon
+a.button-icon--call {
+  padding-left: 41px;
+  background-image: url('../../images/icons/call-white.svg');
+  background-size: 20px;
+  background-position: 10px center;
+  background-repeat: no-repeat;
+}
+
+// Button with email icon
+a.button-icon--email {
+  padding-left: 41px;
+  background-image: url('../../images/icons/email-white.svg');
+  background-size: 20px;
+  background-position: 10px center;
+  background-repeat: no-repeat;
+}
+
+// Button with location icon
+a.button-icon--location {
+  padding-left: 41px;
+  background-image: url('../../images/icons/location-white.svg');
+  background-size: 14px;
+  background-position: 13px center;
+  background-repeat: no-repeat;
+}
+
+
+// Button layout
+// Attempts to predict markup around buttons and adjust styling
+// ----
+
+// Button followed by another button
+a[class^='button'] + a[class^='button']:last-child,
+input[class^='button'] + input[class^='button']:last-child {
+  margin-right: 0;
+}
+
+// Button inside a paragraph after another paragraph
+p + p {
+  > a[class^='button'],
+  > input[class^='button'] {
+    // Decrease top margin
+    margin-top: rem-calc(10);
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      margin-top: rem-calc(10);
+    }
+  }
+}
+
+// Button that is the only element inside a paragraph after another paragraph
+// This often happens in WYSIWYG content because WYSIWYG likes to
+// wrap everything in paragraphs.
+//p + p {
+//  > a[class^='button']:first-child:last-child,
+//  > input[class^='button']:first-child:last-child {
+//    margin: 0;
+//
+//    // XLARGE
+//
+//    @include breakpoint(xlarge) {
+//      margin: 0;
+//    }
+//  }
+//}
+
+// Button inside a paragraph after a lead paragraph
+p.paragraph-size--lead + p {
+  > a[class^='button'],
+  > input[class^='button'] {
+    // Decrease top margin
+    margin-top: 0;
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      margin-top: 0;
+    }
+  }
+}
+
+// Button that is the first-child of a div
+div > a[class^='button']:first-child {
+  margin-top: 0;
+
+  + a[class^='button'] {
+    margin-top: 0;
+  }
+}
+
+// Button inside a WYSIWYG centered paragraph
+.text-align-center > a[class^='button'] {
+  margin-right: 0;
+}
+
+
+// Links
+// ------
+
+// Black link style
+@mixin link-style--black {
+  color: $color--charcoal;
+
+  &:hover,
+  &:focus {
+    color: $color--green;
+  }
+}
+a.link-style--black {
+  @include link-style--black;
+}
+
+// Green link style
+@mixin link-style--green {
+  color: $color--green;
+
+  &:hover,
+  &:focus {
+    color: lighten($color--green, 7%);
+  }
+}
+a.link-style--green {
+  @include link-style--green;
+}
+
+// Dark green link style
+@mixin link-style--darkgreen {
+  color: $color--darkgreen;
+
+  &:hover,
+  &:focus {
+    color: lighten($color--darkgreen, 7%);
+  }
+}
+a.link-style--darkgreen {
+  @include link-style--darkgreen;
+}
+
+// White link style
+@mixin link-style--white {
+  color: $color--white;
+
+  &:hover,
+  &:focus {
+    color: $color--green;
+  }
+}
+a.link-style--white {
+  @include link-style--white;
+}
+
+// Gray link style
+@mixin link-style--gray {
+  color: $color--gray3;
+
+  &:hover,
+  &:focus {
+    color: darken($color--gray3, 10%);
+  }
+}
+a.link-style--gray {
+  @include link-style--gray;
+}
+
+// Orange link style
+@mixin link-style--orange {
+  color: $color--orange;
+
+  &:hover,
+  &:focus {
+    color: darken($color--orange, 7%);
+  }
+}
+a.link-style--orange {
+  @include link-style--orange;
+}
+
+// Links with arrow icon in front
+a.link-style--arrow {
+  display: block;
+  padding-left: 30px;
+  background-image: url('../../images/icons/circle-arrow.svg');
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 19px;
+  color: $color--dark-gray;
+}
+
+a.link-style--arrow + br + a.link-style--arrow {
+  margin-top: rem-calc(-16);
+}
+
+// Read more link
+a.read-more {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: rem-calc(13);
+
+  // LARGE
+
+  @include breakpoint(large) {
+    font-size: rem-calc(14);
+  }
+}
+
+// Default link style
+a {
+  color: $color--body-text;
+  transition: color .3s;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: $color--green;
+  }
+}

@@ -1,0 +1,8 @@
+uuid: 335cc77e-c53a-45cd-9cf8-9bbf33aa364c
+langcode: en
+status: true
+dependencies: {  }
+name: Departments
+vid: departments
+description: ''
+weight: 0

@@ -1,0 +1,29 @@
+uuid: b332da2e-b803-43a4-a0af-699ecb0a3e6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_wellness_tip_category
+    - node.type.blog_post
+    - taxonomy.vocabulary.wellness_tip_categories
+id: node.blog_post.field_wellness_tip_category
+field_name: field_wellness_tip_category
+entity_type: node
+bundle: blog_post
+label: 'Health Tips Category'
+description: 'If this Blog Post is a Health Tip, select what type.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      wellness_tip_categories: wellness_tip_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

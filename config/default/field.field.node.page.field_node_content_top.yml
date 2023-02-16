@@ -1,0 +1,61 @@
+uuid: c4c0e501-56d3-4e7b-880e-24cb64848397
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_node_content_top
+    - node.type.page
+    - paragraphs.paragraphs_type.container
+  module:
+    - entity_reference_revisions
+id: node.page.field_node_content_top
+field_name: field_node_content_top
+entity_type: node
+bundle: page
+label: 'Content Containers - Top'
+description: 'Allows building more complex page layouts with multiple Columns. Will be displayed <em>above</em> Body and Sidebar fields.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      container: container
+    negate: 0
+    target_bundles_drag_drop:
+      block_ref:
+        weight: 12
+        enabled: false
+      column:
+        weight: 13
+        enabled: false
+      contact:
+        weight: 14
+        enabled: false
+      container:
+        weight: 15
+        enabled: true
+      faqs:
+        weight: 16
+        enabled: false
+      marquee:
+        weight: 17
+        enabled: false
+      resource_file:
+        weight: 18
+        enabled: false
+      teaser:
+        weight: 19
+        enabled: false
+      teaser_static:
+        weight: 20
+        enabled: false
+      view:
+        weight: 21
+        enabled: false
+      wysiwyg:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

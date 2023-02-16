@@ -1,0 +1,74 @@
+{#
+/**
+ * @file
+ * Constant Contact Signup Block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{#{%#}
+  {#set classes = [#}
+    {#'block',#}
+    {#'block-id--constant-contact-form',#}
+    {#'block-type--' ~ configuration.provider|clean_class,#}
+  {#]#}
+{#%}#}
+{#<div{{ attributes.addClass(classes) }}>#}
+  {#{% block content %}#}
+    {#<div class="block__content">#}
+      {#<div class="content__top">#}
+        {#{% if label %}#}
+          {#<h3{{ title_attributes.addClass('block__title') }}>{{ label }}</h3>#}
+        {#{% endif %}#}
+      {#</div>#}
+      {#<div class="content__bottom">#}
+        {#{{ content }}#}
+        {#<p class="disclaimer">{{ 'By submitting this form, you are granting DoveLewis Emergency Animal Hospital, 1945 NW Pettygrove, Portland, Oregon, 97209, United States, permission to email you. You may unsubscribe via the link found at the bottom of every email. See our Privacy Policy for details.'|t }}</p>#}
+      {#</div>#}
+
+    {#</div>#}
+  {#{% endblock %}#}
+{#</div>#}
+
+{%
+  set classes = [
+  'block',
+  'block-id--constant-contact-form',
+  'block-type--' ~ configuration.provider|clean_class,
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {% block content %}
+    <div class="block__content">
+      <div class="content__top">
+        {% if label %}
+          <h2{{ title_attributes.addClass('block__title') }}>{{ label }}</h2>
+        {% endif %}
+      </div>
+      <div class="content__bottom">
+        {{ content.form }}
+      </div>
+    </div>
+  {% endblock %}
+</div>

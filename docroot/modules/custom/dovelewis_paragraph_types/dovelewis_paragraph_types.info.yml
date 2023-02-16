@@ -1,0 +1,4 @@
+name: DoveLewis Paragraph Types
+description: Code supporting Paragraph Types, which are reusable components used across the site.
+core_version_requirement: ^8 || ^9
+type: module

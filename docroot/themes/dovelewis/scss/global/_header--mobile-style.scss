@@ -1,0 +1,497 @@
+/**
+ * Header and main menu - Mobile style.
+ * Desktop style will also inherit some of this styling in _header--desktop-style.scss.
+ */
+
+.header {
+  // Quick menu
+  .region--header-top {
+    padding: 10px 0;
+    background-color: $color--charcoal;
+
+    .menu--quick {
+      float: right;
+
+      .menu {
+        margin: 0;
+      }
+
+      .menu-item {
+        display: inline-block;
+        padding: 0;
+        font-size: rem-calc(14);
+        letter-spacing: .02em;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        a {
+          @include link-style--black;
+          padding: 13px 20px;
+          line-height: 1;
+          font-family: Helvetica, Arial, sans-serif;
+        }
+      }
+
+      // Donate
+      .menu-item:first-child {
+        display: none;
+      }
+
+      // Contact
+      .menu-item:nth-child(2) {
+        padding-right: 10px;
+
+        a {
+          width: 56px;
+          height: 48px;
+          text-indent: -2000px;
+          overflow: hidden;
+          background-color: $color--dark-gray;
+          background-image: url('../../images/icons/call-white.svg');
+          background-size: 22px;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+
+      // Directions
+      .menu-item:nth-child(3) {
+        padding-right: 10px;
+
+        a {
+          width: 56px;
+          height: 48px;
+          text-indent: -2000px;
+          overflow: hidden;
+          background-color: $color--dark-gray;
+          background-image: url('../../images/icons/location-white.svg');
+          background-size: 16px;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+
+      // Emergency
+      .menu-item:last-child {
+        display: block;
+        background-color: $color--red;
+        border-left: none;
+
+        a {
+          height: 48px;
+          padding: 14px 13px 13px 47px;
+          font-size: rem-calc(21);
+          font-weight: bold;
+          color: $color--white;
+          transition: background-color .3s;
+          background-image: url('../../images/icons/dove-lewis-icon-emergency.svg');
+          background-size: 20px;
+          background-position: 16px center;
+          background-repeat: no-repeat;
+
+          &:hover {
+            background-color: lighten($color--red, 7%);
+          }
+        }
+
+        // Emergency button when screen size is 320px
+        @include breakpoint(374px down) {
+          a {
+            line-height: 1.5;
+            font-size: rem-calc(13px);
+            background-image: none;
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Logo
+.block-id--block-dovelewis-branding {
+  float: left;
+
+  .site-logo,
+  img {
+    display: block;
+    width: 162px;
+    height: 50px;
+  }
+}
+
+// Main menu - Top level
+.region--header-bottom {
+  padding: 19px 0;
+  background-color: $color--white;
+}
+
+.region--header-bottom .menu--main--top-level {
+  display: none;
+}
+
+.search-toggle {
+  display: none;
+}
+
+// Main menu - Dropdown
+.region--header-dropdown {
+  display: none;
+  background-color: $color--gray;
+}
+
+
+// LARGE AND UP
+// Tablet style
+
+@include breakpoint(large) {
+  // Quick menu
+  //.region--header-top {
+  //  .menu--quick {
+  //    .menu-item {
+  //      a {
+  //      }
+  //    }
+  //
+  //    // Contact
+  //    .menu-item:nth-child(2) {
+  //      padding-right: 10px;
+  //
+  //      a {
+  //        width: 56px;
+  //        height: 48px;
+  //        background-position: center;
+  //      }
+  //    }
+  //
+  //    // Directions
+  //    .menu-item:nth-child(3) {
+  //      padding-right: 10px;
+  //
+  //      a {
+  //        width: 56px;
+  //        height: 48px;
+  //        background-size: 16px;
+  //        background-position: center;
+  //      }
+  //    }
+  //
+  //    // Emergency
+  //    .menu-item:last-child {
+  //
+  //      a {
+  //        height: 48px;
+  //        width: 203px;
+  //        padding: 14px 20px 13px 50px;
+  //        background-size: 20px;
+  //        background-position: 16px center;
+  //      }
+  //    }
+  //  }
+  //}
+}
+
+
+// Mobile menu toggle button
+// ------------------------
+
+.mobile-menu-toggle {
+  z-index: 50;
+  float: right;
+  width: 50px;
+  height: 50px;
+  background-image: url('../../images/icons/dove-lewis-icon-mobile-menu.svg');
+  background-size: 27px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 30px;
+  text-indent: -2000px;
+  overflow: hidden;
+  background-color: $color--dark-gray;
+  transition: background-color .3s;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $color--green;
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+  }
+
+  // Open state
+  .mobile-menu-open & {
+    z-index: 101;
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    background-image: url('../../images/icons/dove-lewis-icon-mobile-menu-close.svg');
+    background-size: 22px;
+    background-color: $color--charcoal;
+  }
+
+  // MEDIUM AND UP
+
+  @include breakpoint(medium) {
+    &.fixed {
+      right: 17.5px;
+    }
+
+    // Open state
+    .mobile-menu-open & {
+      right: 17.5px;
+    }
+  }
+
+  // XLARGE AND UP
+
+  @include breakpoint(xlarge) {
+    display: none;
+  }
+}
+
+
+// Mobile main menu modal
+// ------------------------
+
+.mobile-menu {
+  display: none;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  background-color: $color--charcoal;
+
+  // Open state. Toggled by JS when .mobile-menu-toggle is clicked.
+  &.open {
+    // We need to use flexbox to allow overflow scrolling within this fixed positioned div.
+    display: flex;
+    position: fixed;
+  }
+
+  .region--mobile-menu-top {
+    width: 100%;
+    background-color: $color--dark-gray;
+  }
+
+  .region--mobile-menu-top__inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .block-id--block-mobile-menu-logo {
+    height: auto;
+    float: left;
+    margin: 0;
+    padding: 0;
+
+    .site-logo,
+    img {
+      display: block;
+      width: 157px;
+      height: 48px;
+    }
+  }
+
+  .region--mobile-menu-bottom {
+    flex: 1;
+    width: 100%;
+    overflow-y: scroll;
+  }
+
+  .region--mobile-menu-bottom__inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  // Quick and mobile main menu
+  .menu--quick,
+  .menu--main--mobile {
+    margin-bottom: 7px;
+
+    .menu {
+      margin: 0;
+    }
+
+    .menu-item {
+      display: block;
+      width: 100%;
+      padding: 0;
+
+      a {
+        padding: 17px 15px 15px;
+        font-size: rem-calc(16);
+        color: $color--white;
+        background-color: $color--dark-gray;
+
+        &:hover,
+        &:focus {
+          color: $color--white;
+        }
+      }
+    }
+  }
+
+  // Quick menu
+  .menu--quick {
+    .menu-item {
+      a {
+        margin-bottom: 2px;
+        padding-left: 75px;
+        font-weight: bold;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left;
+      }
+
+      .ajax-progress {
+        display: none !important; // sass-lint:disable-line no-important
+      }
+
+      // Contact
+      &:nth-child(2) a {
+        background-image: url('../../images/icons/dove-lewis-icon-mobile-call-green.svg');
+      }
+
+      // Map
+      &:nth-child(3) a {
+        background-image: url('../../images/icons/dove-lewis-icon-mobile-directions-green.svg');
+      }
+
+      &:first-child,
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+
+  // Mobile main menu
+  .menu--main--mobile {
+    .menu-item {
+      .menu-item__inner__parent-wrapper {
+        margin-bottom: 2px;
+      }
+
+      // Active item
+      &.menu-item--active-trail > .menu-item__inner > .menu-item__inner__parent-wrapper {
+        border-left: 3px solid $color--green;
+      }
+    }
+
+    // Top level
+    .menu-level-0 {
+      > .menu-item {
+        position: relative;
+
+        // Open state
+        &.open .menu-level-1 {
+          display: block;
+        }
+
+        &.open > .menu-item__inner > .dropdown-toggle-arrow {
+          .dropdown-toggle-arrow__arrow {
+            transform: scaleY(-1);
+            border-color: darken(#D5D7D4, 10%) transparent transparent transparent;
+          }
+        }
+
+        &.open > .menu-item__inner > .menu-item__inner__parent-wrapper > a {
+          font-weight: bold;
+        }
+      }
+
+      // Dropdown toggle arrow
+      > .menu-item > .menu-item__inner > .dropdown-toggle-arrow {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50px;
+        height: 33px;
+        padding-top: 23px;
+        cursor: pointer;
+        pointer-events: none;
+
+        .dropdown-toggle-arrow__arrow {
+          width: 0;
+          height: 0;
+          margin: 0 auto;
+          border-style: solid;
+          border-width: 7px 6px 0 6px;
+          border-color: #D5D7D4 transparent transparent transparent;
+          transition: border-color .3s;
+        }
+
+        &:hover,
+        &:focus {
+          .dropdown-toggle-arrow__arrow {
+            border-color: darken(#D5D7D4, 10%) transparent transparent transparent;
+          }
+        }
+      }
+
+      // Hide dropdown-toggle-arrow for Home and Contact
+      > .menu-item:first-child > .menu-item__inner > .dropdown-toggle-arrow,
+      > .menu-item:last-child > .menu-item__inner > .dropdown-toggle-arrow {
+        display: none;
+      }
+    }
+
+    // Second level
+    .menu-level-1 {
+      display: none;
+
+      .menu-item a {
+        padding-left: 30px;
+        background-color: $color--medium-gray;
+      }
+    }
+
+    .field--name-field-menu-image,
+    .title--long {
+      display: none;
+    }
+  }
+
+  // Search
+  .block-id--block-search-form-mobile {
+    form .form--inline {
+      .form-item-search {
+        width: calc(100% - 50px);
+
+        label {
+          display: none;
+        }
+
+        input {
+          font-size: 1rem;
+        }
+      }
+
+      .form-actions {
+        .form-submit {
+          text-indent: 2000px;
+          overflow: hidden;
+          width: 50px;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  // XLARGE AND UP
+
+  @include breakpoint(xlarge) {
+    display: none;
+  }
+}
+

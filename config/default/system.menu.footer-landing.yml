@@ -1,0 +1,8 @@
+uuid: 5cab44a9-d3b4-4de2-a6ba-a63f33cb71e7
+langcode: en
+status: true
+dependencies: {  }
+id: footer-landing
+label: 'Footer - Landing'
+description: 'Menu that appears in the landing page footer'
+locked: false

@@ -1,0 +1,94 @@
+/**
+ * Block: Wellness Tips Mailchimp signup form.
+ */
+
+.block-id--mailchimp-form {
+  .block__content {
+    box-sizing: border-box;
+    border: 3px solid white;
+    background-color: #FFF3D4;
+    background-image: url("../../images/dove-lewis-graphic-email-subscribe-bulldog.svg");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+    .content__top {
+      background-color: $color--orange;
+      padding: 30px $spacing--small;
+
+      .block__title {
+        margin-bottom: 0;
+        font-size: rem-calc(23);
+        font-weight: bold;
+        color: white;
+      }
+    }
+
+    .content__bottom {
+      margin: auto;
+      padding: $spacing--medium $spacing--small;
+
+      &::before {
+        content: "";
+        position: relative;
+        bottom: 18px;
+        width: 0;
+        height: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-top: 25px solid $color--orange;
+        clear: both;
+      }
+
+      .indicates-required {
+        float: right;
+      }
+
+      .mc-field-group {
+        margin-top: 0;
+        margin-bottom: $spacing--small;
+      }
+
+      .mc-field-group.input-group {
+        display: inline;
+        white-space: nowrap;
+      }
+
+      ul {
+        list-style-type: none;
+        margin-top: $spacing--xsmall;
+      }
+    }
+  }
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .block__content {
+      .content__top {
+        padding: $spacing--medium ($spacing--large + 2px);
+
+        .block__title {
+          font-size: rem-calc(30);
+        }
+      }
+
+      .content__bottom {
+        padding: $spacing--medium ($spacing--large + 2px);
+      }
+    }
+  }
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    .block__content {
+      .content__top {
+        padding: $spacing--large 75px;
+      }
+
+      .content__bottom {
+        padding: $spacing--medium 75px;
+      }
+    }
+  }
+}

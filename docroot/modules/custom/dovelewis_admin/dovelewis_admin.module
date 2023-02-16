@@ -1,0 +1,59 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Session\AccountInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+
+/**
+ * Implements hook_page_attachments().
+ */
+function dovelewis_admin_page_attachments(&$page) {
+  // Load custom CSS overrides of Adminimal theme.
+  $theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+
+  if ($theme == 'adminimal_theme') {
+    $page['#attached']['library'][] = 'dovelewis/admin-styling';
+  }
+}
+
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ *
+ */
+function dovelewis_admin_node_view(array &$build, EntityInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  _dovelewis_admin_disable_anon_node_access($build, $node, $display, $view_mode);
+}
+
+
+/**
+ * Disables full view mode for anonymous users for specific content types.
+ * If authenticated user, displays helpful message to let them know page will be disabled for anonymous users.
+ * @param array $build
+ * @param EntityInterface $node
+ * @param EntityViewDisplayInterface $display
+ * @param $view_mode
+ */
+function _dovelewis_admin_disable_anon_node_access(array &$build, EntityInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  $disabled_types = [
+    'donation_case_study',
+    'resource_file',
+    'sponsor',
+  ];
+
+  if (in_array($node->getType(), $disabled_types) && $view_mode == 'full') {
+    $current_user = \Drupal::currentUser();
+    $roles = $current_user->getRoles();
+
+    if (in_array('anonymous', $roles)) {
+      throw new NotFoundHttpException();
+    }
+    else {
+      $messenger = \Drupal::messenger();
+      $messenger->addMessage(t("Note: This particular page will only be accessible to administrators and not to anonymous users."));
+    }
+  }
+}

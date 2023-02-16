@@ -1,0 +1,408 @@
+/**
+ * Styling for admin tools that are displayed on the frontend theme.
+ */
+
+@import "config/_variables.scss";
+
+
+// Admin bar
+// ----
+
+// Remove "Edit" button from admin toolbar because it is buggy AF
+// and seems to be unnecessary.
+.contextual-toolbar-tab.toolbar-tab {
+  display: none !important;
+}
+
+// Move header down depending on admin bar position
+body.toolbar-fixed {
+  &.toolbar-horizontal,
+  &.toolbar-vertical {
+    .header {
+      margin-top: 40px;
+    }
+  }
+}
+
+
+// General contextual links
+// ----
+
+// Disable contextual links in various regions
+header.header,
+.mobile-menu,
+.secondary-menu,
+.region--local-tasks-tabs {
+  .contextual {
+    display: none !important;
+  }
+}
+
+.contextual.open > button.trigger {
+  display: block !important;
+}
+
+
+// Node contextual links
+// ----
+
+// All nodes
+.node {
+  .contextual {
+    // Hide delete option
+    .entitynodedelete-form {
+      display: none !important;
+    }
+  }
+}
+
+
+// Full view mode
+.node--view-mode--full {
+  > .contextual {
+    right: 64px;
+  }
+}
+
+// Non full view mode
+// Move contextual links down to make room for
+// Paragraph contextual links
+.node:not(.node--view-mode--full) {
+  .contextual {
+    right: 45px;
+  }
+}
+
+
+// Block contextual links
+// ----
+
+.block {
+  > .contextual {
+    right: 45px;
+
+    // Disable settings tray added by Paragraphs FrontEnd UI module
+    .settings-trayblock-configure {
+      display: none !important;
+    }
+  }
+
+  // Inside a full-width Container & Column
+  .paragraph--type--container.width--full > .container__inner .container__content.width--full .paragraph--type--column.xlarge-12 & {
+    > .contextual {
+      right: 65px;
+    }
+  }
+}
+
+
+// Block menu contextual links
+// ----
+
+.block-menu {
+  > .contextual {
+    right: 45px;
+
+    // Disable settings tray added by Paragraphs FrontEnd UI module
+    .settings-trayblock-configure {
+      display: none !important;
+    }
+  }
+}
+
+
+// Paragraphs FrontEnd UI module
+//
+// Styling for Paragraphs contextual links & modal forms.
+// -----
+
+// Disable contextual links for most Paragraph types
+.paragraph {
+  .contextual[data-contextual-id^="paragraph:"] {
+    // Important is needed here to override JS.
+    display: none !important;
+
+    // Disable Paragraphs FrontEnd UI options
+    .quickedit,
+    .paragraphs-editdelete-form,
+    .paragraphs-frontend-uiedit-settings,
+    .paragraphs-frontend-uiduplicate,
+    .paragraphs-frontend-uimove-up,
+    .paragraphs-frontend-uimove-down,
+    .paragraphs-frontend-uiadd {
+      display: none !important;
+    }
+  }
+}
+
+// Enable contextual links for Container Paragraph
+.paragraph--type--container {
+  position: relative;
+}
+
+.paragraph--type--container,
+.paragraph--type--container > .container__inner > .container__content > .grid-x {
+  > .contextual[data-contextual-id^="paragraph:"] {
+    display: block !important;
+    top: 7px;
+
+    .trigger,
+    .contextual-links {
+      border-color: $color--orange;
+      border-width: 2px;
+    }
+  }
+}
+
+// Enable contextual links for Column Paragraph
+.paragraph--type--column {
+  position: relative;
+
+  > .contextual[data-contextual-id^="paragraph:"] {
+    display: block !important;
+    right: 12px;
+
+    .trigger,
+    .contextual-links {
+      border-color: $color--orange;
+    }
+  }
+
+  // Inside a full-width Container
+  .paragraph--type--container.width--full > .container__inner .container__content.width--full & {
+    > .contextual[data-contextual-id^="paragraph:"] {
+      right: 32px;
+    }
+  }
+
+  // Enable contextual links for Nodes inside of Column Paragraphs
+  .node .contextual {
+    display: block !important;
+  }
+}
+
+// Enable contextual links for Paragraphs inside a node Full view mode sidebar
+.node--full__sidebar {
+  .paragraph {
+    position: relative;
+
+    > .contextual[data-contextual-id^="paragraph:"] {
+      display: block !important;
+
+      .trigger,
+      .contextual-links {
+        border-color: $color--orange;
+      }
+    }
+  }
+}
+
+// Modal edit window
+.ui-widget.ui-front {
+  form {
+    label,
+    legend {
+      margin-bottom: 0;
+      font-weight: bold;
+    }
+
+    // General form-item spacing
+    tr.odd .form-item,
+    tr.even .form-item {
+      margin: 0 0 20px 0;
+    }
+
+    .form-item {
+      margin: 0 0 20px 0;
+    }
+
+    // Label
+    .label {
+      font-family: $ff--idealsans;
+      color: $color--black;
+      background-color: transparent;
+    }
+
+    // Description
+    .form-item .description {
+      margin-top: 5px;
+    }
+
+    // General buttons
+    .button,
+    button {
+      margin: 0;
+      font-size: 13px;
+      font-weight: normal;
+      padding: 7px 10px;
+      border-radius: 4px;
+    }
+
+    // Email and text fields
+    [type='text'],
+    [type='password'],
+    [type='date'],
+    [type='datetime'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='week'],
+    [type='email'],
+    [type='number'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='url'],
+    [type='color'] {
+      margin-bottom: 0;
+      box-shadow: none;
+      border-color: #CCCCCC;
+    }
+
+    // Textareas
+    .field--widget-string-textarea {
+      margin-bottom: 20px;
+    }
+
+    .form-item.form-type-textarea,
+    tr.odd .form-item.form-type-textarea,
+    tr.even .form-item.form-type-textarea {
+      margin-bottom: 0;
+    }
+
+    // Select
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      position: relative;
+      margin-bottom: 0;
+      border-radius: 0;
+      border-color: #CCCCCC;
+    }
+
+    // Checkboxes and radios
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin: 0;
+    }
+
+    [type="checkbox"] + label,
+    [type="radio"] + label {
+      margin: 0 11px;
+      vertical-align: bottom;
+    }
+
+    // Checkboxes
+    .form-type-radio .description,
+    .form-type-checkbox .description {
+      margin-top: 0;
+      margin-left: 29px;
+    }
+
+    input[type="checkbox"] {
+      &:after {
+        border-color: #CCCCCC;
+      }
+    }
+
+    // Draggable table
+    .field-multiple-table {
+      .draggable {
+        > td {
+          padding: 10px;
+        }
+
+        .field-multiple-drag {
+          padding: 0;
+        }
+
+        a.tabledrag-handle {
+          height: 100%;
+          margin-left: 0;
+          padding: 13px 10px !important;
+        }
+
+        a.tabledrag-handle .handle {
+          width: 22px;
+          height: 22px;
+          margin: 0;
+          padding: 0;
+          background-size: contain;
+          background-position: center;
+        }
+
+        > td > .form-item {
+          &:first-child:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    // Add new Paragraph button
+    .dropbutton .dropbutton-action {
+      .button {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 7px 15px;
+        color: $color--body-text;
+        background-color: transparent;
+        border-color: transparent;
+        border-radius: 0;
+
+        &:hover,
+        &:focus {
+          background-color: #EEE;
+          border-color: transparent;
+        }
+      }
+    }
+
+    .paragraphs-dropdown-actions {
+      .button {
+        margin: 0;
+        padding: 7px 15px;
+        font-size: 13px;
+        color: $color--body-text;
+        background-color: transparent;
+        border-color: transparent;
+        border-radius: 0;
+
+        &:hover,
+        &:focus {
+          background-color: $color--white;
+          border-color: transparent;
+        }
+      }
+    }
+
+    .paragraph-type-title {
+      flex-basis: auto;
+    }
+  }
+
+
+  // Submit button
+  form .form-submit,
+  .form-submit {
+    margin: 10px 0;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 7px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+}
+
+
+
+// WYSIWYG
+// ----
+
+// WYSIWYG field
+.field--widget-text-textarea .cke_contents {
+  padding: 10px;
+  background-color: $color--gray;
+}
+

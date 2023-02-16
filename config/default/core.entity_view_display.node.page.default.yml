@@ -1,0 +1,101 @@
+uuid: 5fea88b8-14a8-45b0-82a7-1fcab25fcea1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_content_width
+    - field.field.node.page.field_display_secondary_menu
+    - field.field.node.page.field_display_teaser_menu
+    - field.field.node.page.field_header_text
+    - field.field.node.page.field_header_youtube_video
+    - field.field.node.page.field_hero_image
+    - field.field.node.page.field_landing_page
+    - field.field.node.page.field_node_content
+    - field.field.node.page.field_node_content_top
+    - field.field.node.page.field_sidebar_content
+    - field.field.node.page.field_tags
+    - field.field.node.page.field_teaser_cta
+    - field.field.node.page.field_teaser_image
+    - node.type.page
+    - responsive_image.styles.hero
+  module:
+    - entity_reference_revisions
+    - responsive_image
+    - text
+    - user
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_header_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_header_youtube_video:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_hero_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: hero
+      image_link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_node_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_node_content_top:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_sidebar_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  field_content_width: true
+  field_display_secondary_menu: true
+  field_display_teaser_menu: true
+  field_landing_page: true
+  field_tags: true
+  field_teaser_cta: true
+  field_teaser_image: true
+  langcode: true
+  links: true

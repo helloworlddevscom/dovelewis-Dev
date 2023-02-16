@@ -1,0 +1,22 @@
+uuid: f2c84a19-7f4d-475b-9bbf-c76794b2f693
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dovelewis
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: dovelewis_messages
+theme: dovelewis
+region: local_tasks_tabs
+weight: -21
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

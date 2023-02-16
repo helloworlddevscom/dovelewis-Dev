@@ -1,0 +1,32 @@
+{
+    "name": "drupal/responsive_background_image",
+    "description": "Provides a method to call programmatically from within a preprocess function, that will generate CSS media queries for a responsive background image for a specific CSS selector.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/responsive_background_image",
+    "authors": [
+        {
+            "name": "Ben Teegarden (maskedjellybean)",
+            "homepage": "https://www.drupal.org/u/maskedjellybean",
+            "role": "Maintainer"
+        },
+        {
+            "name": "Julian Pustkuchen (Anybody)",
+            "homepage": "https://www.drupal.org/u/anybody",
+            "role": "Maintainer"
+        },
+        {
+            "name": "Thomas Frobieter (thomas.frobieter)",
+            "homepage": "https://www.drupal.org/u/thomasfrobieter",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/responsive_background_image",
+        "source": "https://git.drupalcode.org/project/responsive_background_image"
+    },
+    "require": {
+        "drupal/core": "^8 || ^9",
+        "drupal/responsive_image": "*"
+    }
+}

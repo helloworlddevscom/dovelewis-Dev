@@ -1,0 +1,8 @@
+uuid: 5c6f126d-052b-4deb-8289-28cce8be2abd
+langcode: en
+status: true
+dependencies: {  }
+id: short_date_month_day
+label: 'Short date - Month Day'
+locked: false
+pattern: 'M j'

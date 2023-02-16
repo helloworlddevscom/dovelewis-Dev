@@ -1,0 +1,27 @@
+uuid: 0b8942a6-3bc9-4ddb-957f-bc40e461bf32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.three_image_banner.field_three_image_banner_images
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.three_image_banner
+  module:
+    - svg_image
+id: paragraph.three_image_banner.default
+targetEntityType: paragraph
+bundle: three_image_banner
+mode: default
+content:
+  field_three_image_banner_images:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

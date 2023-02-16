@@ -1,0 +1,20 @@
+uuid: 59a649c3-9599-400d-9b14-66634a6d93aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - dovelewis_search
+  theme:
+    - dovelewis
+id: search_form_mobile
+theme: dovelewis
+region: mobile_menu_bottom
+weight: 0
+provider: null
+plugin: dovelewis_search_block
+settings:
+  id: dovelewis_search_block
+  label: 'Search Form - Mobile'
+  label_display: '0'
+  provider: dovelewis_search
+visibility: {  }

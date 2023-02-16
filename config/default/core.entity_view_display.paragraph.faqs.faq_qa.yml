@@ -1,0 +1,27 @@
+uuid: 98711ca6-18a9-4470-b0d8-b24c40b18e4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.faq_qa
+    - field.field.paragraph.faqs.field_faq_category
+    - field.field.paragraph.faqs.field_faqs_ref
+    - field.field.paragraph.faqs.field_par_faq_title
+    - field.field.paragraph.faqs.field_style
+    - paragraphs.paragraphs_type.faqs
+id: paragraph.faqs.faq_qa
+targetEntityType: paragraph
+bundle: faqs
+mode: faq_qa
+content:
+  field_faqs_ref:
+    type: entity_reference_entity_id
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_faq_category: true
+  field_par_faq_title: true
+  field_style: true

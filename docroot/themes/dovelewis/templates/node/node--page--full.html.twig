@@ -1,0 +1,251 @@
+{#
+/**
+ * @file
+ * Basic Page node - View Mode: Full
+ *
+ * When modifying this template, be aware that fields on Basic Page nodes directly effect
+ * the layout of the page, giving the client control over whether the page has a sidebar
+ * and the width of the page content. Please check that the Content Width field still works.
+ * Here is a page with a sidebar to check:
+ * - /veterinarians/blood-bank
+ * Here is a page without a sidebar to check:
+ * - /veterinarians/ce-training
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{# Set misc. variables. #}
+{%
+  set classes = [
+    'node',
+    'node--type--' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode--' ~ view_mode|clean_class,
+    'node--full-with-sidebars',
+  ]
+%}
+
+{%
+  set title_classes = [
+    'page-title',
+    'node--full__title',
+    'cell',
+  ]
+%}
+
+{# Set vars containing field renders. This will allow us to check if they have a value without rendering multiple times. #}
+{% set field_sidebar_content_render = content.field_sidebar_content|render %}
+{% set field_node_content_render = content.field_node_content|render %}
+{% set field_node_content_top_render = content.field_node_content_top|render %}
+{% set field_header_text_render = content.field_header_text|render %}
+{% set field_header_youtube_video_render = content.field_header_youtube_video|render %}
+{% set field_hero_image_render = content.field_hero_image|render %}
+
+{# Set var to determine width of title. #}
+{% if field_header_text_render is not empty %}
+  {% set title_classes = title_classes|merge(['large-6', 'xlarge-5']) %}
+{% endif %}
+
+{# Set vars to determine whether sidebar is displayed. #}
+{% if field_sidebar_content_render is not empty %}
+  {% set sidebar = true %}
+
+  {# If sidebar, add Foundation grid classes to Body field. #}
+  {%
+    set content_width_classes = [
+    '',
+  ]
+  %}
+  {%
+    set body_width_classes = [
+    'cell',
+    'xlarge-8',
+  ]
+  %}
+{% else %}
+  {% set sidebar = false %}
+
+  {# If no sidebar, set Body and Title field width class. #}
+  {% if content_width == 'narrow' %}
+    {%
+      set content_width_classes = [
+      'width--narrow',
+    ]
+    %}
+  {% else %}
+    {%
+      set content_width_classes = [
+      '',
+    ]
+    %}
+  {% endif %}
+
+  {% set body_width_classes = [
+    'cell',
+    'small-12',
+  ]
+  %}
+
+  {% set title_classes = title_classes|merge(['small-12']) %}
+{% endif %}
+
+
+{# Begin template #}
+
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  <div class="node--full__header">
+    {% if field_header_youtube_video_render is not empty or field_hero_image_render is not empty %}
+      <div class="header__hero grid-container">
+        {% if field_header_youtube_video_render is empty and field_hero_image_render is not empty %}
+          {{ field_hero_image_render }}
+        {% elseif field_header_youtube_video_render is not empty %}
+          {{ field_header_youtube_video_render }}
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="header__text grid-container">
+      <div class="header__text__inner {{ content_width_classes|join(' ') }}">
+        <div class="grid-x grid-margin-x">
+
+          <h1{{ title_attributes.addClass(title_classes) }}>
+            {{ label }}
+          </h1>
+
+          {% if field_header_text_render is not empty %}
+            <div class="header-text cell large-6 xlarge-7">
+              <p class="paragraph-size--lead">
+                {{ content.field_header_text.0 }}
+              </p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% if breadcrumbs_block %}
+      <div class="header__breadcrumbs grid-container">
+        <div class="breadcrumbs {{ content_width_classes|join(' ') }}">
+          {{ breadcrumbs_block }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if teaser_menu_block %}
+    <div class="teaser-menu">
+      <div class="teaser-menu__inner grid-container">
+          {{ teaser_menu_block }}
+      </div>
+    </div>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node--full__content') }}>
+    {# Container Paragraphs - Top #}
+    {% if field_node_content_top_render is not empty %}
+      {{ field_node_content_top_render }}
+    {% endif %}
+
+    {% if body_has_value
+      or field_sidebar_content_render is not empty
+      or body_bottom_block is not empty
+    %}
+      <div class="node--full__body-content grid-container">
+        <div class="node--full__body-content__inner {{ content_width_classes|join(' ') }}">
+          <div class="grid-x grid-margin-x">
+
+            {# Body field #}
+            {% if body_has_value or body_bottom_block is not empty %}
+              <div class="node--full__body {{ body_width_classes|join(' ') }}">
+                {{ content.body|render }}
+
+                {# Twig block that can be extended #}
+                {# See: node--306--full.html.twig #}
+                {% block body_bottom %}
+                {% endblock %}
+              </div>
+            {% endif %}
+
+            {# Sidebar Paragraphs #}
+            {% if sidebar %}
+              <div class="node--full__sidebar cell xlarge-4">
+                {{ field_sidebar_content_render }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {# Container Paragraphs - Bottom #}
+    {% if field_node_content_render is not empty %}
+      {{ field_node_content_render }}
+    {% endif %}
+  </div>
+
+</article>

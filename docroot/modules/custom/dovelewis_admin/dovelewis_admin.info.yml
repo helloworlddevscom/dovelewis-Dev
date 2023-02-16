@@ -1,0 +1,4 @@
+name: Dove Lewis Admin
+description: Admin theme styling overrides.
+core_version_requirement: ^8 || ^9
+type: module

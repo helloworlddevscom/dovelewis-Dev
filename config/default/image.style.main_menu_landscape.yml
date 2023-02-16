@@ -1,0 +1,15 @@
+uuid: 0f41eaff-3c9d-47f7-9071-74d6aa59684f
+langcode: en
+status: true
+dependencies: {  }
+name: main_menu_landscape
+label: 'Main Menu - Landscape'
+effects:
+  f83056f0-510d-4ac9-8b80-f445ac7bac08:
+    uuid: f83056f0-510d-4ac9-8b80-f445ac7bac08
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 178
+      height: 85
+      anchor: center-center

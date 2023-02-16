@@ -1,0 +1,9 @@
+uuid: 0f2ebf15-c0e5-4cbc-8ae1-fc97a566932c
+langcode: en
+status: true
+dependencies: {  }
+id: homepage_marquee
+label: 'Carousel Marquee'
+icon_uuid: null
+description: 'Displays multiple slides as a carousel.'
+behavior_plugins: {  }

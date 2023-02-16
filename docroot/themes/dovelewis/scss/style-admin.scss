@@ -1,0 +1,166 @@
+/**
+ * These are general improvements to the admin theme.
+ */
+
+@import "config/_variables.scss";
+
+// Admin bar
+// ----
+
+// Remove "Edit" button from admin toolbar because it is buggy AF
+// and seems to be unnecessary.
+.contextual-toolbar-tab.toolbar-tab {
+  display: none !important;  // sass-lint:disable-line no-important
+}
+
+
+// Tables
+// ----
+
+thead, tbody, tfoot {
+  border: 1px solid #CCCCCC;
+}
+
+
+// General form
+// ----
+
+form {
+
+  // Labels
+  .form-composite > legend, .label {
+    color: #333333;
+  }
+
+  label,
+  .form-item label {
+    margin-bottom: 5px;
+  }
+
+  // Description
+  .form-item .description {
+    margin-top: 5px;
+  }
+
+  // Checkboxes
+  .form-type-checkbox label {
+    font-weight: bold;
+  }
+
+  .form-type-radio .description,
+  .form-type-checkbox .description {
+    margin-left: 24px;
+  }
+
+  // WYSIWYG field
+  .field--widget-text-textarea,
+  .field--widget-text-textarea-with-summary {
+    .form-type-textarea.js-form-item {
+      margin-bottom: 0;
+    }
+
+    .cke_contents {
+      padding: 10px;
+      background-color: $color--gray;
+    }
+  }
+
+  // Draggable table
+  .field-multiple-table {
+    .draggable {
+      > td {
+        padding: 10px;
+      }
+
+      .field-multiple-drag {
+        padding: 0;
+      }
+
+      a.tabledrag-handle {
+        height: 100%;
+        margin-left: 0;
+        padding: 13px 10px !important;  // sass-lint:disable-line no-important
+      }
+
+      a.tabledrag-handle .handle {
+        width: 22px;
+        height: 22px;
+        margin: 0;
+        padding: 0;
+        background-size: contain;
+        background-position: center;
+      }
+
+      > td > .form-item {
+        &:first-child:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .seven-details {
+    border-radius: 0;
+  }
+}
+
+
+// Node form
+// ----
+
+.layout-node-form {
+  .form-item,
+  tr.odd .form-item,
+  tr.even .form-item {
+    margin: 0 0 15px 0;
+  }
+
+  // WYSIWYG field
+  .field--widget-text-textarea,
+  .field--widget-text-textarea-with-summary {
+    .form-type-textarea.js-form-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+// Paragraph fields
+// ----
+
+.field--widget-entity-reference-paragraphs {
+  margin: 20px 0;
+}
+
+.paragraph-type-title {
+  padding-top: 5px;
+}
+
+.js .paragraph-type-title {
+  flex-basis: auto;
+  font-weight: bold;
+}
+
+.js .paragraph-type-label {
+  font-weight: bold;
+}
+
+//.js .field--widget-paragraphs td {
+//  overflow: hidden;
+//}
+
+.paragraphs-dropbutton-wrapper {
+  padding-right: 10px;
+}
+
+.paragraphs-subform {
+  padding-right: 10px;
+}
+
+.paragraph {
+  padding-right: 10px;
+}
+
+.paragraph--view-mode--preview {
+  padding: 10px 10px 0 0;
+}

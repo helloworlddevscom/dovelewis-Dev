@@ -1,0 +1,25 @@
+uuid: dc87290a-d693-4ef3-99db-e411859a5046
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8abd50ce-04b6-47d8-8eab-2a489c7af6a2'
+  module:
+    - block_content
+  theme:
+    - dovelewis
+id: footerlandingmissionstatement_2
+theme: dovelewis
+region: footer_left_landing
+weight: -23
+provider: null
+plugin: 'block_content:8abd50ce-04b6-47d8-8eab-2a489c7af6a2'
+settings:
+  id: 'block_content:8abd50ce-04b6-47d8-8eab-2a489c7af6a2'
+  label: 'Footer Landing - Mission Statement'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

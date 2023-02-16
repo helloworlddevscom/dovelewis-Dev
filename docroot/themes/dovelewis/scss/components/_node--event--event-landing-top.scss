@@ -1,0 +1,161 @@
+/*
+ * Event node - Event Landing Top view mode.
+ *
+ * Overrides some shared styling from _node--event--teaser.scss.
+ */
+
+.node--type--event.node--view-mode--event-landing-top {
+
+  .event__image {
+    width: 100%;
+
+    .field--name-field-hero-image {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .event__info-wrapper {
+    @include clearfix;
+    padding: $spacing--medium 0;
+  }
+
+  .event__date-wrapper {
+    display: none;
+  }
+
+  .event__info {
+    float: none;
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: $spacing--small;
+
+    .event__body {
+      display: block;
+    }
+
+    .teaser-cta {
+      display: inline-block;
+    }
+  }
+
+  .event__title {
+    font-weight: 600;
+    @include h2--mobile-large;
+  }
+
+  .event__details {
+    clear: both;
+    padding: $spacing--small 0;
+    border-top: 1px solid $color--gray6;
+    border-bottom: 1px solid $color--gray6;
+
+    .field:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .event-details-label {
+    display: none;
+  }
+
+  .field--name-field-event-location-name,
+  .field--name-field-event-date-long,
+  .field--name-field-event-date-time,
+  .field--name-field-event-price {
+    margin-bottom: $spacing--xsmall;
+    padding-left: 30px;
+    @include font-size--paragraph;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+  }
+
+  .field--name-field-event-location-name {
+    font-weight: bold;
+    background-image: url('../../images/icons/location-green.svg');
+  }
+
+  .field--name-field-event-date-long {
+    display: inline-block;
+    background-image: url('../../images/icons/calendar.svg');
+    background-size: 18px;
+  }
+
+  .annual-event {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: $spacing--xsmall;
+    margin-bottom: $spacing--xsmall;
+    padding: 3px 15px;
+    text-transform: uppercase;
+    font-size: rem-calc(13px);
+    background-color: $color--lightgreen;
+    color: $color--white;
+    border-radius: 15px;
+  }
+
+  .field--name-field-event-date-time {
+    background-image: url('../../images/icons/clock.svg');
+    background-size: 18px;
+  }
+
+  .field--name-field-event-price {
+    background-image: url('../../images/icons/ticket.svg');
+    background-size: 19px;
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .event__info-wrapper {
+      padding: $spacing--large 0;
+    }
+
+    .event__date-wrapper {
+      display: block;
+    }
+
+    .event__info {
+      float: left;
+      width: calc(68.5% - 80px);
+      padding-left: $spacing--small;
+      padding-right: $spacing--medium;
+      margin-bottom: 0;
+
+      .teaser-cta {
+        display: inline-block;
+      }
+    }
+
+    .event__details {
+      clear: none;
+      float: left;
+      width: 31.5%;
+      padding: $spacing--medium 0;
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .event__info-wrapper {
+      padding: 90px 0;
+    }
+
+    .event__info {
+      padding-left: $spacing--medium;
+      padding-right: $spacing--large;
+    }
+
+    .event-details-label {
+      display: block;
+      color: $color--lightgreen;
+    }
+  }
+}

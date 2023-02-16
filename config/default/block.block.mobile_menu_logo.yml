@@ -1,0 +1,20 @@
+uuid: 99ba75ed-1eab-4da8-9b7f-b3627c2a2010
+langcode: en
+status: true
+dependencies:
+  module:
+    - dovelewis_menu
+  theme:
+    - dovelewis
+id: mobile_menu_logo
+theme: dovelewis
+region: mobile_menu_top
+weight: 0
+provider: null
+plugin: mobile_menu_logo
+settings:
+  id: mobile_menu_logo
+  label: 'Mobile Menu Logo'
+  label_display: '0'
+  provider: dovelewis_menu
+visibility: {  }

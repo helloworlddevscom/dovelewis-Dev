@@ -1,0 +1,10 @@
+uuid: b3ad6ae2-a575-4118-8106-72fded21c1c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.faq_qa
+label: 'FAQ QA'
+targetEntityType: paragraph
+cache: true

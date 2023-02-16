@@ -1,0 +1,29 @@
+uuid: a8fb359f-16e1-4662-9a1f-ace231687f6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.homepage_marquee.field_homepage_marquee_slides
+    - paragraphs.paragraphs_type.homepage_marquee
+  module:
+    - paragraphs
+id: paragraph.homepage_marquee.default
+targetEntityType: paragraph
+bundle: homepage_marquee
+mode: default
+content:
+  field_homepage_marquee_slides:
+    type: entity_reference_paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

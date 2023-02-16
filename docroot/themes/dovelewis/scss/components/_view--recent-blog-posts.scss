@@ -1,0 +1,24 @@
+/**
+ * Recent Blog Posts view.
+ */
+
+.view--recent-blog-posts {
+  .views-row {
+    padding: $spacing--small 0;
+    border-bottom: 1px solid $color--gray6;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  // XLARGE
+  // ----
+
+  @include breakpoint(xlarge) {
+    .views-row {
+      padding: 0 0 $spacing--small;
+      border-bottom: none;
+    }
+  }
+}

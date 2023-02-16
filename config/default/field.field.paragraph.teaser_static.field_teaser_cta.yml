@@ -1,0 +1,23 @@
+uuid: dd3ea07c-e99c-46ae-ac64-176260fb6bfb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_teaser_cta
+    - paragraphs.paragraphs_type.teaser_static
+  module:
+    - link
+id: paragraph.teaser_static.field_teaser_cta
+field_name: field_teaser_cta
+entity_type: paragraph
+bundle: teaser_static
+label: 'Call To Action'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

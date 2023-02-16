@@ -1,0 +1,469 @@
+<?php
+/**
+ * FAQ related code.
+ */
+
+use Drupal\node\Entity\Node;
+use Drupal\Core\Url;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_theme().
+ */
+function dovelewis_faq_theme($existing, $type, $theme, $path) {
+  return [
+    // Fields.
+    'field__paragraph__field_faqs_ref__faq_accordion' => [
+      'template' => 'field--paragraph--field-faqs-ref--faq-accordion',
+      'base hook' => 'field',
+      'path' => $path . '/templates/fields',
+    ],
+    'field__paragraph__field_faqs_ref__faq_list' => [
+      'template' => 'field--paragraph--field-faqs-ref--faq-list',
+      'base hook' => 'field',
+      'path' => $path . '/templates/fields',
+    ],
+    'field__paragraph__field_faqs_ref__faq_qa' => [
+      'template' => 'field--paragraph--field-faqs-ref--faq-qa',
+      'base hook' => 'field',
+      'path' => $path . '/templates/fields',
+    ],
+    'field__paragraph__field_par_faq_title__faq_accordion' => [
+      'template' => 'field--paragraph--field-par-faq-title--faq-accordion',
+      'base hook' => 'field',
+      'path' => $path . '/templates/fields',
+    ],
+    'field__paragraph__field_par_faq_title__faq_list' => [
+      'template' => 'field--paragraph--field-par-faq-title--faq-list',
+      'base hook' => 'field',
+      'path' => $path . '/templates/fields',
+    ],
+    // Nodes.
+    'node__faq__faq_accordion' => [
+      'template' => 'node--faq--faq-accordion',
+      'base hook' => 'node',
+      'path' => $path . '/templates/nodes',
+    ],
+    // Paragraphs.
+    'paragraph__faqs__faq_accordion' => [
+      'template' => 'paragraph--faqs--faq-accordion',
+      'base hook' => 'paragraph',
+      'path' => $path . '/templates/paragraphs',
+    ],
+    'paragraph__faqs__faq_list' => [
+      'template' => 'paragraph--faqs--faq-list',
+      'base hook' => 'paragraph',
+      'path' => $path . '/templates/paragraphs',
+    ],
+    'paragraph__faqs__faq_qa' => [
+      'template' => 'paragraph--faqs--faq-qa',
+      'base hook' => 'paragraph',
+      'path' => $path . '/templates/paragraphs',
+    ],
+    // Views.
+    'views_exposed_form__faqs_landing' => [
+      'template' => 'views-exposed-form--faqs-landing',
+      'base hook' => 'views_exposed_form',
+      'path' => $path . '/templates/views',
+    ],
+    'views_view__faqs_landing' => [
+      'template' => 'views-view--faqs-landing',
+      'base hook' => 'views_view',
+      'path' => $path . '/templates/views',
+    ],
+    'views_view_unformatted__faqs_landing' => [
+      'template' => 'views-view-unformatted--faqs-landing',
+      'base hook' => 'views_view_unformatted',
+      'path' => $path . '/templates/views',
+    ],
+    // Misc.
+    'bef_radios__faqs_landing' => [
+      'template' => 'bef-radios--faqs-landing',
+      'base hook' => 'bef_radios',
+      'path' => $path . '/templates',
+    ],
+    'form_element__faqs_landing' => [
+      'template' => 'form-element--faqs-landing',
+      'base hook' => 'form_element',
+      'path' => $path . '/templates',
+    ],
+    'form_element_label__faqs_landing' => [
+      'template' => 'form-element-label--faqs-landing',
+      'base hook' => 'form_element_label',
+      'path' => $path . '/templates',
+    ],
+  ];
+}
+
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function dovelewis_faq_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInterface $entity, $context) {
+  if ($entity->getEntityTypeId() == 'paragraph') {
+    // For FAQ Paragraph, set view mode based on field_style.
+    if ($entity->bundle() == 'faqs') {
+      $view_mode = $entity->get('field_style')->getValue()[0]['value'];
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess field--node--faq--faq-accordion.html.twig.
+ *
+ * Creates a proper link path to use for accordion anchor link.
+ */
+function dovelewis_faq_preprocess_node__faq__faq_accordion(&$vars) {
+  $vars['accordion_link_path'] = \Drupal::service('pathauto.alias_cleaner')->cleanString($vars['node']->getTitle());
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess field--paragraph--field-faqs-ref--faq-qa.html.twig.
+ *
+ * Retrieves values from FAQ nodes and passes to template.
+ */
+function dovelewis_faq_preprocess_field__paragraph__field_faqs_ref__faq_qa(&$vars) {
+  // If field_faq_category has a term, set values of field_faqs_ref
+  // with field values from queried FAQ nodes associated with term.
+  if (!empty($vars['element']['#object'])) {
+    if (!empty($vars['element']['#object']->get('field_faq_category')
+      ->getValue())) {
+      $tid = $vars['element']['#object']->get('field_faq_category')->getValue()[0]['target_id'];
+      $nodes = _dovelewis_faq_get_nodes_by_tid(array($tid));
+      // Loop through nodes and insert values.
+      if (!empty($nodes)) {
+        unset($vars['items']);
+        $vars['items'] = array();
+
+        foreach ($nodes as $key => $node) {
+          $vars['items'][$key]['question'] = $node->get('title')->getValue()[0]['value'];
+          $vars['items'][$key]['answer'] = $node->get('field_faq_answer')->getValue()[0]['value'];
+        }
+      }
+
+      return;
+    }
+  }
+
+  // If field_faq_category does not have a term, load field values from referenced nodes.
+  foreach($vars['items'] as $key => $item) {
+    $node = Node::load($item['content']['#plain_text']);
+
+    $vars['items'][$key]['question'] = $node->get('title')->getValue()[0]['value'];
+    $vars['items'][$key]['answer'] = $node->get('field_faq_answer')->getValue()[0]['value'];
+  }
+
+  return $vars;
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess field--paragraph--field-faqs-ref--faq-accordion.html.twig.
+ *
+ * Retrieves values from FAQ nodes and passes to template.
+ */
+function dovelewis_faq_preprocess_field__paragraph__field_faqs_ref__faq_accordion(&$vars) {
+  // If field_faq_category has a term, set values of field_faqs_ref
+  // with field values from queried FAQ nodes associated with term.
+  if (!empty($vars['element']['#object'])) {
+    if (!empty($vars['element']['#object']->get('field_faq_category')
+      ->getValue())) {
+      $tid = $vars['element']['#object']->get('field_faq_category')->getValue()[0]['target_id'];
+      $nodes = _dovelewis_faq_get_nodes_by_tid(array($tid));
+      // Loop through nodes and insert values.
+      if (!empty($nodes)) {
+        unset($vars['items']);
+        $vars['items'] = array();
+
+        foreach ($nodes as $key => $node) {
+          // Render FAQ using faq_accordion view mode.
+          $vars['items'][$key] = \Drupal::entityTypeManager()
+            ->getViewBuilder('node')
+            ->view($node, 'faq_accordion');
+        }
+      }
+
+      return;
+    }
+  }
+
+  // If field_faq_category does not have a term, load field values from referenced nodes.
+  foreach($vars['items'] as $key => $item) {
+    $node = Node::load($item['content']['#plain_text']);
+
+    // Render FAQ using faq_accordion view mode.
+    $vars['items'][$key] = \Drupal::entityTypeManager()
+      ->getViewBuilder('node')
+      ->view($node, 'faq_accordion');
+  }
+
+  return $vars;
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess field--paragraph--field-faqs-ref--faq-list.html.twig.
+ */
+function dovelewis_faq_preprocess_field__paragraph__field_faqs_ref__faq_list(&$vars) {
+  // If field_faq_category has a term, set values of field_faqs_ref
+  // with field values from queried FAQ nodes associated with term.
+  if (!empty($vars['element']['#object'])) {
+    if (!empty($vars['element']['#object']->get('field_faq_category')->getValue())) {
+      $tid = $vars['element']['#object']->get('field_faq_category')->getValue()[0]['target_id'];
+      $nodes = _dovelewis_faq_get_nodes_by_tid(array($tid));
+      // Loop through nodes and insert values.
+      if (!empty($nodes)) {
+        unset($vars['items']);
+        $vars['items'] = array();
+
+        foreach ($nodes as $key => $node) {
+          $Url = Url::fromRoute('entity.node.canonical', ['node' => $node->Id()], []);
+
+          $vars['items'][$key] = array(
+            'content' => array(
+              '#type' => 'link',
+              '#title' => $node->get('title')->getValue()[0]['value'],
+              '#url' => $Url,
+              '#options' => array(
+                'entity_type' => 'node',
+                'entity' => $node,
+              ),
+              '#cache' => array(),
+            ),
+            'attributes' => array()
+          );
+        }
+      }
+    }
+  }
+
+  // Add class to links in field__paragraph__field_faqs_ref template.
+  // Wrap in quotes.
+  foreach($vars["element"]["#items"]->getValue() as $key => $item) {
+    // Get NID.
+    $nid = $item['target_id'];
+    $node = Node::load($nid);
+    // Construct path to point directly to anchor link on FAQ landing page.
+    $title = $node->getTitle();
+    $path = '/faqs#' . \Drupal::service('pathauto.alias_cleaner')->cleanString($title);
+    $vars['items'][$key]['content']['#prefix'] = '<a class="link-style--arrow" href="'.$path.'"><q>';
+    $vars['items'][$key]['content']['#suffix'] = '</a></q>';
+  }
+}
+
+
+/**
+ * Loads node entities by taxonomy term IDs.
+ * Return: Node entities.
+ */
+function _dovelewis_faq_get_nodes_by_tid($termIds){
+  $termIds = (array) $termIds;
+  if(empty($termIds)){
+    return NULL;
+  }
+
+  $query = \Drupal::database()->select('taxonomy_index', 'ti');
+  $query->fields('ti', array('nid'));
+  $query->condition('ti.tid', $termIds, 'IN');
+  $query->distinct(TRUE);
+  $query->range(0,6);
+  $result = $query->execute();
+
+  if($nodeIds = $result->fetchCol()){
+    return Node::loadMultiple($nodeIds);
+  }
+
+  return NULL;
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function dovelewis_faq_theme_suggestions_field_alter(array &$suggestions, array $vars) {
+  // For FAQs Paragraph entity, if view mode is set to faq_qa or faq_accordion,
+  // suggest a new template for entity reference field.
+  if ($vars['element']['#field_name'] == 'field_faqs_ref') {
+    if (!empty($vars['element']['#object'])) {
+
+      switch ($vars['element']['#object']->get('field_style')
+        ->getValue()[0]['value']) {
+
+        case 'faq_qa':
+          $suggestions[] = 'field__paragraph__field_faqs_ref__faq_qa';
+          break;
+
+        case 'faq_accordion':
+          $suggestions[] = 'field__paragraph__field_faqs_ref__faq_accordion';
+          break;
+
+        case 'faq_list':
+          $suggestions[] = 'field__paragraph__field_faqs_ref__faq_list';
+          break;
+      }
+    }
+  }
+
+  if ($vars['element']['#field_name'] == 'field_par_faq_title') {
+    switch ($vars['element']['#object']->get('field_style')
+      ->getValue()[0]['value']) {
+
+      case 'faq_accordion':
+        $suggestions[] = 'field__paragraph__field_par_faq_title__faq_accordion';
+        break;
+
+      case 'faq_list':
+        $suggestions[] = 'field__paragraph__field_par_faq_title__faq_list';
+        break;
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess views-view--faqs-landing.html.twig.
+ * For FAQs Landing view, get value of exposed filter and display it in template.
+ */
+function dovelewis_faq_preprocess_views_view__faqs_landing(&$vars) {
+  if (!empty($vars['exposed']['category']['#value'])) {
+    $category_name = $vars['exposed']['category']['#options'][$vars['exposed']['category']['#value']];
+
+    if ($category_name !== 'All FAQs') {
+      $category_name .= t(' FAQs');
+      $vars['category_name'] = $category_name;
+    }
+  }
+
+  if (!isset($vars['category_name'])) {
+    $vars['category_name'] = t('All FAQs');
+  }
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function dovelewis_faq_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // FAQs Landing view.
+  if ($form['#id'] == 'views-exposed-form-faqs-landing-page-faqs') {
+    // Alter template for radios field.
+    $form['category']['#theme'] = 'bef_radios__faqs_landing';
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_TEMPLATE().
+ *
+ * Preprocess bef-radio--faqs-landing.html.twig.
+ */
+function dovelewis_faq_preprocess_bef_radios__faqs_landing(&$vars) {
+  // Because there is no contextual awareness of parent elements in
+  // dovelewis_faq_theme_suggestions_form_element_alter(), we have to save
+  // the form option ids to a global var and access them later in that function.
+  foreach($vars['element'] as $key => $element) {
+    if (is_array($element)) {
+      if (isset($element['#type'])) {
+        if ($element['#type'] == 'radio') {
+          if (!isset($GLOBALS['faq_landing_options'])) {
+            $GLOBALS['faq_landing_options'] = [$element['#id']];
+          }
+          else {
+            $GLOBALS['faq_landing_options'][] = $element['#id'];
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Alters template for FAQ Landing view exposed form radio buttons.
+ */
+function dovelewis_faq_theme_suggestions_form_element_alter(array &$suggestions, array $vars, $hook) {
+  if (isset($GLOBALS['faq_landing_options'])) {
+    foreach ($GLOBALS['faq_landing_options'] as $option_id) {
+      if ($vars['element']['#id'] === $option_id) {
+        $suggestions[] = $hook . '__faqs_landing';
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_TEMPLATE().
+ *
+ * Preprocess form-element--faqs-landing.html.twig.
+ */
+function dovelewis_faq_preprocess_form_element__faqs_landing(&$vars) {
+  if ($vars['element']['#return_value'] == 'All') {
+    return;
+  }
+
+  // Load taxonomy term from form option to get name and description field values.
+  $term = Term::load($vars['element']['#return_value']);
+  $display_options = array(
+    'label' => 'hidden',
+    'settings' => array(
+      'link' => FALSE,
+    ),
+  );
+  $icon = $term->get('field_category_icon')->view($display_options);
+  $vars['category_icon'] = $icon;
+  $vars['category_name'] = $vars['element']['#title'];
+  $vars['category_description'] = $term->get('field_short_description')->getValue()[0]['value'];
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Alters template for FAQ Landing view exposed form radio buttons.
+ */
+function dovelewis_faq_theme_suggestions_form_element_label_alter(array &$suggestions, array $vars, $hook) {
+  if (isset($GLOBALS['faq_landing_options'])) {
+    foreach ($GLOBALS['faq_landing_options'] as $option_id) {
+      if ($vars['element']['#id'] === $option_id) {
+        $suggestions[] = $hook . '__faqs_landing';
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_TEMPLATE().
+ *
+ * Preprocess form-element-label--faqs-landing.html.twig.
+ */
+function dovelewis_faq_preprocess_form_element_label__faqs_landing(&$vars) {
+  $cat_id = explode('--', $vars['element']['#id']);
+  $cat_id = $cat_id[0];
+
+  if ($cat_id == 'edit-category-all') {
+    return;
+  }
+
+  // Load taxonomy term from form option to get short title field value.
+  $tid = str_replace('edit-category-', '', $cat_id);
+  $term = Term::load($tid);
+  $vars['category_short_name'] = $term->get('field_short_title')->getValue()[0]['value'];
+}

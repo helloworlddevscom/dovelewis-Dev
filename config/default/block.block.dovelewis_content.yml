@@ -1,0 +1,22 @@
+uuid: bd09691e-878d-4e44-a3d4-e4b789fb3938
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dovelewis
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: dovelewis_content
+theme: dovelewis
+region: content
+weight: -12
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,223 @@
+<?php
+
+use Drupal\block\Entity\Block;
+use Drupal\Core\Form\FormStateInterface;
+
+
+/**
+ * Implements hook_preprocess_TEMPLATE().
+ *
+ * Preprocess block.html.twig.
+ */
+function better_template_suggestions_preprocess_block(&$vars) {
+  // Pass block region value to content so this can be used in
+  // better_template_suggestions_theme_suggestions_menu_alter().
+  if (isset($vars['elements']['#id'])) {
+    $block = Block::load($vars['elements']['#id']);
+    if (!empty($block)) {
+      $region = Block::load($vars['elements']['#id'])->getRegion();
+      if (!empty($region)) {
+        $vars['content']['#attributes']['region'] = $region;
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_TEMPLATE().
+ *
+ * Preprocess views-exposed-form.html.twig.
+ */
+function better_template_suggestions_preprocess_views_exposed_form(&$vars) {
+  // Pass region value to form fields so this can be used in
+  // better_template_suggestions_theme_suggestions_input_alter().
+  if (isset($vars['form']['#attributes']['region'])) {
+    $vars['form']['actions']['submit']['#attributes']['region'] = $vars['form']['#attributes']['region'];
+    $vars['form']['actions']['reset']['#attributes']['region'] = $vars['form']['#attributes']['region'];
+    $vars['form'] = _better_template_suggestions_pass_value_to_form_fields($vars['form'], 'region', $vars['form']['#attributes']['region']);
+  }
+}
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function better_template_suggestions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // For views exposed forms, pass view id and view display id to
+  // form fields so they can be used in better_template_suggestions_theme_suggestions_input_alter().
+  // @TODO: Figure out how to do this in better_template_suggestions_preprocess_views_exposed_form() instead.
+  if (isset($form_state->getStorage()['view']->storage)) {
+    $view = $form_state->getStorage()['view']->storage;
+    $view_id = $view->get('id');
+    $view_display_id = $form_state->getStorage()['display']['id'];
+
+    $form['actions']['submit']['#attributes']['view_id'] = $view_id;
+    $form['actions']['submit']['#attributes']['view_display_id'] = $view_display_id;
+    $form['actions']['reset']['#attributes']['view_id'] = $view_id;
+    $form['actions']['reset']['#attributes']['view_display_id'] = $view_display_id;
+    $form = _better_template_suggestions_pass_value_to_form_fields($form, 'view_id', $view_id);
+    $form = _better_template_suggestions_pass_value_to_form_fields($form, 'view_display_id', $view_display_id);
+
+  }
+}
+
+
+/**
+ * Passes a value to all form fields so it can be used as part of template suggestion for field.
+ *
+ * @param $form
+ * @param $key
+ * @param $value
+ * @return mixed
+ */
+function _better_template_suggestions_pass_value_to_form_fields($form, $key, $value) {
+  $ignore_items = [
+    'form_token',
+    'form_build_id',
+    'form_id',
+    'actions',
+    'submit',
+    'reset',
+  ];
+
+  foreach ($form as $form_item_key => $form_item) {
+    if (in_array($form_item_key, $ignore_items)) {
+      continue;
+    }
+    if (substr($form_item_key, 0,1) === '#') {
+      continue;
+    }
+
+    $form[$form_item_key]['#attributes'][$key] = $value;
+  }
+
+  return $form;
+}
+
+
+/**
+ * Implements hook_theme_suggestions_TEMPLATE_alter().
+ *
+ * Alter template suggestions for blocks.
+ */
+function better_template_suggestions_theme_suggestions_block_alter(&$suggestions, $vars) {
+  if (isset($vars['elements']['#id'])) {
+    $id = $vars['elements']['#id'];
+  }
+  if (isset($id)) {
+    $block = Block::load($id);
+    if (!empty($block)) {
+      $region = $block->getRegion();
+    }
+  }
+  if (isset($vars['elements']['content']['#block_content'])) {
+    $bundle = $vars['elements']['content']['#block_content']->bundle();
+  }
+
+  // Remove duplicate suggestions.
+  $suggestions = array_unique($suggestions);
+  $suggestions = array_values($suggestions);
+
+  // Provide bundle (block type) based template suggestions for blocks.
+  if (isset($bundle)) {
+    array_splice($suggestions,2, 0, 'block_type__' . $bundle);
+
+    // Provide bundle--region based template suggestions for blocks.
+    if (isset($region)) {
+      array_splice($suggestions,3, 0, 'block_type__' . $bundle . '__' . $region);
+    }
+  }
+
+  // Provide id--region based template suggestions for blocks.
+  // We want any id based suggestions to take precedence so we add them to the end of array.
+  if (isset($region)) {
+    $suggestions[] = 'block_' . $id . '__' . $region;
+  }
+}
+
+
+/**
+ * Implements hook_theme_suggestions_TEMPLATE_alter().
+ *
+ * Alter template suggestions for fields.
+ */
+function better_template_suggestions_theme_suggestions_field_alter(&$suggestions, $vars) {
+  // Provide view mode based template suggestions for fields.
+  if (!empty($vars['element']['#view_mode'])) {
+    $suggestions[] = end($suggestions) . '__' . $vars['element']['#view_mode'];
+  }
+
+  // @TODO: Region based template suggestions?
+  //
+}
+
+
+/**
+ * Implements hook_theme_suggestions_TEMPLATE_alter().
+ *
+ * Alter template suggestions for inputs.
+ */
+function better_template_suggestions_theme_suggestions_input_alter(&$suggestions, $vars) {
+  $element = $vars['element'];
+
+  // Provide field machine name based template suggestions for form fields.
+  if (!empty($element['#attributes']['name'])) {
+    $suggestions[] = 'input__' . $element['#attributes']['name'];
+  }
+
+  // Provide view id and view display id based template suggestions for views exposed form fields.
+  if (isset($element['#attributes']['view_id'])) {
+
+    $suggestions[] = 'input__' . $element['#type'] . '__' . $element['#attributes']['view_id'];
+
+    if (isset($element['#attributes']['view_display_id'])) {
+      $suggestions[] = 'input__' . $element['#type'] . '__' . $element['#attributes']['view_id'] . '__' . $element['#attributes']['view_display_id'];
+    }
+
+    if (!empty($element['#attributes']['name'])) {
+      $suggestions[] = 'input__' . $element['#attributes']['name'] . '__' . $element['#attributes']['view_id'] . '__' . $element['#attributes']['view_display_id'];
+    }
+  }
+
+  // Provide region based template suggestions for views exposed form fields.
+  if (isset($element['#attributes']['region'])) {
+    foreach($suggestions as $key => $suggestion) {
+      $suggestions[] = $suggestion . '__' . $vars['element']['#attributes']['region'];
+    }
+  }
+}
+
+
+/**
+ * Implements hook_theme_suggestions_TEMPLATE_alter().
+ *
+ * Alter templates suggestions for menus.
+ */
+function better_template_suggestions_theme_suggestions_menu_alter(&$suggestions, $vars) {
+  // Add menu named based suggestion. It is added after this point by some Drupal core
+  // code, which means we have to add it here to keep the correct order for template precedence.
+  $suggestions[] = 'menu__' . $vars['menu_name'];
+
+  // Provide region based template suggestions for menus.
+  if (isset($vars['attributes']['region'])) {
+    $suggestion = 'menu__' . $vars['menu_name'] . '__' . $vars['attributes']['region'];
+    $suggestion = str_replace('-', '_', $suggestion);
+    $suggestions[] = $suggestion;
+
+    // @TODO: If menu machine name ends with 'menu', this causes Drupal to get confused
+    // and region based templates will not be picked up.
+  }
+}
+
+
+/**
+ * Implements hook_theme_suggestions_TEMPLATE_alter().
+ *
+ * Alter template suggestions for images.
+ */
+function better_template_suggestions_theme_suggestions_image_alter(array &$suggestions, array $vars) {
+  // Provide image style based template suggestions for images.
+  $suggestions[] = 'image__' . $vars['style_name'];
+}

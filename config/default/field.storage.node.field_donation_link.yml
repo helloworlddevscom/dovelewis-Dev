@@ -1,0 +1,19 @@
+uuid: c7f2f64e-bb1a-47d3-a302-f7a4529c4146
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_donation_link
+field_name: field_donation_link
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

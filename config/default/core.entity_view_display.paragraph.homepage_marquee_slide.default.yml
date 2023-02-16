@@ -1,0 +1,35 @@
+uuid: 3025b9fd-4c86-47b2-adae-f455df8dcb2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.homepage_marquee_slide.field_marquee_bg_image
+    - field.field.paragraph.homepage_marquee_slide.field_marquee_overlay_text
+    - paragraphs.paragraphs_type.homepage_marquee_slide
+    - responsive_image.styles.carousel_marquee
+  module:
+    - responsive_image
+    - text
+id: paragraph.homepage_marquee_slide.default
+targetEntityType: paragraph
+bundle: homepage_marquee_slide
+mode: default
+content:
+  field_marquee_bg_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: carousel_marquee
+      image_link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_marquee_overlay_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

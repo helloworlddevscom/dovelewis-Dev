@@ -1,0 +1,21 @@
+/**
+ * Paragraph - Resource Tile.
+ */
+
+.paragraph--type--resource-file {
+  .field--name-field-resource-file-ref {
+    > .field__item {
+      padding: 25px 0;
+      border-bottom: 1px solid $color--gray6;
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+}

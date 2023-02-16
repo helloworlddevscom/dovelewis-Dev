@@ -1,0 +1,38 @@
+uuid: 21a2c2e7-843c-4ed8-bdf3-79e4d9b46f26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_donation_image
+    - node.type.donation_case_study
+  module:
+    - image
+id: node.donation_case_study.field_donation_image
+field_name: field_donation_image
+entity_type: node
+bundle: donation_case_study
+label: Image
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: donation-case-studies
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

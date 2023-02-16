@@ -1,0 +1,70 @@
+uuid: 83ff3295-4e89-47f5-af6e-525ee59a654d
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ckeditor
+_core:
+  default_config_hash: AqlPmO16LvJI4D0Ih6u4GFQIzqr5OnLgAUSjcUGWk2g
+format: basic_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+        -
+          name: Linking
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - DrupalImage
+            - video_embed
+            - Blockquote
+            - HorizontalRule
+        -
+          name: 'Block Formatting'
+          items:
+            - Format
+            - Styles
+        -
+          name: Tools
+          items:
+            - Source
+  plugins:
+    stylescombo:
+      styles: "a.button|Button Primary\r\na.button.button-size--small|Button Primary - Small\r\na.button--hollow|Button Primary Hollow\r\na.button--hollow.button-size--small|Button Primary Hollow - Small\r\na.button--secondary|Button Secondary\r\na.button--secondary.button-size--small|Button Secondary - Small\r\na.button--secondary--hollow|Button Secondary Hollow\r\na.button--secondary--hollow.button-size--small|Button Secondary Hollow - Small\r\na.button--white|Button White\r\na.button--white.button-size--small|Button White - Small\r\na.button--white--hollow|Button White Hollow\r\na.button--white--hollow.button-size--small|Button White Hollow - Small\r\na.link-style--arrow|Link Arrow\r\np.font-size--paragraph|Normal Paragraph\r\np.paragraph-size--lead|Lead Paragraph\r\np.text-style--label|Label\r\np.font-size--small|Small\r\np.text-style--small|Small Gray\r\nblockquote.blockquote--small|Small Blockquote\r\nh2.h2--small|Small H2\r\nh2.h2--title|Title Style H2\r\nh3.h3--title|Title Style H3\r\nh3.h3--orange|Orange H3"
+    language:
+      language_list: un
+    video_embed:
+      defaults:
+        children:
+          autoplay: false
+          responsive: true
+          width: '854'
+          height: '480'
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: 1000
+    height: 1000

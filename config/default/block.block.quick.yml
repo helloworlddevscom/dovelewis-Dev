@@ -1,0 +1,25 @@
+uuid: ebb88ed5-dc79-44ac-b46c-8e2f2c8d9ddc
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.quick
+  module:
+    - system
+  theme:
+    - dovelewis
+id: quick
+theme: dovelewis
+region: header_top
+weight: -12
+provider: null
+plugin: 'system_menu_block:quick'
+settings:
+  id: 'system_menu_block:quick'
+  label: Quick
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

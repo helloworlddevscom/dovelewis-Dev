@@ -1,0 +1,42 @@
+uuid: 8920bdb8-8d4c-498b-9dda-c1401643f1fd
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_subject
+field_name: field_subject
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Management
+    -
+      value: '1'
+      label: 'Blood Bank'
+    -
+      value: '2'
+      label: 'Pet Loss Support Program'
+    -
+      value: '3'
+      label: 'Portland Area Canine Therapy Teams (PACTT)'
+    -
+      value: '4'
+      label: 'Donations + Support'
+    -
+      value: '5'
+      label: Volunteering
+    -
+      value: '6'
+      label: 'Marketing & Media'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

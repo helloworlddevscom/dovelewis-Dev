@@ -1,0 +1,104 @@
+<?php
+
+
+/**
+ * Implements hook_theme().
+ */
+function dovelewis_footer_theme($existing, $type, $theme, $path) {
+  return [
+    // Blocks.
+    'block__footer_social_links' => [
+      'template' => 'block--footer-social-links',
+      'base hook' => 'block',
+      'path' => $path . '/templates/blocks',
+    ],
+    'block__footer_images' => [
+      'template' => 'block--footer-images',
+      'base hook' => 'block',
+      'path' => $path . '/templates/blocks',
+    ],
+    'block__footer_privacy_policy' => [
+      'template' => 'block--footer-privacy-policy',
+      'base hook' => 'block',
+      'path' => $path . '/templates/blocks',
+    ],
+    'block__footer_landing_mission_statement' => [
+      'template' => 'block--footer-landing-mission-statement',
+      'base hook' => 'block',
+      'path' => $path . '/templates/blocks',
+    ],
+    'block__footer_landing_contact' => [
+      'template' => 'block--footer-landing-contact',
+      'base hook' => 'block',
+      'path' => $path . '/templates/blocks',
+    ],
+    'block__system_menu_block__footer' => [
+      'template' => 'block--system-menu-block--footer',
+      'base hook' => 'system_menu_block',
+      'path' => $path . '/templates/blocks',
+    ],
+    'block__system_menu_block__footer_landing' => [
+      'template' => 'block--system-menu-block--footer-landing',
+      'base hook' => 'system_menu_block',
+      'path' => $path . '/templates/blocks',
+    ],
+    'block__footercertification' => [
+      'template' => 'block--footer-certification',
+      'base hook' => 'block',
+      'path' => $path . '/templates/blocks',
+    ],
+    'block__footerdonate' => [
+      'template' => 'block--footer-donate',
+      'base hook' => 'block',
+      'path' => $path . '/templates/blocks',
+    ],
+    'block__footeremergency' => [
+      'template' => 'block--footer-emergency',
+      'base hook' => 'block',
+      'path' => $path . '/templates/blocks',
+    ],
+  ];
+}
+
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function dovelewis_footer_theme_suggestions_alter(&$suggestions, $vars, $hook) {
+  if ($hook == 'block') {
+    // Assign template to 'Footer Landing - Mission Statement' block no matter where
+    // it is placed. If we reference the block content entity UUID instead of the machine
+    // name created when the block is placed in a region, we can guarantee this template
+    // will be used.
+    if ($vars['elements']['#plugin_id'] == 'block_content:8abd50ce-04b6-47d8-8eab-2a489c7af6a2') {
+      $suggestions[] = 'block__footer_landing_mission_statement';
+    }
+
+    // Because we need to display the 'Footer - Privacy Policy' in two regions, we can't
+    // rely only on the machine name for the corresponding template to be used in both regions
+    // because the machine name has to be unique for each region.
+    // Instead we have to base it on the block content entity UUID.
+    if ($vars['elements']['#plugin_id'] == 'block_content:c7dbbda2-0f96-48f1-8329-fee99155c3c3') {
+      $suggestions[] = 'block__footer_privacy_policy';
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_template().
+ *
+ * Preprocess page.html.twig.
+ */
+function dovelewis_footer_preprocess_page(&$vars) {
+  // If page is a Page node, determine what version of
+  // the site footer to display based on value of field_landing_page.
+  $vars['landing_footer'] = FALSE;
+  if (isset($vars['node'])) {
+    if ($vars['node']->getType() == 'page') {
+      if ($vars['node']->get('field_landing_page')->getValue()[0]['value']) {
+        $vars['landing_footer'] = TRUE;
+      }
+    }
+  }
+}

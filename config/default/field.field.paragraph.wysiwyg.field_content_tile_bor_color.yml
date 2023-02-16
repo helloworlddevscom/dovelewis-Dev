@@ -1,0 +1,21 @@
+uuid: 3d58bfd3-c953-49e9-81c4-067b51e1f69b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_tile_bor_color
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - options
+id: paragraph.wysiwyg.field_content_tile_bor_color
+field_name: field_content_tile_bor_color
+entity_type: paragraph
+bundle: wysiwyg
+label: 'Border Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

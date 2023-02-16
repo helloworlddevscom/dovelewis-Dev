@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function dovelewis_constant_contact_theme($existing, $type, $theme, $path) {
+  $templates_path = drupal_get_path('module', 'dovelewis_constant_contact') . '/templates';
+
+  return [
+    'block__constant_contact_signup_form' => [
+      'template' => 'block--constant-contact-signup-form',
+      'base hook' => 'block',
+      'path' => $templates_path,
+    ],
+  ];
+}

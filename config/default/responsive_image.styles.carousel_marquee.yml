@@ -1,0 +1,72 @@
+uuid: 264d9491-5adc-42ff-a2b5-778717a6ed32
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.carousel_marquee_large_1x
+    - image.style.carousel_marquee_large_2x
+    - image.style.carousel_marquee_medium_1x
+    - image.style.carousel_marquee_medium_2x
+    - image.style.carousel_marquee_small_2x
+    - image.style.carousel_marquee_small_x1
+    - image.style.carousel_marquee_xlarge_1x
+    - image.style.carousel_marquee_xlarge_2x
+    - image.style.carousel_marquee_xxlarge_1x
+    - image.style.carousel_marquee_xxlarge_2x
+  theme:
+    - dovelewis
+id: carousel_marquee
+label: 'Carousel Marquee'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_marquee_xxlarge_1x
+    breakpoint_id: dovelewis.xxlarge
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_marquee_xxlarge_2x
+    breakpoint_id: dovelewis.xxlarge
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_marquee_xlarge_1x
+    breakpoint_id: dovelewis.xlarge
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_marquee_xlarge_2x
+    breakpoint_id: dovelewis.xlarge
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_marquee_large_1x
+    breakpoint_id: dovelewis.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_marquee_large_2x
+    breakpoint_id: dovelewis.large
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_marquee_medium_1x
+    breakpoint_id: dovelewis.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_marquee_medium_2x
+    breakpoint_id: dovelewis.medium
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_marquee_small_x1
+    breakpoint_id: dovelewis.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_marquee_small_2x
+    breakpoint_id: dovelewis.small
+    multiplier: 2x
+breakpoint_group: dovelewis
+fallback_image_style: carousel_marquee_small_x1

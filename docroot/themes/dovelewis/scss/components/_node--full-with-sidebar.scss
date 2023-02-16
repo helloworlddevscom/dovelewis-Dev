@@ -1,0 +1,212 @@
+/**
+ * Styling for Full view mode nodes/pages with possible sidebars.
+ * This is shared between multiple node types:
+ * - Page
+ * - Person
+ * - Blog Post
+ * - Lost Found Pet
+ */
+
+.node--full-with-sidebars {
+  // Title and header text
+  > .node--full__header {
+    background-color: $color--white;
+    border-bottom: 2px solid $color--gray;
+
+    // Header image or video
+    > .header__hero {
+      .field--name-field-hero-image {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .header__text {
+      padding-top: 36px;
+      padding-bottom: 36px;
+
+      .header__text__inner.width--narrow {
+        max-width: 830px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .node--full__title {
+      margin-bottom: 0;
+      color: $color--green;
+
+      &.small-12 {
+        text-align: center;
+      }
+    }
+
+    .header-text {
+      margin-top: 1rem;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    // Breadcrumbs
+    .header__breadcrumbs {
+      padding-bottom: 5px;
+
+      .breadcrumbs.width--narrow {
+        max-width: 830px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  // Body field and sidebar
+  > .node--full__content {
+    > .node--full__body-content {
+      padding-top: $spacing--large;
+      padding-bottom: $spacing--large;
+    }
+
+    .node--full__body-content__inner.width--narrow {
+      max-width: 830px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .node--full__body {
+      margin-bottom: $spacing--large;
+    }
+
+    .node--full__sidebar {
+      //padding-top: $spacing--medium;
+
+      .paragraph,
+      > * {
+        margin-bottom: $spacing--medium;
+      }
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+
+      //.content-tile .content-tile__content {
+      //  p, span {
+      //    font-size: rem-calc(18);
+      //  }
+      //}
+    }
+  }
+
+  &.no-sidebar {
+    > .node--full__content {
+      .node--full__body {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    > .node--full__header {
+      .header__text {
+        margin-top: 0;
+        padding-top: $spacing--large;
+        padding-bottom: $spacing--large;
+      }
+
+      .node--full__title {
+        margin-bottom: 0;
+
+        &.small-12 {
+          text-align: left;
+        }
+
+        &.cell.xlarge-4 {
+          padding-right: $spacing--medium;
+        }
+      }
+
+      .header-text {
+
+        p {
+          margin-top: 0;
+          text-align: left;
+        }
+      }
+
+      .header__breadcrumbs {
+        padding-bottom: $spacing--small;
+      }
+    }
+
+    > .node--full__content {
+      > .node--full__body-content {
+        padding-top: $spacing--large;
+        padding-bottom: $spacing--large;
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    > .node--full__header {
+      .header__text {
+        padding-top: 115px;
+        padding-bottom: 108px;
+      }
+    }
+
+    > .node--full__content {
+      > .node--full__body-content {
+        padding-top: 105px;
+        padding-bottom: $spacing--xlarge;
+      }
+
+
+      .node--full__body.cell.xlarge-8 {
+        padding-right: 95px;
+        margin-bottom: 0;
+      }
+
+      .field--name-body {
+        > h2:first-child {
+          margin-top: -.3em;
+        }
+      }
+
+      .node--full__sidebar {
+        //padding-top: 80px;
+        padding-left: 10px;
+
+        .paragraph {
+          margin-bottom: 52px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

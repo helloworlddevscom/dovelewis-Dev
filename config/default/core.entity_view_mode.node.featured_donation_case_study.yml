@@ -1,0 +1,10 @@
+uuid: 2fc540ab-0c87-423e-8ac8-980b07b1fcf9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.featured_donation_case_study
+label: 'Featured Donation Case Study'
+targetEntityType: node
+cache: true

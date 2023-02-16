@@ -1,0 +1,55 @@
+uuid: dd7dd01d-5b16-4a84-97e6-bae7cf5cd917
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sidebar_content
+    - node.type.blog_post
+    - paragraphs.paragraphs_type.contact
+  module:
+    - entity_reference_revisions
+id: node.blog_post.field_sidebar_content
+field_name: field_sidebar_content
+entity_type: node
+bundle: blog_post
+label: 'Sidebar Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      contact: contact
+    negate: 0
+    target_bundles_drag_drop:
+      block_ref:
+        weight: 10
+        enabled: false
+      column:
+        weight: 11
+        enabled: false
+      contact:
+        weight: 12
+        enabled: true
+      container:
+        weight: 13
+        enabled: false
+      faqs:
+        weight: 14
+        enabled: false
+      marquee:
+        weight: 15
+        enabled: false
+      teaser:
+        weight: 16
+        enabled: false
+      view:
+        weight: 17
+        enabled: false
+      wysiwyg:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

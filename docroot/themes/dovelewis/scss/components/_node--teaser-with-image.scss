@@ -1,0 +1,339 @@
+/**
+ * Helper class for node view modes with possibility of image positioned to the top
+ * or positioned as a background image to the left.
+ * This is shared between multiple content types & view modes:
+ * - Page (Teaser view mode)
+ * - Person (Teaser view mode)
+ */
+
+
+.node--teaser-with-image {
+
+  .node__content {
+    @include clearfix();
+  }
+
+  .content__image {
+    text-align: center;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      display: inline-block;
+    }
+  }
+
+  .content__text {
+    padding-top: $spacing--small;
+
+    h3.node__title {
+      font-weight: bold;
+    }
+
+    p {
+      @include font-size--paragraph--small;
+    }
+  }
+
+  .teaser-cta {
+    margin: 12px 0 0 0;
+  }
+
+  // Text padding
+  &.text-padding--medium,
+  .text-padding--medium & {
+    .content__text {
+      padding: $spacing--small + 6px;
+    }
+  }
+
+  // Position left image is always rendered
+  // as a background image, however on mobile
+  // it is positioned to the top.
+  &.teaser-image-pos--left,
+  .teaser-image-pos--left & {
+    .content__image {
+      position: relative;
+      padding-bottom: 75%;
+      background-size: initial;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      a {
+        // Because we're fudging the height of .content__image
+        // with the padding-bottom trick, we need to absolutely position
+        // the link in order for it to have height.
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    // Image left
+    // ----
+    // This class is added by a Drupal field.
+    // We want to allow this class to be added on the Teaser itself,
+    // but also on a parent element in case it's not feasible to add it
+    // on the Teaser because Drupal is complicated.
+    &.teaser-image-pos--left,
+    .teaser-image-pos--left & {
+      .node__content {
+        display: flex;
+        flex-flow: row wrap;
+        height: 100%;
+      }
+
+      .content__image {
+        height: 100%;
+        padding-bottom: 0;
+        background-size: cover;
+
+        a {
+          position: initial;
+        }
+
+        // Hide image if image is positioned left to let background image
+        // show through (while keeping height of image). This is so that
+        // if there is a lot of text, the image does not have white space underneath.
+        img {
+          opacity: 0;
+        }
+      }
+
+      .content__text {
+        padding: 0 0 0 $spacing--small;
+
+        // Decrease H3 font size when image is floated left.
+        h3,
+        h3.node__title {
+          font-size: rem-calc(24);
+        }
+
+        p {
+          @include font-size--paragraph;
+        }
+      }
+
+      &.teaser-image-size--quarter,
+      .teaser-image-size--quarter & {
+        .content__text {
+          width: 75%;
+        }
+
+        .content__image {
+          width: 24.5%;
+        }
+      }
+
+      &.teaser-image-size--third,
+      .teaser-image-size--third & {
+        .content__text {
+          width: 63%;
+        }
+
+        .content__image {
+          width: 37%;
+        }
+      }
+
+      &.teaser-image-size--half,
+      .teaser-image-size--half & {
+        .content__text {
+          width: 55%;
+        }
+
+        .content__image {
+          width: 45%;
+        }
+      }
+
+      // Text padding
+      &.text-padding--medium,
+      .text-padding--medium & {
+        .content__text {
+          padding: $spacing--small;
+        }
+      }
+    }
+
+    // Image top
+    // -----
+
+    &.teaser-image-pos--top,
+    .teaser-image-pos--top & {
+
+      // Text padding
+      &.text-padding--medium,
+      .text-padding--medium & {
+        .content__text {
+          padding: 25px;
+        }
+      }
+
+      .content__text {
+        h3,
+        h3.node__title {
+          font-size: rem-calc(22);
+        }
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+
+    // Image left
+    // ----
+
+    &.teaser-image-pos--left,
+    .teaser-image-pos--left & {
+      .content__text {
+        padding: 0 0 0 $spacing--medium;
+      }
+    }
+
+    // Image top
+    // ----
+
+    &.teaser-image-pos--top,
+    .teaser-image-pos--top & {
+
+      // Text padding
+      &.text-padding--medium,
+      .text-padding--medium & {
+        .content__text {
+          padding: $spacing--medium - 10px;
+          padding-top: $spacing--medium - 5px;
+        }
+      }
+
+      .content__text {
+        h3,
+        h3.node__title {
+          font-size: rem-calc(29);
+        }
+      }
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+
+    // Image top
+    // ----
+
+    &.teaser-image-pos--top,
+    .teaser-image-pos--top & {
+
+      // Text padding
+      &.text-padding--medium,
+      .text-padding--medium & {
+        .content__text {
+          padding: $spacing--medium - 4px;
+          padding-top: $spacing--medium - 5px;
+        }
+      }
+
+      .content__text {
+        h3,
+        h3.node__title {
+          font-size: rem-calc(32);
+        }
+      }
+    }
+  }
+}
+
+
+// When displayed inside of a 1/3 Column and image positioned top.
+// ----
+
+.paragraph--type--column.xlarge-4,
+.paragraph--type--column.xxlarge-4 {
+  .teaser-image-pos--top .node--teaser-with-image,
+  .node--teaser-with-image.teaser-image-pos--top {
+
+    // XXLARGE
+
+    @include breakpoint(xxlarge) {
+      // Text padding
+      &.text-padding--medium,
+      .text-padding--medium & {
+        .content__text {
+          padding: $spacing--large - 4px;
+          padding-top: $spacing--large - 5px;
+        }
+      }
+    }
+  }
+}
+
+
+// When displayed inside of a 1/2 Column and image positioned left.
+
+.paragraph--type--column.xlarge-6,
+.paragraph--type--column.xxlarge-6 {
+  .teaser-image-pos--left .node--teaser-with-image,
+  .node--teaser-with-image.teaser-image-pos--left {
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      .content__text {
+        p {
+          @include font-size--paragraph--small;
+        }
+      }
+
+      // Text padding
+      &.text-padding--medium,
+      .text-padding--medium & {
+        .content__text {
+          padding: $spacing--medium - 4px;
+          padding-top: $spacing--medium - 5px;
+        }
+      }
+    }
+  }
+}
+
+
+// When displayed inside of a full-width Column and image positioned left.
+// ----
+
+.paragraph--type--column.xlarge-12,
+.paragraph--type--column.xxlarge-12 {
+  .teaser-image-pos--left .node--teaser-with-image,
+  .node--teaser-with-image.teaser-image-pos--left {
+
+    // XLARGE
+
+    @include breakpoint(xlarge) {
+      .content__text {
+        padding: $spacing--large - 4px;
+        padding-top: $spacing--large - 5px;
+
+        // Increase font-size slightly
+        h3 {
+          font-size: rem-calc(33);
+        }
+      }
+    }
+  }
+}
+

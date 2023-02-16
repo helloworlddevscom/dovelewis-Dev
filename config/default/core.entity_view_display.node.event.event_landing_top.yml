@@ -1,0 +1,110 @@
+uuid: 50e5b71a-fd82-4d76-b9cc-2e805d041439
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.event_landing_top
+    - field.field.node.event.body
+    - field.field.node.event.field_event_annual
+    - field.field.node.event.field_event_button_link
+    - field.field.node.event.field_event_category
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_date_start
+    - field.field.node.event.field_event_location_address
+    - field.field.node.event.field_event_location_name
+    - field.field.node.event.field_event_price
+    - field.field.node.event.field_event_prim_sponsors_ref
+    - field.field.node.event.field_event_sup_sponsors_ref
+    - field.field.node.event.field_hero_image
+    - field.field.node.event.field_hide_start_end_time
+    - field.field.node.event.field_optional_link
+    - field.field.node.event.field_primary_sponsor
+    - field.field.node.event.field_secondary_sponsors
+    - field.field.node.event.field_teaser_image
+    - node.type.event
+    - responsive_image.styles.hero
+  module:
+    - datetime_range
+    - responsive_image
+    - text
+    - user
+id: node.event.event_landing_top
+targetEntityType: node
+bundle: event
+mode: event_landing_top
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_event_annual:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_event_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short_date_month_day
+      separator: '-'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_event_location_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_event_price:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_hero_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: hero
+      image_link: content
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_hide_start_end_time:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_event_button_link: true
+  field_event_category: true
+  field_event_date_start: true
+  field_event_location_address: true
+  field_event_prim_sponsors_ref: true
+  field_event_sup_sponsors_ref: true
+  field_optional_link: true
+  field_primary_sponsor: true
+  field_secondary_sponsors: true
+  field_teaser_image: true
+  langcode: true
+  links: true

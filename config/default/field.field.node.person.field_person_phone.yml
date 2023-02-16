@@ -1,0 +1,19 @@
+uuid: d24ae0f2-4ebc-40bd-bca8-bf14f2576405
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_phone
+    - node.type.person
+id: node.person.field_person_phone
+field_name: field_person_phone
+entity_type: node
+bundle: person
+label: 'Phone Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

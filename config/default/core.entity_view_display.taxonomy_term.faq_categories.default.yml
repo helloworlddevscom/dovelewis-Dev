@@ -1,0 +1,51 @@
+uuid: 8471632f-e247-49b4-8b1f-96a5ff6dfe87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.faq_categories.field_category_icon
+    - field.field.taxonomy_term.faq_categories.field_short_description
+    - field.field.taxonomy_term.faq_categories.field_short_title
+    - taxonomy.vocabulary.faq_categories
+  module:
+    - svg_image
+    - text
+id: taxonomy_term.faq_categories.default
+targetEntityType: taxonomy_term
+bundle: faq_categories
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_category_icon:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_short_description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_short_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true

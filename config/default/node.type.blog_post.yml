@@ -1,0 +1,17 @@
+uuid: ab0c1e23-c1b2-4e43-80a2-aee9cbd756ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Blog Post'
+type: blog_post
+description: 'Create a new Blog Post, Wellness Tip or Press.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

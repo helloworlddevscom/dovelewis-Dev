@@ -1,0 +1,24 @@
+uuid: 6f815458-664a-418b-adfe-9e689356c861
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_content_tile_h_bg_color
+field_name: field_content_tile_h_bg_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: orange
+      label: Orange
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

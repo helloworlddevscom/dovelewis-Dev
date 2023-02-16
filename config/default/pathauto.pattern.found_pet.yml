@@ -1,0 +1,22 @@
+uuid: ed6f211b-083d-43ee-8aa1-ffd40e5e5638
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: found_pet
+label: 'Found Pet'
+type: 'canonical_entities:node'
+pattern: 'community/found-pets/[node:title]'
+selection_criteria:
+  9c28c1ec-b7c8-4bc6-b6ec-12415bedc326:
+    id: node_type
+    negate: false
+    uuid: 9c28c1ec-b7c8-4bc6-b6ec-12415bedc326
+    context_mapping:
+      node: node
+    bundles:
+      lost_found_pet: lost_found_pet
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,29 @@
+uuid: db900f40-42e7-4688-a041-0dd3b684551e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.three_image_banner.field_three_image_banner_images
+    - image.style.blog_post_teaser
+    - paragraphs.paragraphs_type.three_image_banner
+  module:
+    - svg_image
+id: paragraph.three_image_banner.default
+targetEntityType: paragraph
+bundle: three_image_banner
+mode: default
+content:
+  field_three_image_banner_images:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: blog_post_teaser
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

@@ -1,0 +1,23 @@
+uuid: af0ad8ce-9472-4d57-a05f-e22f592744aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_secondary_menu
+    - node.type.page
+id: node.page.field_display_secondary_menu
+field_name: field_display_secondary_menu
+entity_type: node
+bundle: page
+label: 'Display Secondary Menu'
+description: 'Toggles display of the Secondary Menu.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

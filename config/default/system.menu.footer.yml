@@ -1,0 +1,10 @@
+uuid: 6fbfe648-6084-4708-a43e-5936c75db17e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7yrlW5z9zdg2eBucB2GPqXKSMQfH9lSRSO4DbWF7AFc
+id: footer
+label: Footer
+description: 'Menu that appears in the footer'
+locked: true

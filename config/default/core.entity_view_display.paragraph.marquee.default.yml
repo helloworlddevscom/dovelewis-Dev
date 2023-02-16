@@ -1,0 +1,24 @@
+uuid: 2eb925cc-5755-460d-8461-72301bde3801
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.marquee.field_marquee_bg_image
+    - field.field.paragraph.marquee.field_marquee_overlay_text
+    - paragraphs.paragraphs_type.marquee
+  module:
+    - text
+id: paragraph.marquee.default
+targetEntityType: paragraph
+bundle: marquee
+mode: default
+content:
+  field_marquee_overlay_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_marquee_bg_image: true

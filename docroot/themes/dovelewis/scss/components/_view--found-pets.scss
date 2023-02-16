@@ -1,0 +1,158 @@
+/**
+ * View: Found Pets.
+ */
+
+
+// Teaser Block & Landing Block Displays
+// -----
+
+.view--found-pets {
+  .views-row {
+    padding: $spacing--small;
+    margin-bottom: $spacing--small;
+    background-color: $color--white;
+    @include box-shadow;
+    border-radius: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .view-footer {
+    margin-top: $spacing--medium;
+
+    a {
+      margin-right: $spacing--medium;
+      margin-bottom: $spacing--small;
+    }
+
+    .found-pets__info {
+      display: block;
+      margin-top: $spacing--small;
+      @include font-size--large;
+      line-height: 1.2;
+      font-style: italic;
+      color: $color--gray3;
+    }
+  }
+
+  // When displayed inside a Container Paragraph with a green or blue background
+  .paragraph--type--container.bg-color--green &,
+  .paragraph--type--container.bg-color--blue & {
+    .view-footer {
+      .found-pets__info {
+        color: $color--white;
+      }
+    }
+  }
+
+
+  // LARGE
+
+  @include breakpoint(large) {
+    .view-footer {
+      .found-pets__info {
+        display: inline-block;
+        max-width: 340px;
+        margin-top: 0;
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .views-row {
+      padding: 35px;
+      margin-bottom: 0;
+    }
+
+    .view-footer {
+      margin-top: $spacing--large;
+
+      a {
+        margin-right: $spacing--medium;
+        margin-bottom: 0;
+      }
+
+      .found-pets__info {
+        max-width: 380px;
+      }
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    .views-row {
+      padding: $spacing--medium;
+    }
+  }
+}
+
+
+
+
+// Landing Block Display
+// -----
+
+.view--found-pets.view-display-id--landing_block {
+  .view-filters {
+    margin-bottom: 30px;
+
+    form {
+      display: flex;
+      justify-content: center;
+
+      .form-radios {
+        display: flex;
+        flex-flow: row wrap;
+
+        /* round borders on first and last radios */
+        > .form-type-radio:first-child {
+          label {
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+          }
+        }
+        > .form-type-radio:last-child {
+          label {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+          }
+        }
+
+        input[type="radio"] {
+          display: none;
+
+          &:checked + label {
+            background-color: $color--lightgreen;
+            color: $color--white;
+            border: 2px solid $color--lightgreen;
+          }
+        }
+
+        label {
+          background-color: $color--white;
+          padding-left: 10px;
+          padding-right: 10px;
+          margin-left: 0;
+          margin-right: -2px;
+          border: 2px solid $color--gray5;
+        }
+      }
+    }
+  }
+
+  .views-row {
+    @include column-margins;
+  }
+
+  .view-empty {
+    padding: $spacing--large 0;
+    text-align: center;
+  }
+}

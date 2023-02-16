@@ -1,0 +1,30 @@
+uuid: 5a934b7f-2b6f-411b-8fa1-3ed4c3a95b56
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_found_sex
+field_name: field_found_sex
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: male
+      label: Male
+    -
+      value: female
+      label: Female
+    -
+      value: unknown
+      label: Unknown
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

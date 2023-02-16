@@ -1,0 +1,49 @@
+/**
+ * Block type: Modal.
+ * See: block-type--modal.html.twig
+ */
+
+.block-type--modal.jquery-modal {
+  max-width: 690px;
+  padding: 0;
+  border-radius: 0;
+
+  .content__image {
+    display: none;
+  }
+
+  .content__message {
+    padding: 30px;
+  }
+
+  .field--name-body {
+    > *:last-child {
+      margin-bottom: 0;
+
+      > a {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    .block__content {
+      display: flex;
+    }
+
+    .content__image {
+      display: block;
+      width: 45%;
+      background-image: url('../../images/donate-modal-block-images/donate-dog.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .content__message {
+      width: 55%;
+      padding: 30px;
+    }
+  }
+
+}

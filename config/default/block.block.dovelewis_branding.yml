@@ -1,0 +1,25 @@
+uuid: 0ead50a5-99c2-4231-a12c-a0882f3d241f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dovelewis
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: dovelewis_branding
+theme: dovelewis
+region: header_bottom
+weight: -14
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,116 @@
+/**
+ * Block: Wellness Tips Constant Contact signup form.
+ */
+
+
+.block-id--constant-contact-form {
+  .block__content {
+    box-sizing: border-box;
+    border: 3px solid white;
+    background-color: #FFF3D4;
+    background-image: url('../../images/dove-lewis-graphic-email-subscribe-bulldog.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+    .content__top {
+      background-color: $color--orange;
+      padding: 30px $spacing--small;
+
+      .block__title {
+        margin-bottom: 0;
+        font-size: rem-calc(23);
+        font-weight: bold;
+        color: white;
+      }
+    }
+
+    .content__bottom {
+      margin: auto;
+      padding: $spacing--medium $spacing--small;
+
+      &::before {
+        content: "";
+        position: relative;
+        bottom: 18px;
+        width: 0;
+        height: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-top: 25px solid $color--orange;
+        clear: both;
+      }
+
+      form {
+        padding: 0;
+      }
+
+      .form-item-email,
+      .js-form-item-first-name,
+      .form-item-last-name {
+        margin-top: 0;
+        margin-bottom: $spacing--medium;
+      }
+
+      .form-checkboxes {
+        display: flex;
+        flex-flow: row wrap;
+
+        .form-type-checkbox {
+          display: flex;
+          flex-flow: row nowrap;
+          margin: 5px 0;
+        }
+      }
+
+      /* 
+      make checkboxes into rows that sit
+      to the left
+       */
+      .form-checkboxes div:nth-child(even) {
+        width: 67%;
+      }
+      .form-checkboxes div:nth-child(odd) {
+        width: 32%;
+      }
+
+      .disclaimer {
+        font-size: 11px;
+        text-align: justify;
+      }
+    }
+  }
+
+
+  // XLARGE
+
+  @include breakpoint(xlarge) {
+    .block__content {
+      .content__top {
+        padding: $spacing--medium ($spacing--large + 2px);
+
+        .block__title {
+          font-size: rem-calc(30);
+        }
+      }
+
+      .content__bottom {
+        padding: $spacing--medium ($spacing--large + 2px);
+      }
+    }
+  }
+
+
+  // XXLARGE
+
+  @include breakpoint(xxlarge) {
+    .block__content {
+      .content__top {
+        padding: $spacing--large 75px;
+      }
+
+      .content__bottom {
+        padding: $spacing--medium 75px;
+      }
+    }
+  }
+}

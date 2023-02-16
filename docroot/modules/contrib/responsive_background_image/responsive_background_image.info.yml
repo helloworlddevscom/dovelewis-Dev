@@ -1,0 +1,12 @@
+name: Responsive Background Image
+description: Provides functions to generate responsive background image media queries.
+core: 8.x
+core_version_requirement: ^8 || ^9
+type: module
+dependencies:
+  - 'drupal:responsive_image'
+
+# Information added by Drupal.org packaging script on 2021-09-24
+version: '8.x-1.0-alpha3'
+project: 'responsive_background_image'
+datestamp: 1632521062

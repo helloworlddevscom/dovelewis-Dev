@@ -1,0 +1,73 @@
+/**
+ * Custom variables that are not overrides of Foundation variables.
+ */
+
+
+// Colors
+// ---------
+
+// General Colors
+$color--red: #E23E2F;
+$color--orange: #E77200;
+$color--green: #829600;
+
+$color--white: #FFFFFF;
+$color--black: #000000;
+$color--gray: #F5F5F5;
+$color--medium-gray: #4F524B;
+$color--dark-gray: #383A35;
+$color--charcoal: #20241E;
+
+// Greens
+$color--palegreen: #DCE169;
+$color--lightgreen: #AFBE33;
+$color--darkgreen: #5F6E00;
+$color--darkergreen: #373E1E;
+
+// Blues
+$color--lightblue: #68C1FF;
+$color--doveblue: #56A0D3;
+$color--darkblue: #0A2240;
+$color--blue: #144A8C;
+
+//Grays
+$color--gray6: #B8BAB6;
+$color--gray5: #A6AAA0;
+$color--gray4: #8E9288;
+$color--gray3: #7C7E74;
+$color--gray2: #62665C;
+$color--gray1: #4E524A;
+$color--bggray: #F4F5F4;
+$color--doveyellow: #FFD24F;
+$color--lightorange: #F7A71A;
+$color--doveorange: #E87200;
+$color--darkorange: #C04A00;
+
+// Body text color
+$color--body-text: #4E5149;
+
+// Widths
+// ----------
+
+// Spacing Widths
+
+$spacing--xsmall: 15px;
+$spacing--small: 20px;
+$spacing--medium: 40px;
+$spacing--large: 60px;
+$spacing--xlarge: $spacing--large * 2;
+
+// Content Widths
+
+$site-width--max: 1440px;
+
+// Narrow site width used by Container Paragraph.
+$content-width--narrow: 1200px;
+
+
+// Typography
+// -----------
+
+// Font Families
+$ff--idealsans: "Ideal Sans A", "Ideal Sans B", "Helvetica", "Arial", sans-serif;
+$ff--sentinel: "Sentinel A", "Sentinel B", "Times New Roman", serif;

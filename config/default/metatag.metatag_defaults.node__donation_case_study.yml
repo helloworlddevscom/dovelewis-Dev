@@ -1,0 +1,15 @@
+uuid: 95296d4a-fbc1-4783-8bfd-d9ede2e67ec0
+langcode: en
+status: true
+dependencies: {  }
+id: node__donation_case_study
+label: 'Content: Donation Case Study'
+tags:
+  geo_position: '45.5331, -122.69138'
+  geo_placename: 'Portland, Oregon'
+  abstract: 'DoveLewis Emergency Animal Hospital is a nonprofit, 24-hour veterinary emergency clinic and intensive care unit in Portland, Oregon. '
+  description: 'DoveLewis Emergency Animal Hospital is a nonprofit, 24-hour veterinary emergency clinic and intensive care unit in Portland, Oregon that helps relies on donations from individuals, corporate sponsors, charitable estates and volunteers.  '
+  canonical_url: '[current-page:url]'
+  title: '[current-page:title] | [site:name]'
+  geo_region: US-OR
+  keywords: 'Local business, Portland business, Portland nonprofit, private nonprofit, ways to donate, animal nonprofits, financial aid, help abused animals, lost animals, wildlife veterinarian, medical aid for wild animals'

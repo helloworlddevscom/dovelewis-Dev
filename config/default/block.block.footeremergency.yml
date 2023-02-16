@@ -1,0 +1,31 @@
+uuid: 9a76d0cd-db57-4cf9-a4bd-f126900cb5ac
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4f433274-b014-48fa-9e7f-8a533e6edd61'
+  module:
+    - block_content
+    - system
+  theme:
+    - dovelewis
+id: footeremergency
+theme: dovelewis
+region: footer_top
+weight: -11
+provider: null
+plugin: 'block_content:4f433274-b014-48fa-9e7f-8a533e6edd61'
+settings:
+  id: 'block_content:4f433274-b014-48fa-9e7f-8a533e6edd61'
+  label: 'Footer - Emergency'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: /contact

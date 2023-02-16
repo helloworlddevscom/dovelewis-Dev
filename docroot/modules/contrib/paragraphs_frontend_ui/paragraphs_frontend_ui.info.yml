@@ -1,0 +1,16 @@
+name: Paragraphs Frontend UI
+description: Allows users to edit paragraphs from the frontend.
+package: Paragraphs
+type: module
+# core: 8.x
+dependencies:
+  - drupal:image
+  - drupal:paragraphs
+  - drupal:settings_tray
+  - drupal:paragraphs_edit
+
+# Information added by Drupal.org packaging script on 2018-11-23
+version: '8.x-1.0-alpha1'
+core: '8.x'
+project: 'paragraphs_frontend_ui'
+datestamp: 1542988083

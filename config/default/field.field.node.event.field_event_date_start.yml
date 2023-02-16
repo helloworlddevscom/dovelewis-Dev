@@ -1,0 +1,24 @@
+uuid: a1e30a74-6788-4d96-90e4-21cadc825548
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_date_start
+    - node.type.event
+  module:
+    - datetime
+id: node.event.field_event_date_start
+field_name: field_event_date_start
+entity_type: node
+bundle: event
+label: 'Date Start'
+description: "There is currently an open Drupal bug related to date range fields. <br>\r\nDue to this, in order to automatically filter out past Events in lists of Events, you will need to enter the start date again."
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

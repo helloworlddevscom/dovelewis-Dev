@@ -1,0 +1,28 @@
+/**
+ * jQuery Modal plugin.
+ * Shared styling for all modals powered by jQuery Modal plugin across the site.
+ */
+
+.jquery-modal.blocker {
+  z-index: 51;
+  padding: 0;
+
+  .modal {
+    width: 100%;
+    vertical-align: bottom;
+
+    a.close-modal {
+      top: 5px;
+      right: 5px;
+    }
+  }
+
+  @include breakpoint(large) {
+    padding: 20px;
+
+    .modal {
+      width: 90%;
+      vertical-align: middle;
+    }
+  }
+}
